@@ -1,0 +1,11 @@
+- Rename la fonction "die" dans MonsterInstance:
+Le monstre ne meurt pas réèlement on donne simplement les récompenses.
+
+- MonsterHolder getTemplateList changer le type de retour??
+La fonction retourne une Map alors que l'attribut est une HashMap
+
+- Changer la génération des objets pour un monsterInstance:
+Pour l'instant les objets sont généré dans la fonction MonsterInstance dropItems.
+Il faudrait que le monstre ait une liste d'objet déjà généré en fonction du randomGenerator.
+		=> Changer la description dans ItemDropInfo, cela dit que l'item drop info est 
+			utilisé à la mort du monstre.

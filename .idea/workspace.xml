@@ -1,0 +1,1641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="343df287-1d87-4777-a027-c8afb8593ba4" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Dungeon_And_Dragons$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1505995570686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Dungeon_And_Dragons_V3_INCOMING$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1507555924769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Dungeon_And_Dragons" />
+    <favorites_list name="CodeIris Favorites" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DungeonLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/loader/DungeonLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="111" selection-end-column="7" />
+              <folding>
+                <element signature="docComment;field#_instance#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="docComment;field#ALL_DUNGEONS#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="docComment;field#_dungeonInformation#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="docComment;field#_dungeonCount#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="docComment;method#getInstance#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="docComment;method#DungeonLoader#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="docComment;method#loadDungeons#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="method#loadDungeons#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="docComment;method#encodeDungeons#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="method#encodeDungeons#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="docComment;method#extractRoom#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="method#extractRoom#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="docComment;method#extractMonster#0;class#DungeonLoader#0" expanded="false" />
+                <element signature="method#extractMonster#0;class#DungeonLoader#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenderLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/loader/GenderLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="93" selection-end-column="7" />
+              <folding>
+                <element signature="docComment;field#_instance#0;class#GenderLoader#0" expanded="false" />
+                <element signature="docComment;field#ALL_HERO_GENDERS#0;class#GenderLoader#0" expanded="false" />
+                <element signature="docComment;field#_heroGenderCount#0;class#GenderLoader#0" expanded="false" />
+                <element signature="docComment;method#getInstance#0;class#GenderLoader#0" expanded="false" />
+                <element signature="docComment;method#GenderLoader#0;class#GenderLoader#0" expanded="false" />
+                <element signature="docComment;method#loadGenders#0;class#GenderLoader#0" expanded="false" />
+                <element signature="method#loadGenders#0;class#GenderLoader#0" expanded="false" />
+                <element signature="method#encodeHeroGender#0;class#GenderLoader#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneralLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/loader/GeneralLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+              <folding>
+                <element signature="docComment;field#_instance#0;class#GeneralLoader#0" expanded="false" />
+                <element signature="docComment;field#isDebug#0;class#GeneralLoader#0" expanded="false" />
+                <element signature="docComment;method#getInstance#0;class#GeneralLoader#0" expanded="false" />
+                <element signature="docComment;method#GeneralLoader#0;class#GeneralLoader#0" expanded="false" />
+                <element signature="docComment;method#loadAll#0;class#GeneralLoader#0" expanded="false" />
+                <element signature="method#loadAll#0;class#GeneralLoader#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HeroRaceLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/loader/HeroRaceLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="64" selection-end-column="7" />
+              <folding>
+                <element signature="docComment;field#_instance#0;class#HeroRaceLoader#0" expanded="false" />
+                <element signature="docComment;field#ALL_HERO_RACES#0;class#HeroRaceLoader#0" expanded="false" />
+                <element signature="docComment;field#_heroRaceCount#0;class#HeroRaceLoader#0" expanded="false" />
+                <element signature="docComment;method#HeroRaceLoader#0;class#HeroRaceLoader#0" expanded="false" />
+                <element signature="docComment;method#getInstance#0;class#HeroRaceLoader#0" expanded="false" />
+                <element signature="docComment;method#getHeroRaceCount#0;class#HeroRaceLoader#0" expanded="false" />
+                <element signature="docComment;method#loadHeroRaces#0;class#HeroRaceLoader#0" expanded="false" />
+                <element signature="method#loadHeroRaces#0;class#HeroRaceLoader#0" expanded="false" />
+                <element signature="docComment;method#encodeHeroRace#0;class#HeroRaceLoader#0" expanded="false" />
+                <element signature="method#encodeHeroRace#0;class#HeroRaceLoader#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/loader/ItemLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="633">
+              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="143" selection-end-column="7" />
+              <folding>
+                <element signature="docComment;field#_instance#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;field#ALL_ITEMS#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;field#_itemStat#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;field#_allBonus#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;field#_weaponsCount#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;field#_armorCount#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;method#getInstance#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;method#ItemLoader#0;class#ItemLoader#0" expanded="false" />
+                <element signature="method#loadItems#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;method#displayItemsStats#0;class#ItemLoader#0" expanded="false" />
+                <element signature="method#displayItemsStats#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;method#encodeWeapons#0;class#ItemLoader#0" expanded="false" />
+                <element signature="method#encodeWeapons#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;method#encodeArmors#0;class#ItemLoader#0" expanded="false" />
+                <element signature="method#encodeArmors#0;class#ItemLoader#0" expanded="false" />
+                <element signature="docComment;method#encodeEnv#0;class#ItemLoader#0" expanded="false" />
+                <element signature="method#encodeEnv#0;class#ItemLoader#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MonsterHolder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/monster/MonsterHolder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#MonsterHolder#0" expanded="false" />
+                <element signature="docComment;field#_instance#0;class#MonsterHolder#0" expanded="false" />
+                <element signature="docComment;field#_templateList#0;class#MonsterHolder#0" expanded="false" />
+                <element signature="docComment;method#MonsterHolder#0;class#MonsterHolder#0" expanded="false" />
+                <element signature="docComment;method#getInstance#0;class#MonsterHolder#0" expanded="false" />
+                <element signature="docComment;method#getTemplate#0;class#MonsterHolder#0" expanded="false" />
+                <element signature="docComment;method#createTemplate#0;class#MonsterHolder#0" expanded="false" />
+                <element signature="method#createTemplate#0;class#MonsterHolder#0" expanded="false" />
+                <element signature="docComment;method#displayTemplateList#0;class#MonsterHolder#0" expanded="false" />
+                <element signature="method#displayTemplateList#0;class#MonsterHolder#0" expanded="false" />
+                <element signature="docComment;method#getTemplateList#0;class#MonsterHolder#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemHolder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemHolder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MonsterLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/loader/MonsterLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="160" column="5" lean-forward="true" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
+              <folding>
+                <element signature="docComment;class#MonsterLoader#0" expanded="false" />
+                <element signature="docComment;field#_instance#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="docComment;field#ALL_MONSTERS#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="docComment;field#_monsterInformation#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="docComment;field#_monsterCount#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="docComment;method#getInstance#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="docComment;method#MonsterLoader#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="docComment;method#getMonsterCount#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="docComment;method#loadMonsters#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="method#loadMonsters#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="docComment;method#encodeMonsters#0;class#MonsterLoader#0" expanded="false" />
+                <element signature="method#encodeMonsters#0;class#MonsterLoader#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemDropInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+              <folding>
+                <element signature="docComment;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;field#_itemTemplate#0;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;field#_maxDrop#0;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;field#_dropRate#0;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;method#ItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
+                <element signature="method#ItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;method#ItemDropInfo#1;class#ItemDropInfo#0" expanded="false" />
+                <element signature="method#ItemDropInfo#1;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;method#ItemDropInfo#2;class#ItemDropInfo#0" expanded="false" />
+                <element signature="method#ItemDropInfo#2;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;method#getTemplate#0;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;method#getMaxDrop#0;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;method#getDropRate#0;class#ItemDropInfo#0" expanded="false" />
+                <element signature="docComment;method#displayItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
+                <element signature="method#displayItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoryManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/manager/InventoryManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="28" column="53" lean-forward="false" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+              <folding>
+                <element signature="docComment;class#InventoryManager#0" expanded="false" />
+                <element signature="docComment;field#_instance#0;class#InventoryManager#0" expanded="false" />
+                <element signature="docComment;field#_iventoryOptions#0;class#InventoryManager#0" expanded="false" />
+                <element signature="docComment;method#getInstance#0;class#InventoryManager#0" expanded="false" />
+                <element signature="docComment;method#InventoryManager#0;class#InventoryManager#0" expanded="false" />
+                <element signature="docComment;method#inventoryMenu#0;class#InventoryManager#0" expanded="false" />
+                <element signature="method#inventoryMenu#0;class#InventoryManager#0" expanded="false" />
+                <element signature="docComment;method#equipItem#0;class#InventoryManager#0" expanded="false" />
+                <element signature="method#equipItem#0;class#InventoryManager#0" expanded="false" />
+                <element signature="docComment;method#unequipItem#0;class#InventoryManager#0" expanded="false" />
+                <element signature="method#unequipItem#0;class#InventoryManager#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="UML Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>;kvpf(rrrg)(°0MOMV54R55UR34&quot;ee)àp^m mo(ààl)))))))))))))))))))))))))))))))))lllllllluuuuu,,v(,v!èuuyjuuuuuuuu'f</find>
+      <find>map</find>
+      <find>displayMonsterInformation</find>
+      <find>startFight</find>
+      <find>.equ</find>
+      <find>item</find>
+      <find>getAttackModifier</find>
+      <find>System</find>
+      <find>stop</find>
+      <find>S</find>
+      <find>set</find>
+      <find>put</find>
+      <find>get</find>
+      <find>dungeonroomlist</find>
+      <find>monsterCount</find>
+      <find>(Env)stats.getObject</find>
+      <find>(Env)raceInformation.getObject</find>
+      <find>(Env)monstersStats.getObject</find>
+      <find>(Env)</find>
+      <find>getenv</find>
+      <find>getObject</find>
+      <find>getEnum</find>
+      <find>1</find>
+      <find>return _itemList.size();</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>stats.getEnv</replace>
+      <replace>raceInformation.getEnv</replace>
+      <replace>monstersStats.getEnv</replace>
+    </replaceStrings>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/DaD/formulas/MonsterFormulas.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/Stats/Stats.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/Loot.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/ItemRace.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/ItemRarity.java" />
+        <option value="$PROJECT_DIR$/src/DaD/inventory/MonsterInventory.java" />
+        <option value="$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/ItemEquipSlot.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/ItemType.java" />
+        <option value="$PROJECT_DIR$/src/DaD/dungeon/DungeonTemplate.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/MonsterInfo.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/Stats/Env.java" />
+        <option value="$PROJECT_DIR$/src/DaD/dungeon/DungeonHolder.java" />
+        <option value="$PROJECT_DIR$/src/DaD/commons/MultiValueSet.java" />
+        <option value="$PROJECT_DIR$/src/DaD/dungeon/DungeonRoomTemplate.java" />
+        <option value="$PROJECT_DIR$/src/DaD/creature/CreatureInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/formulas/HeroFormulas.java" />
+        <option value="$PROJECT_DIR$/src/DaD/commons/Spacer.java" />
+        <option value="$PROJECT_DIR$/src/DaD/commons/RandomGenerator.java" />
+        <option value="$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java" />
+        <option value="$PROJECT_DIR$/src/DaD/city/Shop.java" />
+        <option value="$PROJECT_DIR$/src/DaD/generator/HeroGenerator.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/MonsterRace.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/HeroGender.java" />
+        <option value="$PROJECT_DIR$/src/DaD/city/Church.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/HeroRace.java" />
+        <option value="$PROJECT_DIR$/src/DaD/creature/Creature.java" />
+        <option value="$PROJECT_DIR$/src/DaD/city/Bank.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/MonsterRarity.java" />
+        <option value="$PROJECT_DIR$/src/DaD/city/Blacksmith.java" />
+        <option value="$PROJECT_DIR$/src/DaD/creature/Hero.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/ItemInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/inventory/Inventory.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/ItemTemplate.java" />
+        <option value="$PROJECT_DIR$/src/DaD/calculator/Calculator.java" />
+        <option value="$PROJECT_DIR$/src/DaD/main.java" />
+        <option value="$PROJECT_DIR$/src/DaD/manager/InventoryManager.java" />
+        <option value="$PROJECT_DIR$/src/DaD/manager/SaveManager.java" />
+        <option value="$PROJECT_DIR$/src/DaD/monster/MonsterHolder.java" />
+        <option value="$PROJECT_DIR$/src/DaD/manager/GameManager.java" />
+        <option value="$PROJECT_DIR$/src/DaD/monster/MonsterInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/generator/NpcGenerator.java" />
+        <option value="$PROJECT_DIR$/src/DaD/monster/MonsterTemplate.java" />
+        <option value="$PROJECT_DIR$/src/DaD/loader/DungeonLoader.java" />
+        <option value="$PROJECT_DIR$/src/DaD/loader/GeneralLoader.java" />
+        <option value="$PROJECT_DIR$/src/DaD/loader/GenderLoader.java" />
+        <option value="$PROJECT_DIR$/src/DaD/loader/HeroRaceLoader.java" />
+        <option value="$PROJECT_DIR$/src/DaD/loader/ItemLoader.java" />
+        <option value="$PROJECT_DIR$/src/DaD/loader/MonsterLoader.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/ItemHolder.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness &gt; Messages</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Performance</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Security</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Usability</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Usability &gt; Icons</id>
+          </State>
+          <State>
+            <id>Android Lint for Kotlin</id>
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Dependency issuesJava</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>ImportsJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java 8Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Javadoc issuesJava</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Probable bugsKotlin</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>Redundant constructsKotlin</id>
+          </State>
+          <State>
+            <id>Reflective access issuesJava</id>
+          </State>
+          <State>
+            <id>Style issuesKotlin</id>
+          </State>
+          <State>
+            <id>TestNGJava</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+          <State>
+            <id>Visibility issuesJava</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="calculator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="city" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="creature" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="types" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="types" type="462c0819:PsiDirectoryNode" />
+              <item name="Stats" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="dungeon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="formulas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="inventory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="item" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="loader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="monster" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration name="Unnamed" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="DaD.main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jre1.8.0_151" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Dungeon_And_Dragons" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="DaD.main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="false" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Dungeon_And_Dragons" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",VISIBILITY_SORTER,ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="343df287-1d87-4777-a027-c8afb8593ba4" name="Default" comment="" />
+      <created>1495728146642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1495728146642</updated>
+      <workItem from="1512921079412" duration="3566000" />
+      <workItem from="1514045977818" duration="558000" />
+      <workItem from="1514206182463" duration="1505000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="5629000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.4618644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41949153" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3209746" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47033897" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44915253" sideWeight="0.5381356" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50073206" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3227848" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869694" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32521185" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DaD/city/Blacksmith.java</url>
+          <line>150</line>
+          <properties />
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="217" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/DaD/city/Inn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/generator/HeroGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="75" column="38" lean-forward="false" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/dungeon/DungeonInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/MonsterRace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/HeroGender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/city/Church.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/HeroRace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-226">
+          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/formulas/HeroFormulas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/MonsterRarity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Save.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AllMonsters.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="1" lean-forward="false" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/commons/MultiValueSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="301" column="56" lean-forward="false" selection-start-line="301" selection-start-column="56" selection-end-line="301" selection-end-column="56" />
+          <folding>
+            <element signature="e#652#653#0" expanded="false" />
+            <element signature="e#691#692#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#830#831#0" expanded="false" />
+            <element signature="e#1134#1135#0" expanded="false" />
+            <element signature="e#1174#1175#0" expanded="false" />
+            <element signature="method#getArrayList#0;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getArrayList#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getEnv#0;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getEnv#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getItemTemplate#0;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getItemTemplate#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getItemDropInfo#0;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getItemDropInfo#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getBool#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getInteger#0;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getInteger#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getIntegerArray#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getIntegerArray#3;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getLong#0;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getLong#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getLongArray#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getDouble#0;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getDouble#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getDoubleArray#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getDoubleArray#3;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getString#0;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getString#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getObject#1;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getEnum#0;class#MultiValueSet#0" expanded="false" />
+            <element signature="method#getEnum#1;class#MultiValueSet#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/city/DaD_Class_Diagram.puml" />
+    <entry file="file://$PROJECT_DIR$/src/DaD/DaD_Diagram_Class.puml" />
+    <entry file="uml://JAVA/DaD.creature.Creature" />
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/calculator;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/city;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/commons;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/creature;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/data/types;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/dungeon;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/formulas;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/generator;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/handler;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/inventory;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/item;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/loader;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/manager;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/monster;" />
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/city;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/calculator;" />
+    <entry file="uml://JAVA/DaD" />
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/city;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/commons;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/creature;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/data/types;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/data/types/Stats;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/dungeon;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/formulas;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/generator;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/handler;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/inventory;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/item;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/loader;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/manager;C:/Users/zantcho/Desktop/Dungeon_And_Dragons_V3_INCOMING/src/DaD/monster;" />
+    <entry file="uml://JAVA/DaD.loader.GeneralLoader" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/modules.uml" />
+    <entry file="file://$PROJECT_DIR$/DaD_uml_diagraù.uml" />
+    <entry file="uml://JAVA/DaD.loader.DungeonLoader" />
+    <entry file="file://$PROJECT_DIR$/src/DaD/creature/Creature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/creature/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="183" column="15" lean-forward="false" selection-start-line="183" selection-start-column="15" selection-end-line="183" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/city/Bank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/inventory/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/city/Blacksmith.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="64" column="15" lean-forward="false" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#blacksmithMenu#0;class#Blacksmith#0" expanded="false" />
+            <element signature="method#buyItemsMenu#0;class#Blacksmith#0" expanded="false" />
+            <element signature="method#buyItem#0;class#Blacksmith#0" expanded="false" />
+            <element signature="method#sellItemsMenu#0;class#Blacksmith#0" expanded="false" />
+            <element signature="method#sellItem#0;class#Blacksmith#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/calculator/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/handler/FightHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-311">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/commons/RandomGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
+          <folding>
+            <element signature="method#ItemInstance#0;class#ItemInstance#0" expanded="false" />
+            <element signature="method#ItemInstance#1;class#ItemInstance#0" expanded="false" />
+            <element signature="method#ItemInstance#2;class#ItemInstance#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/generator/NpcGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="35" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/handler/DungeonHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="78" column="68" lean-forward="false" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/monster/MonsterInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="54" column="47" lean-forward="false" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+          <folding>
+            <element signature="docComment;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;field#_template#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;field#_rarity#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;field#_race#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#MonsterInstance#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="method#MonsterInstance#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#die#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="method#die#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#dropItems#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="method#dropItems#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#getTemplate#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#getRarity#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#setRarity#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#getRace#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#setRace#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="docComment;method#getResumedInformation#0;class#MonsterInstance#0" expanded="false" />
+            <element signature="method#getResumedInformation#0;class#MonsterInstance#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/monster/MonsterTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="307" column="7" lean-forward="false" selection-start-line="307" selection-start-column="7" selection-end-line="307" selection-end-column="7" />
+          <folding>
+            <element signature="docComment;field#_id#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_name#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_description#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_hpPercent#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_maxHp#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_attack#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_defense#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_experience#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_gold#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_itemDropInfoList#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_maxHpPerLevel#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_attackPerLevel#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_defensePerLevel#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_experiencePerLevel#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_maxHpRarityModifier#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_attackRarityModifier#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_defenseRarityModifier#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_experienceRarityModifier#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_minimumRarity#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_maximumRarity#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;field#_race#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#MonsterTemplate#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="method#MonsterTemplate#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getId#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getName#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getDescription#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#displayTemplate#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="method#displayTemplate#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getHpPercent#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getMaxHp#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getAttack#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getDefense#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getExperience#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getGold#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getItemDropInfoList#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getMaxHpPerLevel#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getAttackPerLevel#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getDefensePerLevel#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getExperiencePerLevel#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getMaxHpRarityModifier#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getAttackRarityModifier#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getDefenseRarityModifier#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getExperienceRarityModifier#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getMonsterRace#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getMinimumRarity#0;class#MonsterTemplate#0" expanded="false" />
+            <element signature="docComment;method#getMaximumRarity#0;class#MonsterTemplate#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/MonsterInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/manager/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="99" column="5" lean-forward="false" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#GameManager#0" expanded="false" />
+            <element signature="docComment;field#_instance#0;class#GameManager#0" expanded="false" />
+            <element signature="docComment;field#_mainMenuOptions#0;class#GameManager#0" expanded="false" />
+            <element signature="docComment;field#_inGameMenuOptions#0;class#GameManager#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#GameManager#0" expanded="false" />
+            <element signature="docComment;method#GameManager#0;class#GameManager#0" expanded="false" />
+            <element signature="docComment;method#mainMenu#0;class#GameManager#0" expanded="false" />
+            <element signature="method#mainMenu#0;class#GameManager#0" expanded="false" />
+            <element signature="docComment;method#inGameMenu#0;class#GameManager#0" expanded="false" />
+            <element signature="method#inGameMenu#0;class#GameManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/manager/SaveManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#SaveManager#0" expanded="false" />
+            <element signature="docComment;field#_instance#0;class#SaveManager#0" expanded="false" />
+            <element signature="docComment;field#FILE_NAME#0;class#SaveManager#0" expanded="false" />
+            <element signature="docComment;field#VERSION#0;class#SaveManager#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#SaveManager#0" expanded="false" />
+            <element signature="e#1074#1075#0" expanded="true" />
+            <element signature="e#1097#1098#0" expanded="true" />
+            <element signature="docComment;method#SaveManager#0;class#SaveManager#0" expanded="false" />
+            <element signature="docComment;method#save#0;class#SaveManager#0" expanded="false" />
+            <element signature="method#save#0;class#SaveManager#0" expanded="false" />
+            <element signature="docComment;method#load#0;class#SaveManager#0" expanded="false" />
+            <element signature="method#load#0;class#SaveManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/loader/DungeonLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="111" selection-end-column="7" />
+          <folding>
+            <element signature="docComment;field#_instance#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="docComment;field#ALL_DUNGEONS#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="docComment;field#_dungeonInformation#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="docComment;field#_dungeonCount#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="docComment;method#DungeonLoader#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="docComment;method#loadDungeons#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="method#loadDungeons#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="docComment;method#encodeDungeons#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="method#encodeDungeons#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="docComment;method#extractRoom#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="method#extractRoom#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="docComment;method#extractMonster#0;class#DungeonLoader#0" expanded="false" />
+            <element signature="method#extractMonster#0;class#DungeonLoader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/loader/GenderLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="93" selection-end-column="7" />
+          <folding>
+            <element signature="docComment;field#_instance#0;class#GenderLoader#0" expanded="false" />
+            <element signature="docComment;field#ALL_HERO_GENDERS#0;class#GenderLoader#0" expanded="false" />
+            <element signature="docComment;field#_heroGenderCount#0;class#GenderLoader#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#GenderLoader#0" expanded="false" />
+            <element signature="docComment;method#GenderLoader#0;class#GenderLoader#0" expanded="false" />
+            <element signature="docComment;method#loadGenders#0;class#GenderLoader#0" expanded="false" />
+            <element signature="method#loadGenders#0;class#GenderLoader#0" expanded="false" />
+            <element signature="method#encodeHeroGender#0;class#GenderLoader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/monster/MonsterHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#MonsterHolder#0" expanded="false" />
+            <element signature="docComment;field#_instance#0;class#MonsterHolder#0" expanded="false" />
+            <element signature="docComment;field#_templateList#0;class#MonsterHolder#0" expanded="false" />
+            <element signature="docComment;method#MonsterHolder#0;class#MonsterHolder#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#MonsterHolder#0" expanded="false" />
+            <element signature="docComment;method#getTemplate#0;class#MonsterHolder#0" expanded="false" />
+            <element signature="docComment;method#createTemplate#0;class#MonsterHolder#0" expanded="false" />
+            <element signature="method#createTemplate#0;class#MonsterHolder#0" expanded="false" />
+            <element signature="docComment;method#displayTemplateList#0;class#MonsterHolder#0" expanded="false" />
+            <element signature="method#displayTemplateList#0;class#MonsterHolder#0" expanded="false" />
+            <element signature="docComment;method#getTemplateList#0;class#MonsterHolder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/manager/InventoryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="28" column="53" lean-forward="false" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+          <folding>
+            <element signature="docComment;class#InventoryManager#0" expanded="false" />
+            <element signature="docComment;field#_instance#0;class#InventoryManager#0" expanded="false" />
+            <element signature="docComment;field#_iventoryOptions#0;class#InventoryManager#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#InventoryManager#0" expanded="false" />
+            <element signature="docComment;method#InventoryManager#0;class#InventoryManager#0" expanded="false" />
+            <element signature="docComment;method#inventoryMenu#0;class#InventoryManager#0" expanded="false" />
+            <element signature="method#inventoryMenu#0;class#InventoryManager#0" expanded="false" />
+            <element signature="docComment;method#equipItem#0;class#InventoryManager#0" expanded="false" />
+            <element signature="method#equipItem#0;class#InventoryManager#0" expanded="false" />
+            <element signature="docComment;method#unequipItem#0;class#InventoryManager#0" expanded="false" />
+            <element signature="method#unequipItem#0;class#InventoryManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/loader/HeroRaceLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="64" selection-end-column="7" />
+          <folding>
+            <element signature="docComment;field#_instance#0;class#HeroRaceLoader#0" expanded="false" />
+            <element signature="docComment;field#ALL_HERO_RACES#0;class#HeroRaceLoader#0" expanded="false" />
+            <element signature="docComment;field#_heroRaceCount#0;class#HeroRaceLoader#0" expanded="false" />
+            <element signature="docComment;method#HeroRaceLoader#0;class#HeroRaceLoader#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#HeroRaceLoader#0" expanded="false" />
+            <element signature="docComment;method#getHeroRaceCount#0;class#HeroRaceLoader#0" expanded="false" />
+            <element signature="docComment;method#loadHeroRaces#0;class#HeroRaceLoader#0" expanded="false" />
+            <element signature="method#loadHeroRaces#0;class#HeroRaceLoader#0" expanded="false" />
+            <element signature="docComment;method#encodeHeroRace#0;class#HeroRaceLoader#0" expanded="false" />
+            <element signature="method#encodeHeroRace#0;class#HeroRaceLoader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/loader/GeneralLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding>
+            <element signature="docComment;field#_instance#0;class#GeneralLoader#0" expanded="false" />
+            <element signature="docComment;field#isDebug#0;class#GeneralLoader#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#GeneralLoader#0" expanded="false" />
+            <element signature="docComment;method#GeneralLoader#0;class#GeneralLoader#0" expanded="false" />
+            <element signature="docComment;method#loadAll#0;class#GeneralLoader#0" expanded="false" />
+            <element signature="method#loadAll#0;class#GeneralLoader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/loader/ItemLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="143" selection-end-column="7" />
+          <folding>
+            <element signature="docComment;field#_instance#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;field#ALL_ITEMS#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;field#_itemStat#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;field#_allBonus#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;field#_weaponsCount#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;field#_armorCount#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;method#ItemLoader#0;class#ItemLoader#0" expanded="false" />
+            <element signature="method#loadItems#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;method#displayItemsStats#0;class#ItemLoader#0" expanded="false" />
+            <element signature="method#displayItemsStats#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;method#encodeWeapons#0;class#ItemLoader#0" expanded="false" />
+            <element signature="method#encodeWeapons#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;method#encodeArmors#0;class#ItemLoader#0" expanded="false" />
+            <element signature="method#encodeArmors#0;class#ItemLoader#0" expanded="false" />
+            <element signature="docComment;method#encodeEnv#0;class#ItemLoader#0" expanded="false" />
+            <element signature="method#encodeEnv#0;class#ItemLoader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/loader/MonsterLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="160" column="5" lean-forward="true" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#MonsterLoader#0" expanded="false" />
+            <element signature="docComment;field#_instance#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="docComment;field#ALL_MONSTERS#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="docComment;field#_monsterInformation#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="docComment;field#_monsterCount#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="docComment;method#MonsterLoader#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="docComment;method#getMonsterCount#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="docComment;method#loadMonsters#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="method#loadMonsters#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="docComment;method#encodeMonsters#0;class#MonsterLoader#0" expanded="false" />
+            <element signature="method#encodeMonsters#0;class#MonsterLoader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;field#_itemTemplate#0;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;field#_maxDrop#0;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;field#_dropRate#0;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;method#ItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
+            <element signature="method#ItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;method#ItemDropInfo#1;class#ItemDropInfo#0" expanded="false" />
+            <element signature="method#ItemDropInfo#1;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;method#ItemDropInfo#2;class#ItemDropInfo#0" expanded="false" />
+            <element signature="method#ItemDropInfo#2;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;method#getTemplate#0;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;method#getMaxDrop#0;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;method#getDropRate#0;class#ItemDropInfo#0" expanded="false" />
+            <element signature="docComment;method#displayItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
+            <element signature="method#displayItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Dungeon_And_Dragons</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="simpleUML.UMLToolWindowPlugin">
+    <General>
+      <option name="birdViewUpdateDelay" value="2000" />
+      <option name="knownFile0" value="file://F:/test.suml" />
+      <option name="defaultFileLocation" value="file://F:" />
+    </General>
+    <Classdiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="defaultFieldsExpanded" value="false" />
+      <option name="defaultContructorsExpanded" value="false" />
+      <option name="defaultMethodsExpanded" value="false" />
+      <option name="showParameters" value="true" />
+      <option name="showTooltip" value="true" />
+      <option name="showReturnValues" value="true" />
+      <option name="longModifier" value="true" />
+      <option name="implementsBehaviour" value="1" />
+      <option name="extendsBehaviour" value="1" />
+      <option name="compartmentBehaviour" value="1" />
+      <option name="interfaceBackgroundColor" value="-6494306" />
+      <option name="abstractClassBackgroundColor" value="-1580132" />
+      <option name="classBackgroundColor" value="-6508057" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="quickSourceLinkColor" value="-16776961" />
+      <option name="quickDiagramLinkColor" value="-8454144" />
+      <option name="drawDecorations" value="false" />
+      <option name="hideFieldList" value="" />
+      <option name="showFieldList" value="" />
+      <option name="hideConstructorList" value="" />
+      <option name="showConstructorList" value="" />
+      <option name="hideMethodList" value="" />
+      <option name="showMethodList" value="" />
+      <option name="minimumFigureSize" value="0,0" />
+    </Classdiagram>
+    <Dependencydiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="0" />
+    </Dependencydiagram>
+    <Packagediagram>
+      <option name="diagramTitleFont" value="SansSerif,0,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="packageBackgroundColor" value="-4144960" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="2" />
+    </Packagediagram>
+  </component>
+</project>

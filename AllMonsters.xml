@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<monster id="1" name="Oskelet" race="SKELETON">
+		<set name="hpPercent" value="100"/>
+		<set name="minimumRarity" value="0"/>
+		<set name="maximumRarity" value="0"/>
+		<set name="gold" value="3"/>
+		<set name="description" value="Un petit squelette qui passait par là, sans vous juger."/>
+		<for>
+			<SET name="maxHp" value="10" order="10" stat="HP_MAX"/>
+			<ADD name="maxHpPerLevel" value="2" order="20" stat="HP_MAX"/>
+			<MULTIPLY name="maxHpRarityModifier" value="1.2" order="30" stat="HP_MAX"/>
+			<SET name="attack" value="4" order="10" stat="ATTACK"/>
+			<ADD name="attackPerLevel" value="1" order="20" stat="ATTACK"/>
+			<MULTIPLY name="attackRarityModifier" value="1.2" order="30" stat="ATTACK"/>
+			<SET name="defense" value="2" order="10" stat="DEFENSE"/>
+			<ADD name="defensePerLevel" value="1" order="20" stat="DEFENSE"/>
+			<MULTIPLY name="defenseRarityModifier" value="1.2" order="30" stat="DEFENSE"/>
+			<SET name="experience" value="10" order="10" stat="EXPERIENCE"/>
+			<ADD name="experiencePerLevel" value="1.7" order="20" stat="EXPERIENCE"/>
+			<MULTIPLY name="experienceRarityModifier" value="2" order="30" stat="EXPERIENCE"/>
+		</for>
+		<reward>
+			<item itemId="1" dropRate="20" maxDrop="1"/>
+		</reward>
+	</monster>
+	
+	<monster id="2" name="LittleGiant" race="GIANT">
+		<set name="hpPercent" value="100"/>
+		<set name="minimumRarity" value="0"/>
+		<set name="maximumRarity" value="1"/>
+		<set name="gold" value="3"/>
+		<set name="description" value="Un petit (grand) géant..."/>
+		<for>
+			<SET name="maxHp" value="12" order="10" stat="HP_MAX"/>
+			<ADD name="maxHpPerLevel" value="4" order="20" stat="HP_MAX"/>
+			<MULTIPLY name="maxHpRarityModifier" value="1.2" order="30" stat="HP_MAX"/>
+			<SET name="attack" value="4" order="10" stat="attack"/>
+			<ADD name="attackPerLevel" value="2" order="20" stat="attack"/>
+			<MULTIPLY name="attackRarityModifier" value="1.2" order="30" stat="attack"/>
+			<SET name="defense" value="5" order="10" stat="DEFENSE"/>
+			<ADD name="defensePerLevel" value="2" order="20" stat="DEFENSE"/>
+			<MULTIPLY name="defenseRarityModifier" value="1.2" order="30" stat="DEFENSE"/>
+			<SET name="experience" value="10" order="10" stat="EXPERIENCE"/>
+			<ADD name="experiencePerLevel" value="1.8" order="20" stat="EXPERIENCE"/>
+			<MULTIPLY name="experienceRarityModifier" value="2" order="30" stat="EXPERIENCE"/>
+		</for>
+		<reward>
+			<item itemId="3" dropRate="20" maxDrop="1"/>
+		</reward>
+	</monster>
+	
+	<monster id="3" name="LittleDragy" race="DRAGON">
+		<set name="hpPercent" value="100"/>
+		<set name="minimumRarity" value="2"/>
+		<set name="maximumRarity" value="4"/>
+		<set name="gold" value="1200"/>
+		<set name="description" value="Un bébé dragon KRO MIGNOOOOON!!! (Il peut tout de même vous tuer avec son souffle brûlant dévastateur ...)"/>
+		<for>
+			<SET name="maxHp" value="1500" order="10" stat="HP_MAX"/>
+			<ADD name="maxHpPerLevel" value="30" order="20" stat="HP_MAX"/>
+			<MULTIPLY name="maxHpRarityModifier" value="1.2" order="30" stat="HP_MAX"/>
+			<SET name="attack" value="80" order="10" stat="ATTACK"/>
+			<ADD name="attackPerLevel" value="7" order="20" stat="ATTACK"/>
+			<MULTIPLY name="attackRarityModifier" value="1.2" order="30" stat="ATTACK"/>
+			<SET name="defense" value="45" order="10" stat="DEFENSE"/>
+			<ADD name="defensePerLevel" value="3" order="20" stat="DEFENSE"/>
+			<MULTIPLY name="defenseRarityModifier" value="1.2" order="30" stat="DEFENSE"/>
+			<SET name="experience" value="1000" order="10" stat="EXPERIENCE"/>
+			<ADD name="experiencePerLevel" value="1.1" order="20" stat="EXPERIENCE"/>
+			<MULTIPLY name="experienceRarityModifier" value="2" order="30" stat="EXPERIENCE"/>
+		</for>
+		<reward>
+			<item itemId="1" dropRate="20" maxDrop="1"/>
+		</reward>
+	</monster>
+</list>

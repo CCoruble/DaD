@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<weapon id="1" name="Long Sword">
+		<set name="price" value="118"/>
+		<set name="type" value="SWORD"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="description" value="Epée longue utilisé dans les combats médiévaux."/>
+		<set name="equipSlot" value="PAPERDOLL_RHAND"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<for>
+			<add order="10" stat="attack" value="6"/>
+		</for>
+	</weapon>
+		<weapon id="2" name="Dagger">
+		<set name="price" value="118"/>
+		<set name="type" value="SWORD"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="description" value="Petite dague utilisée pour tuer sournoisement ses ennemis."/>
+		<set name="equipSlot" value="PAPERDOLL_RHAND"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<for>
+			<add order="10" stat="attack" value="4"/>
+		</for>
+	</weapon>
+	<armor id="3" name="Wooden Shield">
+		<set name="price" value="118"/>
+		<set name="type" value="SHIELD"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Bouclier en bois basique."/>
+		<for>
+			<add order="10" stat="defense" value="3"/>
+		</for>
+	</armor>
+	<armor id="4" name="Iron Shield">
+		<set name="price" value="118"/>
+		<set name="type" value="SHIELD"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Bouclier en fer, robuste même contre les marteaux."/>
+		<for>
+			<add order="10" stat="defense" value="6"/>
+		</for>
+	</armor>
+	<armor id="5" name="Banana Shield">
+		<set name="price" value="118"/>
+		<set name="type" value="SHIELD"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="C'est une banane ... bouclier ?!"/>
+		<for>
+			<add order="10" stat="defense" value="6"/>
+		</for>
+	</armor>
+	<armor id="6" name="Steel Shield">
+		<set name="price" value="118"/>
+		<set name="type" value="SHIELD"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Un robuste bouclier d'acier."/>
+		<for>
+			<add order="10" stat="defense" value="10"/>
+		</for>
+	</armor>
+	<armor id="7" name="Steel Ring">
+		<set name="price" value="118"/>
+		<set name="type" value="RING"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="3"/>
+		<set name="equipSlot" value="PAPERDOLL_LBRACELET"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Un anneau forgé dans l'acier."/>
+		<for>
+			<add order="10" stat="defense" value="5"/>
+		</for>
+	</armor>
+	<armor id="8" name="Nail Ring">
+		<set name="price" value="118"/>
+		<set name="type" value="RING"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="4"/>
+		<set name="equipSlot" value="PAPERDOLL_RBRACELET"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Cela ressembles à un cercle de clous fondus."/>
+		<for>
+			<add order="10" stat="defense" value="3"/>
+			<add order="10" stat="attack" value="3"/>
+		</for>
+	</armor>
+	<armor id="9" name="Beginner glove">
+		<set name="price" value="118"/>
+		<set name="type" value="RING"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="equipSlot" value="PAPERDOLL_GLOVES"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Des vieux gants troués."/>
+		<for>
+			<add order="10" stat="defense" value="1"/>
+		</for>
+	</armor>
+	<armor id="10" name="Beginner Belt">
+		<set name="price" value="118"/>
+		<set name="type" value="RING"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="equipSlot" value="PAPERDOLL_BELT"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Une ceinture de cuir."/>
+		<for>
+			<add order="10" stat="hp_max" value="10"/>
+		</for>
+	</armor>
+	<armor id="11" name="Beginner Chestplate">
+		<set name="price" value="118"/>
+		<set name="type" value="RING"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="equipSlot" value="PAPERDOLL_CHEST"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Une armure brillante."/>
+		<for>
+			<add order="10" stat="defense" value="3"/>
+			<add order="10" stat="hp_max" value="5"/>
+		</for>
+	</armor>
+	<armor id="12" name="Beginner Legs">
+		<set name="price" value="118"/>
+		<set name="type" value="RING"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="equipSlot" value="PAPERDOLL_LEGS"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Un pantalon en cuir solide."/>
+		<for>
+			<add order="10" stat="defense" value="4"/>
+		</for>
+	</armor>
+	<armor id="13" name="Beginner Boots">
+		<set name="price" value="118"/>
+		<set name="type" value="RING"/>
+		<set name="weight" value="1600"/>
+		<set name="requiredLevel" value="1"/>
+		<set name="equipSlot" value="PAPERDOLL_BOOTS"/>
+		<set name="maxStack" value="1"/>
+		<set name="maxDurability" value="60"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="true"/>
+		<set name="description" value="Une paire de bottes standard."/>
+		<for>
+			<add order="10" stat="defense" value="2"/>
+		</for>
+	</armor>
+</list>

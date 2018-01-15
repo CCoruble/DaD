@@ -1,0 +1,18 @@
+<list>
+	<gender name="MALE">
+		<MULTIPLY name="hpMaxModifier" value="1.05" order="30" stat="HP_MAX"/>
+		<MULTIPLY name="mpMaxModifier" value="0.9" order="30" stat="MP_MAX"/>
+		<MULTIPLY name="attackModifier" value="1.1" order="30" stat="ATTACK"/>
+		<MULTIPLY name="defenseModifier" value="1.05" order="30" stat="DEFENSE"/>
+		<MULTIPLY name="experienceModifier" value="1" order="30" stat="EXPERIENCE"/>
+		<MULTIPLY name="experienceMaxModifier" value="1" order="30" stat="EXPERIENCE_MAX"/>
+	</gender>
+	<gender name="FEMALE">
+		<MULTIPLY name="hpMaxModifier" value="1" order="30" stat="HP_MAX"/>
+		<MULTIPLY name="mpMaxModifier" value="1.05" order="30" stat="MP_MAX"/>
+		<MULTIPLY name="attackModifier" value="1" order="30" stat="ATTACK"/>
+		<MULTIPLY name="defenseModifier" value="1" order="30" stat="DEFENSE"/>
+		<MULTIPLY name="experienceModifier" value="1.05" order="30" stat="EXPERIENCE"/>
+		<MULTIPLY name="experienceMaxModifier" value="1" order="30" stat="EXPERIENCE_MAX"/>
+	</gender>
+</list>

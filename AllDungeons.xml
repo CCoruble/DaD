@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<dungeon id="1" name="Beginner dungeon">
+		<set name="difficulty" value="1"/>
+		<set name="requiredLevel" value="0"/>
+		<rewardList>
+			<set name="goldReward" value="15"/>
+			<set name="experienceReward" value="30"/>
+		</rewardList>
+		<roomList>
+			<room id="1">
+				<monster id="1">
+					<set name="level" value="1"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+			</room>
+			<room id="2">
+				<monster id="1">
+					<set name="level" value="1"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+				<monster id="2">
+					<set name="level" value="1"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+			</room>
+		</roomList>
+	</dungeon>
+	<dungeon id="2" name="Novice dungeon">
+		<set name="difficulty" value="2"/>
+		<set name="requiredLevel" value="2"/>
+		<rewardList>
+			<set name="goldReward" value="25"/>
+			<set name="experienceReward" value="75"/>
+			
+		</rewardList>
+		<roomList>
+			<room id="1">
+				<monster id="1">
+					<set name="level" value="2"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+				<monster id="2">
+					<set name="level" value="2"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+			</room>
+			<room id="2">
+				<monster id="1">
+					<set name="level" value="2"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+				<monster id="2">
+					<set name="level" value="2"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+			</room>
+			<room id="3">
+				<monster id="1">
+					<set name="level" value="2"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="2"/>
+				</monster>
+				<monster id="2">
+					<set name="level" value="2"/>
+					<set name="rarity" value="1"/>
+					<set name="quantity" value="1"/>
+				</monster>
+			</room>
+		</roomList>
+	</dungeon>
+	<dungeon id="3" name="Expert dungeon">
+		<set name="difficulty" value="3"/>
+		<set name="requiredLevel" value="5"/>
+		<rewardList>
+			<set name="goldReward" value="15"/>
+			<set name="experienceReward" value="30"/>
+		</rewardList>
+		<roomList>
+			<room id="1">
+				<monster id="1">
+					<set name="level" value="1"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+			</room>
+			<room id="2">	
+				<monster id="1">
+					<set name="level" value="1"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+				<monster id="2">
+					<set name="level" value="1"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="1"/>
+				</monster>
+			</room>
+			<room id="3">	
+				<monster id="1">
+					<set name="level" value="2"/>
+					<set name="rarity" value="0"/>
+					<set name="quantity" value="2"/>
+				</monster>
+				<monster id="2">
+					<set name="level" value="1"/>
+					<set name="rarity" value="1"/>
+					<set name="quantity" value="1"/>
+				</monster>
+			</room>
+		</roomList>
+	</dungeon>
+</list>
