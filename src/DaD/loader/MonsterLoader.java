@@ -63,7 +63,7 @@ public class MonsterLoader
 
 	/**
 	 * Accessor for total of monster loaded.
-	 * @return
+	 * @return int
 	 */
 	public int getMonsterCount(){
 		return _monsterCount;

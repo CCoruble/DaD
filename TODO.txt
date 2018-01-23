@@ -9,3 +9,19 @@ Pour l'instant les objets sont généré dans la fonction MonsterInstance dropIt
 Il faudrait que le monstre ait une liste d'objet déjà généré en fonction du randomGenerator.
 		=> Changer la description dans ItemDropInfo, cela dit que l'item drop info est 
 			utilisé à la mort du monstre.
+EDIT: Voir pour optimiser / améliorer / déplacer les fonctions mais le monstre doit seulement
+posséder des "ItemDropInfo" et non "ItemInstance"
+			
+- Changer d'emplacement les fonction "equip" et "unequip" de ItemInstance vers l'inventaire ???
+
+- Passer la classe inventaire en abstract et faire un MonsterInventory et heroInventory ???
+
+- Rework l'interface de choix de donjon.
+
+- enlever l'attribut "gold" de NPC et le mettre dans inventaire
+	- Rework l'inventaire pour qu'il contiennent les golds de héro et monstre
+	
+- Changer "gold" de type double à ItemInstance avec un maxStack infinite.
+
+- Changer l'inventaire de façon à ce qu'un item équipé ne prenne pas de place dans l'inventaire,
+il doit prendre une place seulement lorsque qu'il est dé-équipé. (Comme Titan Quest)

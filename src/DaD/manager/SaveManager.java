@@ -7,6 +7,7 @@ import DaD.data.types.HeroRace;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
 import DaD.data.types.Stats.Stats;
+import DaD.inventory.HeroInventory;
 import DaD.inventory.Inventory;
 import DaD.item.ItemInstance;
 
@@ -36,7 +37,6 @@ public class SaveManager
 	 * to verify is version of saved game is correct.
 	 */
 	private static final String VERSION = "DADVer3";
-
 
 	/**
 	 * Accessor for private instance of class.
@@ -165,7 +165,7 @@ public class SaveManager
 				Bank.getInstance().setMoney(in.readInt());
 
 				// Inventory
-				Hero.getInstance().setInventory(new Inventory(in.readInt()));
+				Hero.getInstance().setInventory(new HeroInventory(in.readInt()));
 
 				// Items
 				// write number of items to then ensure we retrieve them all

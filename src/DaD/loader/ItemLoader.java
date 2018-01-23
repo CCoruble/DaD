@@ -67,7 +67,7 @@ public class ItemLoader
 	/**
 	 * Private constructor of class.
 	 */
-	private ItemLoader() {}
+	private ItemLoader(){}
 
 	/**
 	 * Loading function that browse configuration file
@@ -126,7 +126,7 @@ public class ItemLoader
 
 	/**
 	 * Display all stats of an item template from the given HashMap.
-	 * @param itemStat
+	 * @param itemStat HashMap containing all stats of the item.
 	 */
 	private void displayItemsStats(HashMap<String,Object> itemStat){
 		System.out.println("Début de l'affichage _itemStats");

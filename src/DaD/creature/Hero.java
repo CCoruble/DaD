@@ -7,6 +7,7 @@ import DaD.data.types.HeroGender;
 import DaD.data.types.HeroRace;
 import DaD.data.types.Stats.Env;
 import DaD.formulas.HeroFormulas;
+import DaD.inventory.HeroInventory;
 import DaD.inventory.Inventory;
 import DaD.item.ItemInstance;
 
@@ -21,7 +22,7 @@ public class Hero extends Creature
 	private HeroRace _race;
 	private Env _experienceMax;
 	private Env _experience;
-	private Inventory _inventory;
+	private HeroInventory _inventory;
 
 	private Hero(){}
 	private Hero(MultiValueSet heroInformation) {
@@ -34,12 +35,12 @@ public class Hero extends Creature
 		// Inventory
 		// When loading an existing hero he will already possess several items in his inventory
 		if (heroInformation.getArrayList("allItems") != null) {
-			_inventory = new Inventory(heroInformation.getArrayList("allItems"),heroInformation.getInteger("inventorySize"));
+			_inventory = new HeroInventory(heroInformation.getArrayList("allItems"),heroInformation.getInteger("inventorySize"));
 		} else if(heroInformation.getInteger("inventorySize",-1) != -1){
 			// When loading an existing Hero without items in his inventory but with extra inventory size
-			_inventory = new Inventory(heroInformation.getInteger("inventorySize"));
+			_inventory = new HeroInventory(heroInformation.getInteger("inventorySize"));
 		} else { // When creating a new Hero
-			_inventory = new Inventory(HeroFormulas.BASE_INVENTORY_SIZE);
+			_inventory = new HeroInventory(HeroFormulas.BASE_INVENTORY_SIZE);
 		}
 	}
 
@@ -181,7 +182,7 @@ public class Hero extends Creature
 	public Inventory getInventory(){
 		return _inventory;
 	}
-	public void setInventory(Inventory inventory){
+	public void setInventory(HeroInventory inventory){
 		_inventory = inventory;
 	}
 }

@@ -43,6 +43,18 @@ public class ItemHolder
 	 */
 	private ItemHolder() {}
 
+	/**
+	 * Create a template from a MultiValueSet containing
+	 * all necessary information.
+	 * <p>
+	 *     Here we receive information about a template,
+	 *     we call the constructor and add the template
+	 *     create to the HashMap.
+	 * </p>
+	 * @param itemStat MultiValueSet containing the information
+	 * @throws Exception If a template already use ID given in MultiValueSet
+	 * @see ItemTemplate#ItemTemplate(MultiValueSet)
+	 */
 	public void createTemplate(MultiValueSet itemStat) throws Exception{
 		int itemId = itemStat.getInteger("id");
 		// If there is already an existing item with this ID, we throw an exception
@@ -50,14 +62,35 @@ public class ItemHolder
 			throw new Exception("Item ID [" + itemId + "] already exist");
 		_itemsList.put(itemId,new ItemTemplate(itemStat));
 	}
+
+	/**
+	 * Return the item who has the given value as ID.
+	 * <p>
+	 *     Here ID given in MultiValueSet and key in the HashMap are the same!
+	 * </p>
+	 * @param order The ID of the item.
+	 * @return ItemTemplate
+	 */
 	public ItemTemplate getItem(int order){
 		return _itemsList.get(order);
 	}
 
+	/**
+	 * Return the full HashMap containing all templates.
+	 * <p>
+	 *     The HashMap use an Integer as a key and
+	 *     an ItemTemplate as value.
+	 * </p>
+	 * @return HashMap
+	 */
 	public HashMap<Integer,ItemTemplate> getTemplateList(){
 		return _itemsList;
 	}
 
+	/**
+	 * Display all item in the HashMap by calling the
+	 * {@link ItemTemplate#displayTemplate()} function for each template.
+	 */
 	public void displayAllItems(){
 		for(int i = 0; i < _itemsList.size(); i++){
 			if(_itemsList.get(i) != null)
