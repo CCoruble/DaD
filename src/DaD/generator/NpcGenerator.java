@@ -14,18 +14,37 @@ import DaD.monster.MonsterTemplate;
 
 /**
  * Created by Clovis on 08/02/2017.
+ * Used to split information from a
+ * {@link MonsterInfo} and return a {@link MonsterInstance}
  */
 public class NpcGenerator
 {
+	/**
+	 * Private instance of class.
+	 */
 	private static final NpcGenerator _instance = new NpcGenerator();
 
+	/**
+	 * Private constructor of class.
+	 */
 	private NpcGenerator(){}
 
+	/**
+	 * Accessor for instance of class.
+	 * @return NpcGenerator
+	 */
 	public static final NpcGenerator getInstance()
 	{
 		return _instance;
 	}
 
+	/**
+	 * Separate information from the
+	 * MonsterInfo, call constructor and
+	 * return the MonsterInstance created
+	 * @param monsterInfo Information about the monster.
+	 * @return MonsterInstance
+	 */
 	public MonsterInstance createMonster(MonsterInfo monsterInfo){
 		// Retrieve the template accord to id in monsterInfo
 		int templateID = monsterInfo.getId();

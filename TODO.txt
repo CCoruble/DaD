@@ -25,3 +25,14 @@ posséder des "ItemDropInfo" et non "ItemInstance"
 
 - Changer l'inventaire de façon à ce qu'un item équipé ne prenne pas de place dans l'inventaire,
 il doit prendre une place seulement lorsque qu'il est dé-équipé. (Comme Titan Quest)
+	=> L'attribut "equipped" dans ItemInstance 
+	
+- Changer l'enum utiliser dans FightHandler pour connaitre le résultat du combat.
+Pour l'instant c'est "DungeonRoomExitState" mais non somme dans une combat ! Changer pour "FightExitState" ??
+
+- Rework la fonction "dungeonSetting" de dungeonHandler. Trop longue, complexe.
+
+- Rework la fonction "dropItems" dans MonsterInstance
+	Déplacer une partie du code dans ItemGenerator.createItem ???
+	
+DONE: Changer la fonction createDungeon de DungeonHandler vers DungeonGenerator

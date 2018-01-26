@@ -13,25 +13,37 @@ import java.util.Scanner;
 
 /**
  * Created by Clovis on 07/02/2017.
+ * Singleton used to generate a hero
+ * for new players.
  */
 public class HeroGenerator
 {
+	/**
+	 * Private instance of class.
+	 */
 	private static final HeroGenerator _instance = new HeroGenerator();
 
+	/**
+	 * Private constructor of class.
+	 */
 	private HeroGenerator(){}
 
+	/**
+	 * Accessor for private instance of class.
+	 * @return HeroGenerator
+	 */
 	public static final HeroGenerator getInstance()
 	{
 		return _instance;
 	}
 
-	public void createNewHero()
-	{
+	/**
+	 * Set default stats of hero, also call
+	 * different function to set race, gender and name.
+	 */
+	public void createNewHero() {
 		try
 		{
-			// Initializing a scanner for the player choice
-			Scanner scanner = new Scanner(System.in);
-
 			// Initializing a MultiValueSet that will contain the values of the new hero
 			MultiValueSet heroInformation = new MultiValueSet();
 
@@ -66,6 +78,10 @@ public class HeroGenerator
 		}
 	}
 
+	/**
+	 * Ask player to input a name for hero and return it.
+	 * @return String
+	 */
 	private String setupHeroName(){
 		// Initializing a scanner for the player choice
 		Scanner scanner = new Scanner(System.in);
@@ -80,6 +96,11 @@ public class HeroGenerator
 		}
 	}
 
+	/**
+	 * Ask player to choose a gender among the
+	 * list of available genders.
+	 * @return HeroGender
+	 */
 	private HeroGender setupHeroGender(){
 		// Initializing a scanner for the player choice
 		Scanner scanner = new Scanner(System.in);
@@ -104,14 +125,19 @@ public class HeroGenerator
 		//Get the right gender from the choice previously made
 		return HeroGender.VALUES[choice-1];
 	}
-	
+
+	/**
+	 * Ask player to choose a race among the
+	 * list of available races.
+	 * @return HeroRace
+	 */
 	private HeroRace setupHeroRace(){
 		// Initializing a scanner for the player choice
 		Scanner scanner = new Scanner(System.in);
 
 		//First get the choice of race
 		int choice = 0;
-		while (choice < 1 || choice > HeroRace.VALUES.length){ // condition to stay is "choice is not 1 or 2"
+		while (choice < 1 || choice > HeroRace.VALUES.length){
 			// First we display all available races
 			System.out.println("Veuillez choisir une race :");
 			for(HeroRace race : HeroRace.VALUES) // Display all the possible race for a hero

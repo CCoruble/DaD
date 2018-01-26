@@ -6,18 +6,30 @@ import DaD.data.types.MonsterRarity;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by Clovis on 26/09/2017.
+ * Used to create {@link DungeonRoomInstance}.
  */
 public class DungeonRoomTemplate
 {
+	/**
+	 * Order of this room, this room
+	 * is part of a dungeonTemplate so
+	 * it must have an order / index.
+	 */
 	private final int _order;
-	private final Set<MonsterInfo> _monsterList;
+	/**
+	 * ArrayList containing all {@link MonsterInfo}.
+	 */
+	private final ArrayList<MonsterInfo> _monsterList;
 
+	/**
+	 * Constructor of class.
+	 * @param roomInformation MultiValueSet containing all information abou template.
+	 */
 	public DungeonRoomTemplate(MultiValueSet roomInformation){
-		_monsterList = new HashSet<>();
+		_monsterList = new ArrayList<>();
 		_order = roomInformation.getInteger("id");
 		ArrayList<MultiValueSet> allMonsters = roomInformation.getArrayList("monsters");
 		for(MultiValueSet monster: allMonsters){
@@ -32,10 +44,19 @@ public class DungeonRoomTemplate
 		}
 	}
 
-	public Set<MonsterInfo> getMonsterList(){
+	/**
+	 * Return the list of MonsterInfo
+	 * @return ArrayList
+	 */
+	public ArrayList<MonsterInfo> getMonsterList(){
 		return _monsterList;
 	}
 
+	/**
+	 * Display order then iterate on list on
+	 * {@link MonsterInfo} and call {@link MonsterInfo#displayInfo()}
+	 * for each.
+	 */
 	public void displayTemplate(){
 		System.out.println("order: " + _order);
 		for(MonsterInfo monsterInfo: _monsterList){

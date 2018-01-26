@@ -5,16 +5,18 @@ import DaD.monster.MonsterTemplate;
 
 /**
  * Created by Clovis on 09/02/2017.
+ * Class used to calculate difference
+ * stats and reward for a monster.
  */
 public class MonsterFormulas
 {
-	private MonsterFormulas(){}
-
-	public static int calcLevel(int difficulty, int roomOrder){
-		double level = (Math.random()+0.01); // Goes from 0 to 1
-		return Math.max(1,(int)(level * difficulty + roomOrder/2));
-	}
-
+	/**
+	 * Calculate experience given by killing monster.
+	 * @param template Template of the monster
+	 * @param level Level of the monster
+	 * @param rarity Rarity fo the monster
+	 * @return double
+	 */
 	public static double calcExperience(MonsterTemplate template,int level,MonsterRarity rarity){
 		//  Calculate the experience given by killing a monster depending on his level and rarity
 		double exp = template.getExperience().getValue();
@@ -29,6 +31,13 @@ public class MonsterFormulas
 		}
 	}
 
+	/**
+	 * Calculate HpMax of a monster.
+	 * @param template Template of the monster
+	 * @param level Level of the monster
+	 * @param rarity Rarity fo the monster
+	 * @return double
+	 */
 	public static double calcHpMax(MonsterTemplate template, int level, MonsterRarity rarity){
 		double hp = template.getMaxHp().getValue();
 		hp = template.getMaxHpPerLevel().calcStat(hp,level - 1);
@@ -41,10 +50,25 @@ public class MonsterFormulas
 		}
 	}
 
+	/**
+	 * Calculate hp of a monster, hp can be
+	 * different from HpMax.
+	 * @param hpMax Maximum Hp of the monster
+	 * @param percent Percent of his HpMax he will get as Hp
+	 * @return double
+	 * @see MonsterTemplate#_hpPercent
+	 */
 	public static double calcHp(double hpMax, double percent){
 		return ((hpMax * percent) / 100D);
 	}
 
+	/**
+	 * Calculate attack of a monster.
+	 * @param template Template of the monster
+	 * @param level Level of the monster
+	 * @param rarity Rarity fo the monster
+	 * @return double
+	 */
 	public static double calcAttack(MonsterTemplate template, int level, MonsterRarity rarity){
 		double attack = template.getAttack().getValue();
 		attack = template.getAttackPerLevel().calcStat(attack,level - 1);
@@ -57,6 +81,13 @@ public class MonsterFormulas
 		}
 	}
 
+	/**
+	 * Calculate defense of a monster.
+	 * @param template Template of the monster
+	 * @param level Level of the monster
+	 * @param rarity Rarity fo the monster
+	 * @return double
+	 */
 	public static double calcDefense(MonsterTemplate template, int level, MonsterRarity rarity){
 		double defense = template.getDefense().getValue();
 		defense = template.getDefensePerLevel().calcStat(defense,level - 1);
@@ -69,36 +100,12 @@ public class MonsterFormulas
 		}
 	}
 
+	/**
+	 * Calculate gold given by killing a monster.
+	 * @param template Template of the monster
+	 * @return double
+	 */
 	public static double calcGold(MonsterTemplate template){
 		return template.getGold();
-	}
-
-	public static MonsterRarity calcRarity(int minRarity, int maxRarity){
-		// Pre determined rarity for specific monsters, can be lengendary / boss monsters
-		if(minRarity == maxRarity)
-			return MonsterRarity.VALUES[minRarity];
-
-		// Not pre determined rarity, must be randomly generated
-		double rarity = Math.random()*100+1;
-		MonsterRarity randomRarity;
-
-		if(rarity > 99) // 1% chance to a an epic monster
-			randomRarity =  MonsterRarity.EPIC;
-		else if(rarity > 95) // 4% chance to be rare monster
-			randomRarity = MonsterRarity.RARE;
-		else if(rarity > 85) // 10% chance to be uncommon monster
-			randomRarity = MonsterRarity.UNCOMMON;
-		else //85% chance to be a common monster
-			randomRarity = MonsterRarity.COMMON;
-
-		if(randomRarity.ordinal() < minRarity)
-			// The rarity randomly generated is too low, set the rarity to the minimum of the monster
-			return MonsterRarity.VALUES[minRarity];
-		else if(randomRarity.ordinal() > maxRarity)
-			// The rarity randomly generated is too high, set the rarity to the maximum of the monster
-			return MonsterRarity.VALUES[maxRarity];
-		else
-			// The rarity randomly generated is between the monster minimum & maximum rarity
-			return randomRarity;
 	}
 }

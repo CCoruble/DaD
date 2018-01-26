@@ -6,6 +6,7 @@ import DaD.data.types.DungeonRoomExitState;
 import DaD.data.types.HeroDeathReason;
 import DaD.data.types.MonsterInfo;
 import DaD.dungeon.*;
+import DaD.generator.DungeonGenerator;
 import DaD.generator.NpcGenerator;
 import DaD.monster.MonsterInstance;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -15,21 +16,48 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * Class used to handle dungeons.
+ * When hero want to enter a dungeon it is
+ * redirected here. Every events will be handled here.
+ * @see DungeonInstance
+ * @see DungeonRoomInstance
+ * @see DungeonTemplate
+ * @see DungeonRoomTemplate
+ */
 public class DungeonHandler {
 
+    /**
+     * Private instance of class.
+     */
     private static final DungeonHandler _instance = new DungeonHandler();
-
+    /**
+     * Instance of the dungeon to handle.
+     */
     private DungeonInstance _dungeon;
+    /**
+     * All available options.
+     */
     private static final String[] _options = {"Entrer dans la salle","Afficher tes caractéristiques","Quitter le donjon"};
 
-    private DungeonHandler() {
-        // Let this empty
-    }
+    /**
+     * Private constructor of class.
+     */
+    private DungeonHandler() {}
 
+    /**
+     * Accessor for private instance of class.
+     * @return DungeonHandler
+     */
     public static final DungeonHandler getInstance() {
         return _instance;
     }
 
+    /**
+     * Function that makes the hero
+     * choose which dungeon he wants to enter.
+     * @return DungeonInstance
+     */
     public DungeonInstance dungeonSetting(){
         Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
         String input;
@@ -51,7 +79,7 @@ public class DungeonHandler {
                     System.out.println("Ce niveau de donjon est trop élevé ou ce donjon n'existe pas.");
                     continue;
                 }
-                return createDungeon(dungeonId);
+                return DungeonGenerator.getInstance().createDungeon(dungeonId);
             } catch (Exception e){
                 e.printStackTrace();
                 System.out.println("Ce n'est pas une valeur valide!");
@@ -59,39 +87,19 @@ public class DungeonHandler {
         }
     }
 
-    private DungeonInstance createDungeon(int dungeonTemplateId){
-        // Set the Multivalue Set where we'll stock all the dungeon information
-        MultiValueSet dungeonInformation = new MultiValueSet();
-
-        // Get the dungeonTemplate from the list of template in the DungeonHolder
-        DungeonTemplate dungeonTemplate = DungeonHolder.getInstance().getTemplate(dungeonTemplateId);
-
-        DungeonRoomTemplate dungeonRoomTemplate;
-        ArrayList<DungeonRoomInstance> dungeonRoomList = new ArrayList<>();
-
-        for(int i = 0; i < dungeonTemplate.getTotalRoomCount(); i++){
-            dungeonRoomTemplate = dungeonTemplate.getDungeonRoom(i);
-            Set<MonsterInfo> monsterInfoList = dungeonRoomTemplate.getMonsterList();
-            // This is the list that will contain all monsterInstance of the room
-            ArrayList<MonsterInstance> monsterInstancesList =  new ArrayList<>();
-            for (MonsterInfo monsterInfo:monsterInfoList){
-                // For each monsterInformation, we create an instance representing it
-                monsterInstancesList.add(NpcGenerator.getInstance().createMonster(monsterInfo));
-            }
-            dungeonRoomList.add(new DungeonRoomInstance(monsterInstancesList,i+1));
-        }
-
-        dungeonInformation.put("roomList",dungeonRoomList);
-        dungeonInformation.put("name",dungeonTemplate.getName());
-        dungeonInformation.put("requiredLevel",dungeonTemplate.getRequiredLevel());
-        dungeonInformation.put("levelDifficulty",dungeonTemplate.getLevelDifficulty());
-        dungeonInformation.put("experienceReward",dungeonTemplate.getExperienceReward());
-        dungeonInformation.put("goldReward",dungeonTemplate.getGoldReward());
-        return new DungeonInstance(dungeonInformation);
-    }
-
-    public void StartDungeon(Hero hero,DungeonInstance dungeon)
-    {
+    /**
+     * Show available options to hero.
+     * Depending on his choice call different functions.
+     * <p>
+     *     If you choose to enter the room here,
+     *     this will call the {@link FightHandler}.
+     *     Depending on the result of the fight we will
+     *     either go to next room or leave the dungeon.
+     * </p>
+     * @param hero Hero that enter the dungeon
+     * @param dungeon Choosen dungeonInstance
+     */
+    public void StartDungeon(Hero hero,DungeonInstance dungeon) {
         _dungeon = dungeon;
         while (true)
         {
@@ -114,8 +122,8 @@ public class DungeonHandler {
                     {
                         if (_dungeon.getCurrentRoomOrder() > _dungeon.getRoomList().size()) // If we finished all dungeon room
                         {
-                            giveReward(); // The hero did success the entire DungeonInstance so he get rewarded and leave
-                            System.out.println("Bravo tu as finis ce Donjon aventurier " + Hero.getInstance().getName() + " !");
+                            giveReward(hero); // The hero did success the entire DungeonInstance so he get rewarded and leave
+                            System.out.println("Bravo tu as finis ce Donjon aventurier " + hero.getName() + " !");
                             return;
                         } else {
                             System.out.println("Bravo tu as finis cette salle !");
@@ -127,7 +135,7 @@ public class DungeonHandler {
                     }
                     break;
                 case 2:
-                    System.out.println(Hero.getInstance().displayFullCharacteristic());
+                    System.out.println(hero.displayFullCharacteristic());
                     break;
                 case 3:
                     System.out.println("A bientot dans un autre donjon aventurier !");
@@ -137,6 +145,13 @@ public class DungeonHandler {
         }
     }
 
+    /**
+     * Enter a dungeon room, start the fight
+     * with monsters in it and depending on
+     * fight result execute function.
+     * Return true if Hero succeeded on killing monsters.
+     * @return
+     */
     private boolean goToDungeonRoom(){
         DungeonRoomExitState exitState = FightHandler.getInstance().startFight(Hero.getInstance(), _dungeon.getCurrentRoom().getMonsterList()); // This function will return true if the hero killed all the monsters
         switch(exitState) {
@@ -158,8 +173,12 @@ public class DungeonHandler {
         }
     }
 
-    private void giveReward(){
-        Hero.getInstance().addGold(_dungeon.getGoldReward());
-        Hero.getInstance().addExperience(_dungeon.getExperienceReward());
+    /**
+     * Give to the hero rewards
+     * for finishing dungeon.
+     */
+    private void giveReward(Hero hero){
+        hero.addGold(_dungeon.getGoldReward());
+        hero.addExperience(_dungeon.getExperienceReward());
     }
 }
