@@ -39,7 +39,10 @@ public class Calculator implements Comparator<Env>
 		allStats.add(HeroFormulas.calcBaseHpMax(hero.getHeroRace(),hero.getHeroGender()));
 		allStats.add(HeroFormulas.calcBaseMpMax(hero.getHeroRace(),hero.getHeroGender()));
 
-		// Finally calculate all the stats separatly
+		// Once you retrieved all stats we must sort the ArrayList
+		sort(allStats);
+
+		// Finally calculate all the stats separately
 		// Attack
 		hero.setAttack(new Env(
 				calculateStat(getEnvByStat(allStats,Stats.ATTACK)),
@@ -56,7 +59,7 @@ public class Calculator implements Comparator<Env>
 				0x01
 		));
 
-		// Be carefull of taking of actual hp_percent, if the hero was 70% we should not give back 100% of his HP
+		// DO NOT FORGET about actual hp_percent, if the hero was 70% we should not give back 100% of his HP
 		// Hp_Max
 		double hpMaxValue = calculateStat(getEnvByStat(allStats,Stats.HP_MAX));
 		hero.setHpMax(new Env(
@@ -74,7 +77,7 @@ public class Calculator implements Comparator<Env>
 				0x01
 		));
 
-		// Be carefull of taking of actual Mp_percent, if the hero was 70% we should not give back 100% of his Mp
+		// DO NOT FORGET about actual Mp_percent, if the hero was 70% we should not give back 100% of his Mp
 		/* Mp_Max
 		double mpMaxValue = calculateStat(getEnvByStat(allStats,Stats.MP_MAX));
 		hero.setMpMax(new Env(

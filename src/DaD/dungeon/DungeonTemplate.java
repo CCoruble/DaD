@@ -45,7 +45,7 @@ public class DungeonTemplate {
 
 	/**
 	 * Return number of room in this dungeon.
-	 * @return
+	 * @return int
 	 */
 	public int getTotalRoomCount(){
 		return _roomTemplateList.size();

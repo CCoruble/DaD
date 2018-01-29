@@ -25,6 +25,13 @@ public class GameManager
 	private static final GameManager _instance = new GameManager();
 
 	/**
+	 * Used to know if we launch app on debug
+	 * mode or not.
+	 */
+	public final boolean isDebug = java.lang.management.ManagementFactory.getRuntimeMXBean().
+			getInputArguments().toString().contains("jdwp");
+
+	/**
 	 * Option for loading / creating new game menu.
 	 *
 	 * @see GameManager#mainMenu()
@@ -58,7 +65,7 @@ public class GameManager
 	 * Main menu of the game, where you will choose between
 	 * starting a new game or loading an old one.
 	 *
-	 * @see         SaveManager
+	 * @see SaveManager
 	 */
 	public void mainMenu(){
 		while (true)

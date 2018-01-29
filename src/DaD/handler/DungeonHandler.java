@@ -150,7 +150,7 @@ public class DungeonHandler {
      * with monsters in it and depending on
      * fight result execute function.
      * Return true if Hero succeeded on killing monsters.
-     * @return
+     * @return boolean
      */
     private boolean goToDungeonRoom(){
         DungeonRoomExitState exitState = FightHandler.getInstance().startFight(Hero.getInstance(), _dungeon.getCurrentRoom().getMonsterList()); // This function will return true if the hero killed all the monsters
@@ -176,6 +176,7 @@ public class DungeonHandler {
     /**
      * Give to the hero rewards
      * for finishing dungeon.
+     * @param hero Hero who receives rewards
      */
     private void giveReward(Hero hero){
         hero.addGold(_dungeon.getGoldReward());

@@ -312,6 +312,6 @@ public abstract class Inventory
 			}
 		}
 		// Then display gold
-		System.out.println((int)_gold + "G");
+		System.out.println(_gold + ".G");
 	}
 }

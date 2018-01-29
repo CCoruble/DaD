@@ -78,8 +78,8 @@ public class Hero extends Creature
 		Spacer.displayLevelUpSpacer();
 	}
 
-	public void resurect(HeroDeathReason deathReson){
-		switch(deathReson){ // Depending of the source / reason of death the gold & experience loss can be changed
+	public void resurect(HeroDeathReason deathReason){
+		switch(deathReason){ // Depending of the source / reason of death the gold & experience loss can be changed
 			case KILLED_BY_MONSTER: // The only reason of death for the moment
 				setGold((int)(getGold() * 0.9));
 				setHpValue((int)(getHpMax().getValue()*0.5));

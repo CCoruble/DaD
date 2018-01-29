@@ -1,5 +1,6 @@
 package DaD.manager;
 
+import DaD.Debug.DebugLogger;
 import DaD.creature.Hero;
 import DaD.item.ItemInstance;
 
@@ -126,7 +127,7 @@ public class InventoryManager
                 }
             }
         } catch (Exception e){
-            e.printStackTrace();
+            DebugLogger.log(e);
             System.out.println("Ce n'est pas un choix valide!");
         }
     }

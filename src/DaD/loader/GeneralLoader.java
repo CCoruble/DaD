@@ -3,6 +3,7 @@ package DaD.loader;
 import DaD.commons.Spacer;
 import DaD.dungeon.DungeonHolder;
 import DaD.item.ItemHolder;
+import DaD.manager.GameManager;
 import DaD.monster.MonsterHolder;
 /**
  * Singleton used to launch all
@@ -15,12 +16,6 @@ public class GeneralLoader {
      * Private instance of class.
      */
     private static final GeneralLoader _instance = new GeneralLoader();
-    /**
-     * Used to know if we launch app on debug
-     * mode or not.
-     */
-    private final boolean isDebug = java.lang.management.ManagementFactory.getRuntimeMXBean().
-            getInputArguments().toString().contains("jdwp");
 
     /**
      * Accessor for private instance of class.
@@ -52,7 +47,7 @@ public class GeneralLoader {
             // Then load Dungeons => linked to Monsters & Items
             DungeonLoader.getInstance().loadDungeons();
 
-            if(isDebug){
+            if(GameManager.getInstance().isDebug){
                 Spacer.displayDebugSpacer();
                 ItemHolder.getInstance().displayAllItems();
                 MonsterHolder.getInstance().displayTemplateList();

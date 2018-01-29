@@ -13,7 +13,7 @@ public class ItemHandler
 
 	/**
 	 * Accessor for instance of class.
-	 * @return
+	 * @return ItemHandler
 	 */
 	public static final ItemHandler getInstance()
 	{

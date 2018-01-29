@@ -20,7 +20,7 @@ public class ItemGenerator {
 
     /**
      * Accessor for instance of class.
-     * @return
+     * @return ItemGenerator
      */
     public static final ItemGenerator getInstance() {
             return _instance;

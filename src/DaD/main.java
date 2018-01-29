@@ -1,8 +1,13 @@
 package DaD;
 
+import DaD.calculator.Calculator;
+import DaD.data.types.Stats.Env;
+import DaD.data.types.Stats.StatType;
+import DaD.data.types.Stats.Stats;
 import DaD.loader.GeneralLoader;
 import DaD.manager.GameManager;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -26,7 +31,7 @@ public class main
 	private static void runTest(){
 
 		System.out.println("Running test.");
-		/*ArrayList<Env> envList = new ArrayList<Env>();
+		ArrayList<Env> envList = new ArrayList<Env>();
 		envList.add(new Env(2, StatType.ADD, Stats.ATTACK,5));
 		envList.add(new Env(4, StatType.DIVIDE, Stats.DEFENSE,10));
 		envList.add(new Env(5, StatType.ADD, Stats.ATTACK,14));
@@ -35,17 +40,24 @@ public class main
 		envList.add(new Env(9, StatType.MULTIPLY, Stats.EXPERIENCE,5));
 		envList.add(new Env(8, StatType.NONE, Stats.ATTACK,7));
 
-		Calculator.getInstance().sort(envList);
-
+		System.out.println("Avant sort");
 		for (Env env: envList)
 		{
 			System.out.println("Order: " + env.getOrder() + " Bonus: " + env.getValue());
-		}*/
+		}
+
+		Calculator.getInstance().sort(envList);
+
+		System.out.println("Apres sort");
+		for (Env env: envList)
+		{
+			System.out.println("Order: " + env.getOrder() + " Bonus: " + env.getValue());
+		}
 
 		// Tests
 		//DungeonLoader.getInstance().loadDungeons();
 
-
+		/*
 		Random random = new Random();
 		int low = 1;
 		int high = 20;
@@ -69,6 +81,7 @@ public class main
 				"\n Max: " + max +
 				"\n Min: " + min +
 				"\n Moyenne :" + ((double)total / (double)iteration));
+		*/
 		System.out.println("Finished test.");
 	}
 }
