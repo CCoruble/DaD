@@ -1,3 +1,4 @@
+TODO:
 - Rename la fonction "die" dans MonsterInstance:
 Le monstre ne meurt pas réèlement on donne simplement les récompenses.
 
@@ -35,4 +36,7 @@ Pour l'instant c'est "DungeonRoomExitState" mais non somme dans une combat ! Cha
 - Rework la fonction "dropItems" dans MonsterInstance
 	Déplacer une partie du code dans ItemGenerator.createItem ???
 	
-DONE: Changer la fonction createDungeon de DungeonHandler vers DungeonGenerator
+- Voir pour supprimer une des deux fonctions "setExperience" ou "setExperienceValue" dans "Hero.java"
+	
+DONE: 
+- Changer la fonction createDungeon de DungeonHandler vers DungeonGenerator

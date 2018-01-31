@@ -21,7 +21,7 @@ public class DungeonInstance
 	 */
 	private int _currentRoomOrder;
 	/**
-	 * Total of {@Link DungeonRoomInstance}
+	 * Total of {@link DungeonRoomInstance}
 	 * in this dungeon.
 	 */
 	private final int _totalRoomCount;

@@ -13,18 +13,62 @@ import DaD.item.ItemInstance;
 
 /**
  * Created by Clovis on 07/02/2017.
+ * Singleton for the hero. For the moment
+ * there is only one hero at a time
+ * during a game.
+ * @see Creature
+ * @see DaD.generator.HeroGenerator
+ * @see HeroDeathReason
+ * @see HeroGender
+ * @see HeroRace
+ * @see HeroInventory
  */
 public class Hero extends Creature
 {
+	/**
+	 * Private instance of class.
+	 */
 	private static Hero _instance = new Hero();
-
+	/**
+	 * Gender of the hero
+	 */
 	private HeroGender _gender;
+	/**
+	 * Race of the hero.
+	 */
 	private HeroRace _race;
+	/**
+	 * Max experience for the hero,
+	 * upon reaching this amount of
+	 * experience, hero will level up.
+	 */
 	private Env _experienceMax;
+	/**
+	 * Actual amount of experience
+	 * the hero has.
+	 */
 	private Env _experience;
+	/**
+	 * Inventory where every items
+	 * are stored.
+	 */
 	private HeroInventory _inventory;
 
+	/**
+	 * Private constructor.
+	 */
 	private Hero(){}
+
+	/**
+	 * Private constructor.
+	 * <p>
+	 *     This constructor is used when loading a hero
+	 *     from a previous save or when creating a new one.
+	 *     We set the different attributes values
+	 *     depending on what is inside the MultiValueSet.
+	 * </p>
+	 * @param heroInformation MultiValueSet containing all information about the hero
+	 */
 	private Hero(MultiValueSet heroInformation) {
 		super(heroInformation);
 		_gender = (HeroGender) heroInformation.get("gender");
@@ -44,18 +88,39 @@ public class Hero extends Creature
 		}
 	}
 
+	/**
+	 * Accessor for private instance of class.
+	 * @return Hero
+	 */
 	public static Hero getInstance()
 	{
 		return _instance;
 	}
+
+	/**
+	 * Set the instance of by calling the
+	 * {@link #Hero(MultiValueSet) constructor}.
+	 * @param heroInformation MultiValueSet containing all information
+	 */
 	public static void setInstance(MultiValueSet heroInformation) {
 		_instance = new Hero(heroInformation);
 	}
 
+	/**
+	 * If value of {@link #_experience} of hero
+	 * is higher than value of {@link #_experienceMax}
+	 * call {@link #levelUp()} function.
+	 */
 	private void checkLevelUp(){
-		if(getExperience().getValue() >= _experienceMax.getValue())
+		if(_experience.getValue() >= _experienceMax.getValue())
 			levelUp();
 	}
+
+	/**
+	 * Increase stats of the hero
+	 * depending on his {@link #_race}
+	 * and {@link #_gender}.
+	 */
 	private void levelUp(){
 		// Subtract the required experience to lvl up to his actual experience
 		setExperienceValue(getExperience().getValue() - _experienceMax.getValue());
@@ -78,6 +143,13 @@ public class Hero extends Creature
 		Spacer.displayLevelUpSpacer();
 	}
 
+	/**
+	 * Make the hero come back to life and
+	 * apply a death penalty
+	 * to the hero depending on the
+	 * {@link HeroDeathReason}.
+	 * @param deathReason Enum representing the reason why hero died.
+	 */
 	public void resurect(HeroDeathReason deathReason){
 		switch(deathReason){ // Depending of the source / reason of death the gold & experience loss can be changed
 			case KILLED_BY_MONSTER: // The only reason of death for the moment
@@ -88,6 +160,11 @@ public class Hero extends Creature
 		}
 	}
 
+	/**
+	 * Create and return a short string
+	 * which resume the hero information.
+	 * @return String
+	 */
 	@Override
 	public String toString(){
 		return getName() + " Lv." + getLevel()
@@ -95,6 +172,12 @@ public class Hero extends Creature
 				+  " HP :[" + (int)getHp().getValue() + "/" + (int)getHpMax().getValue() + "]";
 		// If you want to display more information add them here
 	}
+
+	/**
+	 * Return string representing all
+	 * characteristics of the hero.
+	 * @return String
+	 */
 	public String displayFullCharacteristic(){
 		return  "=============================" + "\n" +
 				getName() + " Lv." + getLevel() + "\n" +
@@ -110,56 +193,114 @@ public class Hero extends Creature
 	}
 
 	//Race and gender
+	/**
+	 * Return gender of the hero.
+	 * @return HeroGender
+	 */
 	public HeroGender getHeroGender(){
 		return _gender;
 	}
+	/**
+	 * Return race of the hero.
+	 * @return HeroRace
+	 */
 	public HeroRace getHeroRace(){
 		return _race;
 	}
+
+	/**
+	 * Set the gender of the hero to
+	 * the given HeroGender.
+	 * @param gender New gender for the hero.
+	 */
 	public void setHeroGender( HeroGender gender){
 		_gender = gender;
 	}
+	/**
+	 * Set the race of the hero to
+	 * the given HeroRace.
+	 * @param race New race for the hero.
+	 */
 	public void setHeroRace( HeroRace race){
 		_race = race;
 	}
 
 	//Experience
+
+	/**
+	 * Return an int representing percent
+	 * of experience to max experience.
+	 * @return int
+	 */
 	private int getPercentExperience(){
 		return (int)((getExperience().getValue() / _experienceMax.getValue()) * 100);
 	}
+
+	/**
+	 * Set the attribute experience.
+	 * @param experience New value for experience
+	 */
 	public void setExperience(Env experience){
 		_experience = experience;
 	}
+
+	/**
+	 * Set the value of experience.
+	 * @param experience New experience value.
+	 */
 	private void setExperienceValue(double experience){
 		_experience.setValue(experience);
 	}
+
+	/**
+	 * Add experience to the hero.
+	 * @param experience Amount to add.
+	 */
 	public void addExperience(double experience){
 		setExperienceValue(_experience.getValue() + experience);
 		checkLevelUp();
 	}
-	public void addExperience(Env experience){
-		setExperienceValue(_experience.getValue() + experience.getValue());
-		checkLevelUp();
-	}
+
+	/**
+	 * Return {@link #_experience}
+	 * @return Env
+	 */
 	public Env getExperience(){
 		return _experience;
 	}
 
 	//ExperienceMax
+
+	/**
+	 * Return {@link #_experienceMax}
+	 * @return Env
+	 */
 	public Env getExperienceMax(){
 		return _experienceMax;
 	}
+
+	/**
+	 * Set the attribute {@link #_experienceMax}.
+	 * @param experienceMax New value of attribute.
+	 */
 	public void setExperienceMax(Env experienceMax){
 		_experienceMax = experienceMax;
 	}
-	public void setExperienceMaxValue(double experienceMax){
-		_experienceMax.setValue(experienceMax);
-	}
-	public void addExperienceMax(double experienceMax){
-		_experienceMax.setValue(_experienceMax.getValue() + experienceMax);
-	}
 
 	// Equipment & inventory
+
+	/**
+	 * Return true if the item can be equipped.
+	 * <p>
+	 *     This only take care of primary
+	 *     requirement like is item equipable
+	 *     and does hero has the required level.
+	 *     If there is an item already equipped here
+	 *     it can still return true.
+	 * </p>
+	 * @param item Item you wish to know if you can equip it.
+	 * @return boolean
+	 */
 	public boolean tryEquip(ItemInstance item){
 		// Here we only test the basic requirement: level & equipable, the inventory space left & other are tested in "equip" function
 		// If the item is not equipable we do nothing
@@ -173,15 +314,39 @@ public class Hero extends Creature
 		item.equip(this);
 		return true;
 	}
-	public void tryUnequip(ItemInstance item){
+
+	/**
+	 * Return true if item can be unequipped.
+	 * <p>
+	 *     This is not used for now, but
+	 *     there might be future item that
+	 *     can only be unequipped in some
+	 *     specific way.
+	 *     example: cursed items
+	 * </p>
+	 * @param item Item wish you want to know if you can unequip it.
+	 * @return boolean
+	 */
+	public boolean tryUnequip(ItemInstance item){
 		// This can be later use to prevent special item to be unequip by certain way (cursed items, holy items, ...)
 		item.unequip(this);
+		return true;
 	}
 
 	// Inventory
-	public Inventory getInventory(){
+
+	/**
+	 * Return {@link #_inventory}
+	 * @return HeroInventory
+	 */
+	public HeroInventory getInventory(){
 		return _inventory;
 	}
+
+	/**
+	 * Set the attribute {@link #_inventory}.
+	 * @param inventory New value of attribute.
+	 */
 	public void setInventory(HeroInventory inventory){
 		_inventory = inventory;
 	}

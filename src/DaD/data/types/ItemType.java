@@ -1,5 +1,9 @@
 package DaD.data.types;
 
+/**
+ * Class representing the type of
+ * weapons or armor.
+ */
 public enum ItemType {
 
     // RHAND
@@ -18,7 +22,7 @@ public enum ItemType {
     GLOVES,
     // CHEST
     CHESTPLATE,
-    // LEGGS
+    // LEGS
     LEGGINGS,
     // BOOTS
     BOOTS,
@@ -29,5 +33,8 @@ public enum ItemType {
     // BELT
     BELT;
 
+    /**
+     * Array containing all enum values.
+     */
     public static final ItemType[] VALUES = values();
 }

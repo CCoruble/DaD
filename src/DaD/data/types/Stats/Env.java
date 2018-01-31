@@ -4,6 +4,9 @@ import DaD.commons.MultiValueSet;
 
 /**
  * Created by Clovis on 09/03/2017.
+ * Class used to calculate stats.
+ * This can represent either a basic stats
+ * or a modifier to a a stat.
  */
 public class Env
 {
@@ -12,11 +15,23 @@ public class Env
 	private int _order;
 	private double _value;
 
+	/**
+	 * Constructor of class.
+	 * @param bonus value of the bonus
+	 * @param type type of the bonus
+	 */
 	public Env(double bonus, StatType type){
 		_value = bonus;
 		_type = type;
 	}
 
+	/**
+	 * Constructor of class.
+	 * @param bonus value of the bonus
+	 * @param type type of the bonus
+	 * @param stat stat concerning of the bonus
+	 * @param order order of the stat
+	 */
 	public Env(double bonus, StatType type, Stats stat, int order){
 		_value = bonus;
 		_type = type;
@@ -24,6 +39,10 @@ public class Env
 		_order = order;
 	}
 
+	/**
+	 * Constructor of class.
+	 * @param envInformation MultiValueSet containing all information
+	 */
 	public Env(MultiValueSet envInformation){
 		_value = envInformation.getDouble("bonus");
 		_type = (StatType)envInformation.getEnum("type",StatType.class);
@@ -31,33 +50,12 @@ public class Env
 		_stat = (Stats)envInformation.getEnum("stat",Stats.class);
 	}
 
-	public void setStatsType(StatType type){
-		_type = type;
-	}
-
-	public double calcStat(int base){
-		switch (_type){
-			case SET:
-				return _value;
-			case MULTIPLY:
-				return base * _value;
-			case DIVIDE:
-				return base / _value;
-			case ADD:
-				return base + _value;
-			case SUBTRACT:
-				return base - _value;
-			default : // NONE
-				return base - _value;
-		}
-	}
-	public int calcStat(int base, int iteration){
-		double baseD = base;
-		for(int i = 0; i < iteration; i++)
-			baseD = calcStat(baseD);
-		return (int)baseD;
-	}
-
+	/**
+	 * Return "base" + or / or * or -
+	 * {@link #_value} depending on {@link #_type}.
+	 * @param base the base value you want to affect with the Env
+	 * @return double
+	 */
 	public double calcStat(double base){
 		switch (_type){
 			case SET:
@@ -73,6 +71,13 @@ public class Env
 		}
 		return base;
 	}
+
+	/**
+	 * Call {@link #calcStat(double)} X times.
+	 * @param base base value to affect with the Env
+	 * @param iteration number of time you call the function.
+	 * @return double
+	 */
 	public double calcStat(double base, int iteration){
 		for(int i = 0; i < iteration; i++)
 			base = calcStat(base);
@@ -80,27 +85,55 @@ public class Env
 	}
 
 	// Stat
-	public Stats getStat()
-	{
+
+	/**
+	 * Return {@link #_stat}.
+	 * @return Stats
+	 */
+	public Stats getStat() {
 		return _stat;
 	}
 
 	// Order
+
+	/**
+	 * Return order of Env.
+	 * @return int
+	 */
 	public int getOrder(){
 		return _order;
 	}
+
+	/**
+	 * Set the value of order.
+	 * @param order value to set
+	 */
 	public void setOrder(int order){
 		_order = order;
 	}
 
 	// Value
+
+	/**
+	 * Return value of the Env.
+	 * @return double
+	 */
 	public double getValue(){
 		return _value;
 	}
+
+	/**
+	 * Set the value of the env.
+	 * @param value value to set.
+	 */
 	public void setValue(double value){
 		_value = value;
 	}
 
+	/**
+	 * Return a string representing all
+	 * attributes and their values.
+	 */
 	@Override
 	public String toString(){
 		return "type: " + _type + "\n" +

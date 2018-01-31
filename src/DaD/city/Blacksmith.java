@@ -9,19 +9,49 @@ import java.util.Scanner;
 
 /**
  * Created by Clovis on 09/02/2017.
+ * Singleton used to handle item
+ * buying and selling process.
  */
 public class Blacksmith
 {
+	/**
+	 * Private instance of class.
+	 */
 	private static final Blacksmith _instance = new Blacksmith();
+	/**
+	 * Array containing template id
+	 * corresponding to items that the
+	 * blacksmith sells.
+	 */
 	private int _itemTemplateIdList[];
+	/**
+	 * All possible choices for the hero
+	 */
 	private static final String[] _options = {"Acheter des objets","Vendre des objets","Quitter le shop"};
-	// This is used to determine the price of an item we sell
-	private final double _sellRate = 0.8;
+	/**
+	 * Sell rate, when selling an item
+	 * we apply this sell rate to reduce the price.
+	 */
+	private final double _sellRate = 0.7;
+
+	/**
+	 * Constructor of class.
+	 */
 	private Blacksmith(){}
+
+	/**
+	 *Accessor for private instance of class.
+	 * @return Blacksmith
+	 */
 	public static Blacksmith getInstance() {
 		return _instance;
 	}
 
+	/**
+	 * Display the main menu where hero
+	 * will be prompted choices.
+	 * @param hero Hero entering the black smith menu
+	 */
 	public void blacksmithMenu(Hero hero){
 		// First call this method to charge / change / update the inventory of the blacksmith
 		initializeBlacksmithInventory(hero);
@@ -54,6 +84,12 @@ public class Blacksmith
 			}
 		}
 	}
+
+	/**
+	 * Depending on hero level, the blacksmith
+	 * will have different items to sell.
+	 * @param hero Hero entering the black smith menu
+	 */
 	private void initializeBlacksmithInventory(Hero hero){
 		// Later rework this to add full set of items to the list depending on the hero level.
 		if(hero.getLevel() < 10){
@@ -69,6 +105,11 @@ public class Blacksmith
 		}
 	}
 
+	/**
+	 * Main menu where hero can choose which
+	 * item he wants to buy.
+	 * @param hero Hero who wants to buy items
+	 */
 	private void buyItemsMenu(Hero hero){
 		System.out.println("Voici la liste des objets en vente:");
 		for(int i = 0; i < _itemTemplateIdList.length; i++){
@@ -89,6 +130,13 @@ public class Blacksmith
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * Test if hero can buy item and prompt
+	 * message depending on it.
+	 * @param hero Hero buying item
+	 * @param itemTemplate Template of the item bought by hero
+	 */
 	private void buyItem(Hero hero, ItemTemplate itemTemplate){
 		if(hero.getGold() < itemTemplate.getPrice()) {
 			System.out.println("Vous n'avez pas assez d'argent !");
@@ -104,6 +152,11 @@ public class Blacksmith
 		}
 	}
 
+	/**
+	 * Main menu where can choose which
+	 * item he wants to sell.
+	 * @param hero Hero who wants to sell items.
+	 */
 	private void sellItemsMenu(Hero hero){
 		System.out.println("Voici la liste de vos objets (qui peuvent se vendre):");
 		int count = 1;
@@ -123,6 +176,13 @@ public class Blacksmith
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * Ask hero quantity he wants to sell and
+	 * sell them.
+	 * @param hero Hero selling his items
+	 * @param itemInstance Item hero wants to sell
+	 */
 	private void sellItem(Hero hero, ItemInstance itemInstance){
 		// If this a non stackable item
 		if(itemInstance.getTemplate().getMaxStack() == 1){

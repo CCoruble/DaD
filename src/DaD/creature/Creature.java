@@ -6,6 +6,11 @@ import DaD.formulas.FightFormulas;
 
 /**
  * Created by Clovis on 07/02/2017.
+ * Mother class for every creature, both
+ * player and non player in the game.
+ * @see Npc
+ * @see Hero
+ * @see Env
  */
 public abstract class Creature
 {
@@ -20,8 +25,15 @@ public abstract class Creature
 	private Env _mpMax;
 	// Add _spell, _critsChance, _dodge ...
 
+	/**
+	 * Constructor of class.
+	 */
 	Creature(){}
 
+	/**
+	 * Constructor of class.
+	 * @param stats MultiValueSet containing all information.
+	 */
 	Creature(MultiValueSet stats) {
 		_name = stats.getString("name");
 		_level = stats.getInteger("level");
@@ -34,12 +46,28 @@ public abstract class Creature
 		_gold = stats.getDouble("gold");
 	}
 
+	/**
+	 * Call different function to calculate and inflict
+	 * damage to a, receiver, creature.
+	 * <p>
+	 *     Amount of damage dealt is calculated by
+	 *     {@link FightFormulas#calcDamageDealt(Creature, Creature) calcDamageDealt},
+	 * 	   reduce hp of the receiver and return this same amount.
+	 * </p>
+	 * @param receiver Creature receiving the attack.
+	 * @return int Amount of damage dealt
+	 * @see FightFormulas
+	 */
 	public int attack(Creature receiver){
 		int damageDealt = FightFormulas.calcDamageDealt(this, receiver);
 		receiver.setHpValue(Math.max(receiver.getHp().getValue() - damageDealt, 0));
 		return damageDealt;
 	}
 
+	/**
+	 * Return true if hp value is below 1.
+	 * @return boolean
+	 */
 	public boolean isDead()
 	{
 		return _hp.getValue() < 1;

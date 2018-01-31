@@ -6,16 +6,35 @@ import java.util.Scanner;
 
 /**
  * Created by Clovis on 09/02/2017.
+ * Singleton representing the inn zone.
+ * This is where hero can heal wounds and skip a day.
  */
 public class Inn
 {
+	/**
+	 * Private instance of class.
+	 */
 	private static final Inn _instance = new Inn();
+
+	/**
+	 * Private constructor.
+	 */
 	private Inn(){}
+
+	/**
+	 * Accessor for private instance.
+	 * @return Inn
+	 */
 	public static Inn getInstance(){
 		return _instance;
 	}
-	public void innMenu()
-	{
+
+	/**
+	 * Main menu of this class, this is
+	 * where the hero can choose
+	 * which room he wants.
+	 */
+	public void innMenu() {
 		Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
 		System.out.println("Bienvenue à l'auberge jeune aventurier !");
 		System.out.println("Tu as actuellement " + Hero.getInstance().getPercentHp() + "% de tes points de vie.");
@@ -46,6 +65,13 @@ public class Inn
 		}
 	}
 
+	/**
+	 * Calculate the price of a night depending
+	 * on hero level and quality of room.
+	 * @param level hero level
+	 * @param quality quality of room
+	 * @return int
+	 */
 	private int calcInnPrice(int level, int quality){
 		return (int)(20*((9+level)/10)*(quality/1.5));
 	}

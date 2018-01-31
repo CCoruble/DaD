@@ -3,14 +3,16 @@ package DaD.data.types;
 import DaD.commons.MultiValueSet;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
+import org.w3c.dom.Node;
 
 /**
  * Created by Clovis on 07/02/2017.
+ * Represent the gender of hero.
  */
 public enum HeroGender
 {
-	MALE(),
-	FEMALE();
+	MALE,
+	FEMALE;
 
 	private Env _attackModifier;
 	private Env _defenseModifier;
@@ -19,18 +21,16 @@ public enum HeroGender
 	private Env _experienceModifier;
 	private Env _experienceMaxModifier;
 
-
+	/**
+	 * Array containing all enum values.
+	 */
 	public static final HeroGender[] VALUES = values();
 
-	HeroGender(){
-		_attackModifier = new Env(1, StatType.MULTIPLY);
-		_defenseModifier = new Env(1, StatType.MULTIPLY);
-		_hpMaxModifier = new Env(1, StatType.MULTIPLY);
-		_mpMaxModifier = new Env(1, StatType.MULTIPLY);
-		_experienceModifier = new Env(1, StatType.MULTIPLY);
-		_experienceMaxModifier = new Env(1, StatType.MULTIPLY);
-	}
-
+	/**
+	 * Called by {@link DaD.loader.GenderLoader#encodeHeroGender(Node)}
+	 * and adjust each gender buff.
+	 * @param raceInformation MultiValueSet containing all buff information
+	 */
 	public void adjustGenderInformation(MultiValueSet raceInformation){
 		_attackModifier	= raceInformation.getEnv("attackModifier");
 		_defenseModifier	= raceInformation.getEnv("defenseModifier");
@@ -40,21 +40,45 @@ public enum HeroGender
 		_experienceMaxModifier	= raceInformation.getEnv("experienceMaxModifier");
 	}
 
+	/**
+	 * Return attack modifier.
+	 * @return Env
+	 */
 	public Env getAttackModifier(){
 		return _attackModifier;
 	}
+	/**
+	 * Return defense modifier.
+	 * @return Env
+	 */
 	public Env getDefenseModifier(){
 		return _defenseModifier;
 	}
+	/**
+	 * Return hp max modifier.
+	 * @return Env
+	 */
 	public Env getHpMaxModifier(){
 		return _hpMaxModifier;
 	}
+	/**
+	 * Return mp max modifier.
+	 * @return Env
+	 */
 	public Env getMpMaxModifier(){
 		return _mpMaxModifier;
 	}
+	/**
+	 * Return experience modifier.
+	 * @return Env
+	 */
 	public Env getExperienceModifier(){
 		return _experienceModifier;
 	}
+	/**
+	 * Return experience max modifier.
+	 * @return Env
+	 */
 	public Env getExperienceMaxModifier(){
 		return _experienceMaxModifier;
 	}

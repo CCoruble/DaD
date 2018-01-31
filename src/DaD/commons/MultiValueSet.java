@@ -7,6 +7,12 @@ import DaD.item.ItemTemplate;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This class was not created by Clovis.
+ * Simply used to store several types of information
+ * into the same object and easily retrieve them.
+ * @param <T> Object type
+ */
 public class MultiValueSet<T> extends HashMap<T, Object>
 {
 	public MultiValueSet()

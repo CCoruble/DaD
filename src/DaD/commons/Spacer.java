@@ -1,5 +1,9 @@
 package DaD.commons;
 
+/**
+ * Statics functions used to display spacer
+ * and separate different information.
+ */
 public class Spacer {
     public static void displayMainMenuSpacer(){
         System.out.println("[][][][][][][][][][][][][][][][]");

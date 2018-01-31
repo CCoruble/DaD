@@ -2,6 +2,8 @@ package DaD.data.types.Stats;
 
 /**
  * Created by Clovis on 30/09/2017.
+ * Represent the stat an {@link Env} is
+ * modifying.
  */
 public enum Stats
 {

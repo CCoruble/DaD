@@ -5,31 +5,79 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Scanner;
 
+/**
+ * Singleton used to handle money
+ * exchange between player and a safe.
+ */
 public class Bank {
+    /**
+     * Private instance of class.
+     */
     private static final Bank _instance = new Bank();
+    /**
+     * All available choices.
+     */
     private static final String[] _options = {"Stocker des pièces d'or","Retirer des pièces d'or","Faire un prêt","Quitter la banque"};
+    /**
+     * Minimum of gold to put in bank, if
+     * amount if below it will refuse
+     * stocking money.
+     */
     private final int _minimumGoldPerStock = 10;
+    /**
+     * Golds in bank.
+     */
     private int _stockedGold;
 
+    /**
+     * Private constructor.
+     */
     private Bank(){}
 
+    /**
+     * Accessor for private instance.
+     * @return Bank
+     */
     public static Bank getInstance(){
         return _instance;
     }
 
+    /**
+     * Increase {@link #_stockedGold} value.
+     * @param gold Added value
+     */
     private void addMoney(int gold){
         _stockedGold += gold;
     }
+
+    /**
+     * Decrease {@link #_stockedGold} value.
+     * @param gold Amount to decrease
+     */
     private void decreaseMoney(int gold){
         _stockedGold -= gold;
     }
+
+    /**
+     * Return {@link #_stockedGold}.
+     * @return int
+     */
     public int getMoney(){
         return _stockedGold;
     }
+
+    /**
+     * Set the value of {@link #_stockedGold}.
+     * @param gold New value to set.
+     */
     public void setMoney(int gold){
         _stockedGold = gold;
     }
 
+    /**
+     * Display the main menu where hero
+     * will be prompted choices.
+     */
     public void bankMenu() {
         Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
         Boolean stayInBank = true;
@@ -64,6 +112,10 @@ public class Bank {
             }
         }
     }
+
+    /**
+     * Menu to store golds into bank.
+     */
     private void stockMoney(){
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -93,6 +145,10 @@ public class Bank {
             }
         }
     }
+
+    /**
+     * Menu to retrieve golds from bank.
+     */
     private void retrieveMoney(){
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -120,6 +176,11 @@ public class Bank {
             }
         }
     }
+
+    /**
+     * Main menu to borrow money,
+     * not implemented yet.
+     */
     private void borrowMoney(){
         throw new NotImplementedException();
     }
