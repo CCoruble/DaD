@@ -1,7 +1,5 @@
+#########################################################################################
 TODO:
-- Rename la fonction "die" dans MonsterInstance:
-Le monstre ne meurt pas réèlement on donne simplement les récompenses.
-
 - MonsterHolder getTemplateList changer le type de retour??
 La fonction retourne une Map alors que l'attribut est une HashMap
 
@@ -12,12 +10,6 @@ Il faudrait que le monstre ait une liste d'objet déjà généré en fonction du
 			utilisé à la mort du monstre.
 EDIT: Voir pour optimiser / améliorer / déplacer les fonctions mais le monstre doit seulement
 posséder des "ItemDropInfo" et non "ItemInstance"
-			
-- Changer d'emplacement les fonction "equip" et "unequip" de ItemInstance vers l'inventaire ???
-
-- Passer la classe inventaire en abstract et faire un MonsterInventory et heroInventory ???
-
-- Rework l'interface de choix de donjon.
 
 - enlever l'attribut "gold" de NPC et le mettre dans inventaire
 	- Rework l'inventaire pour qu'il contiennent les golds de héro et monstre
@@ -27,16 +19,29 @@ posséder des "ItemDropInfo" et non "ItemInstance"
 - Changer l'inventaire de façon à ce qu'un item équipé ne prenne pas de place dans l'inventaire,
 il doit prendre une place seulement lorsque qu'il est dé-équipé. (Comme Titan Quest)
 	=> L'attribut "equipped" dans ItemInstance 
+
+- Rework le calcul des stats "Calculate all stats" et le calcul des statistiques lors du level up.
+L'un des deux ne fonctionne pas, au lvl 4 si on équipe un item on perd des statistiques.
+ lié à:
+	- Rework la fonction levelUp, ajouter simplement les nouvelles stats lié au level up puis recalculé le tout
+		Faire attention aux buff de race & gender qui s'appliquent que sur les stats de base
+			=> Faire en sorte que le sbuff de race et gender s'appliquent sur tout ? peut faire partie du gameplay
+
+- Rework la fonction startDungeon de "DungeonHandler"
 	
+#########################################################################################
+DONE:
+
+- Rename la fonction "die" dans MonsterInstance:
+Le monstre ne meurt pas réèlement on donne simplement les récompenses.
+
 - Changer l'enum utiliser dans FightHandler pour connaitre le résultat du combat.
 Pour l'instant c'est "DungeonRoomExitState" mais non somme dans une combat ! Changer pour "FightExitState" ??
 
-- Rework la fonction "dungeonSetting" de dungeonHandler. Trop longue, complexe.
-
 - Rework la fonction "dropItems" dans MonsterInstance
 	Déplacer une partie du code dans ItemGenerator.createItem ???
-	
-- Voir pour supprimer une des deux fonctions "setExperience" ou "setExperienceValue" dans "Hero.java"
-	
-DONE: 
-- Changer la fonction createDungeon de DungeonHandler vers DungeonGenerator
+
+- Rework la fonction "dungeonSetting" de dungeonHandler. Trop longue, complexe.
+
+- Changer d'emplacement les fonction "equip" et "unequip" de ItemInstance vers l'inventaire ???
+EDIT: Mis dans "HeroInventory"

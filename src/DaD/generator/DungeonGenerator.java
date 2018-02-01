@@ -36,17 +36,14 @@ public class DungeonGenerator
 
 
 	/**
-	 * Return an instance from the choosen
-	 * {@link DungeonTemplate} id.
-	 * @param dungeonTemplateId The id of the dungeonTemplate
+	 * Create a {@link DungeonInstance} from
+	 * a given {@link DungeonTemplate}.
+	 * @param dungeonTemplate The chosen template.
 	 * @return DungeonInstance
 	 */
-	public DungeonInstance createDungeon(int dungeonTemplateId){
+	public DungeonInstance createDungeon(DungeonTemplate dungeonTemplate){
 		// Set the MultiValue Set where we'll stock all the dungeon information
 		MultiValueSet dungeonInformation = new MultiValueSet();
-
-		// Get the dungeonTemplate from the list of template in the DungeonHolder
-		DungeonTemplate dungeonTemplate = DungeonHolder.getInstance().getTemplate(dungeonTemplateId);
 
 		DungeonRoomTemplate dungeonRoomTemplate;
 		ArrayList<DungeonRoomInstance> dungeonRoomList = new ArrayList<>();

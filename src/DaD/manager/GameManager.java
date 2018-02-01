@@ -134,8 +134,10 @@ public class GameManager
 				switch (choice) {
 					case 1:
 						// Go into the dungeonMenu, choose difficulty then create the DungeonInstance
-						DungeonInstance dungeon = DungeonHandler.getInstance().dungeonSetting();
-						DungeonHandler.getInstance().StartDungeon(Hero.getInstance(), dungeon);
+						DungeonInstance dungeon = DungeonHandler.getInstance().dungeonSetting(Hero.getInstance());
+						if(dungeon != null) { // In case the hero left before choosing a dungeon
+							DungeonHandler.getInstance().StartDungeon(Hero.getInstance(), dungeon);
+						}
 						break;
 					case 2:
 						Blacksmith.getInstance().blacksmithMenu(Hero.getInstance());

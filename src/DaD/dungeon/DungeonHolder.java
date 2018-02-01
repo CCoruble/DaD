@@ -1,8 +1,11 @@
 package DaD.dungeon;
 
 import DaD.commons.MultiValueSet;
+import DaD.creature.Hero;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 /**
@@ -80,4 +83,21 @@ public class DungeonHolder {
     public Map<Integer,DungeonTemplate> getTemplateList(){
         return _templateList;
     }
+
+    /**
+     * Return an ArrayList containing all dungeons the
+     * player has unlocked. Obviously required level
+     * and other conditions are checked before.
+     * @param hero the hero that want to see his available dungeon
+     * @return ArrayList
+     */
+    public ArrayList<DungeonTemplate> getAvailableDungeon(Hero hero){
+        ArrayList<DungeonTemplate> availableDungeons = new ArrayList<>();
+        for(Map.Entry<Integer, DungeonTemplate> entry : DungeonHolder.getInstance().getTemplateList().entrySet()) {
+            if(hero.getLevel() >= entry.getValue().getRequiredLevel())
+                availableDungeons.add(entry.getValue());
+        }
+        return availableDungeons;
+    }
+
 }

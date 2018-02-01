@@ -1,5 +1,6 @@
 package DaD.generator;
 
+import DaD.commons.RandomGenerator;
 import DaD.item.ItemDropInfo;
 import DaD.item.ItemInstance;
 /**
@@ -33,6 +34,21 @@ public class ItemGenerator {
      * @return ItemInstance
      */
     public ItemInstance createItem(ItemDropInfo itemDropInfo){
-        return new ItemInstance(itemDropInfo.getTemplate());
+        ItemInstance instance = null;
+        for (int i = 0; i < itemDropInfo.getMaxDrop(); i++) {
+            // Each item has a chance to be dropped, we test if the item is successfully dropped
+            boolean success = RandomGenerator.RNG(itemDropInfo.getDropRate());
+            // If the item fail to be dropped we just continue
+            if (!success) {
+                continue;
+            } else if(instance == null){
+                // First time we success
+                instance = ItemGenerator.getInstance().createItem(itemDropInfo);
+            } else {
+                // We already created this item, it mean it is dropped X times so we add one stack
+                instance.addStack(1);
+            }
+        }
+        return instance;
     }
 }

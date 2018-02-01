@@ -1,20 +1,14 @@
 package DaD.handler;
 
-import DaD.commons.MultiValueSet;
+import DaD.Debug.DebugLogger;
 import DaD.creature.Hero;
-import DaD.data.types.DungeonRoomExitState;
+import DaD.data.types.FightExitState;
 import DaD.data.types.HeroDeathReason;
-import DaD.data.types.MonsterInfo;
 import DaD.dungeon.*;
 import DaD.generator.DungeonGenerator;
-import DaD.generator.NpcGenerator;
-import DaD.monster.MonsterInstance;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Class used to handle dungeons.
@@ -58,33 +52,31 @@ public class DungeonHandler {
      * choose which dungeon he wants to enter.
      * @return DungeonInstance
      */
-    public DungeonInstance dungeonSetting(){
-        Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
+    public DungeonInstance dungeonSetting(Hero hero){
+        Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the player's choice
         String input;
-        int dungeonId;
-        while(true){
-            try {
-                System.out.println("Dans quelle donjon veux-tu entrer ?");
-                for(Map.Entry<Integer, DungeonTemplate> entry : DungeonHolder.getInstance().getTemplateList().entrySet()){
-                    DungeonTemplate dungeonTemplate = entry.getValue();
-                    if(dungeonTemplate.getRequiredLevel() <= Hero.getInstance().getLevel()){
-                        System.out.println(dungeonTemplate.getName());
-                    }
-                }
-                input = scanner.next();
-                dungeonId = Integer.parseInt(input);
-                if (!DungeonHolder.getInstance().getTemplateList().containsKey(dungeonId)
-                        || DungeonHolder.getInstance().getTemplateList().get(dungeonId).getRequiredLevel() > Hero.getInstance().getLevel())
-                {
-                    System.out.println("Ce niveau de donjon est trop élevé ou ce donjon n'existe pas.");
-                    continue;
-                }
-                return DungeonGenerator.getInstance().createDungeon(dungeonId);
-            } catch (Exception e){
-                e.printStackTrace();
-                System.out.println("Ce n'est pas une valeur valide!");
-            }
+        int choice;
+        // Retrieve all dungeons the player can choose
+        ArrayList<DungeonTemplate> availableDungeons = DungeonHolder.getInstance().getAvailableDungeon(hero);
+
+        System.out.println("Dans quelle donjon veux-tu entrer ?");
+        for(int i = 0; i < availableDungeons.size(); i++){
+            System.out.println((i+1) + ": " + availableDungeons.get(i).getName());
         }
+        System.out.println("Autre: Quitter");
+
+        try{
+            input = scanner.nextLine();
+            choice = Integer.parseInt(input);
+            if(choice > 0 && choice <= availableDungeons.size()){ // Player did a correct choice
+                // Order start at 0 in ArrayList meanwhile hero choices are displayed starting at 1
+                return DungeonGenerator.getInstance().createDungeon(availableDungeons.get(choice-1));
+            }
+        } catch (Exception e) {
+            DebugLogger.log(e);
+        }
+        // Player want to leave
+        return null;
     }
 
     /**
@@ -153,7 +145,7 @@ public class DungeonHandler {
      * @return boolean
      */
     private boolean goToDungeonRoom(){
-        DungeonRoomExitState exitState = FightHandler.getInstance().startFight(Hero.getInstance(), _dungeon.getCurrentRoom().getMonsterList()); // This function will return true if the hero killed all the monsters
+        FightExitState exitState = FightHandler.getInstance().startFight(Hero.getInstance(), _dungeon.getCurrentRoom().getMonsterList()); // This function will return true if the hero killed all the monsters
         switch(exitState) {
             case HERO_ESCAPED:
                 throw new NotImplementedException();

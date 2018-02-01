@@ -297,7 +297,6 @@ public abstract class Inventory
 
 
 	// display
-
 	/**
 	 * First display each items inventory name, stack and
 	 * if it is equipped or not. Then display golds amount.

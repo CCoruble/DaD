@@ -133,9 +133,6 @@ public class Hero extends Creature
 		setAttackValue(HeroFormulas.calcLevelUpAttack(_instance));
 		setDefenseValue(HeroFormulas.calcLevelUpDefense(_instance));
 
-		// The hero get 10% of this maxHp back
-		setHpValue(getHp().getValue()*1.1);
-
 		// Increase level & display it
 		setLevel(getLevel()+1);
 		Spacer.displayLevelUpSpacer();
@@ -226,7 +223,6 @@ public class Hero extends Creature
 	}
 
 	//Experience
-
 	/**
 	 * Return an int representing percent
 	 * of experience to max experience.
@@ -270,7 +266,6 @@ public class Hero extends Creature
 	}
 
 	//ExperienceMax
-
 	/**
 	 * Return {@link #_experienceMax}
 	 * @return Env
@@ -288,7 +283,6 @@ public class Hero extends Creature
 	}
 
 	// Equipment & inventory
-
 	/**
 	 * Return true if the item can be equipped.
 	 * <p>
@@ -309,9 +303,8 @@ public class Hero extends Creature
 		// If you do not have the required level we do nothing
 		if(item.getTemplate().getRequiredLevel() > Hero.getInstance().getLevel())
 			return false;
-
-		// Nothing stop us to equip the item, unequip old item will be manage in "equip" function
-		item.equip(this);
+		// Nothing stop us from equipping this items
+		_inventory.equip(this,item);
 		return true;
 	}
 
@@ -328,13 +321,12 @@ public class Hero extends Creature
 	 * @return boolean
 	 */
 	public boolean tryUnequip(ItemInstance item){
-		// This can be later use to prevent special item to be unequip by certain way (cursed items, holy items, ...)
-		item.unequip(this);
+		// Maybe used later to prevent hero to unequip some special items (cursed / blessed / ...)
+		_inventory.unequip(this, item);
 		return true;
 	}
 
 	// Inventory
-
 	/**
 	 * Return {@link #_inventory}
 	 * @return HeroInventory

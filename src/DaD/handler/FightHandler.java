@@ -2,7 +2,7 @@ package DaD.handler;
 
 import DaD.commons.Spacer;
 import DaD.creature.Hero;
-import DaD.data.types.DungeonRoomExitState;
+import DaD.data.types.FightExitState;
 import DaD.monster.MonsterInstance;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.Scanner;
  * Class used to handle fights.
  * When a fight begin we enter
  * this class to handle all events.
- * @see DungeonRoomExitState
+ * @see FightExitState
  */
 public class FightHandler
 {
@@ -56,9 +56,9 @@ public class FightHandler
 	 * values and starting the {@link #fightLoop()} function.
 	 * @param hero The hero part of the fight
 	 * @param monsterList List of {@link MonsterInstance} part of the fight
-	 * @return DungeonRoomExitState
+	 * @return FightExitState
 	 */
-	public DungeonRoomExitState startFight(Hero hero, ArrayList<MonsterInstance> monsterList) {
+	public FightExitState startFight(Hero hero, ArrayList<MonsterInstance> monsterList) {
 		_hero = hero;
 		_monsterList = monsterList;
 		_turn = 0;
@@ -68,9 +68,9 @@ public class FightHandler
 	/**
 	 * Function that call {@link #heroTurn()} and {@link #monsterTurn()}
 	 * until either hero or all monsters are dead.
-	 * @return DungeonRoomExitState
+	 * @return FightExitState
 	 */
-	public DungeonRoomExitState fightLoop() {
+	public FightExitState fightLoop() {
 		while (!_monsterList.isEmpty() && !_hero.isDead()) // Condition to stay is "there is still monster left" and "the hero is alive"
 		{
 			Spacer.displayFightSpacer();
@@ -92,23 +92,23 @@ public class FightHandler
 	 * When either hero or all monsters are dead return
 	 * the appropriate state.
 	 * <p>
-	 *     If hero died return {@link DungeonRoomExitState#HERO_DIED},
-	 *     if all monsters died return {@link DungeonRoomExitState#HERO_SUCCEEDED}
-	 *     else return {@link DungeonRoomExitState#HERO_ESCAPED}.
+	 *     If hero died return {@link FightExitState#HERO_DIED},
+	 *     if all monsters died return {@link FightExitState#HERO_SUCCEEDED}
+	 *     else return {@link FightExitState#HERO_ESCAPED}.
 	 *     Only these 3 states exist for the moment.
 	 * </p>
-	 * @return DungeonRoomExitState
+	 * @return FightExitState
 	 */
-	private DungeonRoomExitState endFight() { //  Either the hero is dead OR all the monsters are dead
+	private FightExitState endFight() { //  Either the hero is dead OR all the monsters are dead
 		if (_hero.isDead())
 		{ // The hero is dead
-			return DungeonRoomExitState.HERO_DIED;
+			return FightExitState.HERO_DIED;
 		} else if(_monsterList.isEmpty())
 		{// All the monsters are dead
-			return DungeonRoomExitState.HERO_SUCCEEDED;
+			return FightExitState.HERO_SUCCEEDED;
 		} else
 		{ // Hero escaped
-			return DungeonRoomExitState.HERO_ESCAPED;
+			return FightExitState.HERO_ESCAPED;
 		}
 	}
 
@@ -138,7 +138,7 @@ public class FightHandler
 		damageDealt = _hero.attack(_monsterList.get(playerChoice)); // We make the hero attack the target
 		System.out.println(_hero.getName() + " inflige " + damageDealt + " à " + _monsterList.get(playerChoice));
 		if(_monsterList.get(playerChoice).isDead()){ // Check if the monster we just attacked is dead (hp < 1)
-			_monsterList.get(playerChoice).die(_hero); // Make the monster die and give the experience to the hero
+			_monsterList.get(playerChoice).giveRewards(_hero); // Make the monster giveRewards and give the experience to the hero
 			_monsterList.remove(playerChoice); // Remove the monster that just died of the list
 		}
 	}

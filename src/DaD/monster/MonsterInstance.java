@@ -69,7 +69,7 @@ public class MonsterInstance extends Npc
 	 * @param killer The {@link Creature} that killed the monster.
 	 * @see DaD.handler.FightHandler
 	 */
-	public void die(Creature killer){
+	public void giveRewards(Creature killer){
 		// If we are killed a by Hero
 		if (killer instanceof Hero)
 		{
@@ -99,29 +99,18 @@ public class MonsterInstance extends Npc
 		ArrayList<ItemDropInfo> itemDropInfoList = _template.getItemDropInfoList();
 		// for each itemDropInfo we try to create the item if the luck is enough for it
 		for(ItemDropInfo itemDropInfo: itemDropInfoList) {
-			// Each item can be droped several times => a monster can have several times the same object
-			for (int i = 0; i < itemDropInfo.getMaxDrop(); i++) {
-
-				// Each item has a chance to be dropped, we test if the item is successfully dropped
-				boolean success = RandomGenerator.RNG(itemDropInfo.getDropRate());
-				// If the item fail to be droped we just continue
-				if(!success)
-					continue;
-
-				// Else the item was successfully dropped
-				ItemInstance instance = ItemGenerator.getInstance().createItem(itemDropInfo);
-				System.out.println(getName() + " fait tomber " + instance.getTemplate().getName());
-				// addItem will return true if the item was added to the inventory, this can fail if there is no place left in inventory
-				if (hero.getInventory().addItem(instance)) {
-					System.out.println("L'objet est ajoute a votre inventaire!");
-				} else {
-					System.out.println("Vous ne pouvez pas porter cet item, vous le laissez par terre !");
-				}
+			// Each item can be dropped several times => a monster can have several times the same object
+			ItemInstance itemInstance = ItemGenerator.getInstance().createItem(itemDropInfo);
+			if (itemInstance == null) { // Item was not created because of RNG
+				continue;
+			} else if (hero.getInventory().addItem(itemInstance)) { // Item was created and inventory is not full
+					System.out.println(getName() + " fait tomber " + itemInstance.getTemplate().getName() + "[x" + itemInstance.getStack() + "]");
+			} else { // Item was created but inventory is full
+					System.out.println("Votre inventaire est plein !");
 			}
 		}
 	}
 
-	// Template
 	/**
 	 * Accessor for template of instance.
 	 * @return MonsterTemplate
@@ -130,7 +119,6 @@ public class MonsterInstance extends Npc
 		return _template;
 	}
 
-	// Rarity & race
 	/**
 	 * Accessor for rarity of instance.
 	 * @return MonsterRarity
@@ -162,8 +150,6 @@ public class MonsterInstance extends Npc
 	public void setRace(MonsterRace race) {
 		_race = race;
 	}
-
-	// Display information
 
 	/**
 	 * Return the name of the monster.

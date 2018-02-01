@@ -110,53 +110,17 @@ public class ItemInstance
 	}
 
 	/**
-	 * Make the hero Equip this item instance, check full description for
-	 * important details!
-	 * <p>
-	 *     The function first check if there is an item equipped
-	 *     at the place where we'll equip the new item. If so then we
-	 *     unequip it first and then equip the new one. Then we re-calculate
-	 *     all the stats for the hero.
-	 * </p>
-	 * @param hero The hero who equip the item.
-	 * @see Calculator#calculateAllStats(Hero)
-	 */
-	public void equip(Hero hero){
-		ItemInstance oldEquippedItem = hero.getInventory().getEquippedItem(_itemTemplate.getEquiSlot());
-		// If there is already an equiped item on the equipSlot we unequip it
-		if(oldEquippedItem != null){
-			oldEquippedItem.unequipWithoutCalculate();
-		}
-		// Set the new item as equipped
-		_equipped = true;
-		// then call calculator to calculate all the new stats
-		Calculator.getInstance().calculateAllStats(hero);
-	}
-
-	/**
-	 * Make the hero unequip this item by changing his {@link #_equipped}
-	 * value and then re-calculate his stats
-	 * @param hero The hero that will unequip the item.
-	 */
-	public void unequip(Hero hero){
-		// Set the item as Unequipped
-		_equipped = false;
-		// then call calculator so it calculate all the hero stat again
-		Calculator.getInstance().calculateAllStats(hero);
-	}
-
-	/**
-	 * Set the value of {@link #_equipped} to false.
-	 */
-	private void unequipWithoutCalculate(){
-		_equipped = false;
-	}
-
-	/**
 	 * Return true if item Instance is equipped.
 	 * @return Boolean
 	 */
 	public Boolean isEquipped(){
 		return _equipped;
+	}
+	/**
+	 * Set the value of {@link #_equipped}.
+	 * @param equipped New value for attribute
+	 */
+	public void setEquipped(boolean equipped){
+		_equipped = equipped;
 	}
 }
