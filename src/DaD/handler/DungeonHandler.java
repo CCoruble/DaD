@@ -2,11 +2,10 @@ package DaD.handler;
 
 import DaD.Debug.DebugLogger;
 import DaD.creature.Hero;
+import DaD.data.types.DungeonExitState;
 import DaD.data.types.FightExitState;
-import DaD.data.types.HeroDeathReason;
 import DaD.dungeon.*;
 import DaD.generator.DungeonGenerator;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.*;
 
@@ -32,7 +31,7 @@ public class DungeonHandler {
     /**
      * All available options.
      */
-    private static final String[] _options = {"Entrer dans la salle","Afficher tes caractéristiques","Quitter le donjon"};
+    private static final String[] _options = {"Entrer dans la salle","Afficher tes statistiques","Quitter le donjon"};
 
     /**
      * Private constructor of class.
@@ -80,89 +79,107 @@ public class DungeonHandler {
     }
 
     /**
-     * Show available options to hero.
-     * Depending on his choice call different functions.
-     * <p>
-     *     If you choose to enter the room here,
-     *     this will call the {@link FightHandler}.
-     *     Depending on the result of the fight we will
-     *     either go to next room or leave the dungeon.
-     * </p>
+     * Here we handle all event while in
+     * dungeon, displaying menu, entering room
+     * and give rewards. This is done
+     * by calling several sub-function.
      * @param hero Hero that enter the dungeon
-     * @param dungeon Choosen dungeonInstance
+     * @param dungeonInstance Chosen dungeonInstance
      */
-    public void StartDungeon(Hero hero,DungeonInstance dungeon) {
-        _dungeon = dungeon;
-        while (true)
-        {
-            Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
-
-            System.out.println("Tu es actuellement à la salle " + _dungeon.getCurrentRoomOrder() + " sur " + _dungeon.getTotalRoomCount() + ".\nQue veux-tu faire ?");
-            int playerChoice = 0;
-            while (playerChoice < 1 || playerChoice > _options.length) //  Condition to stay is not giving a good answer (1 or 2)
-            {
-                for(int i = 0; i < _options.length; i++){
-                    System.out.println((i+1) + " : " + _options[i]);
-                }
-                playerChoice = scanner.nextInt();
-            }
-            ///////////////////////////////////////////THIS MUST BE REWORKED TO BE MORE EFFICIENT/////////////////////////////////
-            switch (playerChoice)
-            {
-                case 1:
-                    if (goToDungeonRoom()) // Return true if the Hero succeed the DungeonRoomInstance
-                    {
-                        if (_dungeon.getCurrentRoomOrder() > _dungeon.getRoomList().size()) // If we finished all dungeon room
-                        {
-                            giveReward(hero); // The hero did success the entire DungeonInstance so he get rewarded and leave
-                            System.out.println("Bravo tu as finis ce Donjon aventurier " + hero.getName() + " !");
-                            return;
-                        } else {
-                            System.out.println("Bravo tu as finis cette salle !");
-                        }
-                    }
-                    else { // The hero did fail the DungeonRoomInstance and died
-                        System.out.println("Tu es mort aventurier !");
-                        return;
-                    }
-                    break;
-                case 2:
-                    System.out.println(hero.displayFullCharacteristic());
-                    break;
-                case 3:
-                    System.out.println("A bientot dans un autre donjon aventurier !");
-                    return;
-            }
-            ///////////////////////////////////////////////////////END OF REWORK NEEDED//////////////////////////////////////////
+    public void enterDungeon(Hero hero, DungeonInstance dungeonInstance) {
+        initializeDungeon(hero,dungeonInstance);
+        DungeonExitState exitState = DungeonRoomMenu(hero);
+        switch (exitState) {
+            case HERO_SUCCEEDED:
+                System.out.println("Bravo tu as fini ce donjon !");
+                endDungeon(hero);
+                break;
+            case HERO_LEFT:
+                System.out.println("A bientot dans un autre donjon aventurier !");
+                break;
+            case HERO_DIED:
+                System.out.println("Tu es mort aventurier !");
+                break;
         }
     }
 
-    /**
-     * Enter a dungeon room, start the fight
-     * with monsters in it and depending on
-     * fight result execute function.
-     * Return true if Hero succeeded on killing monsters.
-     * @return boolean
-     */
-    private boolean goToDungeonRoom(){
-        FightExitState exitState = FightHandler.getInstance().startFight(Hero.getInstance(), _dungeon.getCurrentRoom().getMonsterList()); // This function will return true if the hero killed all the monsters
-        switch(exitState) {
-            case HERO_ESCAPED:
-                throw new NotImplementedException();
-
-            case HERO_SUCCEEDED:
-                // Increase the room order so next time he'll enter next dungeon room
-                _dungeon.increaseCurrentRoomOrder();
-                return true;
-
-            case HERO_DIED:
-                // Hero is dead he make him go back to life and apply Killed_By_Monster loss (exp / gold)
-                Hero.getInstance().resurect(HeroDeathReason.KILLED_BY_MONSTER);
-                return false;
-
-            default: // Should never be reached
-                return false;
+    public DungeonExitState DungeonRoomMenu(Hero hero){
+        while (_dungeon.getCurrentRoomOrder() <= _dungeon.getRoomList().size()) { // While we have not finished all rooms
+            // Get the room the player will get into
+            DungeonRoomInstance dungeonRoomInstance = _dungeon.getRoomList().get(_dungeon.getCurrentRoomOrder()-1); // List index start at 0 when currentRoomOrder start at 1
+            int playerChoice = dungeonMenu();
+            FightExitState exitState = FightExitState.NONE;
+            switch (playerChoice)
+            {
+                case 1:
+                    exitState = FightHandler.getInstance().startFight(hero,dungeonRoomInstance.getMonsterList());
+                    break;
+                case 2:
+                    hero.displayFullCharacteristic();
+                    break;
+                case 3:
+                    return DungeonExitState.HERO_LEFT;
+            }
+            // Depending on what happened in the dungeonRoom fight
+            switch (exitState){
+                case HERO_SUCCEEDED:
+                    _dungeon.increaseCurrentRoomOrder(); // Give access to the next room
+                    break;
+                case HERO_ESCAPED:
+                    return DungeonExitState.HERO_LEFT;
+                case HERO_DIED:
+                    return DungeonExitState.HERO_DIED;
+            }
         }
+        // If we go here it mean hero won each dungeonRoom.
+        return DungeonExitState.HERO_SUCCEEDED;
+    }
+
+    /**
+     * Display dungeon options to player and return his choice
+     * @return int
+     */
+    public int dungeonMenu(){
+        Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
+        String input;
+        System.out.println("Tu es actuellement à la salle " + _dungeon.getCurrentRoomOrder() + " sur " + _dungeon.getTotalRoomCount() + ".\nQue veux-tu faire ?");
+        int playerChoice = 0;
+        while (playerChoice < 1 || playerChoice > _options.length) //  Condition to stay is not giving a good answer (1 or 2)
+        {
+            for(int i = 0; i < _options.length; i++){
+                System.out.println((i+1) + " : " + _options[i]);
+            }
+            try {
+                input = scanner.nextLine();
+                playerChoice = Integer.parseInt(input);
+            } catch (Exception e){
+                System.out.println("Ce n'est pas un choix valide !");
+            }
+        }
+        return playerChoice;
+    }
+
+    /**
+     * Called at the beginning of {@link #enterDungeon(Hero, DungeonInstance) enterDungeon},
+     * we set the attribute {@link #_dungeon} and
+     * later can be used to apply special effect to the hero.
+     * @param hero Hero entering dungeon
+     * @param dungeonInstance Dungeon hero is entering in
+     */
+    public void initializeDungeon(Hero hero, DungeonInstance dungeonInstance){
+        _dungeon = dungeonInstance;
+        // Later can be used to apply effects to the hero.
+    }
+
+    /**
+     * Called at the end of the dungeon, when
+     * hero has finished it. Give rewards and
+     * clean buffs.
+     * @param hero Hero that has finished the dungeon
+     */
+    public void endDungeon(Hero hero){
+        giveReward(hero);
+        // Later can be used for special rewards / buff or buff clearing
     }
 
     /**

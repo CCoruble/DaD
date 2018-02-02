@@ -121,6 +121,7 @@ public class GameManager
 		while(inGame)
 		{
 			Spacer.displayInGameMenuSpacer();
+			System.out.println("Exp in 'GameMenu': " + Hero.getInstance().getExperience().getValue());
 			System.out.println("Bonjour " + Hero.getInstance().getName() + "!");
 			System.out.println("Que veux-tu faire ?");
 			for(int i = 0; i < _inGameMenuOptions.length; i++){
@@ -133,10 +134,10 @@ public class GameManager
 				choice = Integer.parseInt(input);
 				switch (choice) {
 					case 1:
-						// Go into the dungeonMenu, choose difficulty then create the DungeonInstance
+						// Go into the enterDungeon, choose difficulty then create the DungeonInstance
 						DungeonInstance dungeon = DungeonHandler.getInstance().dungeonSetting(Hero.getInstance());
 						if(dungeon != null) { // In case the hero left before choosing a dungeon
-							DungeonHandler.getInstance().StartDungeon(Hero.getInstance(), dungeon);
+							DungeonHandler.getInstance().enterDungeon(Hero.getInstance(), dungeon);
 						}
 						break;
 					case 2:
@@ -154,7 +155,7 @@ public class GameManager
 						Bank.getInstance().bankMenu();
 						break;
 					case 6:
-						System.out.println(Hero.getInstance().displayFullCharacteristic());
+						Hero.getInstance().displayFullCharacteristic();
 						break;
 					case 7:
 						InventoryManager.getInstance().inventoryMenu(Hero.getInstance());

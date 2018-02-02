@@ -175,8 +175,9 @@ public class Hero extends Creature
 	 * characteristics of the hero.
 	 * @return String
 	 */
-	public String displayFullCharacteristic(){
-		return  "=============================" + "\n" +
+	public void displayFullCharacteristic(){
+		String charac =
+				"=============================" + "\n" +
 				getName() + " Lv." + getLevel() + "\n" +
 				"Sexe : " + getHeroGender() + "\n" +
 				"Race : " + getHeroRace() + "\n" +
@@ -184,9 +185,10 @@ public class Hero extends Creature
 				"Attaque : " + (int)getAttack().getValue() + "\n" +
 				"Defense : " + (int)getDefense().getValue() + "\n" +
 				"Gold : " + getGold() + "\n" +
-				"Experience : [" + (int)getExperience().getValue() + "/" + (int)getExperienceMax().getValue() + "] (" + getPercentExperience() + "%) \n" +
+				"Experience : [" + getExperience().getValue() + "/" + (int)getExperienceMax().getValue() + "] (" + getPercentExperience() + "%) \n" +
 				"Inventory space : [" + (_inventory.getInventorySize() - _inventory.getInventorySizeLeft()) + "/" + _inventory.getInventorySize() + "]\n" +
 				"=============================";
+		System.out.println(charac);
 	}
 
 	//Race and gender

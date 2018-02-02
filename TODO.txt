@@ -31,17 +31,3 @@ L'un des deux ne fonctionne pas, au lvl 4 si on équipe un item on perd des stat
 	
 #########################################################################################
 DONE:
-
-- Rename la fonction "die" dans MonsterInstance:
-Le monstre ne meurt pas réèlement on donne simplement les récompenses.
-
-- Changer l'enum utiliser dans FightHandler pour connaitre le résultat du combat.
-Pour l'instant c'est "DungeonRoomExitState" mais non somme dans une combat ! Changer pour "FightExitState" ??
-
-- Rework la fonction "dropItems" dans MonsterInstance
-	Déplacer une partie du code dans ItemGenerator.createItem ???
-
-- Rework la fonction "dungeonSetting" de dungeonHandler. Trop longue, complexe.
-
-- Changer d'emplacement les fonction "equip" et "unequip" de ItemInstance vers l'inventaire ???
-EDIT: Mis dans "HeroInventory"

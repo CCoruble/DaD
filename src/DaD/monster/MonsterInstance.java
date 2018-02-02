@@ -75,9 +75,12 @@ public class MonsterInstance extends Npc
 		{
 			System.out.println(this + " vient de mourir sous les coups de " + killer.getName());
 			Hero hero = (Hero)killer;
+			System.out.println("Exp hero before killing monster: " + hero.getExperience().getValue());
 			// Then give the experience & gold to the killer
 			double experience = HeroFormulas.calcExperienceGained(hero,this);
+			System.out.println("+" + experience + "xp!");
 			hero.addExperience(experience);
+			System.out.println("Exp hero after killing monster: " + hero.getExperience().getValue());
 			hero.addGold(getGold());
 			dropItems(hero);
 		}

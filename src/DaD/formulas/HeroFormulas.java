@@ -86,27 +86,24 @@ public class HeroFormulas
 	 * @return double
 	 */
 	public static double calcExperienceGained(Hero hero, MonsterInstance monsterInstance){
-		// Get the difference between hero & monster level
-		int levelDifference = Math.abs(hero.getLevel() - monsterInstance.getLevel());
-
-		// Calculate the potential exp gained by the hero
-		// Monster modifier
 		ArrayList<Env> envList = new ArrayList<>();
 
-		// All hero modifier & env
-		envList.add(hero.getExperience());
+		// Hero race & gender modifiers
 		envList.add(hero.getHeroRace().getExperienceModifier());
 		envList.add(hero.getHeroGender().getExperienceModifier());
 
 		// For the moment we just add one Env to the EnvList for each level, LEVEL START AT 1 NOT AT 0 !!!!
-		for(int i = 1; i < monsterInstance.getLevel()-1; i++)
+		for(int i = 1; i <= monsterInstance.getLevel(); i++)
 			envList.add(monsterInstance.getTemplate().getExperiencePerLevel());
 
-		for(int i = 0; i < monsterInstance.getRarity().ordinal(); i++)
+		// Rarity start at 1, we do not add buff for "common" creatures
+		for(int i = 1; i <= monsterInstance.getRarity().ordinal(); i++)
 			envList.add(monsterInstance.getTemplate().getExperienceRarityModifier());
 
 		double experience = Calculator.getInstance().calculateStat(envList);
 
+		// Get the difference between hero & monster level
+		int levelDifference = Math.abs(hero.getLevel() - monsterInstance.getLevel());
 		// Depending on the lvl difference we decrease the exp gained
 		if (levelDifference <= 2) {
 			// No exp diminution
