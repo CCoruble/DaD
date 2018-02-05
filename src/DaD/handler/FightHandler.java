@@ -3,6 +3,7 @@ package DaD.handler;
 import DaD.commons.Spacer;
 import DaD.creature.Hero;
 import DaD.data.types.FightExitState;
+import DaD.data.types.HeroDeathReason;
 import DaD.monster.MonsterInstance;
 
 import java.util.ArrayList;
@@ -102,6 +103,7 @@ public class FightHandler
 	private FightExitState endFight() { //  Either the hero is dead OR all the monsters are dead
 		if (_hero.isDead())
 		{ // The hero is dead
+			_hero.resurect(HeroDeathReason.KILLED_BY_MONSTER);
 			return FightExitState.HERO_DIED;
 		} else if(_monsterList.isEmpty())
 		{// All the monsters are dead
@@ -154,6 +156,7 @@ public class FightHandler
 			System.out.println(countAttacker + " : " + attacker.getName() + " Lv." + attacker.getLevel()
 					+ " vous inflige " + damageDealt + " points de dégats !");
 			if(_hero.isDead()){
+
 				return;
 			}
 			countAttacker++;

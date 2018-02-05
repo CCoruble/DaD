@@ -1,8 +1,5 @@
 package DaD.item;
 
-import DaD.calculator.Calculator;
-import DaD.creature.Hero;
-
 /**
  * Created by Clovis on 06/03/2017.
  * This is this instance of an item, this is what

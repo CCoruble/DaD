@@ -111,7 +111,7 @@ public class MonsterHolder
 	 * </p>
 	 * @return Map
 	 */
-	public Map<Integer,MonsterTemplate> getTemplateList(){
+	public HashMap<Integer,MonsterTemplate> getTemplateList(){
 		return _templateList;
 	}
 }

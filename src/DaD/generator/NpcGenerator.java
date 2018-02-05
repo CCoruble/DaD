@@ -56,9 +56,6 @@ public class NpcGenerator
 		MonsterRarity rarity = monsterInfo.getRarity();
 		int level = monsterInfo.getLevel(); // get the monster level
 
-		double experienceValue = MonsterFormulas.calcExperience(template,level,rarity);
-		Env experience = new Env(experienceValue, StatType.SET, Stats.EXPERIENCE, 10);
-
 		double hpMaxValue = MonsterFormulas.calcHpMax(template,level,rarity);
 		Env hpMax = new Env(hpMaxValue, StatType.SET, Stats.HP_MAX, 10);
 
@@ -80,7 +77,6 @@ public class NpcGenerator
 		stats.set("race",race);
 		stats.set("rarity",rarity);
 		stats.set("level",level);
-		stats.set("experience",experience);
 		stats.set("hpMax",hpMax);
 		stats.set("hp",hp);
 		stats.set("attack",attack);

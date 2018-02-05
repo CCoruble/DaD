@@ -185,7 +185,7 @@ public class Hero extends Creature
 				"Attaque : " + (int)getAttack().getValue() + "\n" +
 				"Defense : " + (int)getDefense().getValue() + "\n" +
 				"Gold : " + getGold() + "\n" +
-				"Experience : [" + getExperience().getValue() + "/" + (int)getExperienceMax().getValue() + "] (" + getPercentExperience() + "%) \n" +
+				"Experience : [" + (int)getExperience().getValue() + "/" + (int)getExperienceMax().getValue() + "] (" + getPercentExperience() + "%) \n" +
 				"Inventory space : [" + (_inventory.getInventorySize() - _inventory.getInventorySizeLeft()) + "/" + _inventory.getInventorySize() + "]\n" +
 				"=============================";
 		System.out.println(charac);

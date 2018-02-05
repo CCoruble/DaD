@@ -4,6 +4,7 @@ import DaD.Debug.DebugLogger;
 import DaD.creature.Hero;
 import DaD.data.types.DungeonExitState;
 import DaD.data.types.FightExitState;
+import DaD.data.types.HeroDeathReason;
 import DaD.dungeon.*;
 import DaD.generator.DungeonGenerator;
 
@@ -190,5 +191,8 @@ public class DungeonHandler {
     private void giveReward(Hero hero){
         hero.addGold(_dungeon.getGoldReward());
         hero.addExperience(_dungeon.getExperienceReward());
+        System.out.println("Récompenses du donjon:");
+        System.out.println("+" + (int)_dungeon.getGoldReward() + " gold");
+        System.out.println("+" + (int)_dungeon.getExperienceReward() + " exp");
     }
 }

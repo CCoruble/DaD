@@ -23,7 +23,7 @@ public class DungeonHolder {
      * Map containing all DungeonTemplate as value and
      * {@link Integer} representing their id as key.
      */
-    private final Map<Integer,DungeonTemplate> _templateList =  new HashMap<>();
+    private final HashMap<Integer,DungeonTemplate> _templateList =  new HashMap<>();
 
     /**
      * Accessor for private instance of class.
@@ -80,7 +80,7 @@ public class DungeonHolder {
      * Return the Map containing all {@link DungeonTemplate}.
      * @return Map
      */
-    public Map<Integer,DungeonTemplate> getTemplateList(){
+    public HashMap<Integer,DungeonTemplate> getTemplateList(){
         return _templateList;
     }
 

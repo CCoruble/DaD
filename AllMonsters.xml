@@ -16,8 +16,8 @@
 			<SET name="defense" value="2" order="10" stat="DEFENSE"/>
 			<ADD name="defensePerLevel" value="1" order="20" stat="DEFENSE"/>
 			<MULTIPLY name="defenseRarityModifier" value="1.2" order="30" stat="DEFENSE"/>
-			<SET name="experience" value="10" order="10" stat="EXPERIENCE"/>
-			<ADD name="experiencePerLevel" value="1.7" order="20" stat="EXPERIENCE"/>
+			<SET name="experience" value="5" order="10" stat="EXPERIENCE"/>
+			<ADD name="experiencePerLevel" value="1" order="20" stat="EXPERIENCE"/>
 			<MULTIPLY name="experienceRarityModifier" value="2" order="30" stat="EXPERIENCE"/>
 		</for>
 		<reward>
@@ -41,7 +41,7 @@
 			<SET name="defense" value="5" order="10" stat="DEFENSE"/>
 			<ADD name="defensePerLevel" value="2" order="20" stat="DEFENSE"/>
 			<MULTIPLY name="defenseRarityModifier" value="1.2" order="30" stat="DEFENSE"/>
-			<SET name="experience" value="10" order="10" stat="EXPERIENCE"/>
+			<SET name="experience" value="8" order="10" stat="EXPERIENCE"/>
 			<ADD name="experiencePerLevel" value="1.8" order="20" stat="EXPERIENCE"/>
 			<MULTIPLY name="experienceRarityModifier" value="2" order="30" stat="EXPERIENCE"/>
 		</for>

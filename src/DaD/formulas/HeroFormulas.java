@@ -88,18 +88,15 @@ public class HeroFormulas
 	public static double calcExperienceGained(Hero hero, MonsterInstance monsterInstance){
 		ArrayList<Env> envList = new ArrayList<>();
 
-		// Hero race & gender modifiers
+		// Calculate the EXP gave by monster
+		Env monsterExp = new Env(MonsterFormulas.calcExperience(monsterInstance),StatType.SET,Stats.EXPERIENCE,10);
+		envList.add(monsterExp);
+
+		// Add hero race & gender modifiers
 		envList.add(hero.getHeroRace().getExperienceModifier());
 		envList.add(hero.getHeroGender().getExperienceModifier());
 
-		// For the moment we just add one Env to the EnvList for each level, LEVEL START AT 1 NOT AT 0 !!!!
-		for(int i = 1; i <= monsterInstance.getLevel(); i++)
-			envList.add(monsterInstance.getTemplate().getExperiencePerLevel());
-
-		// Rarity start at 1, we do not add buff for "common" creatures
-		for(int i = 1; i <= monsterInstance.getRarity().ordinal(); i++)
-			envList.add(monsterInstance.getTemplate().getExperienceRarityModifier());
-
+		// Then calculate the final exp earned by hero
 		double experience = Calculator.getInstance().calculateStat(envList);
 
 		// Get the difference between hero & monster level

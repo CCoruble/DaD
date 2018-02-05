@@ -37,7 +37,7 @@ public class Inn
 	public void innMenu() {
 		Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
 		System.out.println("Bienvenue à l'auberge jeune aventurier !");
-		System.out.println("Tu as actuellement " + Hero.getInstance().getPercentHp() + "% de tes points de vie.");
+		System.out.println("Tu as actuellement " + (int)Hero.getInstance().getPercentHp() + "% de tes points de vie.");
 		int innChoice = 0;
 		while (innChoice < 1 || innChoice > 4)
 		{

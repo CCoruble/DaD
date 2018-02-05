@@ -23,11 +23,6 @@ public abstract class Inventory
 	 * ArrayList containing all ItemInstance.
 	 */
 	private ArrayList<ItemInstance> _itemList;
-	/**
-	 * Amount of golds. Should be reworked
-	 * to be an ItemInstance.
-	 */
-	private double _gold;
 
 	/**
 	 * Constructor of class.
@@ -132,24 +127,6 @@ public abstract class Inventory
 	 */
 	public void setItemList(ArrayList<ItemInstance> itemList){
 		_itemList = itemList;
-	}
-
-	// Gold
-
-	/**
-	 * Return amount of golds.
-	 * @return double
-	 */
-	public double getGold(){
-		return _gold;
-	}
-
-	/**
-	 * Set the amount of golds.
-	 * @param gold Amount of golds.
-	 */
-	public void setGold(double gold){
-		_gold = gold;
 	}
 
 	// items
@@ -296,13 +273,12 @@ public abstract class Inventory
 	}
 
 
-	// display
 	/**
 	 * First display each items inventory name, stack and
 	 * if it is equipped or not. Then display golds amount.
 	 */
 	public void displayInventory() {
-		// Display all items first
+		// Display all items
 		for (ItemInstance itemInstance : _itemList) {
 			if (itemInstance.isEquipped()) {
 				System.out.println("{EQUIPE} " + itemInstance.getTemplate().getName());
@@ -310,7 +286,5 @@ public abstract class Inventory
 				System.out.println("[x" + itemInstance.getStack() + "]" + itemInstance.getTemplate().getName());
 			}
 		}
-		// Then display gold
-		System.out.println(_gold + ".G");
 	}
 }

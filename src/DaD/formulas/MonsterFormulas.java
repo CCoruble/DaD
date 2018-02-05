@@ -1,6 +1,7 @@
 package DaD.formulas;
 
 import DaD.data.types.MonsterRarity;
+import DaD.monster.MonsterInstance;
 import DaD.monster.MonsterTemplate;
 
 /**
@@ -12,21 +13,19 @@ public class MonsterFormulas
 {
 	/**
 	 * Calculate experience given by killing monster.
-	 * @param template Template of the monster
-	 * @param level Level of the monster
-	 * @param rarity Rarity fo the monster
+	 * @param monsterInstance instance of monster
 	 * @return double
 	 */
-	public static double calcExperience(MonsterTemplate template,int level,MonsterRarity rarity){
+	public static double calcExperience(MonsterInstance monsterInstance){
 		//  Calculate the experience given by killing a monster depending on his level and rarity
-		double exp = template.getExperience().getValue();
-		for(int i = 0; i < level-1; i++)
-		exp = template.getExperiencePerLevel().calcStat(exp,level-1);
+		double exp = monsterInstance.getTemplate().getExperience().getValue();
+		for(int i = 0; i < monsterInstance.getLevel() - 1; i++)
+		exp = monsterInstance.getTemplate().getExperiencePerLevel().calcStat(exp,monsterInstance.getLevel() - 1);
 
-		if(rarity.ordinal() == 0 || template.getMinimumRarity() == template.getMaximumRarity()) // This is the basic rarity or a specific rarity so there is no modification to the total experience
+		if(monsterInstance.getRarity().ordinal() == 0 || monsterInstance.getTemplate().getMinimumRarity() == monsterInstance.getTemplate().getMaximumRarity()) // This is the basic rarity or a specific rarity so there is no modification to the total experience
 			return exp;
 		else{ // This is a non-basic rarity (rare / epic / legendary ...), we apply the modifier to the total experience
-			exp = template.getExperienceRarityModifier().calcStat(exp,rarity.ordinal() - template.getMinimumRarity());
+			exp = monsterInstance.getTemplate().getExperienceRarityModifier().calcStat(exp,monsterInstance.getRarity().ordinal() - monsterInstance.getTemplate().getMinimumRarity());
 			return exp;
 		}
 	}

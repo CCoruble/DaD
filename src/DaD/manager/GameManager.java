@@ -121,7 +121,6 @@ public class GameManager
 		while(inGame)
 		{
 			Spacer.displayInGameMenuSpacer();
-			System.out.println("Exp in 'GameMenu': " + Hero.getInstance().getExperience().getValue());
 			System.out.println("Bonjour " + Hero.getInstance().getName() + "!");
 			System.out.println("Que veux-tu faire ?");
 			for(int i = 0; i < _inGameMenuOptions.length; i++){
