@@ -166,27 +166,6 @@ public class Env
 	 * readable form.
 	 */
 	public void displayEnv(){
-		String string = _stat.toString() + " ";
-		switch(_type){
-			case SET:
-				string += ("= ");
-				break;
-			case ADD:
-				string += ("+ ");
-				break;
-			case SUBTRACT:
-				string += ("- ");
-				break;
-			case MULTIPLY:
-				string += ("/ ");
-				break;
-			case DIVIDE:
-				string += ("* ");
-				break;
-			default: // Should never get here, value "NONE" should not get used !
-				return;
-		}
-		string += _value;
-		System.out.println(string);
+		System.out.println(_stat.toString() + " " + _type.toString() + " " + _value);
 	}
 }

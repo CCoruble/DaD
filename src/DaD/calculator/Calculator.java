@@ -105,7 +105,7 @@ public class Calculator implements Comparator<Env>
 					0x01
 			));
 			// This can be negative if item applied debuf on HP
-			double hpMaxValueDiff = oldHpMaxValue - hpMaxValue;
+			double hpMaxValueDiff = hpMaxValue - oldHpMaxValue;
 			// Hp
 			hero.setHp(new Env(
 					hero.getHp().getValue() + hpMaxValueDiff,
@@ -113,18 +113,18 @@ public class Calculator implements Comparator<Env>
 					Stats.HP,
 					0x01
 			));
-			/*
+
 			// Mp_Max
 			double oldMpMaxValue = hero.getMpMax().getValue();
 			double mpMaxValue = calculateStat(getEnvByStat(allStats, Stats.MP_MAX));
 			hero.setMpMax(new Env(
-					hpMaxValue,
+					mpMaxValue,
 					StatType.SET,
 					Stats.MP_MAX,
 					0x10
 			));
 			// This can be negative if item applied debuf on MP
-			double mpMaxValueDiff = oldMpMaxValue - mpMaxValue;
+			double mpMaxValueDiff = mpMaxValue - oldMpMaxValue;
 			// Mp
 			hero.setMp(new Env(
 					hero.getMp().getValue() + mpMaxValueDiff,
@@ -132,7 +132,6 @@ public class Calculator implements Comparator<Env>
 					Stats.MP,
 					0x10
 			));
-			*/
 
 			// exp_Max
 			double expMaxValue = calculateStat(getEnvByStat(allStats, Stats.EXPERIENCE_MAX));

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<weapon id="1" name="Long Sword">
+	<gear id="1" name="Long Sword">
 		<set name="price" value="220"/>
 		<set name="type" value="SWORD"/>
 		<set name="weight" value="1600"/>
@@ -14,8 +14,8 @@
 		<for>
 			<add order="10" stat="attack" value="6"/>
 		</for>
-	</weapon>
-		<weapon id="2" name="Dagger">
+	</gear>
+		<gear id="2" name="Dagger">
 		<set name="price" value="130"/>
 		<set name="type" value="SWORD"/>
 		<set name="weight" value="1600"/>
@@ -29,8 +29,8 @@
 		<for>
 			<add order="10" stat="attack" value="4"/>
 		</for>
-	</weapon>
-	<armor id="3" name="Wooden Shield">
+	</gear>
+	<gear id="3" name="Wooden Shield">
 		<set name="price" value="100"/>
 		<set name="type" value="SHIELD"/>
 		<set name="weight" value="1600"/>
@@ -44,8 +44,8 @@
 		<for>
 			<add order="10" stat="defense" value="3"/>
 		</for>
-	</armor>
-	<armor id="4" name="Iron Shield">
+	</gear>
+	<gear id="4" name="Iron Shield">
 		<set name="price" value="240"/>
 		<set name="type" value="SHIELD"/>
 		<set name="weight" value="1600"/>
@@ -59,8 +59,8 @@
 		<for>
 			<add order="10" stat="defense" value="6"/>
 		</for>
-	</armor>
-	<armor id="5" name="Banana Shield">
+	</gear>
+	<gear id="5" name="Banana Shield">
 		<set name="price" value="240"/>
 		<set name="type" value="SHIELD"/>
 		<set name="weight" value="1600"/>
@@ -74,8 +74,8 @@
 		<for>
 			<add order="10" stat="defense" value="6"/>
 		</for>
-	</armor>
-	<armor id="6" name="Steel Shield">
+	</gear>
+	<gear id="6" name="Steel Shield">
 		<set name="price" value="300"/>
 		<set name="type" value="SHIELD"/>
 		<set name="weight" value="1600"/>
@@ -89,8 +89,8 @@
 		<for>
 			<add order="10" stat="defense" value="10"/>
 		</for>
-	</armor>
-	<armor id="7" name="Steel Ring">
+	</gear>
+	<gear id="7" name="Steel Ring">
 		<set name="price" value="100"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
@@ -104,8 +104,8 @@
 		<for>
 			<add order="10" stat="defense" value="5"/>
 		</for>
-	</armor>
-	<armor id="8" name="Nail Ring">
+	</gear>
+	<gear id="8" name="Nail Ring">
 		<set name="price" value="120"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
@@ -120,8 +120,8 @@
 			<add order="10" stat="defense" value="3"/>
 			<add order="10" stat="attack" value="3"/>
 		</for>
-	</armor>
-	<armor id="9" name="Beginner glove">
+	</gear>
+	<gear id="9" name="Beginner glove">
 		<set name="price" value="30"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
@@ -135,8 +135,8 @@
 		<for>
 			<add order="10" stat="defense" value="1"/>
 		</for>
-	</armor>
-	<armor id="10" name="Beginner Belt">
+	</gear>
+	<gear id="10" name="Beginner Belt">
 		<set name="price" value="80"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
@@ -150,8 +150,8 @@
 		<for>
 			<add order="10" stat="hp_max" value="10"/>
 		</for>
-	</armor>
-	<armor id="11" name="Beginner Chestplate">
+	</gear>
+	<gear id="11" name="Beginner Chestplate">
 		<set name="price" value="100"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
@@ -166,8 +166,8 @@
 			<add order="10" stat="defense" value="3"/>
 			<add order="10" stat="hp_max" value="5"/>
 		</for>
-	</armor>
-	<armor id="12" name="Beginner Legs">
+	</gear>
+	<gear id="12" name="Beginner Legs">
 		<set name="price" value="60"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
@@ -181,8 +181,8 @@
 		<for>
 			<add order="10" stat="defense" value="4"/>
 		</for>
-	</armor>
-	<armor id="13" name="Beginner Boots">
+	</gear>
+	<gear id="13" name="Beginner Boots">
 		<set name="price" value="50"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
@@ -196,5 +196,5 @@
 		<for>
 			<add order="10" stat="defense" value="2"/>
 		</for>
-	</armor>
+	</gear>
 </list>

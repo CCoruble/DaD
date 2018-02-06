@@ -47,13 +47,13 @@ public class ItemLoader
 	 */
 	private final ArrayList<Env> _allBonus = new ArrayList<>();
 	/**
-	 * Total of weapons loaded.
+	 * Total of gear, weapons & armor, loaded.
 	 */
-	private int _weaponsCount = 0;
+	private int _gearCount = 0;
 	/**
-	 * Total of armor loaded.
+	 * Total of goods, usable & non usable items, loaded.
 	 */
-	private int _armorCount = 0;
+	private int _goodsCount = 0;
 
 	/**
 	 * Accessor for private instance of class.
@@ -73,9 +73,9 @@ public class ItemLoader
 	 * Loading function that browse configuration file
 	 * to find node containing {@link DaD.item.ItemTemplate} information.
 	 * <p>
-	 *     Depending on the type of items, armor or weapons, we
-	 *     will call {@link #encodeArmors(Node) encode Armor} or
-	 *     {@link #encodeWeapons(Node) encode Weapon}.
+	 *     Depending on the type of items we
+	 *     will call {@link #encodeGoods(Node) encode Goods} or
+	 *     {@link #encodeGear(Node) encode Gear}.
 	 * </p>
 	 * @throws Exception If an item with an ID that already exists is loaded.
 	 */
@@ -103,16 +103,12 @@ public class ItemLoader
 
 					// Depending on the type of item, we will parse information  differently
 					switch(itemType){
-						case "weapon":
-							encodeWeapons(actualNode);
-							_weaponsCount++;
-							break;
-						case "armor":
-							encodeArmors(actualNode);
-							_armorCount++;
+						case "gear":
+							encodeGear(actualNode);
+							_gearCount++;
 							break;
 					}
-					// Create the itemTemplate, stock it into the itemTemplate holder then clear the multivalueSet
+					// Create the itemTemplate, stock it into the itemTemplate holder then clear the MultiValueSet
 					ItemHolder.getInstance().createTemplate(_itemStat);
 					_itemStat.clear();
 					_allBonus.clear();
@@ -142,7 +138,7 @@ public class ItemLoader
 	 * @param actualNode Node of the XML file where the weapon information start.
 	 * @see DaD.item.ItemTemplate
 	 */
-	private void encodeWeapons(Node actualNode){
+	private void encodeGear(Node actualNode){
 		NodeList childNodeList = actualNode.getChildNodes();
 		_itemStat.set(actualNode.getAttributes().getNamedItem("id").getNodeName(),actualNode.getAttributes().getNamedItem("id").getNodeValue());
 		_itemStat.set(actualNode.getAttributes().getNamedItem("name").getNodeName(),actualNode.getAttributes().getNamedItem("name").getNodeValue());
@@ -153,16 +149,6 @@ public class ItemLoader
 
 			if(childNode.getAttributes().getNamedItem("name") != null){
 				_itemStat.set(childNode.getAttributes().getNamedItem("name").getNodeValue(),childNode.getAttributes().getNamedItem("value").getNodeValue());
-			}
-
-			if (childNode.getNodeName().equals("equip")) {
-				NodeList subNodeList = childNode.getChildNodes();
-				for(int k = 0; k < subNodeList.getLength(); k++){
-					Node subNode = subNodeList.item(k);
-					if (subNode.getNodeType() == 3) // Because of xml format, we need to skip the blank and new line
-						continue;
-					_itemStat.set("slot",subNode.getAttributes().getNamedItem("id").getNodeValue());
-				}
 			}
 
 			if (childNode.getNodeName().equals("for")) {
@@ -184,7 +170,7 @@ public class ItemLoader
 	 * @param actualNode Node of the XML file where the armor information start.
 	 * @see DaD.item.ItemTemplate
 	 */
-	private void encodeArmors(Node actualNode){
+	private void encodeGoods(Node actualNode){
 		NodeList childNodeList = actualNode.getChildNodes();
 		_itemStat.set(actualNode.getAttributes().getNamedItem("id").getNodeName(),actualNode.getAttributes().getNamedItem("id").getNodeValue());
 		_itemStat.set(actualNode.getAttributes().getNamedItem("name").getNodeName(),actualNode.getAttributes().getNamedItem("name").getNodeValue());
@@ -195,16 +181,6 @@ public class ItemLoader
 
 			if(childNode.getAttributes().getNamedItem("name") != null){
 				_itemStat.set(childNode.getAttributes().getNamedItem("name").getNodeValue(),childNode.getAttributes().getNamedItem("value").getNodeValue());
-			}
-
-			if (childNode.getNodeName().equals("equip")) {
-				NodeList subNodeList = childNode.getChildNodes();
-				for(int k = 0; k < subNodeList.getLength(); k++){
-					Node subNode = subNodeList.item(k);
-					if (subNode.getNodeType() == 3) // Because of xml format, we need to skip the blank and new line
-						continue;
-					_itemStat.set("slot",subNode.getAttributes().getNamedItem("id").getNodeValue());
-				}
 			}
 
 			if (childNode.getNodeName().equals("for")) {

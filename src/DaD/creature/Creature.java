@@ -41,8 +41,10 @@ public abstract class Creature
 		//Env
 		_attack = stats.getEnv("attack");
 		_defense = stats.getEnv("defense");
-		_hp = stats.getEnv("hp");
 		_hpMax = stats.getEnv("hpMax");
+		_hp = stats.getEnv("hp");
+		_mpMax = stats.getEnv("mpMax");
+		_mp = stats.getEnv("mp");
 		_gold = stats.getDouble("gold");
 	}
 
@@ -157,9 +159,6 @@ public abstract class Creature
 	public void addHpMax(double hpMax){
 		_hpMax.setValue(_hpMax.getValue() + hpMax);
 	}
-	public int getPercentMp(){
-		return (int)((_mp.getValue() / _mpMax.getValue()) * 100);
-	}
 
 	//Gold
 	public double getGold(){
@@ -176,7 +175,7 @@ public abstract class Creature
 	}
 
 
-	// Mana points
+	// MP
 	public Env getMp(){
 		return _mp;
 	}
@@ -186,6 +185,11 @@ public abstract class Creature
 	public void setMpValue(double mp){
 		_mp.setValue(mp);
 	}
+	public double getPercentMp(){
+		return (_mp.getValue() / _mpMax.getValue()) * 100;
+	}
+
+	// MPMax
 	public Env getMpMax(){
 		return _mpMax;
 	}

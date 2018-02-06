@@ -22,7 +22,7 @@ import java.util.ArrayList;
  */
 public class HeroFormulas
 {
-	private static final Env BASE_ATTACK = new Env(6,StatType.SET,Stats.ATTACK,10);
+	private static final Env BASE_ATTACK = new Env(6,StatType.SET,Stats.ATTACK);
 	private static final Env ATTACK_GAIN_PER_LEVEL = new Env(2, StatType.ADD, Stats.ATTACK);
 	private static final Env BASE_DEFENSE = new Env(3,StatType.SET, Stats.DEFENSE);
 	private static final Env DEFENSE_GAIN_PER_LEVEL = new Env(2, StatType.ADD, Stats.DEFENSE);

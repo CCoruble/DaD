@@ -73,6 +73,8 @@ public class SaveManager
 			out.writeDouble(Hero.getInstance().getDefense().getValue());
 			out.writeDouble(Hero.getInstance().getHpMax().getValue());
 			out.writeDouble(Hero.getInstance().getHp().getValue());
+			out.writeDouble(Hero.getInstance().getMpMax().getValue());
+			out.writeDouble(Hero.getInstance().getMp().getValue());
 			//Hero
 			out.writeInt(Hero.getInstance().getHeroGender().ordinal());
 			out.writeInt(Hero.getInstance().getHeroRace().ordinal());
@@ -138,26 +140,32 @@ public class SaveManager
 				Hero.getInstance().setLevel(in.readInt());
 
 				double attackValue = in.readDouble();
-				Hero.getInstance().setAttack(new Env(attackValue, StatType.SET, Stats.ATTACK, 10));
+				Hero.getInstance().setAttack(new Env(attackValue, StatType.SET, Stats.ATTACK));
 
 				double defenseValue = in.readDouble();
-				Hero.getInstance().setDefense(new Env(defenseValue, StatType.SET, Stats.DEFENSE, 10));
+				Hero.getInstance().setDefense(new Env(defenseValue, StatType.SET, Stats.DEFENSE));
 
 				double hpMaxValue = in.readDouble();
-				Hero.getInstance().setHpMax(new Env(hpMaxValue, StatType.SET, Stats.HP_MAX, 10));
+				Hero.getInstance().setHpMax(new Env(hpMaxValue, StatType.SET, Stats.HP_MAX));
 
 				double hpValue = in.readDouble();
-				Hero.getInstance().setHp(new Env(hpValue, StatType.SET, Stats.HP, 10));
+				Hero.getInstance().setHp(new Env(hpValue, StatType.SET, Stats.HP));
+
+				double mpMaxValue = in.readDouble();
+				Hero.getInstance().setMpMax(new Env(mpMaxValue,StatType.SET,Stats.MP));
+
+				double mpValue = in.readDouble();
+				Hero.getInstance().setMp(new Env(mpValue,StatType.SET,Stats.MP));
 
 				//Hero
 				Hero.getInstance().setHeroGender(HeroGender.VALUES[in.readInt()]);
 				Hero.getInstance().setHeroRace(HeroRace.VALUES[in.readInt()]);
 
 				double experienceMaxValue = in.readDouble();
-				Hero.getInstance().setExperienceMax(new Env(experienceMaxValue, StatType.SET, Stats.EXPERIENCE_MAX, 10));
+				Hero.getInstance().setExperienceMax(new Env(experienceMaxValue, StatType.SET, Stats.EXPERIENCE_MAX));
 
 				double experienceValue = in.readDouble();
-				Hero.getInstance().setExperience(new Env(experienceValue, StatType.SET, Stats.EXPERIENCE, 10));
+				Hero.getInstance().setExperience(new Env(experienceValue, StatType.SET, Stats.EXPERIENCE));
 
 				Hero.getInstance().setGold(in.readDouble());
 
@@ -168,9 +176,7 @@ public class SaveManager
 				Hero.getInstance().setInventory(new HeroInventory(in.readInt()));
 
 				// Items
-				// write number of items to then ensure we retrieve them all
 				int numberOfItems = in.readInt();
-				// Then write first the templateId then the stack of items
 				for (int i = 0; i < numberOfItems; i++) {
 					Hero.getInstance().getInventory().addItem(
 							new ItemInstance(

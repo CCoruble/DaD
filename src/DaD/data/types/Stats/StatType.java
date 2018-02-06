@@ -11,5 +11,23 @@ public enum StatType
 	MULTIPLY,
 	DIVIDE,
 	ADD,
-	SUBTRACT
+	SUBTRACT;
+
+	@Override
+	public String toString() {
+		switch(this){
+			case SET:
+				return "=";
+			case ADD:
+				return "+";
+			case SUBTRACT:
+				return "-";
+			case MULTIPLY:
+				return "*";
+			case DIVIDE:
+				return "/";
+			default: // Should not get here as value "NONE" should not get used
+				return "";
+		}
+	}
 }

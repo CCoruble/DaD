@@ -163,8 +163,8 @@ public class Hero extends Creature
 	public String toString(){
 		return getName() + " Lv." + getLevel()
 				+ "(" + HeroFormulas.calcPercentExperience(_instance) + "%)"
-				+  " HP :[" + (int)getHp().getValue() + "/" + (int)getHpMax().getValue() + "]";
-		// If you want to display more information add them here
+				+  " HP :[" + (int)getHp().getValue() + "/" + (int)getHpMax().getValue() + "]"
+				+  " MP :[" + (int)getMp().getValue() + "/" + (int)getMpMax().getValue() + "]";
 	}
 
 	/**
@@ -173,19 +173,20 @@ public class Hero extends Creature
 	 * @return String
 	 */
 	public void displayFullCharacteristic(){
-		String charac =
+		String string =
 				"=============================" + "\n" +
 				getName() + " Lv." + getLevel() + "\n" +
 				"Sexe : " + getHeroGender() + "\n" +
 				"Race : " + getHeroRace() + "\n" +
 				"Hp : [" + (int)getHp().getValue() + "/" + (int)getHpMax().getValue() + "] (" + (int)getPercentHp() + "%)\n" +
+				"Mp : [" + (int)getMp().getValue() + "/" + (int)getMpMax().getValue() + "] (" + (int)getPercentMp() + "%)\n" +
 				"Attaque : " + (int)getAttack().getValue() + "\n" +
 				"Defense : " + (int)getDefense().getValue() + "\n" +
 				"Gold : " + getGold() + "\n" +
 				"Experience : [" + (int)getExperience().getValue() + "/" + (int)getExperienceMax().getValue() + "] (" + getPercentExperience() + "%) \n" +
 				"Inventory space : [" + (_inventory.getInventorySize() - _inventory.getInventorySizeLeft()) + "/" + _inventory.getInventorySize() + "]\n" +
 				"=============================";
-		System.out.println(charac);
+		System.out.println(string);
 	}
 
 	//Race and gender
@@ -230,7 +231,6 @@ public class Hero extends Creature
 	private int getPercentExperience(){
 		return (int)((getExperience().getValue() / _experienceMax.getValue()) * 100);
 	}
-
 	/**
 	 * Set the attribute experience.
 	 * @param experience New value for experience
@@ -238,7 +238,6 @@ public class Hero extends Creature
 	public void setExperience(Env experience){
 		_experience = experience;
 	}
-
 	/**
 	 * Set the value of experience.
 	 * @param experience New experience value.
@@ -246,7 +245,6 @@ public class Hero extends Creature
 	private void setExperienceValue(double experience){
 		_experience.setValue(experience);
 	}
-
 	/**
 	 * Add experience to the hero.
 	 * @param experience Amount to add.
@@ -255,7 +253,6 @@ public class Hero extends Creature
 		setExperienceValue(_experience.getValue() + experience);
 		checkLevelUp();
 	}
-
 	/**
 	 * Return {@link #_experience}
 	 * @return Env
@@ -272,7 +269,6 @@ public class Hero extends Creature
 	public Env getExperienceMax(){
 		return _experienceMax;
 	}
-
 	/**
 	 * Set the attribute {@link #_experienceMax}.
 	 * @param experienceMax New value of attribute.
@@ -306,7 +302,6 @@ public class Hero extends Creature
 		_inventory.equip(this,item);
 		return true;
 	}
-
 	/**
 	 * Return true if item can be unequipped.
 	 * <p>
@@ -333,7 +328,6 @@ public class Hero extends Creature
 	public HeroInventory getInventory(){
 		return _inventory;
 	}
-
 	/**
 	 * Set the attribute {@link #_inventory}.
 	 * @param inventory New value of attribute.
