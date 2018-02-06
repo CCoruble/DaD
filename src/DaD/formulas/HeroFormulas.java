@@ -22,18 +22,54 @@ import java.util.ArrayList;
  */
 public class HeroFormulas
 {
-	private static final Env BASE_ATTACK = new Env(6,StatType.SET);
-	private static final Env ATTACK_GAIN_PER_LEVEL = new Env(2, StatType.ADD);
-	private static final Env BASE_DEFENSE = new Env(3,StatType.SET);
-	private static final Env DEFENSE_GAIN_PER_LEVEL = new Env(2, StatType.ADD);
-	private static final Env BASE_HP_MAX = new Env(100,StatType.SET);
-	private static final Env HP_MAX_GAIN_PER_LEVEL = new Env(12, StatType.ADD);
-	private static final Env BASE_MP_MAX = new Env(50,StatType.SET);
-	private static final Env MP_GAIN_PER_LEVEL = new Env(10, StatType.ADD);
-	private static final Env BASE_EXPERIENCE = new Env(70,StatType.SET);
-	private static final Env EXP_MAX_GAIN_PER_LEVEL = new Env(1.45, StatType.MULTIPLY);
+	private static final Env BASE_ATTACK = new Env(6,StatType.SET,Stats.ATTACK,10);
+	private static final Env ATTACK_GAIN_PER_LEVEL = new Env(2, StatType.ADD, Stats.ATTACK);
+	private static final Env BASE_DEFENSE = new Env(3,StatType.SET, Stats.DEFENSE);
+	private static final Env DEFENSE_GAIN_PER_LEVEL = new Env(2, StatType.ADD, Stats.DEFENSE);
+	private static final Env BASE_HP_MAX = new Env(100,StatType.SET, Stats.HP_MAX);
+	private static final Env HP_MAX_GAIN_PER_LEVEL = new Env(10, StatType.ADD, Stats.HP_MAX);
+	private static final Env BASE_MP_MAX = new Env(50,StatType.SET, Stats.MP_MAX);
+	private static final Env MP_MAX_GAIN_PER_LEVEL = new Env(8, StatType.ADD, Stats.MP_MAX);
+	private static final Env BASE_EXP_MAX = new Env(70,StatType.SET, Stats.EXPERIENCE_MAX);
+	private static final Env EXP_MAX_GAIN_PER_LEVEL = new Env(1.45, StatType.MULTIPLY, Stats.EXPERIENCE_MAX);
 	public static final int BASE_INVENTORY_SIZE = 10;
-	public static final double BASE_GOLD = 100;
+	public static final double BASE_GOLD = 30;
+
+
+	public static Env getBaseAttack(){
+		return BASE_ATTACK;
+	}
+	public static Env getAttackGainPerLevel(){
+		return ATTACK_GAIN_PER_LEVEL;
+	}
+
+	public static Env getBaseDefense() {
+		return BASE_DEFENSE;
+	}
+	public static Env getDefenseGainPerLevel(){
+		return DEFENSE_GAIN_PER_LEVEL;
+	}
+
+	public static Env getBaseHpMax() {
+		return BASE_HP_MAX;
+	}
+	public static Env getHpMaxGainPerLevel(){
+		return HP_MAX_GAIN_PER_LEVEL;
+	}
+
+	public static Env getBaseMpMax() {
+		return BASE_MP_MAX;
+	}
+	public static Env getMpMaxGainPerLevel(){
+		return MP_MAX_GAIN_PER_LEVEL;
+	}
+
+	public static Env getBaseExpMax() {
+		return BASE_EXP_MAX;
+	}
+	public static Env getExpMaxGainPerLevel(){
+		return EXP_MAX_GAIN_PER_LEVEL;
+	}
 
 	/**
 	 * Return the percent of experience to max experience.
@@ -55,7 +91,7 @@ public class HeroFormulas
 	public static Env calcBaseMaxExperience(HeroRace race, HeroGender gender){
 		return new Env(
 				race.getExperienceMaxModifier().calcStat(
-				gender.getExperienceMaxModifier().calcStat(BASE_EXPERIENCE.getValue())
+				gender.getExperienceMaxModifier().calcStat(BASE_EXP_MAX.getValue())
 			),StatType.SET,Stats.EXPERIENCE_MAX,0x01);
 	}
 
@@ -226,7 +262,7 @@ public class HeroFormulas
 	public static int calcLevelUpMpMax(Hero hero){
 		return (int)(hero.getHeroRace().getMpMaxModifier().calcStat(
 				hero.getHeroGender().getMpMaxModifier().calcStat(
-						MP_GAIN_PER_LEVEL.calcStat(hero.getMpMax())
+						MP_MAX_GAIN_PER_LEVEL.calcStat(hero.getMpMax().getValue())
 				)
 		));
 	}

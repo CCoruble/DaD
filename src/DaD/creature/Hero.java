@@ -1,5 +1,6 @@
 package DaD.creature;
 
+import DaD.calculator.Calculator;
 import DaD.commons.MultiValueSet;
 import DaD.commons.Spacer;
 import DaD.data.types.HeroDeathReason;
@@ -122,21 +123,17 @@ public class Hero extends Creature
 	 * and {@link #_gender}.
 	 */
 	private void levelUp(){
-		// Subtract the required experience to lvl up to his actual experience
-		setExperienceValue(getExperience().getValue() - _experienceMax.getValue());
+		// Decrease experience value by experienceMax value
+		_experience.setValue(_experience.getValue() - _experienceMax.getValue());
 
-		// Update the experience required to lvl up
-		_experienceMax.setValue(HeroFormulas.calcLevelUpMaxExperience(_instance));
-
-		// Upgrade all the hero stats
-		setHpMaxValue(HeroFormulas.calcLevelUpHpMax(_instance));
-		setAttackValue(HeroFormulas.calcLevelUpAttack(_instance));
-		setDefenseValue(HeroFormulas.calcLevelUpDefense(_instance));
-
-		// Increase level & display it
+		// Increase level
 		setLevel(getLevel()+1);
+
+		// Call the calculator to re-calculate all stat of the hero after he leveled up
+		Calculator.getInstance().calculateAllStats(this);
+
 		Spacer.displayLevelUpSpacer();
-		System.out.println("\n Bravo " + getName() + ", tu as gagné un niveau !");
+		System.out.println("Bravo " + getName() + ", tu as gagné un niveau !");
 		Spacer.displayLevelUpSpacer();
 	}
 

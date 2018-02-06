@@ -88,8 +88,7 @@ public abstract class Creature
 	{
 		return _level;
 	}
-	public void setLevel(int level)
-	{
+	public void setLevel(int level) {
 		_level = level;
 	}
 
@@ -187,8 +186,8 @@ public abstract class Creature
 	public void setMpValue(double mp){
 		_mp.setValue(mp);
 	}
-	public double getMpMax(){
-		return _mpMax.getValue();
+	public Env getMpMax(){
+		return _mpMax;
 	}
 	public void setMpMax(Env mpMax){
 		_mpMax = mpMax;

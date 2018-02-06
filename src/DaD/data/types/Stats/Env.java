@@ -20,9 +20,11 @@ public class Env
 	 * @param bonus value of the bonus
 	 * @param type type of the bonus
 	 */
-	public Env(double bonus, StatType type){
+	public Env(double bonus, StatType type, Stats stat){
 		_value = bonus;
 		_type = type;
+		_stat = stat;
+		_order = getOrderByStatType(type);
 	}
 
 	/**
@@ -85,7 +87,6 @@ public class Env
 	}
 
 	// Stat
-
 	/**
 	 * Return {@link #_stat}.
 	 * @return Stats
@@ -95,7 +96,6 @@ public class Env
 	}
 
 	// Order
-
 	/**
 	 * Return order of Env.
 	 * @return int
@@ -103,7 +103,6 @@ public class Env
 	public int getOrder(){
 		return _order;
 	}
-
 	/**
 	 * Set the value of order.
 	 * @param order value to set
@@ -111,9 +110,30 @@ public class Env
 	public void setOrder(int order){
 		_order = order;
 	}
+	/**
+	 * Depending on the StatType, return an int
+	 * representing the order of the stat.
+	 * This should be fixed and never change.
+	 * @param statType Type of stat
+	 */
+	public int getOrderByStatType(StatType statType){
+		switch(statType){
+			case SET:
+				return 10;
+			case ADD:
+				return 20;
+			case SUBTRACT:
+				return 20;
+			case MULTIPLY:
+				return 30;
+			case DIVIDE:
+				return 30;
+			default: // Should not get in here, value "NONE" should not be used
+				return -1;
+		}
+	}
 
 	// Value
-
 	/**
 	 * Return value of the Env.
 	 * @return double
@@ -121,7 +141,6 @@ public class Env
 	public double getValue(){
 		return _value;
 	}
-
 	/**
 	 * Set the value of the env.
 	 * @param value value to set.
@@ -140,5 +159,34 @@ public class Env
 				"stat: " + _stat + "\n" +
 				"order: " + _order + "\n" +
 				"value: " + _value;
+	}
+
+	/**
+	 * Display all attributes in a human
+	 * readable form.
+	 */
+	public void displayEnv(){
+		String string = _stat.toString() + " ";
+		switch(_type){
+			case SET:
+				string += ("= ");
+				break;
+			case ADD:
+				string += ("+ ");
+				break;
+			case SUBTRACT:
+				string += ("- ");
+				break;
+			case MULTIPLY:
+				string += ("/ ");
+				break;
+			case DIVIDE:
+				string += ("* ");
+				break;
+			default: // Should never get here, value "NONE" should not get used !
+				return;
+		}
+		string += _value;
+		System.out.println(string);
 	}
 }

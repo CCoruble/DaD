@@ -1,14 +1,18 @@
-set 0x01 - 0x10 ou > 0x70 (0x100 pour les ultimate debuff)(édité)
-Defaut: 0x01
+Attention ici les valeurs ne 
+set 01 - 10 
+Defaut: 10
 
-add 0x10 pour les base stats et 0x31 - 0x40 (0x40 par defaut) pour le reste(édité)
-defaut: 0x10
+add 11 - 20
+defaut: 20
 
-sub 0x31 - 0x40 (0x40 par defaut)
-Defaut: 0x40
+sub 11 - 20
+Defaut: 20
 
-div 0x30 (defaut) ou 0x50 pour les total multipliers (ultra puissance)(édité)
-Defaut: 0x30
+div 21 - 30
+Defaut: 30
 
-mul 0x30 (defaut) ou 0x50 pour les total multipliers (ultra puissance)(édité)
-Defaut: 0x30
+mul 21 - 30
+Defaut: 30
+
+UltimateDebuf / UltimateBuf: 70 - 100
+Defaut: 100

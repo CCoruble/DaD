@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
 	<weapon id="1" name="Long Sword">
-		<set name="price" value="118"/>
+		<set name="price" value="220"/>
 		<set name="type" value="SWORD"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -16,7 +16,7 @@
 		</for>
 	</weapon>
 		<weapon id="2" name="Dagger">
-		<set name="price" value="118"/>
+		<set name="price" value="130"/>
 		<set name="type" value="SWORD"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -31,7 +31,7 @@
 		</for>
 	</weapon>
 	<armor id="3" name="Wooden Shield">
-		<set name="price" value="118"/>
+		<set name="price" value="100"/>
 		<set name="type" value="SHIELD"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -46,7 +46,7 @@
 		</for>
 	</armor>
 	<armor id="4" name="Iron Shield">
-		<set name="price" value="118"/>
+		<set name="price" value="240"/>
 		<set name="type" value="SHIELD"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -61,7 +61,7 @@
 		</for>
 	</armor>
 	<armor id="5" name="Banana Shield">
-		<set name="price" value="118"/>
+		<set name="price" value="240"/>
 		<set name="type" value="SHIELD"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -76,7 +76,7 @@
 		</for>
 	</armor>
 	<armor id="6" name="Steel Shield">
-		<set name="price" value="118"/>
+		<set name="price" value="300"/>
 		<set name="type" value="SHIELD"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -91,7 +91,7 @@
 		</for>
 	</armor>
 	<armor id="7" name="Steel Ring">
-		<set name="price" value="118"/>
+		<set name="price" value="100"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="3"/>
@@ -106,7 +106,7 @@
 		</for>
 	</armor>
 	<armor id="8" name="Nail Ring">
-		<set name="price" value="118"/>
+		<set name="price" value="120"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="4"/>
@@ -122,7 +122,7 @@
 		</for>
 	</armor>
 	<armor id="9" name="Beginner glove">
-		<set name="price" value="118"/>
+		<set name="price" value="30"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -137,7 +137,7 @@
 		</for>
 	</armor>
 	<armor id="10" name="Beginner Belt">
-		<set name="price" value="118"/>
+		<set name="price" value="80"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -152,7 +152,7 @@
 		</for>
 	</armor>
 	<armor id="11" name="Beginner Chestplate">
-		<set name="price" value="118"/>
+		<set name="price" value="100"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -168,7 +168,7 @@
 		</for>
 	</armor>
 	<armor id="12" name="Beginner Legs">
-		<set name="price" value="118"/>
+		<set name="price" value="60"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
@@ -183,7 +183,7 @@
 		</for>
 	</armor>
 	<armor id="13" name="Beginner Boots">
-		<set name="price" value="118"/>
+		<set name="price" value="50"/>
 		<set name="type" value="RING"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>

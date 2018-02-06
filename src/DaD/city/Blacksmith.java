@@ -115,6 +115,7 @@ public class Blacksmith
 		for(int i = 0; i < _itemTemplateIdList.length; i++){
 			ItemTemplate template = ItemHolder.getInstance().getItem(_itemTemplateIdList[i]);
 			System.out.println((i+1) + ": (" + (int)template.getPrice() +"g) "  + template.getName() + " [Lv." + template.getRequiredLevel() + "]");
+			template.displayBonus();
 		}
 		System.out.println("Autre: Quitter");
 		System.out.println("Quelle item voulez-vous acheter ?");

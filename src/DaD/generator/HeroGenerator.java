@@ -62,7 +62,7 @@ public class HeroGenerator
 			heroInformation.set("experienceMax", HeroFormulas.calcBaseMaxExperience(race,gender));
 			Env hpMax = HeroFormulas.calcBaseHpMax(race, gender);
 			heroInformation.set("hpMax", hpMax);
-			Env hp = HeroFormulas.calcBaseHpMax(race, gender);
+			Env hp = new Env(hpMax.getValue(),StatType.SET,Stats.HP);
 			heroInformation.set("hp", hp);
 			heroInformation.set("attack", HeroFormulas.calcBaseAttack(race, gender));
 			heroInformation.set("defense", HeroFormulas.calcBaseDefense(race, gender));

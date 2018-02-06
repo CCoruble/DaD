@@ -5,6 +5,8 @@ import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
 import org.w3c.dom.Node;
 
+import java.util.ArrayList;
+
 /**
  * Created by Clovis on 07/02/2017.
  * Represent the gender of hero.
@@ -81,5 +83,21 @@ public enum HeroGender
 	 */
 	public Env getExperienceMaxModifier(){
 		return _experienceMaxModifier;
+	}
+
+	/**
+	 * Return all env in an ArrayList.
+	 * @return ArrayList
+	 */
+	public ArrayList<Env> getAllEnv() {
+		ArrayList<Env> allEnv = new ArrayList<>();
+		allEnv.add(_attackModifier);
+		allEnv.add(_defenseModifier);
+		allEnv.add(_hpMaxModifier);
+		allEnv.add(_mpMaxModifier);
+		allEnv.add(_experienceModifier);
+		allEnv.add(_experienceMaxModifier);
+
+		return allEnv;
 	}
 }

@@ -1,5 +1,6 @@
 package DaD.calculator;
 
+import DaD.Debug.DebugLogger;
 import DaD.creature.Hero;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
@@ -43,74 +44,107 @@ public class Calculator implements Comparator<Env>
 	 * @param hero Hero you wants to calculate all statistics.
 	 */
 	public void calculateAllStats(Hero hero){
-		// We must calculate all stats that compose the Hero, for this we will first retrieve all stats in one List
-		// First get all bonus from his equipped items
-		ArrayList<Env> allStats = new ArrayList();
-		for (ItemInstance item : hero.getInventory().getAllEquippedItems()) {
-			allStats.addAll(item.getTemplate().getAllBonus());
+		try {
+			// We must calculate all stats that compose the Hero, for this we will first retrieve all stats in one List
+			ArrayList<Env> allStats = new ArrayList();
+
+			// FIRST get all his BASICS STATS
+			allStats.add(HeroFormulas.getBaseAttack());
+			allStats.add(HeroFormulas.getBaseDefense());
+			allStats.add(HeroFormulas.getBaseHpMax());
+			allStats.add(HeroFormulas.getBaseMpMax());
+			allStats.add(HeroFormulas.getBaseExpMax());
+
+			// Then all gender & race modifier
+			for (Env raceModifier : hero.getHeroRace().getAllEnv())
+				allStats.add(raceModifier);
+			for (Env genderModifier : hero.getHeroGender().getAllEnv())
+				allStats.add(genderModifier);
+
+			// Then for every level, LEVEL START AT 1 NOT 0
+			for (int i = 1; i < hero.getLevel(); i++) {
+				allStats.add(HeroFormulas.getAttackGainPerLevel());
+				allStats.add(HeroFormulas.getDefenseGainPerLevel());
+				allStats.add(HeroFormulas.getHpMaxGainPerLevel());
+				allStats.add(HeroFormulas.getMpMaxGainPerLevel());
+				allStats.add(HeroFormulas.getExpMaxGainPerLevel());
+			}
+
+			// All bonus from his equipped items
+			for (ItemInstance item : hero.getInventory().getAllEquippedItems()) {
+				allStats.addAll(item.getTemplate().getAllBonus());
+			}
+
+			// Once you retrieved all stats we must sort the ArrayList by order
+			sort(allStats);
+
+			// Finally calculate all the stats separately
+			// Attack
+			hero.setAttack(new Env(
+					calculateStat(getEnvByStat(allStats, Stats.ATTACK)),
+					StatType.SET,
+					Stats.ATTACK,
+					0x01
+			));
+
+			// Defense
+			hero.setDefense(new Env(
+					calculateStat(getEnvByStat(allStats, Stats.DEFENSE)),
+					StatType.SET,
+					Stats.DEFENSE,
+					0x01
+			));
+
+			// Hp_Max
+			double oldHpMaxValue = hero.getHpMax().getValue();
+			double hpMaxValue = calculateStat(getEnvByStat(allStats, Stats.HP_MAX));
+			hero.setHpMax(new Env(
+					hpMaxValue,
+					StatType.SET,
+					Stats.HP_MAX,
+					0x01
+			));
+			// This can be negative if item applied debuf on HP
+			double hpMaxValueDiff = oldHpMaxValue - hpMaxValue;
+			// Hp
+			hero.setHp(new Env(
+					hero.getHp().getValue() + hpMaxValueDiff,
+					StatType.SET,
+					Stats.HP,
+					0x01
+			));
+			/*
+			// Mp_Max
+			double oldMpMaxValue = hero.getMpMax().getValue();
+			double mpMaxValue = calculateStat(getEnvByStat(allStats, Stats.MP_MAX));
+			hero.setMpMax(new Env(
+					hpMaxValue,
+					StatType.SET,
+					Stats.MP_MAX,
+					0x10
+			));
+			// This can be negative if item applied debuf on MP
+			double mpMaxValueDiff = oldMpMaxValue - mpMaxValue;
+			// Mp
+			hero.setMp(new Env(
+					hero.getMp().getValue() + mpMaxValueDiff,
+					StatType.SET,
+					Stats.MP,
+					0x10
+			));
+			*/
+
+			// exp_Max
+			double expMaxValue = calculateStat(getEnvByStat(allStats, Stats.EXPERIENCE_MAX));
+			hero.setExperienceMax(new Env(
+					expMaxValue,
+					StatType.SET,
+					Stats.EXPERIENCE_MAX,
+					0x10
+			));
+		} catch (Exception e){
+			DebugLogger.log(e);
 		}
-
-		// Then get all his basic bonus Hp,Attack,Defense,...
-		allStats.add(HeroFormulas.calcBaseAttack(hero.getHeroRace(),hero.getHeroGender()));
-		allStats.add(HeroFormulas.calcBaseDefense(hero.getHeroRace(),hero.getHeroGender()));
-		allStats.add(HeroFormulas.calcBaseHpMax(hero.getHeroRace(),hero.getHeroGender()));
-		allStats.add(HeroFormulas.calcBaseMpMax(hero.getHeroRace(),hero.getHeroGender()));
-
-		// Once you retrieved all stats we must sort the ArrayList
-		sort(allStats);
-
-		// Finally calculate all the stats separately
-		// Attack
-		hero.setAttack(new Env(
-				calculateStat(getEnvByStat(allStats,Stats.ATTACK)),
-				StatType.SET,
-				Stats.ATTACK,
-				0x01
-		));
-
-		// Defense
-		hero.setDefense(new Env(
-				calculateStat(getEnvByStat(allStats,Stats.DEFENSE)),
-				StatType.SET,
-				Stats.DEFENSE,
-				0x01
-		));
-
-		// DO NOT FORGET about actual hp_percent, if the hero was 70% we should not give back 100% of his HP
-		// Hp_Max
-		double hpMaxValue = calculateStat(getEnvByStat(allStats,Stats.HP_MAX));
-		hero.setHpMax(new Env(
-				hpMaxValue,
-				StatType.SET,
-				Stats.HP_MAX,
-				0x01
-		));
-
-		// Hp
-		hero.setHp(new Env(
-				hpMaxValue * (Hero.getInstance().getPercentHp() / 100),
-				StatType.SET,
-				Stats.HP,
-				0x01
-		));
-
-		// DO NOT FORGET about actual Mp_percent, if the hero was 70% we should not give back 100% of his Mp
-		/* Mp_Max
-		double mpMaxValue = calculateStat(getEnvByStat(allStats,Stats.MP_MAX));
-		hero.setMpMax(new Env(
-				hpMaxValue,
-				StatType.SET,
-				Stats.MP_MAX,
-				0x10
-		));*/
-
-		/* Mp
-		hero.setMp(new Env(
-				mpMaxValue * Hero.getInstance().getPercentMp(),
-				StatType.SET,
-				Stats.MP,
-				0x10
-		));*/
 	}
 
 	/**

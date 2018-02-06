@@ -230,4 +230,13 @@ public class ItemTemplate
 		System.out.println("_equipable: " + _equipable);
 		System.out.println("_description: " + _description);
 	}
+
+	/**
+	 * Display all bonus, Env, of this template.
+	 */
+	public void displayBonus(){
+		for (Env env: _allBonus) {
+			env.displayEnv();
+		}
+	}
 }
