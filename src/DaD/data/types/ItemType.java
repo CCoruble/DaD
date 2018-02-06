@@ -7,14 +7,16 @@ package DaD.data.types;
 public enum ItemType {
 
     // RHAND
+    RHAND_DAGGER,
     SWORD,
-    DAGGER,
-    AXE,
     SPEAR,
-    LONGSWORD,
     BOW,
     // LHAND
+    LHAND_DAGGER,
     SHIELD,
+    // RLHAND
+    AXE,
+    LONGSWORD,
     // HEAD
     HELMET,
     HAT,
@@ -28,8 +30,9 @@ public enum ItemType {
     BOOTS,
     // BACK
     CAPE,
-    // L & A BRACELET (hands)
-    RING,
+    // RBRACELET OR LBRACELET
+    RHAND_RING,
+    LHAND_RING,
     // BELT
     BELT;
 

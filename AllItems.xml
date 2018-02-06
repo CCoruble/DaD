@@ -17,7 +17,7 @@
 	</gear>
 		<gear id="2" name="Dagger">
 		<set name="price" value="130"/>
-		<set name="type" value="SWORD"/>
+		<set name="type" value="RHAND_DAGGER"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="description" value="Petite dague utilisée pour tuer sournoisement ses ennemis."/>
@@ -92,7 +92,7 @@
 	</gear>
 	<gear id="7" name="Steel Ring">
 		<set name="price" value="100"/>
-		<set name="type" value="RING"/>
+		<set name="type" value="RHAND_RING"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="3"/>
 		<set name="equipSlot" value="PAPERDOLL_LBRACELET"/>
@@ -107,7 +107,7 @@
 	</gear>
 	<gear id="8" name="Nail Ring">
 		<set name="price" value="120"/>
-		<set name="type" value="RING"/>
+		<set name="type" value="LHAND_RING"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="4"/>
 		<set name="equipSlot" value="PAPERDOLL_RBRACELET"/>
@@ -123,7 +123,7 @@
 	</gear>
 	<gear id="9" name="Beginner glove">
 		<set name="price" value="30"/>
-		<set name="type" value="RING"/>
+		<set name="type" value="GLOVES"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_GLOVES"/>
@@ -138,7 +138,7 @@
 	</gear>
 	<gear id="10" name="Beginner Belt">
 		<set name="price" value="80"/>
-		<set name="type" value="RING"/>
+		<set name="type" value="BELT"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_BELT"/>
@@ -153,7 +153,7 @@
 	</gear>
 	<gear id="11" name="Beginner Chestplate">
 		<set name="price" value="100"/>
-		<set name="type" value="RING"/>
+		<set name="type" value="CHESTPLATE"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_CHEST"/>
@@ -169,7 +169,7 @@
 	</gear>
 	<gear id="12" name="Beginner Legs">
 		<set name="price" value="60"/>
-		<set name="type" value="RING"/>
+		<set name="type" value="LEGGINGS"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LEGS"/>
@@ -184,7 +184,7 @@
 	</gear>
 	<gear id="13" name="Beginner Boots">
 		<set name="price" value="50"/>
-		<set name="type" value="RING"/>
+		<set name="type" value="BOOTS"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_BOOTS"/>

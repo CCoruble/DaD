@@ -43,7 +43,7 @@ public class ItemGenerator {
                 continue;
             } else if(instance == null){
                 // First time we success
-                instance = ItemGenerator.getInstance().createItem(itemDropInfo);
+                instance = new ItemInstance(itemDropInfo.getTemplate());
             } else {
                 // We already created this item, it mean it is dropped X times so we add one stack
                 instance.addStack(1);

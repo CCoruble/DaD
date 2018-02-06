@@ -178,16 +178,14 @@ public class SaveManager
 				// Items
 				int numberOfItems = in.readInt();
 				for (int i = 0; i < numberOfItems; i++) {
-					Hero.getInstance().getInventory().addItem(
-							new ItemInstance(
-									// templateId
-									in.readInt(),
-									// Equipped
-									in.readBoolean(),
-									// Stack
-									in.readInt()
-							)
-					);
+					int templateId = in.readInt();
+					boolean isItemEquipped = in.readBoolean();
+					int stack = in.readInt();
+					ItemInstance itemInstance = new ItemInstance(templateId,stack);
+					Hero.getInstance().getInventory().addItem(itemInstance);
+					if(isItemEquipped){
+						Hero.getInstance().getInventory().equip(Hero.getInstance(),itemInstance);
+					}
 				}
 			}
 		} catch (Exception ex){

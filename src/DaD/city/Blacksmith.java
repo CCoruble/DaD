@@ -125,7 +125,7 @@ public class Blacksmith
 		try{
 			input = scanner.nextLine();
 			choice = Integer.parseInt(input);
-			// Get the template corresponding to the templateId choosen by player
+			// Get the template corresponding to the templateId chosen by player
 			buyItem(hero,ItemHolder.getInstance().getItem(_itemTemplateIdList[choice - 1]));
 
 		} catch (Exception e){
@@ -150,7 +150,7 @@ public class Blacksmith
 			hero.decreaseGold(itemTemplate.getPrice());
 			System.out.println("L'objet est maintenant dans votre inventaire!");
 		} else {
-			System.out.println("Impossible d'ajouter l'item a votre inventaire!");
+			System.out.println("Impossible d'ajouter l'item à votre inventaire!");
 		}
 	}
 

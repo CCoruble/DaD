@@ -44,7 +44,6 @@ public abstract class Inventory
 	}
 
 	//_inventorySize methods
-
 	/**
 	 * Return inventory size
 	 * @return int
@@ -52,7 +51,6 @@ public abstract class Inventory
 	public int getInventorySize(){
 		return _inventorySize;
 	}
-
 	/**
 	 * Set the value of inventory size
 	 * @param inventorySize Max amount of different items that can be stored
@@ -60,7 +58,6 @@ public abstract class Inventory
 	public void setInventorySize(int inventorySize){
 		_inventorySize = inventorySize;
 	}
-
 	/**
 	 * Increase inventory size by a certain number.
 	 * @param bonusSize Inventory space you want to add
@@ -68,7 +65,6 @@ public abstract class Inventory
 	public void increaseInventorySize(int bonusSize){
 		_inventorySize += bonusSize;
 	}
-
 	/**
 	 * Decrease inventory size by a certain number.
 	 * @param malusSize Inventory space you want to remove
@@ -76,7 +72,6 @@ public abstract class Inventory
 	public void decreaseInventorySize(int malusSize){
 		_inventorySize -= malusSize;
 	}
-
 	/**
 	 * Return amount of different items that can
 	 * be stored.
@@ -85,7 +80,6 @@ public abstract class Inventory
 	public int getInventorySizeLeft(){
 		return _inventorySize - _itemList.size();
 	}
-
 	/**
 	 * Return true if inventory is full.
 	 * <p>
@@ -99,7 +93,6 @@ public abstract class Inventory
 		// If the size of the list containing the items is higher or the same as the inventory size
 		return _itemList.size() >= _inventorySize;
 	}
-
 	/**
 	 * Return the number of different items that are stored
 	 * in this inventory.
@@ -110,7 +103,6 @@ public abstract class Inventory
 	}
 
 	//_itemList methods
-
 	/**
 	 * Return the ArrayList containing all
 	 * {@link ItemInstance}.
@@ -119,7 +111,6 @@ public abstract class Inventory
 	public ArrayList<ItemInstance> getItemList(){
 		return _itemList;
 	}
-
 	/**
 	 * Replace ArrayList containing all items
 	 * by the given one.
@@ -130,7 +121,6 @@ public abstract class Inventory
 	}
 
 	// items
-
 	/**
 	 * Add an ItemInstance to the list of items.
 	 * <p>
@@ -165,7 +155,6 @@ public abstract class Inventory
 		// By reaching this point it means we can not add this item to the inventory
 		return false;
 	}
-
 	/**
 	 * Delete an item from the list of ItemInstance
 	 * @param itemInstance Item to be removed from the list
@@ -173,7 +162,6 @@ public abstract class Inventory
 	public void deleteItem(ItemInstance itemInstance){
 		_itemList.remove(itemInstance);
 	}
-
 	/**
 	 * Return the ItemInstance equipped on this
 	 * EquipSlot, return null if there is no equipped item
@@ -184,13 +172,12 @@ public abstract class Inventory
 	public ItemInstance getEquippedItem(ItemEquipSlot equipSlot){
 		for (ItemInstance item: _itemList)
 		{
-			if(item.getTemplate().getEquiSlot() == equipSlot && item.isEquipped()){
+			if(item.getEquipSlot() == equipSlot && item.isEquipped()){
 				return item;
 			}
 		}
 		return null;
 	}
-
 	/**
 	 * Return all equipped ItemInstance in
 	 * an ArrayList.
@@ -204,7 +191,6 @@ public abstract class Inventory
 		}
 		return allEquippedItems;
 	}
-
 	/**
 	 * Return all ItemInstance that are not equipped
 	 * in an arrayList.
@@ -219,7 +205,6 @@ public abstract class Inventory
 		}
 		return allEquippedItems;
 	}
-
 	/**
 	 * Return all ItemInstance that can be equipped
 	 * in an ArrayList.
@@ -240,7 +225,6 @@ public abstract class Inventory
 		}
 		return allEquipableItems;
 	}
-
 	/**
 	 * Return all ItemInstance that are not equipped and
 	 * can be equipped in an ArrayList.
@@ -255,7 +239,6 @@ public abstract class Inventory
 		}
 		return allEquipableItems;
 	}
-
 	/**
 	 * Return all ItemInstance that can be sold in
 	 * an ArrayList.
@@ -271,8 +254,6 @@ public abstract class Inventory
 		}
 		return sellableItems;
 	}
-
-
 	/**
 	 * First display each items inventory name, stack and
 	 * if it is equipped or not. Then display golds amount.

@@ -1,5 +1,7 @@
 package DaD.item;
 
+import DaD.data.types.ItemEquipSlot;
+
 /**
  * Created by Clovis on 06/03/2017.
  * This is this instance of an item, this is what
@@ -22,14 +24,15 @@ public class ItemInstance
 	 */
 	private int _stack;
 	/**
-	 * True if the item is equipped.
-	 */
-	private Boolean _equipped;
-	/**
 	 * Template of the item instance.
 	 * @see ItemTemplate
 	 */
 	private final ItemTemplate _itemTemplate;
+	/**
+	 * Equip slot where the item should be equipped.
+	 * @see ItemEquipSlot
+	 */
+	private ItemEquipSlot _equipSlot;
 
 	/**
 	 * Constructor of class.
@@ -38,7 +41,7 @@ public class ItemInstance
 	public ItemInstance(int itemTemplateId){
 		_itemTemplate = ItemHolder.getInstance().getItem(itemTemplateId);
 		_stack = 1;
-		_equipped = false;
+		_equipSlot = ItemEquipSlot.NONE; // Item is not equipped
 	}
 
 	/**
@@ -48,18 +51,16 @@ public class ItemInstance
 	public ItemInstance(ItemTemplate itemTemplate){
 		_itemTemplate = itemTemplate;
 		_stack = 1;
-		_equipped = false;
+		_equipSlot = ItemEquipSlot.NONE; // Item is not equipped
 	}
 
 	/**
 	 * Constructor of class.
 	 * @param itemTemplateId The id of the template.
-	 * @param equipped Is the item equiped or not.
 	 * @param stack Number of item stacked.
 	 */
-	public ItemInstance(int itemTemplateId, boolean equipped, int stack){
+	public ItemInstance(int itemTemplateId, int stack){
 		_stack = stack;
-		_equipped = equipped;
 		_itemTemplate = ItemHolder.getInstance().getItem(itemTemplateId);
 	}
 
@@ -107,17 +108,28 @@ public class ItemInstance
 	}
 
 	/**
-	 * Return true if item Instance is equipped.
+	 * Return true if {@link #_equipSlot} is
+	 * different from {@link ItemEquipSlot#NONE}.
 	 * @return Boolean
 	 */
 	public Boolean isEquipped(){
-		return _equipped;
+		return (_equipSlot != ItemEquipSlot.NONE);
+	}
+
+	/**
+	 * Return attribute {@link #_equipSlot},
+	 * this represent where the item is equipped.
+	 * Value is "NONE" if item is not equipped.
+	 * @return
+	 */
+	public ItemEquipSlot getEquipSlot() {
+		return _equipSlot;
 	}
 	/**
-	 * Set the value of {@link #_equipped}.
-	 * @param equipped New value for attribute
+	 * Set the value of {@link #_equipSlot}.
+	 * @param equipSlot New value for attribute
 	 */
-	public void setEquipped(boolean equipped){
-		_equipped = equipped;
+	public void setEquipSlot(ItemEquipSlot equipSlot){
+		_equipSlot = equipSlot;
 	}
 }

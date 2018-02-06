@@ -74,11 +74,6 @@ public class ItemTemplate
 	 * Description of the item, can be short stories.
 	 */
 	private final String _description;
-	/**
-	 * Equip slot where the item should be equipped.
-	 * @see ItemEquipSlot
-	 */
-	private final ItemEquipSlot _equipSlot;
 
 	/**
 	 * The list containing all Env of the item.
@@ -100,11 +95,9 @@ public class ItemTemplate
 		_maxDurability = itemsStats.getInteger("maxDurability");
 		_weight = itemsStats.getInteger("weight");
 
-		// In the xml file "equipable" is equal to 0 or 1, depending on it we set the boolean value to true or false
 		_equipable = itemsStats.getBool("equipable");
 
 		_description = itemsStats.getString("description");
-		_equipSlot = (ItemEquipSlot) itemsStats.getEnum("equipSlot",ItemEquipSlot.class);
 		_type = (ItemType)itemsStats.getEnum("type",ItemType.class);
 
 		ArrayList<Env> allBonus = itemsStats.getArrayList("allBonus");
@@ -191,19 +184,6 @@ public class ItemTemplate
 	}
 
 	/**
-	 * Return the equipSlot of the item.
-	 * <p>
-	 *     ItemTemplate cannot be equipped and so does not really
-	 *     have an equip slot. ItemInstance base on this template
-	 *     can be equipped and will be equipped on this equip slot.
-	 * </p>
-	 * @return ItemEquipSlot
-	 */
-	public ItemEquipSlot getEquiSlot(){
-		return _equipSlot;
-	}
-
-	/**
 	 * Return the level required to equip this item.
 	 * <p>
 	 *     ItemTemplate cannot be equipped.
@@ -238,5 +218,13 @@ public class ItemTemplate
 		for (Env env: _allBonus) {
 			env.displayEnv();
 		}
+	}
+
+	/**
+	 * Return {@link #_type}.
+	 * @return ItemType
+	 */
+	public ItemType getItemType() {
+		return _type;
 	}
 }
