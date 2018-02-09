@@ -1,5 +1,6 @@
 package DaD.generator;
 
+import DaD.Debug.DebugLogger;
 import DaD.commons.MultiValueSet;
 import DaD.creature.Hero;
 import DaD.data.types.HeroGender;
@@ -8,6 +9,7 @@ import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
 import DaD.data.types.Stats.Stats;
 import DaD.formulas.HeroFormulas;
+import DaD.manager.SaveManager;
 
 import java.util.Scanner;
 
@@ -41,14 +43,17 @@ public class HeroGenerator
 	 * Set default stats of hero, also call
 	 * different function to set race, gender and name.
 	 */
-	public void createNewHero() {
+	public boolean createNewHero() {
 		try
 		{
 			// Initializing a MultiValueSet that will contain the values of the new hero
 			MultiValueSet heroInformation = new MultiValueSet();
 
 			// Setting name of hero
-			heroInformation.set("name", setupHeroName());
+			String name = setupHeroName();
+			if(name.isEmpty())
+				return false; // Player want to leave
+			heroInformation.set("name", name);
 
 			// Setting gender & race of hero
 			HeroGender gender = setupHeroGender();
@@ -75,10 +80,11 @@ public class HeroGenerator
 
 			// Set the new hero values
 			Hero.setInstance(heroInformation);
+			return true;
 		} catch(Exception e) {
-			e.printStackTrace();
+			DebugLogger.log(e);
 			System.out.println("Erreur lors de la création du personnage !");
-			System.exit(1);
+			return false;
 		}
 	}
 
@@ -89,15 +95,30 @@ public class HeroGenerator
 	private String setupHeroName(){
 		// Initializing a scanner for the player choice
 		Scanner scanner = new Scanner(System.in);
-
+		String name;
 		while(true){
-			System.out.println("Veuillez rentrer un nom de personnage :");
+			System.out.println("Veuillez rentrer un nom de personnage, 'x' pour quitter.");
 			try{
-				return scanner.next();
+				name = scanner.nextLine();
+				if(name.equals("x"))
+					return "";
+				if (isNameAvailable(name)){
+					return name;
+				} else {
+					System.out.println("Ce nom est déjà prit, veuillez en choisir un autre.");
+				}
 			} catch (Exception e){
 				System.out.println("Nom incorrect veuillez recommencer !");
 			}
 		}
+	}
+
+	private boolean isNameAvailable(String name){
+		for(String string: SaveManager.getInstance().getAllUsedName())
+			if(string.equals(name))
+				return false;
+		// If no save name match the given name, it is available
+		return true;
 	}
 
 	/**

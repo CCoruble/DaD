@@ -3,6 +3,7 @@ package DaD.inventory;
 import DaD.data.types.ItemEquipSlot;
 import DaD.item.ItemInstance;
 
+import javax.net.ssl.SSLContext;
 import java.util.ArrayList;
 
 /**
@@ -259,6 +260,8 @@ public abstract class Inventory
 	 * if it is equipped or not. Then display golds amount.
 	 */
 	public void displayInventory() {
+		if(_itemList.size() == 0)
+			System.out.println("Votre inventaire est vide!");
 		// Display all items
 		for (ItemInstance itemInstance : _itemList) {
 			if (itemInstance.isEquipped()) {

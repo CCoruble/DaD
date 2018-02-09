@@ -62,6 +62,7 @@ public class ItemInstance
 	public ItemInstance(int itemTemplateId, int stack){
 		_stack = stack;
 		_itemTemplate = ItemHolder.getInstance().getItem(itemTemplateId);
+		_equipSlot = ItemEquipSlot.NONE;
 	}
 
 	/**

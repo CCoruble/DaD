@@ -1,5 +1,6 @@
 package DaD.manager;
 
+import DaD.Debug.DebugLogger;
 import DaD.city.Bank;
 import DaD.creature.Hero;
 import DaD.data.types.HeroGender;
@@ -8,13 +9,12 @@ import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
 import DaD.data.types.Stats.Stats;
 import DaD.inventory.HeroInventory;
-import DaD.inventory.Inventory;
 import DaD.item.ItemInstance;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by Clovis on 12/05/2017.
@@ -26,12 +26,14 @@ public class SaveManager
 	 * Private instance of class.
 	 */
 	private static final SaveManager _instance = new SaveManager();
-
-	/**
-	 * Name of the file were we save game.
-	 */
-	private static final String FILE_NAME = "Save.txt"; // path from the folder root
-
+    /**
+     * Folder for all saves.
+     */
+    private static final String FOLDER_NAME = "Saves/";
+    /**
+     * Extension for save files.
+     */
+    private static final String SAVE_EXTENSION = ".txt";
 	/**
 	 * Actual version of game, this is used
 	 * to verify is version of saved game is correct.
@@ -62,7 +64,7 @@ public class SaveManager
 		ObjectOutputStream out = null;
 		try{
 			//opening the file
-			out = new ObjectOutputStream(new FileOutputStream(FILE_NAME));
+			out = new ObjectOutputStream(new FileOutputStream(FOLDER_NAME + Hero.getInstance().getName() + SAVE_EXTENSION));
 
 			//Saving
 			out.writeUTF(VERSION); // Saving the version, checking save compatibility
@@ -123,12 +125,16 @@ public class SaveManager
 	 * @return boolean Status of load process, true if successfully loaded game.
 	 */
 	public boolean load(){
-		boolean loadSuccess = true;
+	    String heroName = askSelectedSave();
+	    if(heroName.equals("")) // If empty
+	        return false; // Get out of here
 
+		boolean loadSuccess = true;
 		ObjectInputStream in = null;
+
 		try{
 			//opening the file
-			in = new ObjectInputStream(new FileInputStream(FILE_NAME));
+			in = new ObjectInputStream(new FileInputStream(FOLDER_NAME + heroName + SAVE_EXTENSION));
 
 			//Saving
 			if(!in.readUTF().equals(VERSION)) { // Checking save version
@@ -189,7 +195,7 @@ public class SaveManager
 				}
 			}
 		} catch (Exception ex){
-			ex.printStackTrace();
+			DebugLogger.log(ex);
 			loadSuccess = false;
 		}finally {
 			try{
@@ -197,7 +203,7 @@ public class SaveManager
 				in.close();
 			}
 			catch(Exception ex){
-				ex.printStackTrace();
+			    DebugLogger.log(ex);
 				loadSuccess = false;
 			}
 		}
@@ -207,4 +213,55 @@ public class SaveManager
 			System.out.println("Chargement échouée !");
 		return loadSuccess;
 	}
+
+    /**
+     * Display all available saves and
+     * ask the player to choose one.
+     * @return String
+     */
+	public String askSelectedSave(){
+	    ArrayList<String> allSaveName = getAllUsedName();
+	    if(allSaveName.size() == 0){
+	        System.out.println("Aucune sauvegarde disponible !");
+	        return "";
+        }
+        System.out.println("Quelle partie voulez-vous charger?");
+	    while(true) {
+            for (int i = 0; i < allSaveName.size(); i++) {
+                System.out.println((i + 1) + ": " + allSaveName.get(i));
+            }
+            System.out.println("Autre: quitter");
+            Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
+            String input;
+            int choice;
+            try {
+                input = scanner.next();
+                choice = Integer.parseInt(input);
+                if(choice < 1 || choice > allSaveName.size()) // He choose to quite
+                    return "";
+                return allSaveName.get(choice - 1); // Else he made a valid choice
+            } catch (Exception e){
+                DebugLogger.log(e);
+                System.out.println("Ce n'est pas un choix valide !");
+            }
+        }
+    }
+
+    /**
+     * Return an ArrayList containing all name of
+     * saves in save folder without save file extension.
+     * @return ArrayList
+     */
+	public ArrayList<String> getAllUsedName(){
+	    ArrayList<String> arrayList = new ArrayList<>();
+        File folder = new File(FOLDER_NAME);
+        File[] listOfFiles = folder.listFiles();
+
+        for (File file : listOfFiles) {
+            if (file.isFile() && file.getName().contains(SAVE_EXTENSION)) {
+                arrayList.add(file.getName().replace(SAVE_EXTENSION,""));
+            }
+        }
+        return arrayList;
+    }
 }

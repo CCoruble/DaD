@@ -87,11 +87,11 @@ public class GameManager
 
 				switch (choice) { // Action depending en the player's choice
 					case 1: // Create a new game with a new hero
-						HeroGenerator.getInstance().createNewHero(); // create a new hero with the hero generator
-						inGameMenu();
+						if(HeroGenerator.getInstance().createNewHero()) // Return true if creating hero was successful
+							inGameMenu();
 						break;
 					case 2: // Continue an existing game
-						if (SaveManager.getInstance().load()) // load() return true if the load succeed, false if the load fail
+						if (SaveManager.getInstance().load()) // load() return true if the load succeed, false other way
 							inGameMenu(); // If it's true, the load succeed, we load the main menu with the hero
 						break;
 					case 3: // Quit game
