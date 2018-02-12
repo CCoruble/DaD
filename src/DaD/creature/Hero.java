@@ -90,6 +90,14 @@ public class Hero extends Creature
 	}
 
 	/**
+	 * Call Hero constructor to reset
+	 * all Hero information.
+	 */
+	public void clearHero(){
+		_instance = new Hero();
+	}
+
+	/**
 	 * Accessor for private instance of class.
 	 * @return Hero
 	 */
@@ -168,9 +176,8 @@ public class Hero extends Creature
 	}
 
 	/**
-	 * Return string representing all
+	 * Display all
 	 * characteristics of the hero.
-	 * @return String
 	 */
 	public void displayFullCharacteristic(){
 		String string =
@@ -314,8 +321,12 @@ public class Hero extends Creature
 	 * @param item Item wish you want to know if you can unequip it.
 	 * @return boolean
 	 */
-	public boolean tryUnequip(ItemInstance item){
+	public boolean tryUnequip(ItemInstance item) {
 		// Maybe used later to prevent hero to unequip some special items (cursed / blessed / ...)
+		if (_inventory.isInventoryFull()){
+			System.out.println("Votre inventaire est plein, videz le avant de vous dé-équiper !");
+			return false;
+		}
 		_inventory.unequip(this, item);
 		return true;
 	}

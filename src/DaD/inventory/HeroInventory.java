@@ -40,31 +40,34 @@ public class HeroInventory extends Inventory{
      *     unequip it first and then equip the new one. Then we re-calculate
      *     all the stats for the hero.
      * </p>
-     * @param hero The hero who equip the item.
+     * @param hero The hero who equip the item
+     * @param itemInstance ItemInstance to equip
      * @see Calculator#calculateAllStats(Hero)
      */
-    public void equip(Hero hero, ItemInstance instance){
-        ItemInstance oldEquippedItem = hero.getInventory().getEquippedItem(instance.getEquipSlot());
-        // If there is already an equiped item on the equipSlot we unequip it
+    public void equip(Hero hero, ItemInstance itemInstance){
+        ItemInstance oldEquippedItem = hero.getInventory().getEquippedItem(itemInstance.getEquipSlot());
+        // If there is already an equipped item on the equipSlot we unequip it
         if(oldEquippedItem != null){
             setUnequipped(oldEquippedItem);
         }
         // Set the new item as equipped
-        setEquipped(instance);
+        setEquipped(itemInstance);
         // then call calculator to calculate all the new stats
         Calculator.getInstance().calculateAllStats(hero);
+        System.out.println(itemInstance.getTemplate().getName() + " est maintenant équipé !");
     }
 
     /**
-     * Make the hero unequip this item by changing his {@link ItemInstance#_equipped}
-     * value and then re-calculate his stats
-     * @param hero The hero that will unequip the item.
+     * Set item as unequip and calculate Hero stats.
+     * @param hero The hero that will unequip the item
+     * @param itemInstance Item to equip
      */
     public void unequip(Hero hero, ItemInstance itemInstance){
         // Set the item as Unequipped
         setUnequipped(itemInstance);
         // then call calculator so it calculate all the hero stat again
         Calculator.getInstance().calculateAllStats(hero);
+        System.out.println(itemInstance.getTemplate().getName() + " n'est plus équipé!");
     }
 
     /**

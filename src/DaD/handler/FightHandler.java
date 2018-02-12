@@ -53,9 +53,9 @@ public class FightHandler
 	}
 
 	/**
-	 * Initialize fight by setting attributes
-	 * values and starting the {@link #fightLoop()} function.
-	 * @param hero The hero part of the fight
+	 * Set attributes value, call {@link #fightLoop()}
+	 * and return result of {@link #endFight()} function.
+ 	 * @param hero The hero part of the fight
 	 * @param monsterList List of {@link MonsterInstance} part of the fight
 	 * @return FightExitState
 	 */
@@ -63,15 +63,15 @@ public class FightHandler
 		_hero = hero;
 		_monsterList = monsterList;
 		_turn = 0;
-		return fightLoop();
+		fightLoop();
+		return endFight();
 	}
 
 	/**
 	 * Function that call {@link #heroTurn()} and {@link #monsterTurn()}
 	 * until either hero or all monsters are dead.
-	 * @return FightExitState
 	 */
-	public FightExitState fightLoop() {
+	public void fightLoop() {
 		while (!_monsterList.isEmpty() && !_hero.isDead()) // Condition to stay is "there is still monster left" and "the hero is alive"
 		{
 			Spacer.displayFightSpacer();
@@ -86,7 +86,6 @@ public class FightHandler
 			monsterTurn();
 			Spacer.displayFightSpacer();
 		}
-		return endFight();
 	}
 
 	/**

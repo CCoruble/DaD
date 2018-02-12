@@ -121,7 +121,7 @@ public class ItemInstance
 	 * Return attribute {@link #_equipSlot},
 	 * this represent where the item is equipped.
 	 * Value is "NONE" if item is not equipped.
-	 * @return
+	 * @return ItemEquipSlot
 	 */
 	public ItemEquipSlot getEquipSlot() {
 		return _equipSlot;

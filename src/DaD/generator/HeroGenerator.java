@@ -42,6 +42,8 @@ public class HeroGenerator
 	/**
 	 * Set default stats of hero, also call
 	 * different function to set race, gender and name.
+	 * Return true if hero was successfully created.
+	 * @return boolean
 	 */
 	public boolean createNewHero() {
 		try

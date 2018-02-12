@@ -79,20 +79,14 @@ public abstract class Inventory
 	 * @return int
 	 */
 	public int getInventorySizeLeft(){
-		return _inventorySize - _itemList.size();
+		return _inventorySize - getUnequippedItemsCount();
 	}
 	/**
 	 * Return true if inventory is full.
-	 * <p>
-	 *     To verify if inventory is full we
-	 *     compare the size of {@link #_itemList}
-	 *     and {@link #_inventorySize}.
-	 * </p>
 	 * @return boolean
 	 */
 	public boolean isInventoryFull(){
-		// If the size of the list containing the items is higher or the same as the inventory size
-		return _itemList.size() >= _inventorySize;
+		return getUnequippedItemsCount() >= _inventorySize;
 	}
 	/**
 	 * Return the number of different items that are stored
@@ -103,7 +97,23 @@ public abstract class Inventory
 		return _itemList.size();
 	}
 
-	//_itemList methods
+	/**
+	 * Return number of unequipped item inventory,
+	 * this represent number of slot taken in
+	 * inventory.
+	 * @return int
+	 */
+	public int getUnequippedItemsCount(){
+		int count = 0;
+		// Count how many non-equipped items are in his inventory
+		for(ItemInstance itemInstance:_itemList){
+			// If item is unequipped
+			if(!itemInstance.isEquipped())
+				count++;
+		}
+		return count;
+	}
+
 	/**
 	 * Return the ArrayList containing all
 	 * {@link ItemInstance}.
@@ -111,14 +121,6 @@ public abstract class Inventory
 	 */
 	public ArrayList<ItemInstance> getItemList(){
 		return _itemList;
-	}
-	/**
-	 * Replace ArrayList containing all items
-	 * by the given one.
-	 * @param itemList ArrayList containing all itemInstance
-	 */
-	public void setItemList(ArrayList<ItemInstance> itemList){
-		_itemList = itemList;
 	}
 
 	// items
@@ -205,26 +207,6 @@ public abstract class Inventory
 				allEquippedItems.add(item);
 		}
 		return allEquippedItems;
-	}
-	/**
-	 * Return all ItemInstance that can be equipped
-	 * in an ArrayList.
-	 * <p>
-	 *     This does not care about already
-	 *     equipped items. If an item is equipped it
-	 *     will be returned too. Moreover if an helmet
-	 *     is equipped and you have another helmet in
-	 *     your inventory, both will be returned.
-	 * </p>
-	 * @return ArrayList
-	 */
-	public ArrayList<ItemInstance> getAllEquipableItems(){
-		ArrayList<ItemInstance> allEquipableItems = new ArrayList<>();
-		for (ItemInstance item: _itemList) {
-			if(item.getTemplate().isEquipable())
-				allEquipableItems.add(item);
-		}
-		return allEquipableItems;
 	}
 	/**
 	 * Return all ItemInstance that are not equipped and

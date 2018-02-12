@@ -50,6 +50,7 @@ public class DungeonHandler {
     /**
      * Function that makes the hero
      * choose which dungeon he wants to enter.
+     * @param hero Hero entering the dungeon
      * @return DungeonInstance
      */
     public DungeonInstance dungeonSetting(Hero hero){

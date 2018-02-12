@@ -47,11 +47,11 @@ public class ItemLoader
 	 */
 	private final ArrayList<Env> _allBonus = new ArrayList<>();
 	/**
-	 * Total of gear, weapons & armor, loaded.
+	 * Total of gear, weapons and armor, loaded.
 	 */
 	private int _gearCount = 0;
 	/**
-	 * Total of goods, usable & non usable items, loaded.
+	 * Total of goods, usable and non usable items, loaded.
 	 */
 	private int _goodsCount = 0;
 

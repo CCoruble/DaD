@@ -68,7 +68,8 @@ public class GameManager
 	 * @see SaveManager
 	 */
 	public void mainMenu(){
-		while (true)
+		boolean inMenu = true;
+		while (inMenu)
 		{
 			Scanner scanner = new Scanner(System.in);
 			String input;
@@ -95,7 +96,7 @@ public class GameManager
 							inGameMenu(); // If it's true, the load succeed, we load the main menu with the hero
 						break;
 					case 3: // Quit game
-						System.exit(0);
+						inMenu = false;
 						break;
 					default:
 						throw new Exception();
@@ -170,5 +171,6 @@ public class GameManager
 				System.out.println("Ce n'est pas un choix valide !");
 			}
 		}
+		Hero.getInstance().clearHero();
 	}
 }

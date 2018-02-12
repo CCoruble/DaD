@@ -19,6 +19,7 @@ public class Env
 	 * Constructor of class.
 	 * @param bonus value of the bonus
 	 * @param type type of the bonus
+	 * @param stat Stat of the bonus
 	 */
 	public Env(double bonus, StatType type, Stats stat){
 		_value = bonus;
@@ -115,6 +116,7 @@ public class Env
 	 * representing the order of the stat.
 	 * This should be fixed and never change.
 	 * @param statType Type of stat
+	 * @return int
 	 */
 	public int getOrderByStatType(StatType statType){
 		switch(statType){
