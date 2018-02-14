@@ -1,4 +1,4 @@
-package DaD.item;
+package DaD.Template;
 
 import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.ItemEquipSlot;
@@ -6,6 +6,7 @@ import DaD.data.types.ItemRarity;
 import DaD.data.types.ItemType;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.Stats;
+import DaD.item.ItemInstance;
 
 import java.util.ArrayList;
 

@@ -6,7 +6,7 @@ import DaD.data.types.*;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
 import DaD.data.types.Stats.Stats;
-import DaD.monster.MonsterInstance;
+import DaD.creature.MonsterInstance;
 
 import java.util.ArrayList;
 

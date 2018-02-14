@@ -1,6 +1,8 @@
 package DaD.item;
 
 import DaD.Commons.Collections.MultiValueSet;
+import DaD.Holder.ItemHolder;
+import DaD.Template.ItemTemplate;
 
 /**
  * Class used when creating monster to set their

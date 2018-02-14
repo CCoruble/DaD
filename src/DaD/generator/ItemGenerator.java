@@ -3,7 +3,7 @@ package DaD.generator;
 import DaD.Commons.Utils.RandomGenerator;
 import DaD.item.ItemDropInfo;
 import DaD.item.ItemInstance;
-import DaD.item.ItemTemplate;
+import DaD.Template.ItemTemplate;
 
 /**
  * Used to create {@link ItemInstance} from

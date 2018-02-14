@@ -1,10 +1,12 @@
-package DaD.monster;
+package DaD.Template;
 
 import DaD.Commons.Utils.RandomGenerator;
 import DaD.Commons.Collections.MultiValueSet;
+import DaD.Holder.MonsterHolder;
 import DaD.data.types.MonsterRace;
 import DaD.data.types.Stats.Env;
 import DaD.item.ItemDropInfo;
+import DaD.creature.MonsterInstance;
 
 import java.util.ArrayList;
 

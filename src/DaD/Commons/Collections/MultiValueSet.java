@@ -2,7 +2,7 @@ package DaD.Commons.Collections;
 
 import DaD.data.types.Stats.Env;
 import DaD.item.ItemDropInfo;
-import DaD.item.ItemTemplate;
+import DaD.Template.ItemTemplate;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,7 +1,10 @@
-package DaD.dungeon;
+package DaD.Holder;
 
 import DaD.Commons.Collections.MultiValueSet;
 import DaD.creature.Hero;
+import DaD.Template.DungeonTemplate;
+import gnu.trove.map.TIntObjectMap;
+import gnu.trove.map.hash.TIntObjectHashMap;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,10 +22,9 @@ public class DungeonHolder {
      */
     private static final DungeonHolder _instance = new DungeonHolder();
     /**
-     * Map containing all DungeonTemplate as value and
-     * {@link Integer} representing their id as key.
+     * Map containing all DungeonTemplate.
      */
-    private final HashMap<Integer,DungeonTemplate> _templateList =  new HashMap<>();
+    private final TIntObjectMap<DungeonTemplate> _templateList = new TIntObjectHashMap<>();
 
     /**
      * Accessor for private instance of class.
@@ -79,7 +81,7 @@ public class DungeonHolder {
      * Return the Map containing all {@link DungeonTemplate}.
      * @return Map
      */
-    public HashMap<Integer,DungeonTemplate> getTemplateList(){
+    public TIntObjectMap<DungeonTemplate> getTemplateList(){
         return _templateList;
     }
 
@@ -92,9 +94,9 @@ public class DungeonHolder {
      */
     public ArrayList<DungeonTemplate> getAvailableDungeon(Hero hero){
         ArrayList<DungeonTemplate> availableDungeons = new ArrayList<>();
-        for(Map.Entry<Integer, DungeonTemplate> entry : DungeonHolder.getInstance().getTemplateList().entrySet()) {
-            if(hero.getLevel() >= entry.getValue().getRequiredLevel())
-                availableDungeons.add(entry.getValue());
+        for(int key : getTemplateList().keys()) {
+            if(hero.getLevel() >= _templateList.get(key).getRequiredLevel())
+                availableDungeons.add(_templateList.get(key));
         }
         return availableDungeons;
     }

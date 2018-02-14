@@ -1,8 +1,8 @@
 package DaD.formulas;
 
 import DaD.data.types.MonsterRarity;
-import DaD.monster.MonsterInstance;
-import DaD.monster.MonsterTemplate;
+import DaD.creature.MonsterInstance;
+import DaD.Template.MonsterTemplate;
 
 /**
  * Created by Clovis on 09/02/2017.

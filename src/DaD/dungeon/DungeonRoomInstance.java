@@ -1,6 +1,7 @@
 package DaD.dungeon;
 
-import DaD.monster.MonsterInstance;
+import DaD.Template.DungeonRoomTemplate;
+import DaD.creature.MonsterInstance;
 
 import java.util.ArrayList;
 

@@ -1,9 +1,11 @@
 package DaD.generator;
 
 import DaD.Commons.Collections.MultiValueSet;
+import DaD.Template.DungeonRoomTemplate;
+import DaD.Template.DungeonTemplate;
 import DaD.data.types.MonsterInfo;
 import DaD.dungeon.*;
-import DaD.monster.MonsterInstance;
+import DaD.creature.MonsterInstance;
 
 import java.util.ArrayList;
 

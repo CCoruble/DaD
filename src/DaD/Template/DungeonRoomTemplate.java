@@ -1,8 +1,9 @@
-package DaD.dungeon;
+package DaD.Template;
 
 import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.MonsterInfo;
 import DaD.data.types.MonsterRarity;
+import DaD.dungeon.DungeonRoomInstance;
 
 import java.util.ArrayList;
 

@@ -1,9 +1,10 @@
 package DaD.loader;
 
 import DaD.Commons.Collections.MultiValueSet;
+import DaD.Template.ItemTemplate;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.Stats;
-import DaD.item.ItemHolder;
+import DaD.Holder.ItemHolder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -22,7 +23,7 @@ import java.util.HashMap;
  * Created by Clovis on 29/05/2017.
  * Singleton used to load the races information out of
  * the race configuration file.
- * @see DaD.item.ItemTemplate
+ * @see ItemTemplate
  * @see DaD.loader
  */
 public class ItemLoader
@@ -71,7 +72,7 @@ public class ItemLoader
 
 	/**
 	 * Loading function that browse configuration file
-	 * to find node containing {@link DaD.item.ItemTemplate} information.
+	 * to find node containing {@link ItemTemplate} information.
 	 * <p>
 	 *     Depending on the type of items we
 	 *     will call {@link #encodeGoods(Node) encode Goods} or
@@ -131,7 +132,7 @@ public class ItemLoader
 	 * Function called by loadItems to create a weapon from the retrieved
 	 * information in the configuration file.
 	 * @param actualNode Node of the XML file where the weapon information start.
-	 * @see DaD.item.ItemTemplate
+	 * @see ItemTemplate
 	 */
 	private void encodeGear(Node actualNode){
 		NodeList childNodeList = actualNode.getChildNodes();
@@ -163,7 +164,7 @@ public class ItemLoader
 	 * Function called by loadItems to create a armor from the retrieved
 	 * information in the configuration file.
 	 * @param actualNode Node of the XML file where the armor information start.
-	 * @see DaD.item.ItemTemplate
+	 * @see ItemTemplate
 	 */
 	private void encodeGoods(Node actualNode){
 		NodeList childNodeList = actualNode.getChildNodes();

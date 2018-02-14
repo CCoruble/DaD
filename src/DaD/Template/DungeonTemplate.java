@@ -1,6 +1,7 @@
-package DaD.dungeon;
+package DaD.Template;
 
 import DaD.Commons.Collections.MultiValueSet;
+import DaD.dungeon.DungeonInstance;
 
 import java.util.ArrayList;
 

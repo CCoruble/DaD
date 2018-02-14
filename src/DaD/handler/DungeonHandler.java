@@ -1,6 +1,9 @@
 package DaD.handler;
 
 import DaD.Commons.Utils.InputFunction;
+import DaD.Holder.DungeonHolder;
+import DaD.Template.DungeonRoomTemplate;
+import DaD.Template.DungeonTemplate;
 import DaD.creature.Hero;
 import DaD.data.types.DungeonExitState;
 import DaD.data.types.FightExitState;

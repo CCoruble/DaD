@@ -5,10 +5,9 @@ import DaD.Commons.Utils.Spacer;
 import DaD.creature.Hero;
 import DaD.data.types.FightExitState;
 import DaD.data.types.HeroDeathReason;
-import DaD.monster.MonsterInstance;
+import DaD.creature.MonsterInstance;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by Clovis on 09/02/2017.

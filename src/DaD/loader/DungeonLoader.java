@@ -1,7 +1,9 @@
 package DaD.loader;
 
 import DaD.Commons.Collections.MultiValueSet;
-import DaD.dungeon.DungeonHolder;
+import DaD.Holder.DungeonHolder;
+import DaD.Template.DungeonRoomTemplate;
+import DaD.Template.DungeonTemplate;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -19,7 +21,7 @@ import java.util.ArrayList;
  * Singleton used to load the dungeon information out of
  * the dungeon file.
  * @see DungeonHolder
- * @see DaD.dungeon.DungeonTemplate
+ * @see DungeonTemplate
  */
 public class DungeonLoader {
     /**
@@ -59,7 +61,7 @@ public class DungeonLoader {
      *     For each node corresponding to a dungeon information, we
      *     will call the function {@link #encodeDungeons(Node) encodeDungeons}
      *     to retrieve information from the node.
-     *     When information are finally retrieved, we create a {@link DaD.dungeon.DungeonTemplate dungeonTemplate}
+     *     When information are finally retrieved, we create a {@link DungeonTemplate dungeonTemplate}
      * </p>
      * @throws Exception If we reach end of file too early of read a malformated information.
      */
@@ -101,13 +103,13 @@ public class DungeonLoader {
      * <p>
      *     The node used here represent the parent node for all the
      *     dungeon information. For each sub-node corresponding to a
-     *     {@link DaD.dungeon.DungeonRoomTemplate dungeonRoom} information,
+     *     {@link DungeonRoomTemplate dungeonRoom} information,
      *     we call the function {@link #extractRoom(Node) extractRoom}.
-     *     When information are retrieved, we create a {@link DaD.dungeon.DungeonRoomTemplate}
+     *     When information are retrieved, we create a {@link DungeonRoomTemplate}
      *     and add it to the list of rooms of this dungeon.
      * </p>
      * @param actualNode Node of the XML file where the dungeon information start.
-     * @see DaD.dungeon.DungeonTemplate
+     * @see DungeonTemplate
      * @see DaD.generator.DungeonGenerator
      */
     private void encodeDungeons(Node actualNode){
@@ -156,7 +158,7 @@ public class DungeonLoader {
      * </p>
      * @param roomNode Node of the XML file where the room information start.
      * @return MultiValueSet
-     * @see DaD.dungeon.DungeonRoomTemplate
+     * @see DungeonRoomTemplate
      */
     private MultiValueSet extractRoom(Node roomNode){
         // Here node is <room></room>

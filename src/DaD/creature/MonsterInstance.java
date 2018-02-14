@@ -1,7 +1,9 @@
-package DaD.monster;
+package DaD.creature;
 
 import DaD.Commons.Collections.MultiValueSet;
 import DaD.Commons.Utils.RandomGenerator;
+import DaD.Holder.MonsterHolder;
+import DaD.Template.MonsterTemplate;
 import DaD.creature.Creature;
 import DaD.creature.Hero;
 import DaD.creature.Npc;

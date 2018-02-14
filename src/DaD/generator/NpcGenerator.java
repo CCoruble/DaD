@@ -8,9 +8,9 @@ import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
 import DaD.data.types.Stats.Stats;
 import DaD.formulas.MonsterFormulas;
-import DaD.monster.MonsterHolder;
-import DaD.monster.MonsterInstance;
-import DaD.monster.MonsterTemplate;
+import DaD.Holder.MonsterHolder;
+import DaD.creature.MonsterInstance;
+import DaD.Template.MonsterTemplate;
 
 /**
  * Created by Clovis on 08/02/2017.

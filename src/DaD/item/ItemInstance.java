@@ -1,5 +1,8 @@
 package DaD.item;
 
+import DaD.Holder.ItemHolder;
+import DaD.Template.ItemTemplate;
+
 /**
  * Created by Clovis on 06/03/2017.
  * This is this instance of an item, this is what

@@ -1,5 +1,8 @@
 package DaD.data.types;
 
+import DaD.Template.MonsterTemplate;
+import DaD.creature.MonsterInstance;
+
 /**
  * Created by Clovis on 27/09/2017.
  * Represent the necessary information
@@ -8,15 +11,15 @@ package DaD.data.types;
 public class MonsterInfo
 {
 	/**
-	 * Id of the{@link DaD.monster.MonsterTemplate}.
+	 * Id of the{@link MonsterTemplate}.
 	 */
 	private final int _id;
 	/**
-	 * Level of the future {@link DaD.monster.MonsterInstance}.
+	 * Level of the future {@link MonsterInstance}.
 	 */
 	private final int _level;
 	/**
-	 * Rarity of the future {@link DaD.monster.MonsterInstance}.
+	 * Rarity of the future {@link MonsterInstance}.
 	 */
 	private final MonsterRarity _rarity;
 

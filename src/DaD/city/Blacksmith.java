@@ -2,14 +2,11 @@ package DaD.city;
 
 import DaD.Commons.Utils.InputFunction;
 import DaD.creature.Hero;
-import DaD.item.ItemHolder;
+import DaD.Holder.ItemHolder;
 import DaD.item.ItemInstance;
-import DaD.item.ItemTemplate;
+import DaD.Template.ItemTemplate;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * Created by Clovis on 09/02/2017.

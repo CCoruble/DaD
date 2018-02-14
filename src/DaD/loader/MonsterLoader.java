@@ -1,11 +1,12 @@
 package DaD.loader;
 
 import DaD.Commons.Collections.MultiValueSet;
+import DaD.Template.MonsterTemplate;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
 import DaD.data.types.Stats.Stats;
 import DaD.item.ItemDropInfo;
-import DaD.monster.MonsterHolder;
+import DaD.Holder.MonsterHolder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
  * Created by Clovis on 09/06/2017.
  * Singleton used to load the monster template information out of
  * the monster configuration file.
- * @see DaD.monster.MonsterTemplate
+ * @see MonsterTemplate
  * @see DaD.loader
  */
 public class MonsterLoader
@@ -72,7 +73,7 @@ public class MonsterLoader
 	/**
 	 * 	/**
 	 * Loading function that browse configuration file
-	 * to find node containing {@link DaD.monster.MonsterTemplate} information.
+	 * to find node containing {@link MonsterTemplate} information.
 	 * @throws Exception If a monster with an ID that already exists is loaded.
 	 */
 	public void loadMonsters() throws Exception{
@@ -111,7 +112,7 @@ public class MonsterLoader
 	 * Function called by {@link #loadMonsters()} to create a monster template
 	 * from the retrieved information in the configuration file.
 	 * @param actualNode Node of the XML file where the monster template information start.
-	 * @see DaD.monster.MonsterTemplate
+	 * @see MonsterTemplate
 	 */
 	private void encodeMonsters(Node actualNode) {
 		ArrayList<ItemDropInfo> itemDropInfoList = new ArrayList();

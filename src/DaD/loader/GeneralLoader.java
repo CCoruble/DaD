@@ -2,10 +2,10 @@ package DaD.loader;
 
 import DaD.Debug.DebugLogger;
 import DaD.Commons.Utils.Spacer;
-import DaD.dungeon.DungeonHolder;
-import DaD.item.ItemHolder;
+import DaD.Holder.DungeonHolder;
+import DaD.Holder.ItemHolder;
 import DaD.manager.GameManager;
-import DaD.monster.MonsterHolder;
+import DaD.Holder.MonsterHolder;
 /**
  * Singleton used to launch all
  * loader in a specific order.
