@@ -234,7 +234,7 @@ public abstract class Inventory
 			}
 			// This represent the number of stack that will set for the new item
 			int addedAmount = Math.min(itemInstance.getStack(),itemInstance.getTemplate().getMaxStack());
-			addItem(new ItemInstance(itemInstance.getTemplate().getId(),addedAmount));
+			_itemList.add(new ItemInstance(itemInstance.getTemplate().getId(),itemInstance.isEquipped(),addedAmount));
 			itemInstance.removeStack(addedAmount);
 		}
 		return itemInstance.getStack();

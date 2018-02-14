@@ -5,8 +5,6 @@ import DaD.item.ItemDropInfo;
 import DaD.item.ItemInstance;
 import DaD.item.ItemTemplate;
 
-import java.util.ArrayList;
-
 /**
  * Used to create {@link ItemInstance} from
  * given {@link ItemDropInfo}
@@ -38,14 +36,12 @@ public class ItemGenerator {
      * @return ItemInstance
      */
     public ItemInstance createItem(ItemDropInfo itemDropInfo){
-        ArrayList<ItemInstance> itemList = new ArrayList<>();
         ItemInstance instance = null;
         for (int i = 0; i < itemDropInfo.getMaxDrop(); i++) {
             // Each item has a chance to be dropped, we test if the item is successfully dropped
             boolean success = RandomGenerator.RNG(itemDropInfo.getDropRate());
-            // RNG was favorable ?
+            // If RNG is success
             if (success) {
-                // Yes RNG was favorable
                 if (instance == null) {
                     // First time we success
                     instance = new ItemInstance(itemDropInfo.getTemplate());
