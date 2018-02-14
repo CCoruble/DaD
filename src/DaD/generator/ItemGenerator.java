@@ -1,8 +1,12 @@
 package DaD.generator;
 
-import DaD.commons.RandomGenerator;
+import DaD.Commons.Utils.RandomGenerator;
 import DaD.item.ItemDropInfo;
 import DaD.item.ItemInstance;
+import DaD.item.ItemTemplate;
+
+import java.util.ArrayList;
+
 /**
  * Used to create {@link ItemInstance} from
  * given {@link ItemDropInfo}
@@ -28,25 +32,27 @@ public class ItemGenerator {
     }
 
     /**
-     * Call {@link ItemInstance#ItemInstance(int)} and
+     * Call {@link ItemInstance#ItemInstance(ItemTemplate)} and
      * return the ItemInstance created.
      * @param itemDropInfo Information about the item.
      * @return ItemInstance
      */
     public ItemInstance createItem(ItemDropInfo itemDropInfo){
+        ArrayList<ItemInstance> itemList = new ArrayList<>();
         ItemInstance instance = null;
         for (int i = 0; i < itemDropInfo.getMaxDrop(); i++) {
             // Each item has a chance to be dropped, we test if the item is successfully dropped
             boolean success = RandomGenerator.RNG(itemDropInfo.getDropRate());
-            // If the item fail to be dropped we just continue
-            if (!success) {
-                continue;
-            } else if(instance == null){
-                // First time we success
-                instance = new ItemInstance(itemDropInfo.getTemplate());
-            } else {
-                // We already created this item, it mean it is dropped X times so we add one stack
-                instance.addStack(1);
+            // RNG was favorable ?
+            if (success) {
+                // Yes RNG was favorable
+                if (instance == null) {
+                    // First time we success
+                    instance = new ItemInstance(itemDropInfo.getTemplate());
+                } else {
+                    // We already created this item, it mean it is dropped X times so we add one stack
+                    instance.addStack(1);
+                }
             }
         }
         return instance;

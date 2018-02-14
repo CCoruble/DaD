@@ -1,7 +1,7 @@
 package DaD.monster;
 
-import DaD.commons.MultiValueSet;
-import DaD.commons.RandomGenerator;
+import DaD.Commons.Collections.MultiValueSet;
+import DaD.Commons.Utils.RandomGenerator;
 import DaD.creature.Creature;
 import DaD.creature.Hero;
 import DaD.creature.Npc;
@@ -11,7 +11,6 @@ import DaD.formulas.HeroFormulas;
 import DaD.generator.ItemGenerator;
 import DaD.item.ItemDropInfo;
 import DaD.item.ItemInstance;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 
@@ -77,7 +76,6 @@ public class MonsterInstance extends Npc
 			Hero hero = (Hero)killer;
 			double experience = HeroFormulas.calcExperienceGained(hero,this);
 			hero.addExperience(experience);
-			hero.addGold(getGold());
 			dropItems(hero);
 		}
 	}

@@ -1,6 +1,6 @@
 package DaD.creature;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.Stats.Env;
 import DaD.formulas.FightFormulas;
 
@@ -20,7 +20,6 @@ public abstract class Creature
 	private Env _hpMax;
 	private Env _attack;
 	private Env _defense;
-	private double _gold;
 	private Env _mp;
 	private Env _mpMax;
 	// Add _spell, _critsChance, _dodge ...
@@ -45,7 +44,6 @@ public abstract class Creature
 		_hp = stats.getEnv("hp");
 		_mpMax = stats.getEnv("mpMax");
 		_mp = stats.getEnv("mp");
-		_gold = stats.getDouble("gold");
 	}
 
 	/**
@@ -62,7 +60,7 @@ public abstract class Creature
 	 */
 	public int attack(Creature receiver){
 		int damageDealt = FightFormulas.calcDamageDealt(this, receiver);
-		receiver.setHpValue(Math.max(receiver.getHp().getValue() - damageDealt, 0));
+		receiver.removeHp(damageDealt);
 		return damageDealt;
 	}
 
@@ -133,12 +131,11 @@ public abstract class Creature
 	public void setHp(Env hp){
 		_hp =  hp;
 	}
-	public void setHpValue(double hp)
-	{
-		_hp.setValue(Math.min(hp,_hpMax.getValue()));
-	}
 	public void addHp(double hp){
-		_hp.setValue(_hp.getValue() + hp);
+		_hp.setValue(Math.min(_hp.getValue() + hp, _hpMax.getValue()));
+	}
+	public void removeHp(double hpLost){
+		_hp.setValue(Math.max(_hp.getValue() - hpLost,0));
 	}
 	public double getPercentHp(){
 		return (_hp.getValue() /_hpMax.getValue()) * 100;
@@ -159,21 +156,6 @@ public abstract class Creature
 	public void addHpMax(double hpMax){
 		_hpMax.setValue(_hpMax.getValue() + hpMax);
 	}
-
-	//Gold
-	public double getGold(){
-		return _gold;
-	}
-	public void setGold(double gold){
-		_gold = gold;
-	}
-	public void addGold(double gold){
-		_gold += gold;
-	}
-	public void decreaseGold(double gold){
-		_gold -= gold;
-	}
-
 
 	// MP
 	public Env getMp(){

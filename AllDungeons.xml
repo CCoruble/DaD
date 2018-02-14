@@ -4,7 +4,6 @@
 		<set name="difficulty" value="1"/>
 		<set name="requiredLevel" value="0"/>
 		<rewardList>
-			<set name="goldReward" value="15"/>
 			<set name="experienceReward" value="10"/>
 		</rewardList>
 		<roomList>
@@ -33,9 +32,7 @@
 		<set name="difficulty" value="2"/>
 		<set name="requiredLevel" value="2"/>
 		<rewardList>
-			<set name="goldReward" value="25"/>
 			<set name="experienceReward" value="30"/>
-			
 		</rewardList>
 		<roomList>
 			<room id="1">
@@ -80,7 +77,6 @@
 		<set name="difficulty" value="3"/>
 		<set name="requiredLevel" value="5"/>
 		<rewardList>
-			<set name="goldReward" value="50"/>
 			<set name="experienceReward" value="50"/>
 		</rewardList>
 		<roomList>

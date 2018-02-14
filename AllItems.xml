@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<gear id="1" name="Long Sword">
-		<set name="price" value="220"/>
-		<set name="type" value="SWORD"/>
+	<item id="1" name="Gold">
+		<set name="price" value="1"/>
+		<set name="itemType" value="ETC"/>
+		<set name="weight" value="1"/>
+		<set name="requiredLevel" value="0"/>
+		<set name="description" value="Pièce de monnaie marqué d'une tête de faucon."/>
+		<set name="equipSlot" value="NONE"/>
+		<set name="maxStack" value="-1"/>
+		<set name="maxDurability" value="0"/>
+		<set name="rarity" value="1"/>
+		<set name="equipable" value="false"/>
+		<set name="sellable" value="false"/>
+		<for>
+		</for>
+	</item>
+	<item id="2" name="Long Sword">
+		<set name="price" value="130"/>
+		<set name="itemType" value="WEAPON"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="description" value="Epée longue utilisé dans les combats médiévaux."/>
@@ -11,13 +26,14 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<for>
 			<add order="10" stat="attack" value="6"/>
 		</for>
-	</gear>
-		<gear id="2" name="Dagger">
-		<set name="price" value="130"/>
-		<set name="type" value="RHAND_DAGGER"/>
+	</item>
+	<item id="3" name="Dagger">
+		<set name="price" value="100"/>
+		<set name="itemType" value="WEAPON"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="description" value="Petite dague utilisée pour tuer sournoisement ses ennemis."/>
@@ -26,13 +42,14 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<for>
 			<add order="10" stat="attack" value="4"/>
 		</for>
-	</gear>
-	<gear id="3" name="Wooden Shield">
+	</item>
+	<item id="4" name="Wooden shield">
 		<set name="price" value="100"/>
-		<set name="type" value="SHIELD"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
@@ -40,14 +57,15 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Bouclier en bois basique."/>
 		<for>
 			<add order="10" stat="defense" value="3"/>
 		</for>
-	</gear>
-	<gear id="4" name="Iron Shield">
+	</item>
+	<item id="5" name="Iron shield">
 		<set name="price" value="240"/>
-		<set name="type" value="SHIELD"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
@@ -55,14 +73,15 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Bouclier en fer, robuste même contre les marteaux."/>
 		<for>
 			<add order="10" stat="defense" value="6"/>
 		</for>
-	</gear>
-	<gear id="5" name="Banana Shield">
+	</item>
+	<item id="6" name="Banana shield">
 		<set name="price" value="240"/>
-		<set name="type" value="SHIELD"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
@@ -70,14 +89,15 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="C'est une banane ... bouclier ?!"/>
 		<for>
 			<add order="10" stat="defense" value="6"/>
 		</for>
-	</gear>
-	<gear id="6" name="Steel Shield">
+	</item>
+	<item id="7" name="Steel shield">
 		<set name="price" value="300"/>
-		<set name="type" value="SHIELD"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
@@ -85,14 +105,15 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Un robuste bouclier d'acier."/>
 		<for>
 			<add order="10" stat="defense" value="10"/>
 		</for>
-	</gear>
-	<gear id="7" name="Steel Ring">
+	</item>
+	<item id="8" name="Steel Ring">
 		<set name="price" value="100"/>
-		<set name="type" value="RHAND_RING"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="3"/>
 		<set name="equipSlot" value="PAPERDOLL_LBRACELET"/>
@@ -100,14 +121,15 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Un anneau forgé dans l'acier."/>
 		<for>
 			<add order="10" stat="defense" value="5"/>
 		</for>
-	</gear>
-	<gear id="8" name="Nail Ring">
+	</item>
+	<item id="9" name="Nail Ring">
 		<set name="price" value="120"/>
-		<set name="type" value="LHAND_RING"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="4"/>
 		<set name="equipSlot" value="PAPERDOLL_RBRACELET"/>
@@ -115,15 +137,16 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Cela ressembles à un cercle de clous fondus."/>
 		<for>
 			<add order="10" stat="defense" value="3"/>
 			<add order="10" stat="attack" value="3"/>
 		</for>
-	</gear>
-	<gear id="9" name="Beginner glove">
+	</item>
+	<item id="10" name="Beginner glove">
 		<set name="price" value="30"/>
-		<set name="type" value="GLOVES"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_GLOVES"/>
@@ -131,14 +154,15 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Des vieux gants troués."/>
 		<for>
 			<add order="10" stat="defense" value="1"/>
 		</for>
-	</gear>
-	<gear id="10" name="Beginner Belt">
+	</item>
+	<item id="11" name="Beginner Belt">
 		<set name="price" value="80"/>
-		<set name="type" value="BELT"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_BELT"/>
@@ -146,14 +170,15 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Une ceinture de cuir."/>
 		<for>
 			<add order="10" stat="hp_max" value="10"/>
 		</for>
-	</gear>
-	<gear id="11" name="Beginner Chestplate">
+	</item>
+	<item id="12" name="Beginner Chestplate">
 		<set name="price" value="100"/>
-		<set name="type" value="CHESTPLATE"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_CHEST"/>
@@ -161,15 +186,16 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Une armure brillante."/>
 		<for>
 			<add order="10" stat="defense" value="3"/>
 			<add order="10" stat="hp_max" value="5"/>
 		</for>
-	</gear>
-	<gear id="12" name="Beginner Legs">
+	</item>
+	<item id="13" name="Beginner Legs">
 		<set name="price" value="60"/>
-		<set name="type" value="LEGGINGS"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LEGS"/>
@@ -177,14 +203,15 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Un pantalon en cuir solide."/>
 		<for>
 			<add order="10" stat="defense" value="4"/>
 		</for>
-	</gear>
-	<gear id="13" name="Beginner Boots">
+	</item>
+	<item id="14" name="Beginner Boots">
 		<set name="price" value="50"/>
-		<set name="type" value="BOOTS"/>
+		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_BOOTS"/>
@@ -192,9 +219,10 @@
 		<set name="maxDurability" value="60"/>
 		<set name="rarity" value="1"/>
 		<set name="equipable" value="true"/>
+		<set name="sellable" value="true"/>
 		<set name="description" value="Une paire de bottes standard."/>
 		<for>
 			<add order="10" stat="defense" value="2"/>
 		</for>
-	</gear>
+	</item>
 </list>

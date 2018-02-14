@@ -1,6 +1,7 @@
 package DaD.manager;
 
 import DaD.Debug.DebugLogger;
+import DaD.Commons.Utils.InputFunction;
 import DaD.creature.Hero;
 import DaD.item.ItemInstance;
 
@@ -46,36 +47,27 @@ public class InventoryManager
      * @param hero The hero you want to access inventory menu.
      */
     public void inventoryMenu(Hero hero){
-        Scanner scanner = new Scanner(System.in);
-        String input;
-        int choice;
-
-        while(true) {
+        boolean stay = true;
+        while(stay) {
             System.out.println("Que souhaites-tu faire ?");
             for (int i = 0; i < _iventoryOptions.length; i++) {
                 System.out.println(i + 1 + ": " + _iventoryOptions[i]);
             }
-            try {
-                input = scanner.next();
-                choice = Integer.parseInt(input);
-
-                switch (choice) { // Action depending en the player's choice
-                    case 1:
-                        hero.getInventory().displayInventory();
-                        break;
-                    case 2:
-                        equipItem(hero);
-                        break;
-                    case 3:
-                        unequipItem(hero);
-                        break;
-                    case 4: // quite
-                        return;
-                    default:
-                        throw new Exception();
-                }
-            } catch (Exception e){
-                System.out.println("Ce n'est pas un choix valide!");
+            switch (InputFunction.getIntInput()) { // Action depending en the player's choice
+                case 1:
+                    hero.getInventory().displayInventory();
+                    break;
+                case 2:
+                    equipItem(hero);
+                    break;
+                case 3:
+                    unequipItem(hero);
+                    break;
+                case 4: // quite
+                    stay = false;
+                    break;
+                default:
+                    System.out.println("Ce n'est pas un choix valide!");
             }
         }
     }
@@ -106,29 +98,22 @@ public class InventoryManager
             System.out.println(count + ": " + itemInstance.getTemplate().getName());
             count++;
         }
-
+        System.out.println("Autre: Quitter");
         System.out.println("Quelle item voulez-vous equiper ?");
-        Scanner scanner = new Scanner(System.in);
-        String input;
-        int choice;
-        try{
-            input = scanner.next();
-            choice = Integer.parseInt(input);
-            // If this is not a valid choice
-            if (choice > allEquipableUnequipedItems.size() || choice < 0){
-                throw new Exception();
-            } else { // this is a valid choice
-                // When displaying the choice, it start at 1 but in the array index start at 0
-                if(hero.tryEquip(allEquipableUnequipedItems.get(choice - 1))){
-                    // Try Equip can return false if the hero doesn't fulfill the requirements (level, ...)
-                    System.out.println("Item equipe !");
-                }else {
-                    System.out.println("Impossible d'equiper l'item !");
-                }
-            }
-        } catch (Exception e){
-            DebugLogger.log(e);
-            System.out.println("Ce n'est pas un choix valide!");
+
+        // Retrieve player choice
+        int choice = InputFunction.getIntInput();
+
+        // If this is not a valid choice, player wants to leave
+        if (choice <= 0 ||choice > allEquipableUnequipedItems.size())
+            return;
+
+        // When displaying the choice, it start at 1 but in the array index start at 0
+        if(hero.tryEquip(allEquipableUnequipedItems.get(choice - 1))){
+            // Try Equip can return false if the hero doesn't fulfill the requirements (level, Special itemType, ...)
+            System.out.println("Item equipé !");
+        }else {
+            System.out.println("Impossible d'equiper l'item !");
         }
     }
 
@@ -152,22 +137,23 @@ public class InventoryManager
             System.out.println(count + ": " + itemInstance.getTemplate().getName());
             count++;
         }
-
+        System.out.println("Autre: Quitter");
         System.out.println("Quelle item voulez-vous enlever ?");
-        Scanner scanner = new Scanner(System.in);
-        String input;
-        int choice;
-        try{
-            input = scanner.next();
-            choice = Integer.parseInt(input);
-            // If this is not a valid choice
-            if (choice > allEquipedItems.size() || choice < 0){
-                throw new Exception();
-            } else { // this is a valid choice
-                hero.tryUnequip(allEquipedItems.get(choice - 1));
-            }
-        } catch (Exception e){
-            System.out.println("Ce n'est pas un choix valide!");
+
+        // Retrieve player choice
+        int choice = InputFunction.getIntInput();
+
+        // If this is not a valid choice, player wants to leave
+        if (choice <= 0 || choice > allEquipedItems.size())
+            return;
+
+        // this is a valid choice, displayed choices start at 1 but array index start at 0
+        if(hero.tryUnequip(allEquipedItems.get(choice - 1))){
+            // Hero successfully unequipped item
+            System.out.println("Item déséquipé!");
+        } else {
+            // Hero failed to unequip item, inventory can be full
+            System.out.println("Impossible de déséquiper l'item !");
         }
     }
 }

@@ -1,6 +1,6 @@
 package DaD.loader;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.HeroRace;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;

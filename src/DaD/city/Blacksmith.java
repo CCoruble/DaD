@@ -1,11 +1,15 @@
 package DaD.city;
 
+import DaD.Commons.Utils.InputFunction;
 import DaD.creature.Hero;
 import DaD.item.ItemHolder;
 import DaD.item.ItemInstance;
 import DaD.item.ItemTemplate;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Created by Clovis on 09/02/2017.
@@ -23,16 +27,16 @@ public class Blacksmith
 	 * corresponding to items that the
 	 * blacksmith sells.
 	 */
-	private int _itemTemplateIdList[];
+	private ArrayList<Integer> _itemTemplateIdList = new ArrayList<>();
 	/**
 	 * All possible choices for the hero
 	 */
-	private static final String[] _options = {"Acheter des objets","Vendre des objets","Quitter le shop"};
+	private static final String[] _options = {"Acheter des objets","Vendre des objets"};
 	/**
 	 * Sell rate, when selling an item
 	 * we apply this sell rate to reduce the price.
 	 */
-	private final double _sellRate = 0.7;
+	private final double _sellRate = 0.6;
 
 	/**
 	 * Constructor of class.
@@ -56,32 +60,22 @@ public class Blacksmith
 		// First call this method to charge / change / update the inventory of the blacksmith
 		initializeBlacksmithInventory(hero);
 
-		boolean stayInShop = true;
-		Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
 		System.out.println("Que veux-tu faire ?");
 
-		while(stayInShop) {
-			//Display all options to the player
-			for (int i = 0; i < _options.length; i++) {
-				System.out.println((i + 1) + " : " + _options[i]);
-			}
-			try {
-				int choice; // Variable that represent the player's choice
-				choice = scanner.nextInt(); // Get the player's choice
-				switch (choice) {
-					case 1:
-						buyItemsMenu(hero);
-						break;
-					case 2:
-						sellItemsMenu(hero);
-						break;
-					case 3:
-						stayInShop = false;
-						break;
-				}
-			}catch (Exception e){
-				System.out.println("Ce n'est pas un choix valide.");
-			}
+		//Display all options to the player
+		for (int i = 0; i < _options.length; i++) {
+			System.out.println((i + 1) + " : " + _options[i]);
+		}
+		System.out.println("Autre: Quitter");
+		switch (InputFunction.getIntInput()) {
+			case 1:
+				buyItemsMenu(hero);
+				break;
+			case 2:
+				sellItemsMenu(hero);
+				break;
+			default:
+				// Nothing, player just want to leave
 		}
 	}
 
@@ -91,13 +85,14 @@ public class Blacksmith
 	 * @param hero Hero entering the black smith menu
 	 */
 	private void initializeBlacksmithInventory(Hero hero){
-		// Later rework this to add full set of items to the list depending on the hero level.
+		// Clear old id in it
+		_itemTemplateIdList.clear();
+		// Add item depending on hero level
 		if(hero.getLevel() < 10){
-			_itemTemplateIdList = new int[4];
-			_itemTemplateIdList[0] = 9;
-			_itemTemplateIdList[1] = 10;
-			_itemTemplateIdList[2] = 11;
-			_itemTemplateIdList[3] = 12;
+			_itemTemplateIdList.add(10);
+			_itemTemplateIdList.add(11);
+			_itemTemplateIdList.add(12);
+			_itemTemplateIdList.add(13);
 		} else if(hero.getLevel() < 20) {
 			// Add higher level items here
 		} else {
@@ -112,25 +107,18 @@ public class Blacksmith
 	 */
 	private void buyItemsMenu(Hero hero){
 		System.out.println("Voici la liste des objets en vente:");
-		for(int i = 0; i < _itemTemplateIdList.length; i++){
-			ItemTemplate template = ItemHolder.getInstance().getItem(_itemTemplateIdList[i]);
+		for(int i = 0; i < _itemTemplateIdList.size(); i++){
+			ItemTemplate template = ItemHolder.getInstance().getItem(_itemTemplateIdList.get(i));
 			System.out.println((i+1) + ": (" + (int)template.getPrice() +"g) "  + template.getName() + " [Lv." + template.getRequiredLevel() + "]");
 			template.displayBonus();
 		}
 		System.out.println("Autre: Quitter");
 		System.out.println("Quelle item voulez-vous acheter ?");
-		Scanner scanner = new Scanner(System.in);
-		int choice;
-		String input;
-		try{
-			input = scanner.nextLine();
-			choice = Integer.parseInt(input);
-			// Get the template corresponding to the templateId chosen by player
-			buyItem(hero,ItemHolder.getInstance().getItem(_itemTemplateIdList[choice - 1]));
+		int choice = InputFunction.getIntInput();
 
-		} catch (Exception e){
-			e.printStackTrace();
-		}
+		// Player made a valid choice
+		if(choice > 0 || choice <= _itemTemplateIdList.size())
+			buyItem(hero,ItemHolder.getInstance().getItem(_itemTemplateIdList.get(choice - 1)));
 	}
 
 	/**
@@ -140,7 +128,8 @@ public class Blacksmith
 	 * @param itemTemplate Template of the item bought by hero
 	 */
 	private void buyItem(Hero hero, ItemTemplate itemTemplate){
-		if(hero.getGold() < itemTemplate.getPrice()) {
+		// If either hero doesn't have item gold or not enough stack of it
+		if(!hero.canAfford(itemTemplate.getPrice())) {
 			System.out.println("Vous n'avez pas assez d'argent !");
 			return;
 		}
@@ -166,53 +155,52 @@ public class Blacksmith
 			System.out.println(count + ": {" + (int)(itemInstance.getTemplate().getPrice() * _sellRate) + "} " + itemInstance.getTemplate().getName());
 			count++;
 		}
+		System.out.println("Autre: Quitter");
 		System.out.println("Quelle item voulez-vous vendre?");
-		Scanner scanner = new Scanner(System.in);
-		int choice;
-		try{
-			choice = scanner.nextInt();
-			// Get the templateId of the selected item
-			sellItem(hero,hero.getInventory().getAllSellableItems().get(choice - 1));
+		int choice = InputFunction.getIntInput();
 
-		} catch (Exception e){
-			e.printStackTrace();
-		}
+		// Player made a non valid choice, he want to leave
+		if(choice <= 0 || choice > hero.getInventory().getAllSellableItems().size())
+			return;
+
+		// Player did a valid choice, get the templateId of the selected item
+		sellItem(hero,hero.getInventory().getAllSellableItems().get(choice - 1));
 	}
 
 	/**
-	 * Ask hero quantity he wants to sell and
-	 * sell them.
+	 * Ask hero how many stack
+	 * of item he want to sell and
+	 * then sell them.
 	 * @param hero Hero selling his items
 	 * @param itemInstance Item hero wants to sell
 	 */
 	private void sellItem(Hero hero, ItemInstance itemInstance){
-		// If this a non stackable item
-		if(itemInstance.getTemplate().getMaxStack() == 1){
-			// First retrieve the price of the item, delete it and then add gold to the hero
-			double goldGained = itemInstance.getTemplate().getPrice() * _sellRate;
-			hero.getInventory().deleteItem(itemInstance);
-			hero.addGold(goldGained);
-			System.out.println("Item vendu avec succès ! (+" + (int)goldGained + " gold)");
+		double goldGained;
+		int stackSold;
+
+		// Check how many stack does the player want to sell
+		if(itemInstance.getTemplate().getMaxStack() == 1 || itemInstance.getStack() == 1){
+			// If this a non stackable item or there is only 1 stack of it
+			stackSold = 1;
 		} else {
+			// there is more than 1 stack
 			System.out.println("Vous possedez " + itemInstance.getStack() + " examplaires, combien voulez-vous en vendre ?");
-			Scanner scanner = new Scanner(System.in);
-			int stackSelled;
-			String input;
-			try{
-				input = scanner.nextLine();
-				stackSelled = Integer.parseInt(input);
-				double goldGained = itemInstance.getTemplate().getPrice() * stackSelled * _sellRate;
-				itemInstance.retrieveStack(stackSelled);
-				// If we selled all stacks we just delete the item from inventory
-				if(itemInstance.getStack() < 1){
-					hero.getInventory().deleteItem(itemInstance);
-				}
-				hero.addGold(goldGained);
-				System.out.println("Item vendu avec succès ! (+" + (int)goldGained + " gold)");
-			} catch (Exception e){
-				e.printStackTrace();
-				System.out.println("Ce n'est pas un choix valide!");
-			}
+			System.out.println("Montant invalide: Quitter");
+			stackSold = InputFunction.getIntInput();
+		}
+
+		// Calculate potential gold gained
+		goldGained = itemInstance.getTemplate().getPrice() * stackSold * _sellRate;
+
+		// Check if hero can get gold, he may not if his inventory is full
+		if(hero.canAddGold()) {
+			// Hero can get gold, remove stack from item and add gold
+			hero.getInventory().removeItemStack(itemInstance,stackSold);
+			hero.addGold(goldGained);
+			System.out.println("Item vendu avec succès ! (+" + (int) goldGained + " gold)");
+		} else {
+			// Hero cannot get gold, do NOT sell items
+			System.out.println("Impossible de vendre l'objet, vous n'avez peut-être plus de place dans votre inventaire !");
 		}
 	}
 }

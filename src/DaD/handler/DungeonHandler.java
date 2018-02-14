@@ -1,10 +1,9 @@
 package DaD.handler;
 
-import DaD.Debug.DebugLogger;
+import DaD.Commons.Utils.InputFunction;
 import DaD.creature.Hero;
 import DaD.data.types.DungeonExitState;
 import DaD.data.types.FightExitState;
-import DaD.data.types.HeroDeathReason;
 import DaD.dungeon.*;
 import DaD.generator.DungeonGenerator;
 
@@ -32,7 +31,7 @@ public class DungeonHandler {
     /**
      * All available options.
      */
-    private static final String[] _options = {"Entrer dans la salle","Afficher tes statistiques","Quitter le donjon"};
+    private static final String[] _options = {"Commencer le combat","Afficher tes statistiques","Quitter le donjon"};
 
     /**
      * Private constructor of class.
@@ -54,8 +53,6 @@ public class DungeonHandler {
      * @return DungeonInstance
      */
     public DungeonInstance dungeonSetting(Hero hero){
-        Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the player's choice
-        String input;
         int choice;
         // Retrieve all dungeons the player can choose
         ArrayList<DungeonTemplate> availableDungeons = DungeonHolder.getInstance().getAvailableDungeon(hero);
@@ -66,16 +63,12 @@ public class DungeonHandler {
         }
         System.out.println("Autre: Quitter");
 
-        try{
-            input = scanner.nextLine();
-            choice = Integer.parseInt(input);
-            if(choice > 0 && choice <= availableDungeons.size()){ // Player did a correct choice
-                // Order start at 0 in ArrayList meanwhile hero choices are displayed starting at 1
-                return DungeonGenerator.getInstance().createDungeon(availableDungeons.get(choice-1));
-            }
-        } catch (Exception e) {
-            DebugLogger.log(e);
+        choice = InputFunction.getIntInput();
+        if(choice > 0 && choice <= availableDungeons.size()){ // Player did a correct choice
+            // Order start at 0 in ArrayList meanwhile hero choices are displayed starting at 1
+            return DungeonGenerator.getInstance().createDungeon(availableDungeons.get(choice-1));
         }
+
         // Player want to leave
         return null;
     }
@@ -90,7 +83,7 @@ public class DungeonHandler {
      */
     public void enterDungeon(Hero hero, DungeonInstance dungeonInstance) {
         initializeDungeon(hero,dungeonInstance);
-        DungeonExitState exitState = DungeonRoomMenu(hero);
+        DungeonExitState exitState = dungeonLoop(hero);
         switch (exitState) {
             case HERO_SUCCEEDED:
                 System.out.println("Bravo tu as fini ce donjon !");
@@ -105,11 +98,19 @@ public class DungeonHandler {
         }
     }
 
-    public DungeonExitState DungeonRoomMenu(Hero hero){
+    /**
+     * For each room in the dungeon, call
+     * {@link #dungeonRoomMenu()} and
+     * call the right function depending on
+     * the choice made by player.
+     * @param hero Hero entering dungeon
+     * @return DungeonExitState
+     */
+    public DungeonExitState dungeonLoop(Hero hero){
         while (_dungeon.getCurrentRoomOrder() <= _dungeon.getRoomList().size()) { // While we have not finished all rooms
             // Get the room the player will get into
             DungeonRoomInstance dungeonRoomInstance = _dungeon.getRoomList().get(_dungeon.getCurrentRoomOrder()-1); // List index start at 0 when currentRoomOrder start at 1
-            int playerChoice = dungeonMenu();
+            int playerChoice = dungeonRoomMenu();
             FightExitState exitState = FightExitState.NONE;
             switch (playerChoice)
             {
@@ -119,7 +120,7 @@ public class DungeonHandler {
                 case 2:
                     hero.displayFullCharacteristic();
                     break;
-                case 3:
+                default:
                     return DungeonExitState.HERO_LEFT;
             }
             // Depending on what happened in the dungeonRoom fight
@@ -141,24 +142,15 @@ public class DungeonHandler {
      * Display dungeon options to player and return his choice
      * @return int
      */
-    public int dungeonMenu(){
-        Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
-        String input;
+    public int dungeonRoomMenu(){
         System.out.println("Tu es actuellement à la salle " + _dungeon.getCurrentRoomOrder() + " sur " + _dungeon.getTotalRoomCount() + ".\nQue veux-tu faire ?");
-        int playerChoice = 0;
-        while (playerChoice < 1 || playerChoice > _options.length) //  Condition to stay is not giving a good answer (1 or 2)
-        {
-            for(int i = 0; i < _options.length; i++){
-                System.out.println((i+1) + " : " + _options[i]);
-            }
-            try {
-                input = scanner.nextLine();
-                playerChoice = Integer.parseInt(input);
-            } catch (Exception e){
-                System.out.println("Ce n'est pas un choix valide !");
-            }
+
+        for(int i = 0; i < _options.length; i++){
+            System.out.println((i+1) + " : " + _options[i]);
         }
-        return playerChoice;
+        System.out.println("Autre: Quitter");
+
+        return InputFunction.getIntInput();
     }
 
     /**
@@ -190,10 +182,8 @@ public class DungeonHandler {
      * @param hero Hero who receives rewards
      */
     private void giveReward(Hero hero){
-        hero.addGold(_dungeon.getGoldReward());
         hero.addExperience(_dungeon.getExperienceReward());
         System.out.println("Récompenses du donjon:");
-        System.out.println("+" + (int)_dungeon.getGoldReward() + " gold");
         System.out.println("+" + (int)_dungeon.getExperienceReward() + " exp");
     }
 }

@@ -3,7 +3,6 @@ package DaD.inventory;
 import DaD.data.types.ItemEquipSlot;
 import DaD.item.ItemInstance;
 
-import javax.net.ssl.SSLContext;
 import java.util.ArrayList;
 
 /**
@@ -126,38 +125,121 @@ public abstract class Inventory
 	// items
 	/**
 	 * Add an ItemInstance to the list of items.
+	 * Return true if itemInstance and all of his stacks
+	 * were added to inventory, false otherwise.
 	 * <p>
-	 *     Here we check various condition before
-	 *     adding item.
-	 *     Function will return true if item
-	 *     was added to inventory.
+	 *     Depending on inventory free slot,
+	 *     item max stack, and items already in
+	 *     inventory it will call {@link #addNonStackableItem(ItemInstance)}
+	 *     , {@link #addStackToExistingItems(ItemInstance)}
+	 *     and {@link #addNewItem(ItemInstance)}/
 	 * </p>
-	 * @param item The ItemInstance to add to inventory.
+	 * @param itemInstance The ItemInstance to add to inventory.
 	 * @return boolean
 	 */
-	public boolean addItem(ItemInstance item){
-		// Is item stackable ?
-		if(item.getTemplate().getMaxStack() > 1) {
-			// For each NON EQUIPED items => We CANNOT stack equipped items, one will be equipped, the other will not
-			for (ItemInstance inventoryItem : getAllNonEquippedITems()) {
-				// If there is already the same item in our inventory
-				if (item.getTemplate().getId() == inventoryItem.getTemplate().getId()
-						// And we did not reach Max Stack for it (Ex: We have a 3 Heal potions and max stack is 5 we can add it)
-						&& item.getStack() < item.getTemplate().getMaxStack()) {
-					// Increase the stack of item by 1
-					inventoryItem.addStack(1);
-					return true;
-				}
-			}
+	public boolean addItem(ItemInstance itemInstance){
+		// Represent number of stack before trying to add them to inventory
+		int baseStack = itemInstance.getStack();
+		if(isInventoryFull())
+			return false;
+
+		if(itemInstance.getTemplate().getMaxStack() == 1){
+			addNonStackableItem(itemInstance);
+		} else {
+			addStackToExistingItems(itemInstance);
+			if(itemInstance.getStack() > 0) // If there is stack left to add to inventory
+				addNewItem(itemInstance);
 		}
-		// We only add an item if we have place in inventory for it
-		if(_itemList.size() < _inventorySize) {
-			_itemList.add(item);
+
+		// When reaching this point, either all stack of item has been added to inventory either inventory is full
+		if(itemInstance.getStack() > 0){
+			System.out.println((baseStack - itemInstance.getStack())
+					+ " " + itemInstance.getTemplate().getName()
+					+ " sur " + baseStack + " ajouté à l'inventaire");
+			return false;
+		} else {
 			return true;
 		}
-		// By reaching this point it means we can not add this item to the inventory
-		return false;
 	}
+
+	/**
+	 * Add as many stack as possible
+	 * to items in inventory with same template
+	 * ID of given itemInstance. Return
+	 * number of stack that couldn't be added.
+	 * @param itemInstance
+	 * @return int
+	 */
+	public int addStackToExistingItems(ItemInstance itemInstance){
+		// This represent number of stack we can add before reaching maxStack
+		int maxAmountToAdd;
+		// This represent number of stack that was really added to existing item
+		int addedAmount;
+		for(ItemInstance uniqueItem: getItemsById(itemInstance.getTemplate().getId())){
+			if(uniqueItem.getTemplate().getMaxStack() == -1) {
+				// There is no limit to stack on this item, add all stacks to it
+				uniqueItem.addStack(itemInstance.getStack());
+				// Return 0, there is no more stack to add
+				itemInstance.removeStack(itemInstance.getStack());
+				return itemInstance.getStack();
+			}
+			// Calculate how many stack can we add until reach maxStack of item
+			maxAmountToAdd = uniqueItem.getTemplate().getMaxStack() - uniqueItem.getStack();
+			// Calculate how many stack we will add to item
+			addedAmount = Math.min(maxAmountToAdd,itemInstance.getStack());
+			uniqueItem.addStack(addedAmount);
+			itemInstance.removeStack(addedAmount);
+		}
+		return itemInstance.getStack();
+	}
+
+	/**
+	 * Add as many non-stackable items
+	 * as possible and return the number
+	 * of items that couldn't be
+	 * added to inventory.
+	 * @param itemInstance item to add
+	 * @return int number of stack left
+	 */
+	public int addNonStackableItem(ItemInstance itemInstance){
+		itemInstance.getStack();
+		for(int i = 0; i < itemInstance.getStack(); i++){
+			if(isInventoryFull())
+				return itemInstance.getStack();
+			_itemList.add(new ItemInstance(itemInstance.getTemplate().getId(),1));
+			itemInstance.removeStack(1);
+		}
+		return itemInstance.getStack();
+	}
+
+	/**
+	 * Add a new item to inventory,
+	 * it means this item will
+	 * take one free slot in inventory.
+	 * Return stack that couldn't been added
+	 * to inventory.
+	 * @param itemInstance ItemInstance to add to inventory
+	 * @return int number of stack left to add
+	 */
+	public int addNewItem(ItemInstance itemInstance){
+		// While inventory is not full AND there is stack to add to inventory
+		while(!isInventoryFull() && itemInstance.getStack() > 0){
+			// In case of infinite stack
+			if(itemInstance.getTemplate().getMaxStack() == -1) {
+				// Add item to list
+				_itemList.add(new ItemInstance(itemInstance.getTemplate().getId(),itemInstance.isEquipped(),itemInstance.getStack()));
+				// Return 0, there is no more stack to add
+				itemInstance.removeStack(itemInstance.getStack());
+				return itemInstance.getStack();
+			}
+			// This represent the number of stack that will set for the new item
+			int addedAmount = Math.min(itemInstance.getStack(),itemInstance.getTemplate().getMaxStack());
+			addItem(new ItemInstance(itemInstance.getTemplate().getId(),addedAmount));
+			itemInstance.removeStack(addedAmount);
+		}
+		return itemInstance.getStack();
+	}
+
 	/**
 	 * Delete an item from the list of ItemInstance
 	 * @param itemInstance Item to be removed from the list
@@ -175,7 +257,7 @@ public abstract class Inventory
 	public ItemInstance getEquippedItem(ItemEquipSlot equipSlot){
 		for (ItemInstance item: _itemList)
 		{
-			if(item.getEquipSlot() == equipSlot && item.isEquipped()){
+			if(item.getTemplate().getEquipSlot() == equipSlot && item.isEquipped()){
 				return item;
 			}
 		}
@@ -199,7 +281,7 @@ public abstract class Inventory
 	 * in an arrayList.
 	 * @return ArrayList
 	 */
-	public ArrayList<ItemInstance> getAllNonEquippedITems() {
+	public ArrayList<ItemInstance> getAllNonEquippedItems() {
 		ArrayList<ItemInstance> allEquippedItems = new ArrayList<>();
 		for (ItemInstance item: _itemList) {
 			// If item is not equipped
@@ -230,8 +312,8 @@ public abstract class Inventory
 	public ArrayList<ItemInstance> getAllSellableItems(){
 		ArrayList<ItemInstance> sellableItems = new ArrayList<>();
 		for(ItemInstance itemInstance:_itemList) {
-			// if the item is not equipped and sellable (later items can be not sellable)
-			if (!itemInstance.isEquipped()) {
+			// if the item is not equipped and sellable
+			if (!itemInstance.isEquipped() && itemInstance.getTemplate().isSellable()) {
 				sellableItems.add(itemInstance);
 			}
 		}
@@ -251,6 +333,44 @@ public abstract class Inventory
 			} else {
 				System.out.println("[x" + itemInstance.getStack() + "]" + itemInstance.getTemplate().getName());
 			}
+		}
+	}
+	/**
+	 * Return the first item
+	 * matching the given ID.
+	 * Return null if no item
+	 * match given ID.
+	 */
+	public ItemInstance getItemById(int id){
+		for(ItemInstance itemInstance:_itemList){
+			if (itemInstance.getTemplate().getId() == id)
+				return itemInstance;
+		}
+		return null;
+	}
+	/**
+	 * Return all items matching
+	 * given ID.
+	 * @param id Id to match
+	 * @return ArrayList
+	 */
+	public ArrayList<ItemInstance> getItemsById(int id) {
+		ArrayList<ItemInstance> arrayList = new ArrayList();
+		for(ItemInstance itemInstance:_itemList){
+			if (itemInstance.getTemplate().getId() == id)
+				arrayList.add(itemInstance);
+		}
+		return arrayList;
+	}
+
+	/**
+	 *
+	 */
+	public void removeItemStack(ItemInstance itemInstance, int stack){
+		itemInstance.removeStack(stack);
+		if(itemInstance.getStack() <= 0) {
+			// There is no more stack of it, remove it from inventory
+			_itemList.remove(itemInstance);
 		}
 	}
 }

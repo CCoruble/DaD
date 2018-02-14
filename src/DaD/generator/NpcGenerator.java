@@ -1,6 +1,6 @@
 package DaD.generator;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.MonsterInfo;
 import DaD.data.types.MonsterRace;
 import DaD.data.types.MonsterRarity;
@@ -68,8 +68,6 @@ public class NpcGenerator
 		double defenseValue = MonsterFormulas.calcDefense(template,level,rarity);
 		Env defense = new Env(defenseValue, StatType.SET, Stats.DEFENSE, 10);
 
-		double gold = MonsterFormulas.calcGold(template);
-
 		// Add the stats to the MultiValueSet
 		MultiValueSet stats = new MultiValueSet();
 		stats.set("templateId",templateID);
@@ -81,7 +79,6 @@ public class NpcGenerator
 		stats.set("hp",hp);
 		stats.set("attack",attack);
 		stats.set("defense",defense);
-		stats.set("gold",gold);
 
 		// Create a MonsterInstance
 		return new MonsterInstance(stats);

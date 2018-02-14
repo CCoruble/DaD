@@ -1,9 +1,8 @@
 package DaD.monster;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Clovis on 13/06/2017.

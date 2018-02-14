@@ -1,11 +1,10 @@
 package DaD.dungeon;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.MonsterInfo;
 import DaD.data.types.MonsterRarity;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 /**
  * Created by Clovis on 26/09/2017.

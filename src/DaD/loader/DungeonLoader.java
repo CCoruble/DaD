@@ -1,6 +1,6 @@
 package DaD.loader;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.dungeon.DungeonHolder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

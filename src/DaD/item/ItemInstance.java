@@ -1,7 +1,5 @@
 package DaD.item;
 
-import DaD.data.types.ItemEquipSlot;
-
 /**
  * Created by Clovis on 06/03/2017.
  * This is this instance of an item, this is what
@@ -29,20 +27,9 @@ public class ItemInstance
 	 */
 	private final ItemTemplate _itemTemplate;
 	/**
-	 * Equip slot where the item should be equipped.
-	 * @see ItemEquipSlot
+	 * True if item is equipped.
 	 */
-	private ItemEquipSlot _equipSlot;
-
-	/**
-	 * Constructor of class.
-	 * @param itemTemplateId The id of the template.
-	 */
-	public ItemInstance(int itemTemplateId){
-		_itemTemplate = ItemHolder.getInstance().getItem(itemTemplateId);
-		_stack = 1;
-		_equipSlot = ItemEquipSlot.NONE; // Item is not equipped
-	}
+	private  boolean _equipped;
 
 	/**
 	 * Constructor of class.
@@ -51,7 +38,7 @@ public class ItemInstance
 	public ItemInstance(ItemTemplate itemTemplate){
 		_itemTemplate = itemTemplate;
 		_stack = 1;
-		_equipSlot = ItemEquipSlot.NONE; // Item is not equipped
+		_equipped = false;
 	}
 
 	/**
@@ -62,7 +49,13 @@ public class ItemInstance
 	public ItemInstance(int itemTemplateId, int stack){
 		_stack = stack;
 		_itemTemplate = ItemHolder.getInstance().getItem(itemTemplateId);
-		_equipSlot = ItemEquipSlot.NONE;
+		_equipped = false;
+	}
+
+	public ItemInstance(int itemTemplateId, boolean equipped, int stack){
+		_itemTemplate = ItemHolder.getInstance().getItem(itemTemplateId);
+		_equipped = equipped;
+		_stack = stack;
 	}
 
 	/**
@@ -104,33 +97,27 @@ public class ItemInstance
 	 * </p>
 	 * @param stack Number of stack to remove.
 	 */
-	public void retrieveStack(int stack){
+	public void removeStack(int stack){
 		_stack -= stack;
 	}
 
 	/**
-	 * Return true if {@link #_equipSlot} is
-	 * different from {@link ItemEquipSlot#NONE}.
+	 * Return value of {@link #_equipped}.
 	 * @return Boolean
 	 */
 	public Boolean isEquipped(){
-		return (_equipSlot != ItemEquipSlot.NONE);
+		return _equipped;
+	}
+	/**
+	 * Set {@link #_equipped} value.
+	 * @param equipped
+	 */
+	public void setEquipped(boolean equipped){
+		_equipped = equipped;
 	}
 
-	/**
-	 * Return attribute {@link #_equipSlot},
-	 * this represent where the item is equipped.
-	 * Value is "NONE" if item is not equipped.
-	 * @return ItemEquipSlot
-	 */
-	public ItemEquipSlot getEquipSlot() {
-		return _equipSlot;
-	}
-	/**
-	 * Set the value of {@link #_equipSlot}.
-	 * @param equipSlot New value for attribute
-	 */
-	public void setEquipSlot(ItemEquipSlot equipSlot){
-		_equipSlot = equipSlot;
+	@Override
+	public String toString() {
+		return "[x" + getStack() + "] " + getTemplate().getName();
 	}
 }

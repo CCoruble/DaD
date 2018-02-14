@@ -1,8 +1,7 @@
 package DaD.data.types;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.Stats.Env;
-import DaD.data.types.Stats.StatType;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;

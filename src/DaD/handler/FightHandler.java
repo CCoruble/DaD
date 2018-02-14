@@ -1,6 +1,7 @@
 package DaD.handler;
 
-import DaD.commons.Spacer;
+import DaD.Commons.Utils.InputFunction;
+import DaD.Commons.Utils.Spacer;
 import DaD.creature.Hero;
 import DaD.data.types.FightExitState;
 import DaD.data.types.HeroDeathReason;
@@ -119,28 +120,33 @@ public class FightHandler
 	 * Hero turn is always happening before {@link #monsterTurn()}.
 	 */
 	private void heroTurn(){
-		Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
-		int countTarget; // This will be used to display the number of the monster
-		int playerChoice = 0; // This will contain the player's choice
+		boolean stay = true;
+		int choice = 0; // This will contain the player's choice
 		int damageDealt; // This will contain the damage deal to the monster
-		while(playerChoice < 1 || playerChoice > _monsterList.size())
+		while(stay)
 		{
-			countTarget = 1; // In order to properly display the monster list
-			System.out.println(_hero.toString());
+			int count = 1; // In order to properly display the monster list
 			System.out.println("Veuillez choisir une cible :");
 			for (MonsterInstance target : _monsterList)
 			{
-				displayMonsterInformation(target,countTarget);
-				countTarget++;
+				displayMonsterInformation(target,count);
+				count++;
 			}
-		playerChoice = scanner.nextInt();
+			choice = InputFunction.getIntInput();
+			// Is this a valid choice ?
+			if(choice > 0 && choice <= _monsterList.size()) {
+				// Yes this is a valid choice, get out of loop and attack selected monster
+				stay = false;
+			} else {
+				System.out.println("Ce n'est pas un choix valide !");
+			}
 		}
-		playerChoice --; // If the player choose the monster N*2 this is equals to _monsterList.get(1) because the ArrayList start at index 0
-		damageDealt = _hero.attack(_monsterList.get(playerChoice)); // We make the hero attack the target
-		System.out.println(_hero.getName() + " inflige " + damageDealt + " à " + _monsterList.get(playerChoice));
-		if(_monsterList.get(playerChoice).isDead()){ // Check if the monster we just attacked is dead (hp < 1)
-			_monsterList.get(playerChoice).giveRewards(_hero); // Make the monster giveRewards and give the experience to the hero
-			_monsterList.remove(playerChoice); // Remove the monster that just died of the list
+		choice --; // If the player choose the monster N*2 this is equals to _monsterList.get(1) because the ArrayList start at index 0
+		damageDealt = _hero.attack(_monsterList.get(choice)); // We make the hero attack the target
+		System.out.println(_hero.getName() + " inflige " + damageDealt + " à " + _monsterList.get(choice));
+		if(_monsterList.get(choice).isDead()){ // Check if the monster we just attacked is dead (hp < 1)
+			_monsterList.get(choice).giveRewards(_hero); // Make the monster giveRewards and give the experience to the hero
+			_monsterList.remove(choice); // Remove the monster that just died of the list
 		}
 	}
 

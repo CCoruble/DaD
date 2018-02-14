@@ -1,6 +1,6 @@
 package DaD.data.types.Stats;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 
 /**
  * Created by Clovis on 09/03/2017.

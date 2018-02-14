@@ -1,6 +1,6 @@
 package DaD.loader;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.Stats;
 import DaD.item.ItemHolder;
@@ -49,7 +49,7 @@ public class ItemLoader
 	/**
 	 * Total of gear, weapons and armor, loaded.
 	 */
-	private int _gearCount = 0;
+	private int _itemsCount = 0;
 	/**
 	 * Total of goods, usable and non usable items, loaded.
 	 */
@@ -99,15 +99,10 @@ public class ItemLoader
 				if(racineNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE)
 				{ // We only reads user created information (<armor> for example)
 					final Node actualNode = racineNoeuds.item(i); // this represent the whole <weapon> </weapon> or <armor> </armor> beacon
-					String itemType = actualNode.getNodeName();
 
-					// Depending on the type of item, we will parse information  differently
-					switch(itemType){
-						case "gear":
-							encodeGear(actualNode);
-							_gearCount++;
-							break;
-					}
+					encodeGear(actualNode);
+					_itemsCount++;
+
 					// Create the itemTemplate, stock it into the itemTemplate holder then clear the MultiValueSet
 					ItemHolder.getInstance().createTemplate(_itemStat);
 					_itemStat.clear();

@@ -1,12 +1,11 @@
 package DaD.generator;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.MonsterInfo;
 import DaD.dungeon.*;
 import DaD.monster.MonsterInstance;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 /**
  * Created by Clovis on 08/02/2017.
@@ -65,7 +64,6 @@ public class DungeonGenerator
 		dungeonInformation.put("requiredLevel",dungeonTemplate.getRequiredLevel());
 		dungeonInformation.put("levelDifficulty",dungeonTemplate.getLevelDifficulty());
 		dungeonInformation.put("experienceReward",dungeonTemplate.getExperienceReward());
-		dungeonInformation.put("goldReward",dungeonTemplate.getGoldReward());
 		return new DungeonInstance(dungeonInformation);
 	}
 }

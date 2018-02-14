@@ -1,4 +1,4 @@
-package DaD.commons;
+package DaD.Commons.Utils;
 
 /**
  * Statics functions used to display spacer

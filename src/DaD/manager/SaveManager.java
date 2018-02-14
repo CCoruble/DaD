@@ -1,6 +1,7 @@
 package DaD.manager;
 
 import DaD.Debug.DebugLogger;
+import DaD.Commons.Utils.InputFunction;
 import DaD.city.Bank;
 import DaD.creature.Hero;
 import DaD.data.types.HeroGender;
@@ -12,9 +13,7 @@ import DaD.inventory.HeroInventory;
 import DaD.item.ItemInstance;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by Clovis on 12/05/2017.
@@ -82,7 +81,6 @@ public class SaveManager
 			out.writeInt(Hero.getInstance().getHeroRace().ordinal());
 			out.writeDouble(Hero.getInstance().getExperienceMax().getValue());
 			out.writeDouble(Hero.getInstance().getExperience().getValue());
-			out.writeDouble(Hero.getInstance().getGold());
 
 			// Bank
 			out.writeInt(Bank.getInstance().getMoney());
@@ -173,8 +171,6 @@ public class SaveManager
 				double experienceValue = in.readDouble();
 				Hero.getInstance().setExperience(new Env(experienceValue, StatType.SET, Stats.EXPERIENCE));
 
-				Hero.getInstance().setGold(in.readDouble());
-
 				// Bank
 				Bank.getInstance().setMoney(in.readInt());
 
@@ -184,26 +180,24 @@ public class SaveManager
 				// Items
 				int numberOfItems = in.readInt();
 				for (int i = 0; i < numberOfItems; i++) {
-					int templateId = in.readInt();
-					boolean isItemEquipped = in.readBoolean();
+					int templateId = in.readInt(); // TemplateId
+					boolean equipped = in.readBoolean(); // equipped
 					int stack = in.readInt();
-					ItemInstance itemInstance = new ItemInstance(templateId,stack);
-					Hero.getInstance().getInventory().addItem(itemInstance);
-					if(isItemEquipped){
-						Hero.getInstance().getInventory().equip(Hero.getInstance(),itemInstance);
-					}
+					Hero.getInstance().getInventory().addNewItem(
+							new ItemInstance(templateId, equipped, stack)
+					);
 				}
 			}
-		} catch (Exception ex){
-			DebugLogger.log(ex);
+		} catch (Exception e){
+			DebugLogger.log(e);
 			loadSuccess = false;
 		}finally {
 			try{
 				// in.close need a try to be executed, but it must be executed anyway
 				in.close();
 			}
-			catch(Exception ex){
-			    DebugLogger.log(ex);
+			catch(Exception e){
+			    DebugLogger.log(e);
 				loadSuccess = false;
 			}
 		}
@@ -221,30 +215,29 @@ public class SaveManager
      */
 	public String askSelectedSave(){
 	    ArrayList<String> allSaveName = getAllUsedName();
+
+	    // There is no save
 	    if(allSaveName.size() == 0){
 	        System.out.println("Aucune sauvegarde disponible !");
 	        return "";
         }
+
+        // Display saves
         System.out.println("Quelle partie voulez-vous charger?");
-	    while(true) {
-            for (int i = 0; i < allSaveName.size(); i++) {
-                System.out.println((i + 1) + ": " + allSaveName.get(i));
-            }
-            System.out.println("Autre: quitter");
-            Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
-            String input;
-            int choice;
-            try {
-                input = scanner.next();
-                choice = Integer.parseInt(input);
-                if(choice < 1 || choice > allSaveName.size()) // He choose to quite
-                    return "";
-                return allSaveName.get(choice - 1); // Else he made a valid choice
-            } catch (Exception e){
-                DebugLogger.log(e);
-                System.out.println("Ce n'est pas un choix valide !");
-            }
-        }
+		for (int i = 0; i < allSaveName.size(); i++) {
+			System.out.println((i + 1) + ": " + allSaveName.get(i));
+		}
+		System.out.println("Autre: quitter");
+
+		// Retrieve player choice
+		int choice = InputFunction.getIntInput();
+
+		// If this is a non valid choice, return empty string
+		if(choice < 1 || choice > allSaveName.size())
+			return "";
+
+		// Return the choice he made
+		return allSaveName.get(choice - 1);
     }
 
     /**

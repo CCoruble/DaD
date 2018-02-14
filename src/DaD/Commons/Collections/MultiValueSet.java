@@ -1,4 +1,4 @@
-package DaD.commons;
+package DaD.Commons.Collections;
 
 import DaD.data.types.Stats.Env;
 import DaD.item.ItemDropInfo;

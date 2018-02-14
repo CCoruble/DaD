@@ -1,6 +1,6 @@
 package DaD.item;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 
 /**
  * Class used when creating monster to set their

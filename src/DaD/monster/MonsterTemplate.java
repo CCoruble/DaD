@@ -1,6 +1,7 @@
 package DaD.monster;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Utils.RandomGenerator;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.MonsterRace;
 import DaD.data.types.Stats.Env;
 import DaD.item.ItemDropInfo;
@@ -64,10 +65,7 @@ public class MonsterTemplate
 	 * Experience of the monster, this will be given to the killer when it dies.
 	 */
 	private final Env _experience;
-	/**
-	 * Gold of the monster, this will be given to the killer when it dies.
-	 */
-	private final double _gold;
+
 	/**
 	 * List of possibly dropped items.
 	 * <p>
@@ -78,7 +76,7 @@ public class MonsterTemplate
 	 *     or not.
 	 * </p>
 	 * @see ItemDropInfo
-	 * @see DaD.commons.RandomGenerator
+	 * @see RandomGenerator
 	 */
 	private final ArrayList<ItemDropInfo> _itemDropInfoList;
 
@@ -158,7 +156,6 @@ public class MonsterTemplate
 		_attack = monstersStats.getEnv("attack");
 		_defense = monstersStats.getEnv("defense");
 		_experience = monstersStats.getEnv("experience");
-		_gold = monstersStats.getDouble("gold");
 		_itemDropInfoList = monstersStats.getArrayList("itemDropInfoList");
 
 		// Env per level
@@ -217,7 +214,6 @@ public class MonsterTemplate
 		System.out.println("attack: \n" + _attack);
 		System.out.println("defense: \n" +  _defense);
 		System.out.println("experience: \n" + _experience);
-		System.out.println("gold: " + _gold);
 		System.out.println("itemDropInfoList: ");
 		for(ItemDropInfo itemDropInfo: _itemDropInfoList){
 			itemDropInfo.displayItemDropInfo();
@@ -277,13 +273,6 @@ public class MonsterTemplate
 	 */
 	public Env getExperience(){
 		return _experience;
-	}
-	/**
-	 * Accessor for gold of the template.
-	 * @return double
-	 */
-	public double getGold(){
-		return _gold;
 	}
 	/**
 	 * Return the complete list of possibly dropped items.

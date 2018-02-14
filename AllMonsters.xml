@@ -4,7 +4,6 @@
 		<set name="hpPercent" value="100"/>
 		<set name="minimumRarity" value="0"/>
 		<set name="maximumRarity" value="0"/>
-		<set name="gold" value="3"/>
 		<set name="description" value="Un petit squelette qui passait par là, sans vous juger."/>
 		<for>
 			<SET name="maxHp" value="10" order="10" stat="HP_MAX"/>
@@ -21,7 +20,8 @@
 			<MULTIPLY name="experienceRarityModifier" value="2" order="30" stat="EXPERIENCE"/>
 		</for>
 		<reward>
-			<item itemId="1" dropRate="20" maxDrop="1"/>
+			<item itemId="1" dropRate="100" maxDrop="3"/>
+			<item itemId="2" dropRate="20" maxDrop="1"/>
 		</reward>
 	</monster>
 	
@@ -29,8 +29,7 @@
 		<set name="hpPercent" value="100"/>
 		<set name="minimumRarity" value="0"/>
 		<set name="maximumRarity" value="1"/>
-		<set name="gold" value="3"/>
-		<set name="description" value="Un petit (grand) géant..."/>
+		<set name="description" value="Un petit géant..."/>
 		<for>
 			<SET name="maxHp" value="12" order="10" stat="HP_MAX"/>
 			<ADD name="maxHpPerLevel" value="4" order="20" stat="HP_MAX"/>
@@ -46,7 +45,8 @@
 			<MULTIPLY name="experienceRarityModifier" value="2" order="30" stat="EXPERIENCE"/>
 		</for>
 		<reward>
-			<item itemId="3" dropRate="20" maxDrop="1"/>
+			<item itemId="1" dropRate="100" maxDrop="3"/>
+			<item itemId="4" dropRate="20" maxDrop="1"/>
 		</reward>
 	</monster>
 	
@@ -54,7 +54,6 @@
 		<set name="hpPercent" value="100"/>
 		<set name="minimumRarity" value="2"/>
 		<set name="maximumRarity" value="4"/>
-		<set name="gold" value="1200"/>
 		<set name="description" value="Un bébé dragon KRO MIGNOOOOON!!! (Il peut tout de même vous tuer avec son souffle brûlant dévastateur ...)"/>
 		<for>
 			<SET name="maxHp" value="1500" order="10" stat="HP_MAX"/>
@@ -71,7 +70,8 @@
 			<MULTIPLY name="experienceRarityModifier" value="2" order="30" stat="EXPERIENCE"/>
 		</for>
 		<reward>
-			<item itemId="1" dropRate="20" maxDrop="1"/>
+			<item itemId="1" dropRate="100" maxDrop="300"/>
+			<item itemId="2" dropRate="20" maxDrop="1"/>
 		</reward>
 	</monster>
 </list>

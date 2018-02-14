@@ -1,6 +1,6 @@
 package DaD.dungeon;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 
 import java.util.ArrayList;
 
@@ -25,11 +25,6 @@ public class DungeonInstance
 	 * in this dungeon.
 	 */
 	private final int _totalRoomCount;
-	/**
-	 * Amount of gold earned by player
-	 * upon finishing this dungeon
-	 */
-	private final double _goldReward;
 	/**
 	 * Amount of experience earned by player
 	 * upon finishing this dungeon
@@ -59,7 +54,6 @@ public class DungeonInstance
 		_roomList = (ArrayList)dungeonInformation.getObject("roomList");
 		_currentRoomOrder = 1; // By default we start at the first room of the dungeon
 		_totalRoomCount = _roomList.size();
-		_goldReward = dungeonInformation.getDouble("goldReward");
 		_experienceReward = dungeonInformation.getDouble("experienceReward");
 		_levelDifficulty = dungeonInformation.getInteger("levelDifficulty");
 		_requiredLevel = dungeonInformation.getInteger("requiredLevel");
@@ -104,14 +98,6 @@ public class DungeonInstance
 	 */
 	public int getLevelDifficulty(){
 		return _levelDifficulty;
-	}
-
-	/**
-	 * Return {@link #_goldReward}.
-	 * @return double
-	 */
-	public double getGoldReward(){
-		return _goldReward;
 	}
 
 	/**

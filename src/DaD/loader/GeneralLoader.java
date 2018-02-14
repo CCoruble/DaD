@@ -1,6 +1,7 @@
 package DaD.loader;
 
-import DaD.commons.Spacer;
+import DaD.Debug.DebugLogger;
+import DaD.Commons.Utils.Spacer;
 import DaD.dungeon.DungeonHolder;
 import DaD.item.ItemHolder;
 import DaD.manager.GameManager;
@@ -56,7 +57,7 @@ public class GeneralLoader {
             }
         } catch (Exception e){
             System.out.println("Erreur lors du chargement des différents élèments du jeu !");
-            e.printStackTrace();
+            DebugLogger.log(e);
             System.exit(1);
         }
     }

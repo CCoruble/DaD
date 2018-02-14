@@ -2,8 +2,8 @@ package DaD.inventory;
 
 import DaD.calculator.Calculator;
 import DaD.creature.Hero;
+import DaD.data.types.GearType;
 import DaD.data.types.ItemEquipSlot;
-import DaD.generator.ItemGenerator;
 import DaD.item.ItemInstance;
 
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class HeroInventory extends Inventory{
      * @see Calculator#calculateAllStats(Hero)
      */
     public void equip(Hero hero, ItemInstance itemInstance){
-        ItemInstance oldEquippedItem = hero.getInventory().getEquippedItem(itemInstance.getEquipSlot());
+        ItemInstance oldEquippedItem = hero.getInventory().getEquippedItem(itemInstance.getTemplate().getEquipSlot());
         // If there is already an equipped item on the equipSlot we unequip it
         if(oldEquippedItem != null){
             setUnequipped(oldEquippedItem);
@@ -73,96 +73,19 @@ public class HeroInventory extends Inventory{
     /**
      * Change the EquipSlot of an
      * {@link ItemInstance} to the appropriate
-     * value, depending on its {@link DaD.data.types.ItemType}.
+     * value, depending on its {@link GearType}.
      * <p>
-     *     Each {@link ItemInstance} has an {@link DaD.data.types.ItemType}.
-     *     Depending on this {@link DaD.data.types.ItemType} the
+     *     Each {@link ItemInstance} has an {@link GearType}.
+     *     Depending on this {@link GearType} the
      *     {@link ItemInstance} will be equipped on a specific {@link DaD.data.types.ItemEquipSlot}.
-     *     Example: An {@link ItemInstance} of type {@link DaD.data.types.ItemType#SWORD}
+     *     Example: An {@link ItemInstance} of type {@link GearType#SWORD}
      *     will be equipped on equip slot
      *     {@link DaD.data.types.ItemEquipSlot#PAPERDOLL_RHAND right hand}.
      * </p>
      * @param itemInstance Item to set as equipped
      */
     public void setEquipped(ItemInstance itemInstance){
-        switch(itemInstance.getTemplate().getItemType()){
-            // RHAND
-            case RHAND_DAGGER:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_RHAND);
-                break;
-            case SWORD:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_RHAND);
-                break;
-            case SPEAR:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_RHAND);
-                break;
-            case BOW:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_RHAND);
-                break;
-
-            // LHAND
-            case LHAND_DAGGER:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_LHAND);
-                break;
-            case SHIELD:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_LHAND);
-                break;
-
-            // RLHAND
-            case AXE:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_RHAND);
-                break;
-            case LONGSWORD:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_RHAND);
-                break;
-
-            // HEAD
-            case HELMET:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_HEAD);
-                break;
-            case HAT:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_HEAD);
-                break;
-
-            // GLOVES
-            case GLOVES:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_GLOVES);
-                break;
-
-            // CHEST
-            case CHESTPLATE:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_CHEST);
-                break;
-
-            // LEGS
-            case LEGGINGS:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_LEGS);
-                break;
-
-            // BOOTS
-            case BOOTS:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_BOOTS);
-                break;
-
-            // BACK
-            case CAPE:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_BACK);
-                break;
-
-            // RBRACELET
-            case RHAND_RING:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_RBRACELET);
-                break;
-            // LBRACELET
-            case LHAND_RING:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_LBRACELET);
-                break;
-
-            // BELT
-            case BELT:
-                itemInstance.setEquipSlot(ItemEquipSlot.PAPERDOLL_BELT);
-                break;
-        }
+        itemInstance.setEquipped(true);
     }
     /**
      * Change {@link DaD.data.types.ItemEquipSlot} of
@@ -171,6 +94,6 @@ public class HeroInventory extends Inventory{
      * @param itemInstance Item to set as unequipped
      */
     public void setUnequipped(ItemInstance itemInstance){
-        itemInstance.setEquipSlot(ItemEquipSlot.NONE);
+        itemInstance.setEquipped(false);
     }
 }

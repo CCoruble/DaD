@@ -1,7 +1,8 @@
 package DaD.generator;
 
+import DaD.Commons.Utils.InputFunction;
 import DaD.Debug.DebugLogger;
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.creature.Hero;
 import DaD.data.types.HeroGender;
 import DaD.data.types.HeroRace;
@@ -46,48 +47,40 @@ public class HeroGenerator
 	 * @return boolean
 	 */
 	public boolean createNewHero() {
-		try
-		{
-			// Initializing a MultiValueSet that will contain the values of the new hero
-			MultiValueSet heroInformation = new MultiValueSet();
+		// Initializing a MultiValueSet that will contain the values of the new hero
+		MultiValueSet heroInformation = new MultiValueSet();
 
-			// Setting name of hero
-			String name = setupHeroName();
-			if(name.isEmpty())
-				return false; // Player want to leave
-			heroInformation.set("name", name);
+		// Setting name of hero
+		String name = setupHeroName();
+		if(name.isEmpty())
+			return false; // Player want to leave
+		heroInformation.set("name", name);
 
-			// Setting gender & race of hero
-			HeroGender gender = setupHeroGender();
-			HeroRace race = setupHeroRace();
-			heroInformation.set("gender", gender);
-			heroInformation.set("race", race);
+		// Setting gender & race of hero
+		HeroGender gender = setupHeroGender();
+		HeroRace race = setupHeroRace();
+		heroInformation.set("gender", gender);
+		heroInformation.set("race", race);
 
-			// Setting all other parameters
-			heroInformation.set("level", 1);
-			heroInformation.set("experience", new Env(0., StatType.SET, Stats.EXPERIENCE, 1));
-			heroInformation.set("experienceMax", HeroFormulas.calcBaseMaxExperience(race,gender));
-			Env hpMax = HeroFormulas.calcBaseHpMax(race, gender);
-			heroInformation.set("hpMax", hpMax);
-			Env hp = new Env(hpMax.getValue(),StatType.SET,Stats.HP);
-			heroInformation.set("hp", hp);
-			Env mpMax = HeroFormulas.calcBaseMpMax(race,gender);
-			heroInformation.set("mpMax",mpMax);
-			Env mp = new Env(mpMax.getValue(),StatType.SET,Stats.MP);
-			heroInformation.set("mp",mp);
-			heroInformation.set("attack", HeroFormulas.calcBaseAttack(race, gender));
-			heroInformation.set("defense", HeroFormulas.calcBaseDefense(race, gender));
-			heroInformation.set("gold", HeroFormulas.BASE_GOLD);
-			heroInformation.set("inventorySize", HeroFormulas.BASE_INVENTORY_SIZE);
+		// Setting all other parameters
+		heroInformation.set("level", 1);
+		heroInformation.set("experience", new Env(0., StatType.SET, Stats.EXPERIENCE, 1));
+		heroInformation.set("experienceMax", HeroFormulas.calcBaseMaxExperience(race,gender));
+		Env hpMax = HeroFormulas.calcBaseHpMax(race, gender);
+		heroInformation.set("hpMax", hpMax);
+		Env hp = new Env(hpMax.getValue(),StatType.SET,Stats.HP);
+		heroInformation.set("hp", hp);
+		Env mpMax = HeroFormulas.calcBaseMpMax(race,gender);
+		heroInformation.set("mpMax",mpMax);
+		Env mp = new Env(mpMax.getValue(),StatType.SET,Stats.MP);
+		heroInformation.set("mp",mp);
+		heroInformation.set("attack", HeroFormulas.calcBaseAttack(race, gender));
+		heroInformation.set("defense", HeroFormulas.calcBaseDefense(race, gender));
+		heroInformation.set("inventorySize", HeroFormulas.BASE_INVENTORY_SIZE);
 
-			// Set the new hero values
-			Hero.setInstance(heroInformation);
-			return true;
-		} catch(Exception e) {
-			DebugLogger.log(e);
-			System.out.println("Erreur lors de la création du personnage !");
-			return false;
-		}
+		// Set the new hero values
+		Hero.setInstance(heroInformation);
+		return true;
 	}
 
 	/**
@@ -95,23 +88,21 @@ public class HeroGenerator
 	 * @return String
 	 */
 	private String setupHeroName(){
-		// Initializing a scanner for the player choice
-		Scanner scanner = new Scanner(System.in);
 		String name;
 		while(true){
 			System.out.println("Veuillez rentrer un nom de personnage, 'x' pour quitter.");
-			try{
-				name = scanner.nextLine();
-				if(name.equals("x"))
-					return "";
-				if (isNameAvailable(name)){
-					return name;
-				} else {
-					System.out.println("Ce nom est déjà prit, veuillez en choisir un autre.");
-				}
-			} catch (Exception e){
-				System.out.println("Nom incorrect veuillez recommencer !");
-			}
+			name = InputFunction.getStringInput();
+
+			// Player wants to leave
+			if(name.equals("x"))
+				return "";
+
+			// If name is available we return it
+			if (isNameAvailable(name))
+				return name;
+
+			// By reaching this point it mean player doesn't want to leave but name is unavailable
+			System.out.println("Ce nom est déjà prit, veuillez en choisir un autre.");
 		}
 	}
 
@@ -129,28 +120,24 @@ public class HeroGenerator
 	 * @return HeroGender
 	 */
 	private HeroGender setupHeroGender(){
-		// Initializing a scanner for the player choice
-		Scanner scanner = new Scanner(System.in);
-
-		//First get the choice of gender
-		int choice = 0;
-		while (choice < 1 || choice > HeroGender.VALUES.length) // Condition to stay is to not contain H or F
-		{
-			// Display all genders available
+		int choice;
+		while(true){
+			// Display all the possible gender for hero
 			System.out.println("Veuillez choisir un genre :");
-			for(HeroGender gender : HeroGender.VALUES) // Display all the possible gender for a hero
+			for(HeroGender gender : HeroGender.VALUES)
 				System.out.println((gender.ordinal()+1) + " : " + gender);
 
-			String input = scanner.next();
-			// Try to parse the player choice
-			try{
-				choice = Integer.parseInt(input);
-			} catch (Exception e){ // If this is a char / string, we force the player to re-choose a gender
-				System.out.println("Ce n'est pas un choix valide, veuillez recommencer !");
+			// Get hero choice
+			choice = InputFunction.getIntInput();
+
+			// If hero make a valid choice return the choosen HeroGender
+			if(choice > 0 || choice > HeroGender.VALUES.length){
+				return HeroGender.VALUES[choice-1];
 			}
+
+			// By reaching this point it means hero did a non valid choice
+			System.out.println("Ce n'est pas un choix valide!");
 		}
-		//Get the right gender from the choice previously made
-		return HeroGender.VALUES[choice-1];
 	}
 
 	/**
@@ -159,27 +146,23 @@ public class HeroGenerator
 	 * @return HeroRace
 	 */
 	private HeroRace setupHeroRace(){
-		// Initializing a scanner for the player choice
-		Scanner scanner = new Scanner(System.in);
-
-		//First get the choice of race
-		int choice = 0;
-		while (choice < 1 || choice > HeroRace.VALUES.length){
-			// First we display all available races
+		int choice;
+		while(true){
+			// Display all the possible race for a hero
 			System.out.println("Veuillez choisir une race :");
-			for(HeroRace race : HeroRace.VALUES) // Display all the possible race for a hero
+			for(HeroRace race : HeroRace.VALUES)
 				System.out.println((race.ordinal()+1) + " : " + race);
 
-			String input = scanner.next();
-			// Then try to parse the player choice
-			try{
-				choice = Integer.parseInt(input);
-			} catch (Exception e) { // If this is a char / string, we force the player to re-choose a race
-				System.out.println("Ce n'est pas un choix valide, veuillez recommencer !");
-			}
-		}
+			// Get hero choice
+			choice = InputFunction.getIntInput();
 
-		//Get the right race name from the choice previously made
-		return HeroRace.VALUES[choice-1];
+			// If hero make a valid choice return the choosen race
+			if(choice > 0 || choice > HeroRace.VALUES.length){
+				return HeroRace.VALUES[choice-1];
+			}
+
+			// By reaching this point it means hero did a non valid choice
+			System.out.println("Ce n'est pas un choix valide!");
+		}
 	}
 }

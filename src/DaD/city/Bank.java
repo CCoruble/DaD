@@ -1,9 +1,10 @@
 package DaD.city;
 
+import DaD.Commons.Utils.InputFunction;
+import DaD.Commons.Utils.ItemFunction;
 import DaD.creature.Hero;
+import DaD.item.ItemInstance;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.Scanner;
 
 /**
  * Singleton used to handle money
@@ -17,7 +18,7 @@ public class Bank {
     /**
      * All available choices.
      */
-    private static final String[] _options = {"Stocker des pièces d'or","Retirer des pièces d'or","Faire un prêt","Quitter la banque"};
+    private static final String[] _options = {"Stocker des pièces d'or","Retirer des pièces d'or","Faire un prêt"};
     /**
      * Minimum of gold to put in bank, if
      * amount if below it will refuse
@@ -77,9 +78,9 @@ public class Bank {
     /**
      * Display the main menu where hero
      * will be prompted choices.
+     * @param hero Hero accessing menu
      */
-    public void bankMenu() {
-        Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
+    public void bankMenu(Hero hero) {
         Boolean stayInBank = true;
 
         System.out.println("Bienvenue dans notre banque !");
@@ -94,17 +95,16 @@ public class Bank {
             for (int i = 0; i < _options.length; i++) {
                 System.out.println((i + 1) + " : " + _options[i]);
             }
-            int choice; // Variable that represent the player's choice
-            choice = scanner.nextInt(); // Get the player's choice
-            switch (choice) {
+            System.out.println("Autre: Quitter");
+            switch (InputFunction.getIntInput()) {
                 case 1:
-                    stockMoney();
+                    stockMoney(hero);
                     break;
                 case 2:
-                    retrieveMoney();
+                    retrieveMoney(hero);
                     break;
                 case 3:
-                    borrowMoney();
+                    borrowMoney(hero);
                     break;
                 default:
                     stayInBank = false;
@@ -115,73 +115,70 @@ public class Bank {
 
     /**
      * Menu to store golds into bank.
+     * @param hero Hero accessing bank
      */
-    private void stockMoney(){
-        Scanner scanner = new Scanner(System.in);
-        String input;
-        int gold;
+    private void stockMoney(Hero hero){
+        // Retrieve gold item from hero inventory
+        ItemInstance gold = hero.getInventory().getItemById(ItemFunction.goldId);
 
-        while(true){
-            System.out.println("Vous avez " + Hero.getInstance().getGold() + " pièces d'or.");
-            System.out.println("Combien voulez-vous stocker de pièces d'or? Minimum " + _minimumGoldPerStock + " pièces!");
-            System.out.println("Inscrivez un montant négatif pour quitter.");
-            input = scanner.next();
-            try {
-                gold = Integer.parseInt(input);
-                if(gold <= 0){
-                    break;
-                } else if(gold < _minimumGoldPerStock){
-                    System.out.println("Ce n'est pas suffisant !");
-                } else if(gold > Hero.getInstance().getGold()){
-                    System.out.println("Vous n'avez pas assez d'argent...");
-                } else {
-                    System.out.println("Vous avons ajouter les " + gold + " pièces d'or dans nos coffre.");
-                    addMoney(gold);
-                    Hero.getInstance().decreaseGold(gold);
-                    break;
-                }
-            } catch (Exception e){
-                System.out.println("Ce n'est pas un montant valide !");
-            }
+        // If hero does not have any gold
+        if(gold == null){
+            System.out.println("Vous n'avez pas d'argent !");
+            return;
+        }
+
+        System.out.println("Vous avez " + gold.getStack() + " pièces d'or.");
+        System.out.println("Combien voulez-vous stocker de pièces d'or? Minimum " + _minimumGoldPerStock + " pièces!");
+        System.out.println("Autre ou montant négatif: Quitter.");
+        int amount = InputFunction.getIntInput();
+
+        if(amount <= 0 || amount == Integer.MAX_VALUE){
+            // Player wants to leave
+            return;
+        } else if(amount < _minimumGoldPerStock){
+            // Player input is too low
+            System.out.println("Ce n'est pas suffisant !");
+        } else if(amount > gold.getStack()){
+            // Player doesn't have the money he wants to stock
+            System.out.println("Vous n'avez pas assez d'argent...");
+        } else {
+            // Player has enough money, remove stock of gold item
+            addMoney(amount);
+            hero.getInventory().removeItemStack(gold,amount);
+            System.out.println("Vous avons ajouté les " + amount + " pièces d'or dans nos coffre.");
         }
     }
 
     /**
      * Menu to retrieve golds from bank.
+     * @param hero Hero accessing bank
      */
-    private void retrieveMoney(){
-        Scanner scanner = new Scanner(System.in);
-        String input;
-        int gold;
+    private void retrieveMoney(Hero hero){
+        System.out.println("Il y a " + _stockedGold + " pièces d'or dans nos coffres.");
+        System.out.println("Combien voulez-vous en retirer ?");
+        System.out.println("Autre ou montant négatif: Quitter.");
+        int amount = InputFunction.getIntInput();
 
-        while(true){
-            System.out.println("Il y a " + _stockedGold + " pièces d'or dans nos coffres.");
-            System.out.println("Combien voulez-vous en retirer ?");
-            System.out.println("Inscrivez un montant négatif pour quitter.");
-            input = scanner.next();
-            try {
-                gold = Integer.parseInt(input);
-                if (gold <= 0) {
-                    break;
-                } else if(gold > _stockedGold) {
-                    System.out.println("Vous ne pouvez retirer plus le montant stocké!");
-                } else {
-                    System.out.println("Vous avons retirer les " + gold + " de notre coffre.");
-                    decreaseMoney(gold);
-                    Hero.getInstance().addGold(gold);
-                    break;
-                }
-            } catch (Exception e){
-                System.out.println("Ce n'est pas un montant valide !");
-            }
+        if (amount <= 0 || amount == Integer.MAX_VALUE) {
+            // Player wants to leave
+            return;
+        } else if(amount > _stockedGold) {
+            System.out.println("Vous ne pouvez retirer plus que le montant stocké!");
+        } else if(hero.canAddGold()){
+            decreaseMoney(amount);
+            hero.addGold(amount);
+            System.out.println("Vous avons retirer les " + amount + " de notre coffre.");
+        } else {
+            System.out.println("Impossible d'ajouter de l'argent à votre inventaire !");
         }
     }
 
     /**
      * Main menu to borrow money,
      * not implemented yet.
+     * @param hero Hero accessing bank
      */
-    private void borrowMoney(){
+    private void borrowMoney(Hero hero){
         throw new NotImplementedException();
     }
 }

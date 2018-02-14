@@ -1,6 +1,6 @@
 package DaD.creature;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 
 /**
  * Created by Clovis on 08/02/2017.

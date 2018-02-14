@@ -98,13 +98,4 @@ public class MonsterFormulas
 			return defense;
 		}
 	}
-
-	/**
-	 * Calculate gold given by killing a monster.
-	 * @param template Template of the monster
-	 * @return double
-	 */
-	public static double calcGold(MonsterTemplate template){
-		return template.getGold();
-	}
 }

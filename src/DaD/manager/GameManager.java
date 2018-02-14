@@ -4,7 +4,8 @@ import DaD.city.Bank;
 import DaD.city.Blacksmith;
 import DaD.city.Church;
 import DaD.city.Inn;
-import DaD.commons.Spacer;
+import DaD.Commons.Utils.InputFunction;
+import DaD.Commons.Utils.Spacer;
 import DaD.creature.Hero;
 import DaD.dungeon.DungeonInstance;
 import DaD.generator.HeroGenerator;
@@ -36,7 +37,7 @@ public class GameManager
 	 *
 	 * @see GameManager#mainMenu()
 	 */
-	private static final String[] _mainMenuOptions = {"Créer une nouvelle partie","Continuer une partie","Quitter le jeu"};
+	private static final String[] _mainMenuOptions = {"Créer une nouvelle partie","Continuer une partie"};
 
 	/**
 	 * Options for player once a game was loaded or created.
@@ -44,7 +45,7 @@ public class GameManager
 	 * @see GameManager#inGameMenu()
 	 */
 	private static final String[] _inGameMenuOptions = {"Entrer en donjon","Aller voir le forgeron","Dormir à  l'auberge",
-			"Aller à l'église","Aller à la banque","Afficher tes caractéristiques","Acceder a ton inventaire","Quitter la partie"};
+			"Aller à l'église","Aller à la banque","Afficher tes caractéristiques","Acceder a ton inventaire"};
 
 	/**
 	 * Accessor for private Instance of class.
@@ -68,41 +69,29 @@ public class GameManager
 	 * @see SaveManager
 	 */
 	public void mainMenu(){
-		boolean inMenu = true;
-		while (inMenu)
-		{
-			Scanner scanner = new Scanner(System.in);
-			String input;
-			int choice;
-
-			//Display information to player
+		boolean stay = true;
+		while(stay) {
+			// Display information to player
 			Spacer.displayMainMenuSpacer();
 			System.out.println("Bienvenue dans le jeu \"Dungeons and Dragons\" !");
-			for(int i = 0; i < _mainMenuOptions.length; i++){
-				System.out.println((i+1) + " : " + _mainMenuOptions[i]);
+			for (int i = 0; i < _mainMenuOptions.length; i++) {
+				System.out.println((i + 1) + " : " + _mainMenuOptions[i]);
 			}
+			System.out.println("Autre: Quitter");
 			Spacer.displayMainMenuSpacer();
-			try {
-				input = scanner.next();
-				choice = Integer.parseInt(input);
 
-				switch (choice) { // Action depending en the player's choice
-					case 1: // Create a new game with a new hero
-						if(HeroGenerator.getInstance().createNewHero()) // Return true if creating hero was successful
-							inGameMenu();
-						break;
-					case 2: // Continue an existing game
-						if (SaveManager.getInstance().load()) // load() return true if the load succeed, false other way
-							inGameMenu(); // If it's true, the load succeed, we load the main menu with the hero
-						break;
-					case 3: // Quit game
-						inMenu = false;
-						break;
-					default:
-						throw new Exception();
-				}
-			} catch (Exception e){
-				System.out.println("Ce n'est pas un choix valide!");
+			switch (InputFunction.getIntInput()) { // Action depending en the player's choice
+				case 1: // Create a new game with a new hero
+					if (HeroGenerator.getInstance().createNewHero()) // Return true if creating hero was successful
+						inGameMenu();
+					break;
+				case 2: // Continue an existing game
+					if (SaveManager.getInstance().load()) // load() return true if the load succeed, false other way
+						inGameMenu(); // If it's true, the load succeed, we load the main menu with the hero
+					break;
+				default: // Quit game
+					stay = false;
+					break;
 			}
 		}
 	}
@@ -114,63 +103,54 @@ public class GameManager
 	 * like entering in a dungeon, save your game, buy items ...
 	 */
 	private void inGameMenu(){ // This is the main menu once the game has been initiated
-		Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
-		String input;
-		int choice;
-		boolean inGame = true;
-
-		while(inGame)
-		{
+		boolean stay = true;
+		while(stay) {
 			Spacer.displayInGameMenuSpacer();
 			System.out.println("Bonjour " + Hero.getInstance().getName() + "!");
 			System.out.println("Que veux-tu faire ?");
-			for(int i = 0; i < _inGameMenuOptions.length; i++){
-				System.out.println((i+1) + " : " + _inGameMenuOptions[i]);
+			for (int i = 0; i < _inGameMenuOptions.length; i++) {
+				System.out.println((i + 1) + " : " + _inGameMenuOptions[i]);
 			}
+			System.out.println("Autre: Quitter");
 			Spacer.displayInGameMenuSpacer();
 
-			try {
-				input = scanner.next();
-				choice = Integer.parseInt(input);
-				switch (choice) {
-					case 1:
-						// Go into the enterDungeon, choose difficulty then create the DungeonInstance
-						DungeonInstance dungeon = DungeonHandler.getInstance().dungeonSetting(Hero.getInstance());
-						if(dungeon != null) { // In case the hero left before choosing a dungeon
-							DungeonHandler.getInstance().enterDungeon(Hero.getInstance(), dungeon);
-						}
-						break;
-					case 2:
-						Blacksmith.getInstance().blacksmithMenu(Hero.getInstance());
-						break;
-					case 3:
-						// Go to the inn menu
-						Inn.getInstance().innMenu();
-						break;
-					case 4:
-						// go to church
-						Church.getInstance().churchMenu();
-						break;
-					case 5:
-						Bank.getInstance().bankMenu();
-						break;
-					case 6:
-						Hero.getInstance().displayFullCharacteristic();
-						break;
-					case 7:
-						InventoryManager.getInstance().inventoryMenu(Hero.getInstance());
-						break;
-					case 8:
-						inGame = false;
-						break;
-					default:
-						// This will go to catch and display the message
-						throw new Exception();
-				}
-			} catch (Exception e){
-				System.out.println("Ce n'est pas un choix valide !");
+			switch (InputFunction.getIntInput()) {
+				case 1:
+					// Go into the enterDungeon, choose difficulty then create the DungeonInstance
+					DungeonInstance dungeon = DungeonHandler.getInstance().dungeonSetting(Hero.getInstance());
+					if (dungeon != null) { // In case the hero left before choosing a dungeon
+						DungeonHandler.getInstance().enterDungeon(Hero.getInstance(), dungeon);
+					}
+					break;
+				case 2:
+					Blacksmith.getInstance().blacksmithMenu(Hero.getInstance());
+					break;
+				case 3:
+					// Go to the inn menu
+					Inn.getInstance().innMenu(Hero.getInstance());
+					break;
+				case 4:
+					// go to church
+					Church.getInstance().churchMenu(Hero.getInstance());
+					break;
+				case 5:
+					Bank.getInstance().bankMenu(Hero.getInstance());
+					break;
+				case 6:
+					Hero.getInstance().displayFullCharacteristic();
+					break;
+				case 7:
+					InventoryManager.getInstance().inventoryMenu(Hero.getInstance());
+					break;
+				default:
+					// Ask confirmation before leaving
+					if (InputFunction.askConfirmation()) {
+						// Clean hero so stats are not used after
+						Hero.getInstance().clearHero();
+						stay = false;
+					}
+					break;
 			}
 		}
-		Hero.getInstance().clearHero();
 	}
 }

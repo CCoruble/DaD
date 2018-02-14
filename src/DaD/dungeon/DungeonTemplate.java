@@ -1,6 +1,6 @@
 package DaD.dungeon;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 
 import java.util.ArrayList;
 
@@ -11,7 +11,6 @@ public class DungeonTemplate {
 
 	private final String _name;
 	private final int _requiredLevel;
-	private final double _goldReward;
 	private final double _experienceReward;
 	/**
 	 * A simple indicator, not really
@@ -34,7 +33,6 @@ public class DungeonTemplate {
 		_name = dungeonStats.getString("name");
 		_levelDifficulty = dungeonStats.getInteger("difficulty");
 		_requiredLevel = dungeonStats.getInteger("requiredLevel");
-		_goldReward = dungeonStats.getInteger("goldReward");
 		_experienceReward = dungeonStats.getInteger("experienceReward");
 
 		ArrayList<MultiValueSet> allRooms = (ArrayList<MultiValueSet>)dungeonStats.getObject("rooms");
@@ -77,15 +75,6 @@ public class DungeonTemplate {
 	}
 
 	/**
-	 * Return amount of gold earned when
-	 * finishing this dungeon.
-	 * @return double
-	 */
-	public double getGoldReward(){
-		return _goldReward;
-	}
-
-	/**
 	 * Return amount of experience earned
 	 * when finishing this dungeon.
 	 * @return double
@@ -113,7 +102,6 @@ public class DungeonTemplate {
 	public void displayTemplate(){
 		System.out.println("name: " + _name);
 		System.out.println("requiredLevel: " + _requiredLevel);
-		System.out.println("goldReward: " + _goldReward);
 		System.out.println("experienceReward: " + _experienceReward);
 		System.out.println("levelDifficulty: " + _levelDifficulty);
 		for(DungeonRoomTemplate roomTemplate: _roomTemplateList){

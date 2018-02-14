@@ -1,8 +1,7 @@
 package DaD.city;
 
+import DaD.Commons.Utils.InputFunction;
 import DaD.creature.Hero;
-
-import java.util.Scanner;
 
 /**
  * Created by Clovis on 09/02/2017.
@@ -34,34 +33,33 @@ public class Inn
 	 * where the hero can choose
 	 * which room he wants.
 	 */
-	public void innMenu() {
-		Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
+	public void innMenu(Hero hero) {
 		System.out.println("Bienvenue à l'auberge jeune aventurier !");
-		System.out.println("Tu as actuellement " + (int)Hero.getInstance().getPercentHp() + "% de tes points de vie.");
-		int innChoice = 0;
-		while (innChoice < 1 || innChoice > 4)
-		{
-			System.out.println("Dans quelle chambre veux-tu dormir ?");
-			System.out.println("1 : Chambre Emaüs (30% de ta vie) pour " + calcInnPrice(Hero.getInstance().getLevel(),1) + " gold");
-			System.out.println("2 : Chambre Ikea (50% de ta vie) pour " + calcInnPrice(Hero.getInstance().getLevel(),2) + " gold");
-			System.out.println("3 : Chambre de luxe (100% de ta vie) pour " + calcInnPrice(Hero.getInstance().getLevel(),3) + " gold");
-			System.out.println("4 : Annuler");
-			innChoice = scanner.nextInt();
+		System.out.println("Tu as actuellement " + (int)hero.getPercentHp() + "% de tes points de vie et " + hero.getAmountOfGold() + " golds.");
+
+
+		System.out.println("Dans quelle chambre veux-tu dormir ?");
+		System.out.println("1 : Chambre Emaüs (30% de ta vie) pour " + calcInnPrice(hero.getLevel(),1) + " gold");
+		System.out.println("2 : Chambre Ikea (50% de ta vie) pour " + calcInnPrice(hero.getLevel(),2) + " gold");
+		System.out.println("3 : Chambre de luxe (100% de ta vie) pour " + calcInnPrice(hero.getLevel(),3) + " gold");
+		System.out.println("Autre : quitter");
+		int choice = InputFunction.getIntInput();
+
+		if(choice < 1 || choice > 3) {
+			// Player wants to leave
+			return;
 		}
-		switch(innChoice)
-		{
-			case 1 : // Low quality +30% Hp
-				Hero.getInstance().decreaseGold(calcInnPrice(Hero.getInstance().getLevel(),1)); // Pay the price
-				Hero.getInstance().setHpValue((int)(Hero.getInstance().getHp().getValue() + Hero.getInstance().getHpMax().getValue()*0.3)); // Get +30% hp (with a max of 100%)
-				break;
-			case 2 : // Medium quality +50% Hp
-				Hero.getInstance().decreaseGold(calcInnPrice(Hero.getInstance().getLevel(),1)); // Pay the price
-				Hero.getInstance().setHpValue((int)(Hero.getInstance().getHp().getValue() + Hero.getInstance().getHpMax().getValue()*0.5)); // Get +50% Hp (with a max of 100%)
-				break;
-			case 3 : // High quality +100% Hp
-				Hero.getInstance().decreaseGold(calcInnPrice(Hero.getInstance().getLevel(),1)); //  Pay the price
-				Hero.getInstance().setHpValue(Hero.getInstance().getHpMax().getValue()); // hp = HpMax
-				break;
+		// Player did a valid choice
+		int price = calcInnPrice(hero.getLevel(),choice);
+		if(hero.canAfford(price)){
+			// Hero has enough money to pay
+			hero.decreaseGold(price);
+			System.out.println("Bonne nuit !");
+			int hpGained = rest(hero,choice);
+			System.out.println("+" + hpGained + "Hp.");
+		} else {
+			// Hero cannot pay
+			System.out.println("Désolé tu n'a pas assez d'argent, une prochaine fois !");
 		}
 	}
 
@@ -74,5 +72,29 @@ public class Inn
 	 */
 	private int calcInnPrice(int level, int quality){
 		return (int)(20*((9+level)/10)*(quality/1.5));
+	}
+
+	/**
+	 * Give HP to hero depending on
+	 * the room quality he choosed.
+	 * Return amount of hp gain.
+	 * @param hero Hero resting
+	 * @param quality Quality of selected room
+	 * @return int
+	 */
+	private int rest(Hero hero, int quality){
+		double hpBeforeRest = hero.getHp().getValue();
+		switch(quality){
+			case 1 : // Low quality +30% Hp
+				hero.addHp(hero.getHpMax().getValue()*0.3); // Get +30% hp (with a max of 100%)
+				break;
+			case 2 : // Medium quality +50% Hp
+				hero.addHp(hero.getHpMax().getValue()*0.5); // Get +50% Hp (with a max of 100%)
+				break;
+			case 3 : // High quality +100% Hp
+				hero.addHp(hero.getHpMax().getValue()); // hp = HpMax
+				break;
+		}
+		return (int)(hero.getHp().getValue() - hpBeforeRest);
 	}
 }

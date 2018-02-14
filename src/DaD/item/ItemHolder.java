@@ -1,6 +1,8 @@
 package DaD.item;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
+import gnu.trove.map.TIntObjectMap;
+import gnu.trove.map.hash.TIntObjectHashMap;
 
 import java.util.HashMap;
 
@@ -16,6 +18,21 @@ public class ItemHolder
 	 * Private instance of class.
 	 */
 	private static final ItemHolder _instance = new ItemHolder();
+
+	/**
+	 * HashMap containing the full ItemTemplate list.
+	 * <p>
+	 *     The key for this HashMap is an Integer and
+	 *     the value is ItemTemplate.
+	 *     The key is equal to the ID of the template,
+	 *     the ID of the template can be found in the
+	 *     item configuration file.
+	 * </p>
+	 * @see DaD.loader.ItemLoader
+	 * @see ItemTemplate
+	 */
+	private final TIntObjectMap<ItemTemplate> _itemsList2 =  new TIntObjectHashMap<>();
+
 	/**
 	 * HashMap containing the full ItemTemplate list.
 	 * <p>

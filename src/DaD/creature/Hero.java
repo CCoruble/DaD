@@ -1,15 +1,16 @@
 package DaD.creature;
 
+import DaD.Commons.Utils.InputFunction;
 import DaD.calculator.Calculator;
-import DaD.commons.MultiValueSet;
-import DaD.commons.Spacer;
+import DaD.Commons.Collections.MultiValueSet;
+import DaD.Commons.Utils.Spacer;
+import DaD.Commons.Utils.ItemFunction;
 import DaD.data.types.HeroDeathReason;
 import DaD.data.types.HeroGender;
 import DaD.data.types.HeroRace;
 import DaD.data.types.Stats.Env;
 import DaD.formulas.HeroFormulas;
 import DaD.inventory.HeroInventory;
-import DaD.inventory.Inventory;
 import DaD.item.ItemInstance;
 
 /**
@@ -87,6 +88,8 @@ public class Hero extends Creature
 		} else { // When creating a new Hero
 			_inventory = new HeroInventory(HeroFormulas.BASE_INVENTORY_SIZE);
 		}
+		// Give him golds
+		_inventory.addItem(new ItemInstance(ItemFunction.goldId,(int)HeroFormulas.BASE_GOLD));
 	}
 
 	/**
@@ -155,9 +158,21 @@ public class Hero extends Creature
 	public void resurect(HeroDeathReason deathReason){
 		switch(deathReason){ // Depending of the source / reason of death the gold & experience loss can be changed
 			case KILLED_BY_MONSTER: // The only reason of death for the moment
-				setGold((int)(getGold() * 0.9));
-				setHpValue((int)(getHpMax().getValue()*0.5));
-				setExperienceValue((int)(getExperience().getValue()*0.9));
+
+				// Get item gold
+				ItemInstance gold = _inventory.getItemById(ItemFunction.goldId);
+
+				// If not null, it mean hero has gold in this inventory
+				if(gold != null) {
+					// Reduce hero gold by 30%
+					_inventory.removeItemStack(gold, (int) (gold.getStack() * 0.7));
+				}
+
+				// Reduce hero experience by 40%
+				setExperienceValue((int)(getExperience().getValue()*0.6));
+
+				// Set hero HP to 50% of its max value
+				addHp(getHpMax().getValue()*0.5);
 				break;
 		}
 	}
@@ -189,7 +204,6 @@ public class Hero extends Creature
 				"Mp : [" + (int)getMp().getValue() + "/" + (int)getMpMax().getValue() + "] (" + (int)getPercentMp() + "%)\n" +
 				"Attaque : " + (int)getAttack().getValue() + "\n" +
 				"Defense : " + (int)getDefense().getValue() + "\n" +
-				"Gold : " + getGold() + "\n" +
 				"Experience : [" + (int)getExperience().getValue() + "/" + (int)getExperienceMax().getValue() + "] (" + getPercentExperience() + "%) \n" +
 				"Inventory space : [" + (_inventory.getInventorySize() - _inventory.getInventorySizeLeft()) + "/" + _inventory.getInventorySize() + "]\n" +
 				"=============================";
@@ -324,7 +338,7 @@ public class Hero extends Creature
 	public boolean tryUnequip(ItemInstance item) {
 		// Maybe used later to prevent hero to unequip some special items (cursed / blessed / ...)
 		if (_inventory.isInventoryFull()){
-			System.out.println("Votre inventaire est plein, videz le avant de vous dé-équiper !");
+			System.out.println("Votre inventaire est plein, videz le avant de vous déséquiper !");
 			return false;
 		}
 		_inventory.unequip(this, item);
@@ -345,5 +359,110 @@ public class Hero extends Creature
 	 */
 	public void setInventory(HeroInventory inventory){
 		_inventory = inventory;
+	}
+	/**
+	 * Display inventory and ask hero
+	 * to remove an item. Return true
+	 * if hero successfully removed
+	 * an item from it.
+	 */
+	public boolean askToReleaseItem(){
+		boolean decision;
+		int count = 0;
+		for(ItemInstance itemInstance:_inventory.getItemList()){
+			System.out.println((count + 1) + ": " + itemInstance.toString());
+			count++;
+		}
+		System.out.println("Autre: Quitter");
+
+		// Retrieve player choice
+		int choice = InputFunction.getIntInput();
+
+		if(choice < 1 || choice > _inventory.getItemList().size()){
+			// If player made a non valid choice, he doesn't want to throw item
+			decision  = false;
+		} else {
+			// Player selected an item to throw
+			decision = true;
+		}
+
+		if(InputFunction.askConfirmation()) {
+			// Player is sure about his decision
+			return decision;
+		} else {
+			// Player is unsure about his decision
+			return askToReleaseItem();
+		}
+	}
+
+	/**
+	 * Return true if hero can
+	 * receive golds. True if
+	 * inventory is not full or
+	 * already contains item gold.
+	 * @return boolean
+	 */
+	public boolean canAddGold(){
+		if(!_inventory.isInventoryFull() || _inventory.getItemById(ItemFunction.goldId) != null)
+			return true;
+		return false;
+	}
+	/**
+	 * Add stack to item gold.
+	 * WARNING! Does not check if
+	 * hero already has gold item or
+	 * inventory is full.
+	 * Call {@link #canAddGold()} to
+	 * ensure this!
+	 * @see #canAddGold()
+	 * @param gold amount of stack to add
+	 */
+	public void addGold(double gold){
+		_inventory.getItemById(ItemFunction.goldId).addStack((int)gold);
+	}
+	/**
+	 * Return true if hero has
+	 * exactly or more gold than
+	 * given amount, false otherwise.
+	 * @param gold Amount of gold you want to check the player has
+	 * @return boolean
+	 */
+	public boolean canAfford(double gold){
+		ItemInstance itemInstance = _inventory.getItemById(ItemFunction.goldId); // Return null if no item match ID
+		if(itemInstance == null) // Player doesn't have golds
+			return false;
+
+		if (itemInstance.getStack() >= gold) // Player has enough golds
+			return true;
+		return false; // Player has not enough golds
+	}
+
+	/**
+	 * Decrease stacks of item gold
+	 * from the given amount.
+	 * <p>
+	 *     WARNING! This does not verify if
+	 *     hero has the item gold neither
+	 *     required stack of it!
+	 * 	   Call {@link #canAfford(double)} to
+	 * 	   ensure this!
+	 * </p>
+	 * @see #canAfford(double)
+	 * @param gold Amount of gold to decrease
+	 */
+	public void decreaseGold(double gold){
+		_inventory.removeItemStack(_inventory.getItemById(ItemFunction.goldId),(int)gold);
+	}
+
+	/**
+	 * Return stack of item gold,
+	 * 0 if player has no gold item.
+	 * @return int
+	 */
+	public int getAmountOfGold(){
+		ItemInstance itemInstance = _inventory.getItemById(ItemFunction.goldId);
+		if(itemInstance == null) // Hero has no gold item
+			return 0;
+		return itemInstance.getStack(); // Hero has gold, return the amount
 	}
 }

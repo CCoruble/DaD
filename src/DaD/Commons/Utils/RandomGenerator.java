@@ -1,4 +1,4 @@
-package DaD.commons;
+package DaD.Commons.Utils;
 
 import java.util.Random;
 

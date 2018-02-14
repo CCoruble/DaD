@@ -1,6 +1,6 @@
 package DaD.item;
 
-import DaD.commons.MultiValueSet;
+import DaD.Commons.Collections.MultiValueSet;
 import DaD.data.types.ItemEquipSlot;
 import DaD.data.types.ItemRarity;
 import DaD.data.types.ItemType;
@@ -49,10 +49,15 @@ public class ItemTemplate
 	 */
 	private final int _maxStack; // -1 => infinite, 1 => can't be stacked, X => can be stacked X times
 	/**
-	 * Type of item, basically: ring, sword, shield ...
-	 * @see ItemType
+	 * Type of item
+	 * @see DaD.data.types.ItemType
 	 */
-	private final ItemType _type;
+	private final ItemType _itemType;
+	/**
+	 * Slot where instances of
+	 * this items should be equipped.
+	 */
+	private final ItemEquipSlot _equipSlot;
 	/**
 	 * Max durability this template can reach.
 	 * <p>
@@ -70,6 +75,10 @@ public class ItemTemplate
 	 * Is the item equipable or not
 	 */
 	private final boolean _equipable;
+	/**
+	 * Is item sellable or not
+	 */
+	private final boolean _sellable;
 	/**
 	 * Description of the item, can be short stories.
 	 */
@@ -96,10 +105,11 @@ public class ItemTemplate
 		_weight = itemsStats.getInteger("weight");
 
 		_equipable = itemsStats.getBool("equipable");
+		_sellable = itemsStats.getBool("sellable");
 
 		_description = itemsStats.getString("description");
-		_type = (ItemType)itemsStats.getEnum("type",ItemType.class);
-
+		_itemType = (ItemType)itemsStats.getEnum("itemType",ItemType.class);
+		_equipSlot = (ItemEquipSlot)itemsStats.getEnum("equipSlot",ItemEquipSlot.class);
 		ArrayList<Env> allBonus = itemsStats.getArrayList("allBonus");
 		_allBonus.addAll(allBonus);
 	}
@@ -158,6 +168,13 @@ public class ItemTemplate
 	}
 
 	/**
+	 * Return {@link #_sellable}.
+	 */
+	public boolean isSellable(){
+		return _sellable;
+	}
+
+	/**
 	 * Return the base price of this item.
 	 * <p>
 	 *     ItemTemplate cannot be sell or buy, but
@@ -203,11 +220,13 @@ public class ItemTemplate
 		System.out.println("Id: " + _id);
 		System.out.println("_name: " + _name);
 		System.out.println("_requiredLevel: " + _requiredLevel);
+		System.out.println("_price: " + _price);
 		System.out.println("_rarity: " + _rarity);
 		System.out.println("_maxStack: " + _maxStack);
 		System.out.println("_maxDurability: " + _maxDurability);
 		System.out.println("_weight: " + _weight);
 		System.out.println("_equipable: " + _equipable);
+		System.out.println("_sellable: " + _sellable);
 		System.out.println("_description: " + _description);
 	}
 
@@ -220,11 +239,7 @@ public class ItemTemplate
 		}
 	}
 
-	/**
-	 * Return {@link #_type}.
-	 * @return ItemType
-	 */
-	public ItemType getItemType() {
-		return _type;
+	public ItemEquipSlot getEquipSlot() {
+		return _equipSlot;
 	}
 }

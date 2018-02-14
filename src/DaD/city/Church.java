@@ -1,8 +1,8 @@
 package DaD.city;
 
+import DaD.Commons.Utils.InputFunction;
+import DaD.creature.Hero;
 import DaD.manager.SaveManager;
-
-import java.util.Scanner;
 
 /**
  * Created by Clovis on 15/05/2017.
@@ -14,6 +14,8 @@ public class Church
 	 * Private instance of class.
 	 */
 	private static final Church _instance = new Church();
+
+	private static final String[] _options = {"Sauvegarder"};
 
 	/**
 	 * Constructor of class.
@@ -33,23 +35,19 @@ public class Church
 	 * this is where choices will be
 	 * prompted to hero.
 	 */
-	public void churchMenu() {
-		Scanner scanner = new Scanner(System.in); // Setting up a scanner to get the choice made by player
+	public void churchMenu(Hero hero) {
 		System.out.println("Que veux-tu faire ?");
 
 		//Display all options to the player
-		System.out.println("1: Sauvegarder");
+		for (int i = 0; i < _options.length; i++) {
+			System.out.println((i + 1) + " : " + _options[i]);
+		}
 		System.out.println("Autre: Quitter l'eglise");
-		try {
-			int choice; // Variable that represent the player's choice
-			choice = scanner.nextInt(); // Get the player's choice
-			switch (choice) {
-				case 1:
-					SaveManager.getInstance().save();
-					break;
-			}
-		} catch (Exception e){
-			e.printStackTrace();
+
+		switch (InputFunction.getIntInput()) {
+			case 1:
+				SaveManager.getInstance().save();
+				break;
 		}
 	}
 }
