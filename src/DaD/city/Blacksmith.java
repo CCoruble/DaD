@@ -33,7 +33,7 @@ public class Blacksmith
 	 * Sell rate, when selling an item
 	 * we apply this sell rate to reduce the price.
 	 */
-	private final double _sellRate = 0.6;
+	private final double _sellRate = 0.3;
 
 	/**
 	 * Constructor of class.
@@ -114,7 +114,7 @@ public class Blacksmith
 		int choice = InputFunction.getIntInput();
 
 		// Player made a valid choice
-		if(choice > 0 || choice <= _itemTemplateIdList.size())
+		if(choice > 0 && choice <= _itemTemplateIdList.size())
 			buyItem(hero,ItemHolder.getInstance().getItem(_itemTemplateIdList.get(choice - 1)));
 	}
 
@@ -134,7 +134,6 @@ public class Blacksmith
 		ItemInstance itemInstance = new ItemInstance(itemTemplate);
 		if(hero.getInventory().addItem(itemInstance)){
 			hero.decreaseGold(itemTemplate.getPrice());
-			System.out.println("L'objet est maintenant dans votre inventaire!");
 		} else {
 			System.out.println("Impossible d'ajouter l'item à votre inventaire!");
 		}

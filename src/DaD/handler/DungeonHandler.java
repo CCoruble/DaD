@@ -34,7 +34,7 @@ public class DungeonHandler {
     /**
      * All available options.
      */
-    private static final String[] _options = {"Commencer le combat","Afficher tes statistiques","Quitter le donjon"};
+    private static final String[] _options = {"Commencer le combat","Afficher tes statistiques"};
 
     /**
      * Private constructor of class.
@@ -56,7 +56,6 @@ public class DungeonHandler {
      * @return DungeonInstance
      */
     public DungeonInstance dungeonSetting(Hero hero){
-        int choice;
         // Retrieve all dungeons the player can choose
         ArrayList<DungeonTemplate> availableDungeons = DungeonHolder.getInstance().getAvailableDungeon(hero);
 
@@ -66,7 +65,7 @@ public class DungeonHandler {
         }
         System.out.println("Autre: Quitter");
 
-        choice = InputFunction.getIntInput();
+        int choice = InputFunction.getIntInput();
         if(choice > 0 && choice <= availableDungeons.size()){ // Player did a correct choice
             // Order start at 0 in ArrayList meanwhile hero choices are displayed starting at 1
             return DungeonGenerator.getInstance().createDungeon(availableDungeons.get(choice-1));

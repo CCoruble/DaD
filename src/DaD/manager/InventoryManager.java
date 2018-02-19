@@ -6,7 +6,6 @@ import DaD.creature.Hero;
 import DaD.item.ItemInstance;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by Clovis on 16/05/2017.

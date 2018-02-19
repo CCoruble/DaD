@@ -11,8 +11,6 @@ import DaD.dungeon.DungeonInstance;
 import DaD.generator.HeroGenerator;
 import DaD.handler.DungeonHandler;
 
-import java.util.Scanner;
-
 /**
  * Created by Clovis on 07/02/2017.
  * Singleton used to display both loading / creating game menu

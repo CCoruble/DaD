@@ -1,8 +1,10 @@
 package DaD.inventory;
 
+import DaD.Commons.Utils.InputFunction;
 import DaD.data.types.ItemEquipSlot;
 import DaD.item.ItemInstance;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -122,7 +124,6 @@ public abstract class Inventory
 		return _itemList;
 	}
 
-	// items
 	/**
 	 * Add an ItemInstance to the list of items.
 	 * Return true if itemInstance and all of his stacks
@@ -137,11 +138,9 @@ public abstract class Inventory
 	 * @param itemInstance The ItemInstance to add to inventory.
 	 * @return boolean
 	 */
-	public boolean addItem(ItemInstance itemInstance){
+	public boolean addItem(ItemInstance itemInstance) {
 		// Represent number of stack before trying to add them to inventory
 		int baseStack = itemInstance.getStack();
-		if(isInventoryFull())
-			return false;
 
 		if(itemInstance.getTemplate().getMaxStack() == 1){
 			addNonStackableItem(itemInstance);
@@ -156,8 +155,13 @@ public abstract class Inventory
 			System.out.println((baseStack - itemInstance.getStack())
 					+ " " + itemInstance.getTemplate().getName()
 					+ " sur " + baseStack + " ajouté à l'inventaire");
-			return false;
+			if(askToFreeSlot()){
+				return addItem(itemInstance);
+			} else {
+				return false;
+			}
 		} else {
+			System.out.println("Item ajouté à votre inventaire");
 			return true;
 		}
 	}
@@ -167,7 +171,7 @@ public abstract class Inventory
 	 * to items in inventory with same template
 	 * ID of given itemInstance. Return
 	 * number of stack that couldn't be added.
-	 * @param itemInstance
+	 * @param itemInstance ItemInstance you want stacks to be added to existing item
 	 * @return int
 	 */
 	public int addStackToExistingItems(ItemInstance itemInstance){
@@ -176,13 +180,6 @@ public abstract class Inventory
 		// This represent number of stack that was really added to existing item
 		int addedAmount;
 		for(ItemInstance uniqueItem: getItemsById(itemInstance.getTemplate().getId())){
-			if(uniqueItem.getTemplate().getMaxStack() == -1) {
-				// There is no limit to stack on this item, add all stacks to it
-				uniqueItem.addStack(itemInstance.getStack());
-				// Return 0, there is no more stack to add
-				itemInstance.removeStack(itemInstance.getStack());
-				return itemInstance.getStack();
-			}
 			// Calculate how many stack can we add until reach maxStack of item
 			maxAmountToAdd = uniqueItem.getTemplate().getMaxStack() - uniqueItem.getStack();
 			// Calculate how many stack we will add to item
@@ -224,20 +221,45 @@ public abstract class Inventory
 	public int addNewItem(ItemInstance itemInstance){
 		// While inventory is not full AND there is stack to add to inventory
 		while(!isInventoryFull() && itemInstance.getStack() > 0){
-			// In case of infinite stack
-			if(itemInstance.getTemplate().getMaxStack() == -1) {
-				// Add item to list
-				_itemList.add(new ItemInstance(itemInstance.getTemplate().getId(),itemInstance.isEquipped(),itemInstance.getStack()));
-				// Return 0, there is no more stack to add
-				itemInstance.removeStack(itemInstance.getStack());
-				return itemInstance.getStack();
-			}
 			// This represent the number of stack that will set for the new item
 			int addedAmount = Math.min(itemInstance.getStack(),itemInstance.getTemplate().getMaxStack());
 			_itemList.add(new ItemInstance(itemInstance.getTemplate().getId(),itemInstance.isEquipped(),addedAmount));
 			itemInstance.removeStack(addedAmount);
 		}
 		return itemInstance.getStack();
+	}
+
+	/**
+	 * Ask player to free one
+	 * of his inventory slot by
+	 * throwing an item.
+	 * Return true if player
+	 * threw an item.
+	 * @return boolean
+	 */
+	public boolean askToFreeSlot(){
+		System.out.println("Voici la liste des items que vous pouvez jeter:");
+		ArrayList<ItemInstance> throwableItemList = getThrowableItems();
+		int count = 0;
+		for (ItemInstance itemInstance: throwableItemList) {
+			System.out.println((count + 1) + ": " + itemInstance.getTemplate().getName() + " [x" + itemInstance.getStack() + "]");
+			count++;
+		}
+		System.out.println("Autre: Quitter");
+		int choice = InputFunction.getIntInput();
+
+		// Ask player if he sure about his decision
+		if(InputFunction.askConfirmation()){
+			// Player is sure about his desicion
+			if(choice > 0 && choice <= throwableItemList.size()){
+				// Player did choose a correct item, remove it
+				_itemList.remove(throwableItemList.get(choice - 1));
+				return true;
+			}
+			return false;
+		}else {
+			return askToFreeSlot();
+		}
 	}
 
 	/**
@@ -319,6 +341,17 @@ public abstract class Inventory
 		}
 		return sellableItems;
 	}
+
+	public ArrayList<ItemInstance> getThrowableItems() {
+		ArrayList<ItemInstance> itemList = new ArrayList<>();
+		for(ItemInstance itemInstance:_itemList)
+			// If item is throwable and not equipped
+			if(itemInstance.isThrowable() && !itemInstance.isEquipped())
+				itemList.add(itemInstance);
+
+		return itemList;
+	}
+
 	/**
 	 * First display each items inventory name, stack and
 	 * if it is equipped or not. Then display golds amount.
@@ -340,6 +373,8 @@ public abstract class Inventory
 	 * matching the given ID.
 	 * Return null if no item
 	 * match given ID.
+	 * @param id ID to item to return
+	 * @return ItemInstance
 	 */
 	public ItemInstance getItemById(int id){
 		for(ItemInstance itemInstance:_itemList){
@@ -364,7 +399,10 @@ public abstract class Inventory
 	}
 
 	/**
-	 *
+	 * Remove given amount of stack
+	 * to a given itemInstance.
+	 * @param itemInstance Item to remove stacks from
+	 * @param stack Amount of stack to remove
 	 */
 	public void removeItemStack(ItemInstance itemInstance, int stack){
 		itemInstance.removeStack(stack);

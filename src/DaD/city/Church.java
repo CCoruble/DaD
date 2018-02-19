@@ -34,6 +34,7 @@ public class Church
 	 * Main menu of this class,
 	 * this is where choices will be
 	 * prompted to hero.
+	 * @param hero Hero entering church
 	 */
 	public void churchMenu(Hero hero) {
 		System.out.println("Que veux-tu faire ?");

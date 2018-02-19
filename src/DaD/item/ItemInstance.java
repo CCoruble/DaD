@@ -92,6 +92,14 @@ public class ItemInstance
 	}
 
 	/**
+	 * Set value of stack.
+	 * @param stack New value for stack
+	 */
+	public void setStack(int stack){
+		_stack = stack;
+	}
+
+	/**
 	 * Remove X stacks to the item instance.
 	 * <p>
 	 *     BE CAREFUL! Here we not verify if number of
@@ -113,7 +121,7 @@ public class ItemInstance
 	}
 	/**
 	 * Set {@link #_equipped} value.
-	 * @param equipped
+	 * @param equipped New value for equipped
 	 */
 	public void setEquipped(boolean equipped){
 		_equipped = equipped;
@@ -122,5 +130,14 @@ public class ItemInstance
 	@Override
 	public String toString() {
 		return "[x" + getStack() + "] " + getTemplate().getName();
+	}
+
+	/**
+	 * Return true if item can
+	 * thrown
+	 * @return boolean
+	 */
+	public boolean isThrowable(){
+		return true;
 	}
 }

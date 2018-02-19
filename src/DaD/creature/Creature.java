@@ -149,8 +149,7 @@ public abstract class Creature
 	public void setHpMax(Env hpMax){
 		_hpMax = hpMax;
 	}
-	void setHpMaxValue(double hpMax)
-	{
+	void setHpMaxValue(double hpMax) {
 		_hpMax.setValue(hpMax);
 	}
 	public void addHpMax(double hpMax){

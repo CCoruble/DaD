@@ -12,8 +12,6 @@ import DaD.data.types.Stats.Stats;
 import DaD.formulas.HeroFormulas;
 import DaD.manager.SaveManager;
 
-import java.util.Scanner;
-
 /**
  * Created by Clovis on 07/02/2017.
  * Singleton used to generate a hero

@@ -6,11 +6,9 @@ import DaD.data.types.Stats.StatType;
 import DaD.data.types.Stats.Stats;
 import DaD.loader.GeneralLoader;
 import DaD.manager.GameManager;
-import javafx.scene.Scene;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * Created by Clovis on 06/02/2017.

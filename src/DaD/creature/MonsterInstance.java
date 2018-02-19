@@ -100,12 +100,12 @@ public class MonsterInstance extends Npc
 		for(ItemDropInfo itemDropInfo: itemDropInfoList) {
 			// Each item can be dropped several times => a monster can have several times the same object
 			ItemInstance itemInstance = ItemGenerator.getInstance().createItem(itemDropInfo);
-			if (itemInstance == null) { // Item was not created because of RNG
-				continue;
-			} else if (hero.getInventory().addItem(itemInstance)) { // Item was created and inventory is not full
-					System.out.println(getName() + " fait tomber " + itemInstance.getTemplate().getName() + "[x" + itemInstance.getStack() + "]");
-			} else { // Item was created but inventory is full
-					System.out.println("Votre inventaire est plein !");
+			// If item was successfully generated
+			if(itemInstance != null) {
+				// Notify player monster dropped an item
+				System.out.println(getName() + " fait tomber " + itemInstance.getTemplate().getName() + "[x" + itemInstance.getStack() + "]");
+				// Add Item to inventory
+				hero.getInventory().addItem(itemInstance);
 			}
 		}
 	}

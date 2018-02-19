@@ -134,7 +134,6 @@ public class Bank {
 
         if(amount <= 0 || amount == Integer.MAX_VALUE){
             // Player wants to leave
-            return;
         } else if(amount < _minimumGoldPerStock){
             // Player input is too low
             System.out.println("Ce n'est pas suffisant !");
@@ -161,7 +160,6 @@ public class Bank {
 
         if (amount <= 0 || amount == Integer.MAX_VALUE) {
             // Player wants to leave
-            return;
         } else if(amount > _stockedGold) {
             System.out.println("Vous ne pouvez retirer plus que le montant stocké!");
         } else if(hero.canAddGold()){

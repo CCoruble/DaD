@@ -32,6 +32,7 @@ public class Inn
 	 * Main menu of this class, this is
 	 * where the hero can choose
 	 * which room he wants.
+	 * @param hero Hero entering Inn
 	 */
 	public void innMenu(Hero hero) {
 		System.out.println("Bienvenue à l'auberge jeune aventurier !");

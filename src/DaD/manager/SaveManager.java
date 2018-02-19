@@ -174,19 +174,20 @@ public class SaveManager
 				// Bank
 				Bank.getInstance().setMoney(in.readInt());
 
-				// Inventory
-				Hero.getInstance().setInventory(new HeroInventory(in.readInt()));
+				// InventorySize
+				int inventorySize = in.readInt();
 
 				// Items
+				ArrayList<ItemInstance> itemList = new ArrayList<>();
 				int numberOfItems = in.readInt();
 				for (int i = 0; i < numberOfItems; i++) {
 					int templateId = in.readInt(); // TemplateId
 					boolean equipped = in.readBoolean(); // equipped
 					int stack = in.readInt();
-					Hero.getInstance().getInventory().addNewItem(
-							new ItemInstance(templateId, equipped, stack)
-					);
+					itemList.add(new ItemInstance(templateId, equipped, stack));
 				}
+
+				Hero.getInstance().setInventory(new HeroInventory(itemList,inventorySize));
 			}
 		} catch (Exception e){
 			DebugLogger.log(e);
@@ -250,7 +251,7 @@ public class SaveManager
         File folder = new File(FOLDER_NAME);
         File[] listOfFiles = folder.listFiles();
 
-        for (File file : listOfFiles) {
+		for (File file : listOfFiles) {
             if (file.isFile() && file.getName().contains(SAVE_EXTENSION)) {
                 arrayList.add(file.getName().replace(SAVE_EXTENSION,""));
             }

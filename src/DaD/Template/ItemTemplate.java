@@ -170,6 +170,7 @@ public class ItemTemplate
 
 	/**
 	 * Return {@link #_sellable}.
+	 * @return boolean
 	 */
 	public boolean isSellable(){
 		return _sellable;
@@ -198,6 +199,9 @@ public class ItemTemplate
 	 * @return int
 	 */
 	public int getMaxStack(){
+		// In case of infinite max stack, gold ca be stacked infinite time
+		if(_maxStack == -1)
+			return Integer.MAX_VALUE;
 		return _maxStack;
 	}
 

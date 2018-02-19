@@ -79,6 +79,9 @@ public class Hero extends Creature
 		_experience = heroInformation.getEnv("experience");
 
 		// Inventory
+		// Is this a new hero ?
+		if(heroInformation.getArrayList("allItems") == null)
+			// This is a new hero
 		// When loading an existing hero he will already possess several items in his inventory
 		if (heroInformation.getArrayList("allItems") != null) {
 			_inventory = new HeroInventory(heroInformation.getArrayList("allItems"),heroInformation.getInteger("inventorySize"));
@@ -89,7 +92,7 @@ public class Hero extends Creature
 			_inventory = new HeroInventory(HeroFormulas.BASE_INVENTORY_SIZE);
 		}
 		// Give him golds
-		_inventory.addItem(new ItemInstance(ItemFunction.goldId,(int)HeroFormulas.BASE_GOLD));
+		_inventory.addNewItem(new ItemInstance(ItemFunction.goldId,(int)HeroFormulas.BASE_GOLD));
 	}
 
 	/**
@@ -165,7 +168,7 @@ public class Hero extends Creature
 				// If not null, it mean hero has gold in this inventory
 				if(gold != null) {
 					// Reduce hero gold by 30%
-					_inventory.removeItemStack(gold, (int) (gold.getStack() * 0.7));
+					_inventory.removeItemStack(gold, (int) (gold.getStack() * 0.3));
 				}
 
 				// Reduce hero experience by 40%
@@ -360,40 +363,6 @@ public class Hero extends Creature
 	public void setInventory(HeroInventory inventory){
 		_inventory = inventory;
 	}
-	/**
-	 * Display inventory and ask hero
-	 * to remove an item. Return true
-	 * if hero successfully removed
-	 * an item from it.
-	 */
-	public boolean askToReleaseItem(){
-		boolean decision;
-		int count = 0;
-		for(ItemInstance itemInstance:_inventory.getItemList()){
-			System.out.println((count + 1) + ": " + itemInstance.toString());
-			count++;
-		}
-		System.out.println("Autre: Quitter");
-
-		// Retrieve player choice
-		int choice = InputFunction.getIntInput();
-
-		if(choice < 1 || choice > _inventory.getItemList().size()){
-			// If player made a non valid choice, he doesn't want to throw item
-			decision  = false;
-		} else {
-			// Player selected an item to throw
-			decision = true;
-		}
-
-		if(InputFunction.askConfirmation()) {
-			// Player is sure about his decision
-			return decision;
-		} else {
-			// Player is unsure about his decision
-			return askToReleaseItem();
-		}
-	}
 
 	/**
 	 * Return true if hero can
@@ -432,9 +401,7 @@ public class Hero extends Creature
 		if(itemInstance == null) // Player doesn't have golds
 			return false;
 
-		if (itemInstance.getStack() >= gold) // Player has enough golds
-			return true;
-		return false; // Player has not enough golds
+		return itemInstance.getStack() >= gold;
 	}
 
 	/**
