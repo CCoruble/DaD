@@ -95,7 +95,7 @@ public class MonsterHolder {
 
 	/**
 	 * Simply browse the list of {@link MonsterTemplate templates} and call
-	 * the displayTemplate function.
+	 * the toString function.
 	 */
 	public void displayTemplateList(){
 		for (int i = 0; i < _templateList.size(); i++) {

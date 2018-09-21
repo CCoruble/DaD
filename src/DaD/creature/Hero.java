@@ -1,6 +1,7 @@
 package DaD.creature;
 
-import DaD.Commons.Utils.InputFunction;
+import DaD.Holder.ItemHolder;
+import DaD.Template.EquipmentTemplate;
 import DaD.calculator.Calculator;
 import DaD.Commons.Collections.MultiValueSet;
 import DaD.Commons.Utils.Spacer;
@@ -9,9 +10,13 @@ import DaD.data.types.HeroDeathReason;
 import DaD.data.types.HeroGender;
 import DaD.data.types.HeroRace;
 import DaD.data.types.Stats.Env;
+import DaD.data.types.Stats.Stats;
 import DaD.formulas.HeroFormulas;
+import DaD.generator.ItemGenerator;
 import DaD.inventory.HeroInventory;
+import DaD.item.EquipmentInstance;
 import DaD.item.ItemInstance;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * Created by Clovis on 07/02/2017.
@@ -63,12 +68,6 @@ public class Hero extends Creature
 
 	/**
 	 * Private constructor.
-	 * <p>
-	 *     This constructor is used when loading a hero
-	 *     from a previous save or when creating a new one.
-	 *     We set the different attributes values
-	 *     depending on what is inside the MultiValueSet.
-	 * </p>
 	 * @param heroInformation MultiValueSet containing all information about the hero
 	 */
 	private Hero(MultiValueSet heroInformation) {
@@ -79,20 +78,8 @@ public class Hero extends Creature
 		_experience = heroInformation.getEnv("experience");
 
 		// Inventory
-		// Is this a new hero ?
-		if(heroInformation.getArrayList("allItems") == null)
-			// This is a new hero
-		// When loading an existing hero he will already possess several items in his inventory
-		if (heroInformation.getArrayList("allItems") != null) {
-			_inventory = new HeroInventory(heroInformation.getArrayList("allItems"),heroInformation.getInteger("inventorySize"));
-		} else if(heroInformation.getInteger("inventorySize",-1) != -1){
-			// When loading an existing Hero without items in his inventory but with extra inventory size
-			_inventory = new HeroInventory(heroInformation.getInteger("inventorySize"));
-		} else { // When creating a new Hero
-			_inventory = new HeroInventory(HeroFormulas.BASE_INVENTORY_SIZE);
-		}
-		// Give him golds
-		_inventory.addNewItem(new ItemInstance(ItemFunction.goldId,(int)HeroFormulas.BASE_GOLD));
+		_inventory = new HeroInventory(HeroFormulas.BASE_INVENTORY_SIZE);
+		_inventory.getItemList().addAll(ItemGenerator.getInstance().createItem(ItemHolder.getInstance().getItem(ItemFunction.goldId),(int)HeroFormulas.BASE_GOLD));
 	}
 
 	/**
@@ -177,6 +164,35 @@ public class Hero extends Creature
 				// Set hero HP to 50% of its max value
 				addHp(getHpMax().getValue()*0.5);
 				break;
+		}
+	}
+
+	/**
+	 * Return a hero env matching
+	 * the given {@link DaD.data.types.Stats.Stats}
+	 * @param type type to match
+	 * @return Env
+	 */
+	public Env getEnvByType(Stats type){
+		switch(type){
+			case HP:
+				return getHp();
+			case MP:
+				return getMp();
+			case ATTACK:
+				return getAttack();
+			case HP_MAX:
+				return getHpMax();
+			case MP_MAX:
+				return getMpMax();
+			case DEFENSE:
+				return getDefense();
+			case EXPERIENCE:
+				return getExperience();
+			case EXPERIENCE_MAX:
+				return getExperienceMax();
+			default:
+				throw new NotImplementedException();
 		}
 	}
 
@@ -308,22 +324,34 @@ public class Hero extends Creature
 	 *     This only take care of primary
 	 *     requirement like is item equipable
 	 *     and does hero has the required level.
-	 *     If there is an item already equipped here
-	 *     it can still return true.
+	 *     Will return true even if equipSlot
+	 *     is already used
 	 * </p>
 	 * @param item Item you wish to know if you can equip it.
 	 * @return boolean
 	 */
 	public boolean tryEquip(ItemInstance item){
-		// Here we only test the basic requirement: level & equipable, the inventory space left & other are tested in "equip" function
-		// If the item is not equipable we do nothing
-		if(!item.getTemplate().isEquipable())
+		// Item is not an equipment or cannot be equipped
+		if(!(item instanceof EquipmentInstance))
 			return false;
+
 		// If you do not have the required level we do nothing
-		if(item.getTemplate().getRequiredLevel() > Hero.getInstance().getLevel())
+		if(item.getTemplate().getRequiredLevel() > Hero.getInstance().getLevel()) {
+			System.out.println("Vous n'avez pas le niveau requis !");
 			return false;
+		}
+
+		// If you do not meet stats requirements
+		for(Env env: ((EquipmentTemplate) item.getTemplate()).getRequirementList()) {
+			// If hero's stat is less than required amount return false
+			if(env.getValue() > getEnvByType(env.getStat()).getValue()) {
+				System.out.println("Vous ne remplissez pas cette condition: " + env.getStat() + " " + env.getValue());
+				return false;
+			}
+		}
+
 		// Nothing stop us from equipping this items
-		_inventory.equip(this,item);
+		_inventory.equip(this,(EquipmentInstance)item);
 		return true;
 	}
 	/**
@@ -344,7 +372,7 @@ public class Hero extends Creature
 			System.out.println("Votre inventaire est plein, videz le avant de vous déséquiper !");
 			return false;
 		}
-		_inventory.unequip(this, item);
+		_inventory.unequip(this, (EquipmentInstance)item);
 		return true;
 	}
 
@@ -364,6 +392,7 @@ public class Hero extends Creature
 		_inventory = inventory;
 	}
 
+	// Gold
 	/**
 	 * Return true if hero can
 	 * receive golds. True if
@@ -403,7 +432,6 @@ public class Hero extends Creature
 
 		return itemInstance.getStack() >= gold;
 	}
-
 	/**
 	 * Decrease stacks of item gold
 	 * from the given amount.
@@ -420,7 +448,6 @@ public class Hero extends Creature
 	public void decreaseGold(double gold){
 		_inventory.removeItemStack(_inventory.getItemById(ItemFunction.goldId),(int)gold);
 	}
-
 	/**
 	 * Return stack of item gold,
 	 * 0 if player has no gold item.

@@ -1,11 +1,13 @@
 package DaD.Holder;
 
 import DaD.Commons.Collections.MultiValueSet;
+import DaD.Template.EquipmentTemplate;
 import DaD.Template.ItemTemplate;
+import DaD.Template.MiscTemplate;
+import DaD.data.types.ItemType;
+import DaD.loader.ItemLoader;
 import gnu.trove.map.TIntObjectMap;
 import gnu.trove.map.hash.TIntObjectHashMap;
-
-import java.util.HashMap;
 
 /**
  * Created by Clovis on 29/05/2017.
@@ -29,7 +31,7 @@ public class ItemHolder
 	 *     the ID of the template can be found in the
 	 *     item configuration file.
 	 * </p>
-	 * @see DaD.loader.ItemLoader
+	 * @see ItemLoader
 	 * @see ItemTemplate
 	 */
 	private final TIntObjectMap<ItemTemplate> _itemsList =  new TIntObjectHashMap<>();
@@ -64,7 +66,16 @@ public class ItemHolder
 		// If there is already an existing item with this ID, we throw an exception
 		if(_itemsList.get(itemId) != null)
 			throw new Exception("Item ID [" + itemId + "] already exist");
-		_itemsList.put(itemId,new ItemTemplate(itemStat));
+
+		ItemType itemType = (ItemType)itemStat.getEnum("itemType",ItemType.class);
+		switch(itemType){
+			case EQUIPMENT:
+				_itemsList.put(itemId, new EquipmentTemplate(itemStat));
+				break;
+			case MISC:
+				_itemsList.put(itemId, new MiscTemplate(itemStat));
+				break;
+		}
 	}
 
 	/**
@@ -93,12 +104,14 @@ public class ItemHolder
 
 	/**
 	 * Display all item in the HashMap by calling the
-	 * {@link ItemTemplate#displayTemplate()} function for each template.
+	 * {@link ItemTemplate#toString()} function for each template.
 	 */
 	public void displayAllItems(){
+		System.out.println("Equipment: " + ItemLoader.getInstance().getEquipmentCount());
+		System.out.println("Misc: " + ItemLoader.getInstance().getMiscCount());
 		for(int i = 0; i < _itemsList.size(); i++){
 			if(_itemsList.get(i) != null)
-				_itemsList.get(i).displayTemplate();
+				System.out.println(_itemsList.get(i));
 		}
 	}
 }

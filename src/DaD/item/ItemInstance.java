@@ -29,10 +29,6 @@ public class ItemInstance
 	 * @see ItemTemplate
 	 */
 	private final ItemTemplate _itemTemplate;
-	/**
-	 * True if item is equipped.
-	 */
-	private  boolean _equipped;
 
 	/**
 	 * Constructor of class.
@@ -41,7 +37,6 @@ public class ItemInstance
 	public ItemInstance(ItemTemplate itemTemplate){
 		_itemTemplate = itemTemplate;
 		_stack = 1;
-		_equipped = false;
 	}
 
 	/**
@@ -52,13 +47,6 @@ public class ItemInstance
 	public ItemInstance(int itemTemplateId, int stack){
 		_stack = stack;
 		_itemTemplate = ItemHolder.getInstance().getItem(itemTemplateId);
-		_equipped = false;
-	}
-
-	public ItemInstance(int itemTemplateId, boolean equipped, int stack){
-		_itemTemplate = ItemHolder.getInstance().getItem(itemTemplateId);
-		_equipped = equipped;
-		_stack = stack;
 	}
 
 	/**
@@ -67,6 +55,16 @@ public class ItemInstance
 	 */
 	public ItemTemplate getTemplate(){
 		return _itemTemplate;
+	}
+
+	/**
+	 * Return true if number of stack
+	 * is higher or equals to maxStack.
+	 * Stack should NEVER be higher than maxStack.
+	 * @return boolean
+	 */
+	public boolean isAtMaxStack(){
+		return _stack >= getTemplate().getMaxStack();
 	}
 
 	/**
@@ -87,8 +85,21 @@ public class ItemInstance
 	 * </p>
 	 * @param stack Number of stack to add
 	 */
-	public void addStack(int stack){
+	private void addStack0(int stack){
 		_stack += stack;
+	}
+
+	/**
+	 * Add as much stack as possible and
+	 * return stacks that couldn't be added
+	 * to item
+	 * @param stack stack to add
+	 * @return int number of stack that couldn't be added
+	 */
+	public int addStack(int stack){
+		int amountToAdd = Math.min(stack, getTemplate().getMaxStack() - getStack());
+		addStack0(amountToAdd);
+		return stack - amountToAdd;
 	}
 
 	/**
@@ -110,21 +121,6 @@ public class ItemInstance
 	 */
 	public void removeStack(int stack){
 		_stack -= stack;
-	}
-
-	/**
-	 * Return value of {@link #_equipped}.
-	 * @return Boolean
-	 */
-	public Boolean isEquipped(){
-		return _equipped;
-	}
-	/**
-	 * Set {@link #_equipped} value.
-	 * @param equipped New value for equipped
-	 */
-	public void setEquipped(boolean equipped){
-		_equipped = equipped;
 	}
 
 	@Override

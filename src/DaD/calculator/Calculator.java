@@ -6,7 +6,7 @@ import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
 import DaD.data.types.Stats.Stats;
 import DaD.formulas.HeroFormulas;
-import DaD.item.ItemInstance;
+import DaD.item.EquipmentInstance;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,8 +71,8 @@ public class Calculator implements Comparator<Env>
 			}
 
 			// All bonus from his equipped items
-			for (ItemInstance item : hero.getInventory().getAllEquippedItems()) {
-				allStats.addAll(item.getTemplate().getAllBonus());
+			for (EquipmentInstance item : hero.getInventory().getAllEquippedItems()) {
+				allStats.addAll(item.getTemplate().getBonusList());
 			}
 
 			// Once you retrieved all stats we must sort the ArrayList by order
@@ -220,5 +220,14 @@ public class Calculator implements Comparator<Env>
 				sortedList.add(env);
 		}
 		return sortedList;
+	}
+
+	/**
+	 * Add a stat to hero, this is used for potion.
+	 * @param env to be added to stats
+	 * @return true if adding stats succeeded
+	 */
+	public boolean addStat(Env env){
+		return false;
 	}
 }

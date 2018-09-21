@@ -55,27 +55,9 @@ public class ItemTemplate
 	 */
 	private final ItemType _itemType;
 	/**
-	 * Slot where instances of
-	 * this items should be equipped.
-	 */
-	private final ItemEquipSlot _equipSlot;
-	/**
-	 * Max durability this template can reach.
-	 * <p>
-	 *     You cannot have an higher durability on
-	 *     an itemInstance than the maxDurability
-	 *     of the template it's based on.
-	 * </p>
-	 */
-	private final int _maxDurability;
-	/**
 	 * Weight of item. Actually not used in inventory.
 	 */
 	private final double _weight;
-	/**
-	 * Is the item equipable or not
-	 */
-	private final boolean _equipable;
 	/**
 	 * Is item sellable or not
 	 */
@@ -86,33 +68,23 @@ public class ItemTemplate
 	private final String _description;
 
 	/**
-	 * The list containing all Env of the item.
-	 * @see Env
-	 */
-	private final ArrayList<Env> _allBonus = new ArrayList<>();
-
-	/**
 	 * Constructor of class.
-	 * @param itemsStats MultiValueSet containing all info about the template.
+	 * @param itemStats MultiValueSet containing all info about the template.
 	 */
-	public ItemTemplate(MultiValueSet itemsStats){
-		_id = itemsStats.getInteger("id");
-		_name = itemsStats.getString("name");
-		_requiredLevel = itemsStats.getInteger("requiredLevel");
-		_price = itemsStats.getInteger("price");
-		_rarity = ItemRarity.VALUES[itemsStats.getInteger("rarity")];
-		_maxStack = itemsStats.getInteger("maxStack");
-		_maxDurability = itemsStats.getInteger("maxDurability");
-		_weight = itemsStats.getInteger("weight");
+	public ItemTemplate(MultiValueSet itemStats){
+		_id = itemStats.getInteger("id");
+		_name = itemStats.getString("name");
+		_requiredLevel = itemStats.getInteger("requiredLevel");
+		_price = itemStats.getInteger("price");
+		_rarity = ItemRarity.VALUES[itemStats.getInteger("rarity")];
+		_maxStack = itemStats.getInteger("maxStack");
+		_weight = itemStats.getInteger("weight");
 
-		_equipable = itemsStats.getBool("equipable");
-		_sellable = itemsStats.getBool("sellable");
+		_sellable = itemStats.getBool("sellable");
 
-		_description = itemsStats.getString("description");
-		_itemType = (ItemType)itemsStats.getEnum("itemType",ItemType.class);
-		_equipSlot = (ItemEquipSlot)itemsStats.getEnum("equipSlot",ItemEquipSlot.class);
-		ArrayList<Env> allBonus = itemsStats.getArrayList("allBonus");
-		_allBonus.addAll(allBonus);
+		_description = itemStats.getString("description");
+		_itemType = (ItemType)itemStats.getEnum("itemType",ItemType.class);
+
 	}
 
 	/**
@@ -129,43 +101,6 @@ public class ItemTemplate
 	 */
 	public String getName(){
 		return _name;
-	}
-
-	/**
-	 * Return the list containing all Env of the item.
-	 * Each env represent a bonus / malus of the item.
-	 * @return ArrayList
-	 * @see Env
-	 */
-	public ArrayList<Env> getAllBonus(){
-		return _allBonus;
-	}
-
-	/**
-	 * Return the list of Env that concern this stat.
-	 * @param stat The specific stat you want to focus on.
-	 * @return ArrayList
-	 */
-	public ArrayList<Env> getBonusByStat(Stats stat){
-		ArrayList<Env> bonusList = new ArrayList<>();
-		for(Env bonus: _allBonus){
-			if(bonus.getStat() == stat)
-				bonusList.add(bonus);
-		}
-		return bonusList;
-	}
-
-	/**
-	 * Return true if item is equipable.
-	 * <p>
-	 *     ItemTemplate cannot be equipped, but
-	 *     the ItemInstance based on this template can be
-	 * </p>
-	 * @return Boolean
-	 * @see ItemInstance
-	 */
-	public Boolean isEquipable(){
-		return _equipable;
 	}
 
 	/**
@@ -221,30 +156,22 @@ public class ItemTemplate
 	/**
 	 * Display all attributes of the template.
 	 */
-	public void displayTemplate(){
-		System.out.println("Id: " + _id);
-		System.out.println("_name: " + _name);
-		System.out.println("_requiredLevel: " + _requiredLevel);
-		System.out.println("_price: " + _price);
-		System.out.println("_rarity: " + _rarity);
-		System.out.println("_maxStack: " + _maxStack);
-		System.out.println("_maxDurability: " + _maxDurability);
-		System.out.println("_weight: " + _weight);
-		System.out.println("_equipable: " + _equipable);
-		System.out.println("_sellable: " + _sellable);
-		System.out.println("_description: " + _description);
+	@Override
+	public String toString(){
+		String s = "Id: " + _id + "\n";
+		s += "_name: " + _name + "\n";
+		s += "_requiredLevel: " + _requiredLevel + "\n";
+		s += "_price: " + _price + "\n";
+		s += "_rarity: " + _rarity + "\n";
+		s += "_maxStack: " + _maxStack + "\n";
+		s += "_weight: " + _weight + "\n";
+		s += "_sellable: " + _sellable + "\n";
+		s += "_description: " + _description + "\n";
+		s += "_itemType: " + _itemType + "\n";
+		return s;
 	}
 
-	/**
-	 * Display all bonus, Env, of this template.
-	 */
-	public void displayBonus(){
-		for (Env env: _allBonus) {
-			env.displayEnv();
-		}
-	}
-
-	public ItemEquipSlot getEquipSlot() {
-		return _equipSlot;
+	public ItemType getItemType() {
+		return _itemType;
 	}
 }

@@ -97,7 +97,7 @@ public class DungeonTemplate {
 	 * each of his room.
 	 * <p>
 	 *     Iterate on the list of room
-	 *     and call displayTemplate for each.
+	 *     and call toString for each.
 	 * </p>
 	 */
 	public void displayTemplate(){

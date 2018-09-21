@@ -1,11 +1,15 @@
 package DaD.inventory;
 
 import DaD.Commons.Utils.InputFunction;
+import DaD.Template.EquipmentTemplate;
 import DaD.data.types.ItemEquipSlot;
+import DaD.generator.ItemGenerator;
+import DaD.item.EquipmentInstance;
 import DaD.item.ItemInstance;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Clovis on 13/02/2017.
@@ -109,7 +113,7 @@ public abstract class Inventory
 		// Count how many non-equipped items are in his inventory
 		for(ItemInstance itemInstance:_itemList){
 			// If item is unequipped
-			if(!itemInstance.isEquipped())
+			if(!(itemInstance instanceof EquipmentInstance) || !((EquipmentInstance)itemInstance).isEquipped())
 				count++;
 		}
 		return count;
@@ -128,23 +132,26 @@ public abstract class Inventory
 	 * Add an ItemInstance to the list of items.
 	 * Return true if itemInstance and all of his stacks
 	 * were added to inventory, false otherwise.
-	 * <p>
-	 *     Depending on inventory free slot,
-	 *     item max stack, and items already in
-	 *     inventory it will call {@link #addNonStackableItem(ItemInstance)}
-	 *     , {@link #addStackToExistingItems(ItemInstance)}
-	 *     and {@link #addNewItem(ItemInstance)}/
-	 * </p>
 	 * @param itemInstance The ItemInstance to add to inventory.
 	 * @return boolean
 	 */
-	public boolean addItem(ItemInstance itemInstance) {
-		// Represent number of stack before trying to add them to inventory
-		int baseStack = itemInstance.getStack();
-
+	public boolean addItem(ItemInstance itemInstance){
+		// Non stackable item
 		if(itemInstance.getTemplate().getMaxStack() == 1){
-			addNonStackableItem(itemInstance);
-		} else {
+			// Inventory is not full
+			if(!isInventoryFull()) {
+				_itemList.add(itemInstance);
+				return true;
+			} else {
+				// Ask user to free one inventory slot
+				if(askToFreeSlot())
+					return addItem(itemInstance);
+				// if we user did not free one inventory slot
+				return false;
+			}
+		}
+		// Stackable item
+		else {
 			addStackToExistingItems(itemInstance);
 			if(itemInstance.getStack() > 0) // If there is stack left to add to inventory
 				addNewItem(itemInstance);
@@ -152,9 +159,7 @@ public abstract class Inventory
 
 		// When reaching this point, either all stack of item has been added to inventory either inventory is full
 		if(itemInstance.getStack() > 0){
-			System.out.println((baseStack - itemInstance.getStack())
-					+ " " + itemInstance.getTemplate().getName()
-					+ " sur " + baseStack + " ajouté à l'inventaire");
+			System.out.println("Impossible d'ajouter " + itemInstance.getStack() + " * " + itemInstance.getTemplate().getName() + " à l'inventaire");
 			if(askToFreeSlot()){
 				return addItem(itemInstance);
 			} else {
@@ -203,7 +208,7 @@ public abstract class Inventory
 		for(int i = 0; i < itemInstance.getStack(); i++){
 			if(isInventoryFull())
 				return itemInstance.getStack();
-			_itemList.add(new ItemInstance(itemInstance.getTemplate().getId(),1));
+			_itemList.add(ItemGenerator.getInstance().createItem(itemInstance.getTemplate(),1).get(0));
 			itemInstance.removeStack(1);
 		}
 		return itemInstance.getStack();
@@ -212,7 +217,9 @@ public abstract class Inventory
 	/**
 	 * Add a new item to inventory,
 	 * it means this item will
-	 * take one free slot in inventory.
+	 * take one free slot in inventory and
+	 * it cannot be added to stacks of
+	 * an existing item in inventory.
 	 * Return stack that couldn't been added
 	 * to inventory.
 	 * @param itemInstance ItemInstance to add to inventory
@@ -223,7 +230,7 @@ public abstract class Inventory
 		while(!isInventoryFull() && itemInstance.getStack() > 0){
 			// This represent the number of stack that will set for the new item
 			int addedAmount = Math.min(itemInstance.getStack(),itemInstance.getTemplate().getMaxStack());
-			_itemList.add(new ItemInstance(itemInstance.getTemplate().getId(),itemInstance.isEquipped(),addedAmount));
+			_itemList.add(new ItemInstance(itemInstance.getTemplate().getId(),addedAmount));
 			itemInstance.removeStack(addedAmount);
 		}
 		return itemInstance.getStack();
@@ -270,17 +277,19 @@ public abstract class Inventory
 		_itemList.remove(itemInstance);
 	}
 	/**
-	 * Return the ItemInstance equipped on this
+	 * Return the EquipmentInstance equipped on this
 	 * EquipSlot, return null if there is no equipped item
 	 * on this EquipSlot.
 	 * @param equipSlot The equipSlot you want the equipped item to be returned
-	 * @return ItemInstance
+	 * @return EquipmentInstance
 	 */
-	public ItemInstance getEquippedItem(ItemEquipSlot equipSlot){
+	public EquipmentInstance getEquippedItem(ItemEquipSlot equipSlot){
 		for (ItemInstance item: _itemList)
 		{
-			if(item.getTemplate().getEquipSlot() == equipSlot && item.isEquipped()){
-				return item;
+			if(item instanceof EquipmentInstance
+					&& ((EquipmentInstance)item).getTemplate().getEquipSlot() == equipSlot
+					&& ((EquipmentInstance)item).isEquipped()){
+				return (EquipmentInstance)item;
 			}
 		}
 		return null;
@@ -290,11 +299,11 @@ public abstract class Inventory
 	 * an ArrayList.
 	 * @return ArrayList
 	 */
-	public ArrayList<ItemInstance> getAllEquippedItems(){
-		ArrayList<ItemInstance> allEquippedItems = new ArrayList<>();
+	public ArrayList<EquipmentInstance> getAllEquippedItems(){
+		ArrayList<EquipmentInstance> allEquippedItems = new ArrayList<>();
 		for (ItemInstance item: _itemList) {
-			if(item.isEquipped())
-				allEquippedItems.add(item);
+			if(item instanceof EquipmentInstance && ((EquipmentInstance)item).isEquipped())
+				allEquippedItems.add((EquipmentInstance)item);
 		}
 		return allEquippedItems;
 	}
@@ -307,7 +316,7 @@ public abstract class Inventory
 		ArrayList<ItemInstance> allEquippedItems = new ArrayList<>();
 		for (ItemInstance item: _itemList) {
 			// If item is not equipped
-			if(!item.isEquipped())
+			if(item instanceof EquipmentInstance && !((EquipmentInstance)item).isEquipped())
 				allEquippedItems.add(item);
 		}
 		return allEquippedItems;
@@ -321,8 +330,10 @@ public abstract class Inventory
 		ArrayList<ItemInstance> allEquipableItems = new ArrayList<>();
 		for (ItemInstance item: _itemList) {
 			// If the item can be equipped and not equipped yet !
-			if(item.getTemplate().isEquipable() && !item.isEquipped())
-				allEquipableItems.add(item);
+			if(item instanceof EquipmentInstance
+				&& ((EquipmentInstance)item).getTemplate().isEquipable()
+				&& !((EquipmentInstance)item).isEquipped())
+					allEquipableItems.add(item);
 		}
 		return allEquipableItems;
 	}
@@ -335,7 +346,9 @@ public abstract class Inventory
 		ArrayList<ItemInstance> sellableItems = new ArrayList<>();
 		for(ItemInstance itemInstance:_itemList) {
 			// if the item is not equipped and sellable
-			if (!itemInstance.isEquipped() && itemInstance.getTemplate().isSellable()) {
+			if (itemInstance instanceof EquipmentInstance
+					&& !((EquipmentInstance)itemInstance).isEquipped()
+					&& itemInstance.getTemplate().isSellable()) {
 				sellableItems.add(itemInstance);
 			}
 		}
@@ -346,7 +359,7 @@ public abstract class Inventory
 		ArrayList<ItemInstance> itemList = new ArrayList<>();
 		for(ItemInstance itemInstance:_itemList)
 			// If item is throwable and not equipped
-			if(itemInstance.isThrowable() && !itemInstance.isEquipped())
+			if(itemInstance.isThrowable())
 				itemList.add(itemInstance);
 
 		return itemList;
@@ -361,7 +374,7 @@ public abstract class Inventory
 			System.out.println("Votre inventaire est vide!");
 		// Display all items
 		for (ItemInstance itemInstance : _itemList) {
-			if (itemInstance.isEquipped()) {
+			if (itemInstance instanceof EquipmentInstance && ((EquipmentInstance)itemInstance).isEquipped()) {
 				System.out.println("{EQUIPE} " + itemInstance.getTemplate().getName());
 			} else {
 				System.out.println("[x" + itemInstance.getStack() + "]" + itemInstance.getTemplate().getName());

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<item id="1" name="Gold">
+	<item id="1" name="Gold" type="MISC">
+		<set name="maxUsage" value="0"/>
+		<set name="reloadable" value="false"/>
 		<set name="price" value="1"/>
-		<set name="itemType" value="ETC"/>
 		<set name="weight" value="1"/>
 		<set name="requiredLevel" value="0"/>
 		<set name="description" value="Pièce de monnaie marqué d'une tête de faucon."/>
@@ -15,9 +16,8 @@
 		<for>
 		</for>
 	</item>
-	<item id="2" name="Long Sword">
+	<item id="2" name="Long Sword" type="EQUIPMENT">
 		<set name="price" value="130"/>
-		<set name="itemType" value="WEAPON"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="description" value="Epée longue utilisé dans les combats médiévaux."/>
@@ -30,10 +30,11 @@
 		<for>
 			<add order="10" stat="attack" value="6"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="3" name="Dagger">
+	<item id="3" name="Dagger" type="EQUIPMENT">
 		<set name="price" value="100"/>
-		<set name="itemType" value="WEAPON"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="description" value="Petite dague utilisée pour tuer sournoisement ses ennemis."/>
@@ -46,10 +47,11 @@
 		<for>
 			<add order="10" stat="attack" value="4"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="4" name="Wooden shield">
+	<item id="4" name="Wooden shield" type="EQUIPMENT">
 		<set name="price" value="100"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
@@ -62,10 +64,11 @@
 		<for>
 			<add order="10" stat="defense" value="3"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="5" name="Iron shield">
+	<item id="5" name="Iron shield" type="EQUIPMENT">
 		<set name="price" value="240"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
@@ -78,10 +81,11 @@
 		<for>
 			<add order="10" stat="defense" value="6"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="6" name="Banana shield">
+	<item id="6" name="Banana shield" type="EQUIPMENT">
 		<set name="price" value="240"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
@@ -94,10 +98,11 @@
 		<for>
 			<add order="10" stat="defense" value="6"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="7" name="Steel shield">
+	<item id="7" name="Steel shield" type="EQUIPMENT">
 		<set name="price" value="300"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LHAND"/>
@@ -110,10 +115,11 @@
 		<for>
 			<add order="10" stat="defense" value="10"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="8" name="Steel Ring">
+	<item id="8" name="Steel Ring" type="EQUIPMENT">
 		<set name="price" value="100"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="3"/>
 		<set name="equipSlot" value="PAPERDOLL_LBRACELET"/>
@@ -126,10 +132,11 @@
 		<for>
 			<add order="10" stat="defense" value="5"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="9" name="Nail Ring">
+	<item id="9" name="Nail Ring" type="EQUIPMENT">
 		<set name="price" value="120"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="4"/>
 		<set name="equipSlot" value="PAPERDOLL_RBRACELET"/>
@@ -143,10 +150,12 @@
 			<add order="10" stat="defense" value="3"/>
 			<add order="10" stat="attack" value="3"/>
 		</for>
+		<requirement>
+			<none order="0" stat="defense" value="10"/>
+		</requirement>
 	</item>
-	<item id="10" name="Beginner glove">
+	<item id="10" name="Beginner glove" type="EQUIPMENT">
 		<set name="price" value="30"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_GLOVES"/>
@@ -159,10 +168,11 @@
 		<for>
 			<add order="10" stat="defense" value="1"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="11" name="Beginner Belt">
+	<item id="11" name="Beginner Belt" type="EQUIPMENT">
 		<set name="price" value="80"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_BELT"/>
@@ -175,10 +185,11 @@
 		<for>
 			<add order="10" stat="hp_max" value="10"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="12" name="Beginner Chestplate">
+	<item id="12" name="Beginner Chestplate" type="EQUIPMENT">
 		<set name="price" value="100"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_CHEST"/>
@@ -192,10 +203,11 @@
 			<add order="10" stat="defense" value="3"/>
 			<add order="10" stat="hp_max" value="5"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="13" name="Beginner Legs">
+	<item id="13" name="Beginner Legs" type="EQUIPMENT">
 		<set name="price" value="60"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_LEGS"/>
@@ -208,10 +220,11 @@
 		<for>
 			<add order="10" stat="defense" value="4"/>
 		</for>
+		<requirement>
+		</requirement>
 	</item>
-	<item id="14" name="Beginner Boots">
+	<item id="14" name="Beginner Boots" type="EQUIPMENT">
 		<set name="price" value="50"/>
-		<set name="itemType" value="ARMOR"/>
 		<set name="weight" value="1600"/>
 		<set name="requiredLevel" value="1"/>
 		<set name="equipSlot" value="PAPERDOLL_BOOTS"/>
@@ -223,6 +236,87 @@
 		<set name="description" value="Une paire de bottes standard."/>
 		<for>
 			<add order="10" stat="defense" value="2"/>
+		</for>
+		<requirement>
+		</requirement>
+	</item>
+	
+	<!-- ========================================== -->
+	<!-- ===============    MISC    =============== --> 
+	<!-- ========================================== -->
+	
+	<item id="15" name="Estus" type="MISC">
+		<set name="maxUsage" value="5"/>
+		<set name="weight" value="5"/>
+		<set name="reloadable" value="true"/>
+		<set name="requiredLevel" value="2"/>
+		<set name="description" value="Une vieille fiole trouver sur
+		le cadavre d'un chevalier portant une marque sombre"/>
+		<set name="rarity" value="3"/>
+		<set name="price" value="0"/>
+		<set name="sellable" value="false"/>
+		<set name="maxStack" value="1"/>
+		<for>
+			<add order="100" stat="hp" value="10"/>
+		</for>
+	</item>
+	<item id="16" name="Estus +1" type="MISC">
+		<set name="maxUsage" value="5"/>
+		<set name="weight" value="5"/>
+		<set name="reloadable" value="true"/>
+		<set name="requiredLevel" value="2"/>
+		<set name="description" value="Une vieille fiole trouver sur
+		le cadavre d'un chevalier portant une marque sombre"/>
+		<set name="rarity" value="3"/>
+		<set name="price" value="0"/>
+		<set name="sellable" value="false"/>
+		<set name="maxStack" value="1"/>
+		<for>
+			<add order="100" stat="hp" value="25"/>
+		</for>
+	</item>
+	<item id="17" name="Estus +2" type="MISC">
+		<set name="maxUsage" value="5"/>
+		<set name="weight" value="5"/>
+		<set name="reloadable" value="true"/>
+		<set name="requiredLevel" value="2"/>
+		<set name="description" value="Une vieille fiole trouver sur
+		le cadavre d'un chevalier portant une marque sombre"/>
+		<set name="rarity" value="3"/>
+		<set name="price" value="0"/>
+		<set name="sellable" value="false"/>
+		<set name="maxStack" value="1"/>
+		<for>
+			<add order="100" stat="hp" value="50"/>
+		</for>
+	</item>
+	<item id="18" name="Estus +3" type="MISC">
+		<set name="maxUsage" value="5"/>
+		<set name="weight" value="5"/>
+		<set name="reloadable" value="true"/>
+		<set name="requiredLevel" value="2"/>
+		<set name="description" value="Une vieille fiole trouver sur
+		le cadavre d'un chevalier portant une marque sombre"/>
+		<set name="rarity" value="3"/>
+		<set name="price" value="0"/>
+		<set name="sellable" value="false"/>
+		<set name="maxStack" value="1"/>
+		<for>
+			<add order="100" stat="hp" value="100"/>
+		</for>
+	</item>
+	<item id="19" name="Herbe médicinale" type="MISC">
+		<set name="maxUsage" value="1"/>
+		<set name="weight" value="2"/>
+		<set name="reloadable" value="true"/>
+		<set name="requiredLevel" value="0"/>
+		<set name="description" value="Ca ressemble beaucoup à du chiendent ..."/>
+		<set name="rarity" value="1"/>
+		<set name="price" value="10"/>
+		<set name="sellable" value="false"/>
+		<set name="maxStack" value="-1"/>
+		<for>
+			<add order="100" stat="hp" value="10"/>
 		</for>
 	</item>
 </list>

@@ -6,11 +6,14 @@ import DaD.city.Bank;
 import DaD.creature.Hero;
 import DaD.data.types.HeroGender;
 import DaD.data.types.HeroRace;
+import DaD.data.types.ItemType;
 import DaD.data.types.Stats.Env;
 import DaD.data.types.Stats.StatType;
 import DaD.data.types.Stats.Stats;
 import DaD.inventory.HeroInventory;
+import DaD.item.EquipmentInstance;
 import DaD.item.ItemInstance;
+import DaD.item.MiscInstance;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -95,22 +98,38 @@ public class SaveManager
 			for (ItemInstance itemInstance : Hero.getInstance().getInventory().getItemList()) {
 				// templateId
 				out.writeInt(itemInstance.getTemplate().getId());
-				// equipped
-				out.writeBoolean(itemInstance.isEquipped());
 				// stacks
 				out.writeInt(itemInstance.getStack());
+				// Item type
+				out.writeObject(itemInstance.getTemplate().getItemType());
+				switch(itemInstance.getTemplate().getItemType()){
+					case EQUIPMENT:
+						// equipped
+						out.writeBoolean(((EquipmentInstance)itemInstance).isEquipped());
+						// durability
+						out.writeInt(((EquipmentInstance)itemInstance).getDurability());
+						break;
+					case MISC:
+						// usageLeft
+						out.writeInt(((MiscInstance)itemInstance).getUsageLeft());
+						break;
+				}
+
 			}
 
 		} catch (Exception ex){
+			if(GameManager.getInstance().isDebug)
+				ex.printStackTrace();
 			saveSuccess = false;
-		}finally {
-			try{
-				// out.close need a try to be executed, but it must be executed anyway
-				out.close();
-			}
-			catch(Exception ex){
-				saveSuccess = false;
-			}
+		}
+		try{
+			// out.close need a try to be executed, but it must be executed anyway
+			out.close();
+		}
+		catch(Exception ex){
+			if(GameManager.getInstance().isDebug)
+				ex.printStackTrace();
+			saveSuccess = false;
 		}
 		if(saveSuccess)
 			System.out.println("Sauvegarde réussie !");
@@ -182,11 +201,20 @@ public class SaveManager
 				int numberOfItems = in.readInt();
 				for (int i = 0; i < numberOfItems; i++) {
 					int templateId = in.readInt(); // TemplateId
-					boolean equipped = in.readBoolean(); // equipped
 					int stack = in.readInt();
-					itemList.add(new ItemInstance(templateId, equipped, stack));
+					ItemType itemType = (ItemType)in.readObject();
+					switch(itemType){
+						case EQUIPMENT:
+							boolean equipped = in.readBoolean();
+							int durability = in.readInt();
+							itemList.add(new EquipmentInstance(templateId, equipped, stack, durability));
+							break;
+						case MISC:
+							int usageLeft = in.readInt();
+							itemList.add(new MiscInstance(templateId, usageLeft, stack));
+							break;
+					}
 				}
-
 				Hero.getInstance().setInventory(new HeroInventory(itemList,inventorySize));
 			}
 		} catch (Exception e){

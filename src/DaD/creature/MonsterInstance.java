@@ -15,6 +15,7 @@ import DaD.item.ItemDropInfo;
 import DaD.item.ItemInstance;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Clovis on 12/06/2017.
@@ -83,30 +84,20 @@ public class MonsterInstance extends Npc
 	}
 
 	/**
-	 * Give items to the hero.
-	 * <p>
-	 *     The template contains a list of possibly droped items.
-	 *     For each of them we call a randomNumberGenerator, if it success
-	 *     then the item is dropped.
-	 * </p>
+	 * Give all items to the hero.
 	 * @param hero The hero that killed the monster
 	 * @see DaD.inventory.Inventory
 	 * @see ItemDropInfo
 	 * @see RandomGenerator
 	 */
 	private void dropItems(Hero hero){
-		ArrayList<ItemDropInfo> itemDropInfoList = _template.getItemDropInfoList();
-		// for each itemDropInfo we try to create the item if the luck is enough for it
-		for(ItemDropInfo itemDropInfo: itemDropInfoList) {
-			// Each item can be dropped several times => a monster can have several times the same object
-			ItemInstance itemInstance = ItemGenerator.getInstance().createItem(itemDropInfo);
-			// If item was successfully generated
-			if(itemInstance != null) {
-				// Notify player monster dropped an item
-				System.out.println(getName() + " fait tomber " + itemInstance.getTemplate().getName() + "[x" + itemInstance.getStack() + "]");
-				// Add Item to inventory
-				hero.getInventory().addItem(itemInstance);
-			}
+		// Create all instance that will be dropped by this monster
+		List<ItemInstance> itemList = ItemGenerator.getInstance().generateItemDropList(_template.getItemDropInfoList());
+		for(ItemInstance item: itemList){
+			// Notify player monster dropped an item
+			System.out.println(getName() + " fait tomber " + item.getTemplate().getName() + "[x" + item.getStack() + "]");
+			// Add Item to inventory
+			hero.getInventory().addItem(item);
 		}
 	}
 

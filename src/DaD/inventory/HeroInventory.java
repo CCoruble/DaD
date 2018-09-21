@@ -4,6 +4,7 @@ import DaD.calculator.Calculator;
 import DaD.creature.Hero;
 import DaD.data.types.GearType;
 import DaD.data.types.ItemEquipSlot;
+import DaD.item.EquipmentInstance;
 import DaD.item.ItemInstance;
 
 import java.util.ArrayList;
@@ -44,8 +45,8 @@ public class HeroInventory extends Inventory{
      * @param itemInstance ItemInstance to equip
      * @see Calculator#calculateAllStats(Hero)
      */
-    public void equip(Hero hero, ItemInstance itemInstance){
-        ItemInstance oldEquippedItem = hero.getInventory().getEquippedItem(itemInstance.getTemplate().getEquipSlot());
+    public void equip(Hero hero, EquipmentInstance itemInstance){
+        EquipmentInstance oldEquippedItem = hero.getInventory().getEquippedItem(itemInstance.getTemplate().getEquipSlot());
         // If there is already an equipped item on the equipSlot we unequip it
         if(oldEquippedItem != null){
             setUnequipped(oldEquippedItem);
@@ -60,40 +61,30 @@ public class HeroInventory extends Inventory{
     /**
      * Set item as unequip and calculate Hero stats.
      * @param hero The hero that will unequip the item
-     * @param itemInstance Item to equip
+     * @param equipmentInstance Item to equip
      */
-    public void unequip(Hero hero, ItemInstance itemInstance){
+    public void unequip(Hero hero, EquipmentInstance equipmentInstance){
         // Set the item as Unequipped
-        setUnequipped(itemInstance);
+        setUnequipped(equipmentInstance);
         // then call calculator so it calculate all the hero stat again
         Calculator.getInstance().calculateAllStats(hero);
-        System.out.println(itemInstance.getTemplate().getName() + " n'est plus équipé!");
+        System.out.println(equipmentInstance.getTemplate().getName() + " n'est plus équipé!");
     }
 
     /**
-     * Change the EquipSlot of an
-     * {@link ItemInstance} to the appropriate
-     * value, depending on its {@link GearType}.
-     * <p>
-     *     Each {@link ItemInstance} has an {@link GearType}.
-     *     Depending on this {@link GearType} the
-     *     {@link ItemInstance} will be equipped on a specific {@link DaD.data.types.ItemEquipSlot}.
-     *     Example: An {@link ItemInstance} of type {@link GearType#SWORD}
-     *     will be equipped on equip slot
-     *     {@link DaD.data.types.ItemEquipSlot#PAPERDOLL_RHAND right hand}.
-     * </p>
-     * @param itemInstance Item to set as equipped
+     * Call {@link EquipmentInstance#setEquipped(boolean) setEquipped(true)}
+     * function.
+     * @param equipmentInstance equipment to set as equipped
      */
-    public void setEquipped(ItemInstance itemInstance){
-        itemInstance.setEquipped(true);
+    public void setEquipped(EquipmentInstance equipmentInstance){
+        equipmentInstance.setEquipped(true);
     }
     /**
-     * Change {@link DaD.data.types.ItemEquipSlot} of
-     * an item to {@link DaD.data.types.ItemEquipSlot#NONE}.
-     * This mean the item is unequipped.
-     * @param itemInstance Item to set as unequipped
+     * Call {@link EquipmentInstance#setEquipped(boolean) setEquipped(false)}
+     * function.
+     * @param equipmentInstance equipment to set as equipped
      */
-    public void setUnequipped(ItemInstance itemInstance){
-        itemInstance.setEquipped(false);
+    public void setUnequipped(EquipmentInstance equipmentInstance){
+        equipmentInstance.setEquipped(false);
     }
 }

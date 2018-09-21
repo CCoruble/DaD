@@ -4,7 +4,54 @@
     <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="343df287-1d87-4777-a027-c8afb8593ba4" name="Default" comment="" />
+    <list default="true" id="343df287-1d87-4777-a027-c8afb8593ba4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/Template/EquipmentTemplate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/Template/MiscTemplate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/item/EquipmentInstance.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/item/IUsable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/item/MiscInstance.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Saves/Dislogette.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Saves/WEEBOZAURUS.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Saves/jackie.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/Holder/ItemHolder.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/Holder/ItemHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/Template/ItemTemplate.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/Template/ItemTemplate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/calculator/Calculator.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/calculator/Calculator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Blacksmith.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Blacksmith.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Church.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Church.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Inn.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Inn.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/Hero$1.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/Hero$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/Hero.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/Hero.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/MonsterInstance.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/MonsterInstance.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/data/types/ItemType.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/data/types/ItemType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/generator/ItemGenerator.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/generator/ItemGenerator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/inventory/HeroInventory.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/inventory/HeroInventory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/inventory/Inventory.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/inventory/Inventory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/item/ItemDropInfo.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/item/ItemDropInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/item/ItemInstance.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/item/ItemInstance.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/loader/ItemLoader.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/loader/ItemLoader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/manager/InventoryManager.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/manager/InventoryManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/manager/SaveManager.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/manager/SaveManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/trove4j_3_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/trove4j_3_0_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AllItems.xml" afterPath="$PROJECT_DIR$/AllItems.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/Holder/ItemHolder.java" afterPath="$PROJECT_DIR$/src/DaD/Holder/ItemHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/Holder/MonsterHolder.java" afterPath="$PROJECT_DIR$/src/DaD/Holder/MonsterHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/Template/DungeonTemplate.java" afterPath="$PROJECT_DIR$/src/DaD/Template/DungeonTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/Template/ItemTemplate.java" afterPath="$PROJECT_DIR$/src/DaD/Template/ItemTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/calculator/Calculator.java" afterPath="$PROJECT_DIR$/src/DaD/calculator/Calculator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/city/Blacksmith.java" afterPath="$PROJECT_DIR$/src/DaD/city/Blacksmith.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/creature/Hero.java" afterPath="$PROJECT_DIR$/src/DaD/creature/Hero.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java" afterPath="$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/data/types/ItemType.java" afterPath="$PROJECT_DIR$/src/DaD/data/types/ItemType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java" afterPath="$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java" afterPath="$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/inventory/Inventory.java" afterPath="$PROJECT_DIR$/src/DaD/inventory/Inventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java" afterPath="$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/item/ItemInstance.java" afterPath="$PROJECT_DIR$/src/DaD/item/ItemInstance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/loader/ItemLoader.java" afterPath="$PROJECT_DIR$/src/DaD/loader/ItemLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/manager/InventoryManager.java" afterPath="$PROJECT_DIR$/src/DaD/manager/InventoryManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/manager/SaveManager.java" afterPath="$PROJECT_DIR$/src/DaD/manager/SaveManager.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,304 +73,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Inventory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/inventory/Inventory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="236" column="5" lean-forward="true" selection-start-line="236" selection-start-column="5" selection-end-line="236" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HeroGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/generator/HeroGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HeroInventory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="56" column="38" lean-forward="true" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+              <folding>
+                <element signature="e#647#648#0" expanded="true" />
+                <element signature="e#692#693#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SaveManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DaD/manager/SaveManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="216" column="17" lean-forward="false" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MonsterInstance.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Hero.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DaD/creature/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="170" column="51" lean-forward="true" selection-start-line="170" selection-start-column="51" selection-end-line="170" selection-end-column="51" />
+            <state relative-caret-position="206">
+              <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
               <folding>
-                <element signature="docComment;class#Hero#0" expanded="false" />
-                <element signature="docComment;field#_instance#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;field#_gender#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;field#_race#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;field#_experienceMax#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;field#_experience#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;field#_inventory#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#Hero#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#Hero#1;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#clearHero#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#getInstance#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#setInstance#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#checkLevelUp#0;class#Hero#0" expanded="false" />
-                <element signature="method#checkLevelUp#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#levelUp#0;class#Hero#0" expanded="false" />
-                <element signature="method#levelUp#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#resurect#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#toString#0;class#Hero#0" expanded="false" />
-                <element signature="method#toString#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#displayFullCharacteristic#0;class#Hero#0" expanded="false" />
-                <element signature="method#displayFullCharacteristic#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#getHeroGender#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#getHeroRace#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#setHeroGender#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#setHeroRace#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#getPercentExperience#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#setExperience#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#setExperienceValue#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#addExperience#0;class#Hero#0" expanded="false" />
-                <element signature="method#addExperience#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#getExperience#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#getExperienceMax#0;class#Hero#0" expanded="false" />
+                <element signature="e#2694#2695#0" expanded="true" />
+                <element signature="e#2738#2739#0" expanded="true" />
                 <element signature="docComment;method#setExperienceMax#0;class#Hero#0" expanded="false" />
                 <element signature="docComment;method#tryEquip#0;class#Hero#0" expanded="false" />
-                <element signature="method#tryEquip#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#tryUnequip#0;class#Hero#0" expanded="false" />
-                <element signature="method#tryUnequip#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#getInventory#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#setInventory#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#canAddGold#0;class#Hero#0" expanded="false" />
-                <element signature="method#canAddGold#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#addGold#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#canAfford#0;class#Hero#0" expanded="false" />
-                <element signature="method#canAfford#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#decreaseGold#0;class#Hero#0" expanded="false" />
-                <element signature="method#decreaseGold#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#getAmountOfGold#0;class#Hero#0" expanded="false" />
-                <element signature="method#getAmountOfGold#0;class#Hero#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Inventory.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DaD/inventory/Inventory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="352" column="5" lean-forward="true" selection-start-line="352" selection-start-column="5" selection-end-line="352" selection-end-column="5" />
-              <folding>
-                <element signature="docComment;class#Inventory#0" expanded="false" />
-                <element signature="docComment;field#_inventorySize#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;field#_itemList#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#Inventory#0;class#Inventory#0" expanded="false" />
-                <element signature="method#Inventory#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#Inventory#1;class#Inventory#0" expanded="false" />
-                <element signature="method#Inventory#1;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getInventorySize#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#setInventorySize#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#increaseInventorySize#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#decreaseInventorySize#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getInventorySizeLeft#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#isInventoryFull#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getNumberOfItems#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getUnequippedItemsCount#0;class#Inventory#0" expanded="false" />
-                <element signature="method#getUnequippedItemsCount#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getItemList#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#addItem#0;class#Inventory#0" expanded="false" />
-                <element signature="method#addItem#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#addStackToExistingItems#0;class#Inventory#0" expanded="false" />
-                <element signature="method#addStackToExistingItems#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#addNonStackableItem#0;class#Inventory#0" expanded="false" />
-                <element signature="method#addNonStackableItem#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#addNewItem#0;class#Inventory#0" expanded="false" />
-                <element signature="method#addNewItem#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#askToFreeSlot#0;class#Inventory#0" expanded="false" />
-                <element signature="method#askToFreeSlot#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#deleteItem#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getEquippedItem#0;class#Inventory#0" expanded="false" />
-                <element signature="method#getEquippedItem#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getAllEquippedItems#0;class#Inventory#0" expanded="false" />
-                <element signature="method#getAllEquippedItems#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getAllNonEquippedItems#0;class#Inventory#0" expanded="false" />
-                <element signature="method#getAllNonEquippedItems#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getAllEquipableUnequippedItems#0;class#Inventory#0" expanded="false" />
-                <element signature="method#getAllEquipableUnequippedItems#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getAllSellableItems#0;class#Inventory#0" expanded="false" />
-                <element signature="method#getAllSellableItems#0;class#Inventory#0" expanded="false" />
-                <element signature="method#getThrowableItems#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#displayInventory#0;class#Inventory#0" expanded="false" />
-                <element signature="method#displayInventory#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getItemById#0;class#Inventory#0" expanded="false" />
-                <element signature="method#getItemById#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#getItemsById#0;class#Inventory#0" expanded="false" />
-                <element signature="method#getItemsById#0;class#Inventory#0" expanded="false" />
-                <element signature="docComment;method#removeItemStack#0;class#Inventory#0" expanded="false" />
-                <element signature="method#removeItemStack#0;class#Inventory#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Blacksmith.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/city/Blacksmith.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="126" column="62" lean-forward="false" selection-start-line="126" selection-start-column="62" selection-end-line="126" selection-end-column="62" />
-              <folding>
-                <element signature="docComment;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;field#_instance#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;field#_itemTemplateIdList#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;field#_options#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;field#_sellRate#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;method#Blacksmith#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;method#getInstance#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;method#blacksmithMenu#0;class#Blacksmith#0" expanded="false" />
-                <element signature="method#blacksmithMenu#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;method#initializeBlacksmithInventory#0;class#Blacksmith#0" expanded="false" />
-                <element signature="method#initializeBlacksmithInventory#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;method#buyItemsMenu#0;class#Blacksmith#0" expanded="false" />
-                <element signature="method#buyItemsMenu#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;method#buyItem#0;class#Blacksmith#0" expanded="false" />
-                <element signature="method#buyItem#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;method#sellItemsMenu#0;class#Blacksmith#0" expanded="false" />
-                <element signature="method#sellItemsMenu#0;class#Blacksmith#0" expanded="false" />
-                <element signature="docComment;method#sellItem#0;class#Blacksmith#0" expanded="false" />
-                <element signature="method#sellItem#0;class#Blacksmith#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DungeonHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/handler/DungeonHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="71" column="9" lean-forward="true" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
-              <folding>
-                <element signature="docComment;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;field#_instance#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;field#_dungeon#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;field#_options#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;method#DungeonHandler#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;method#getInstance#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;method#dungeonSetting#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;method#enterDungeon#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="method#enterDungeon#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;method#dungeonLoop#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="method#dungeonLoop#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;method#dungeonRoomMenu#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="method#dungeonRoomMenu#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;method#initializeDungeon#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="method#initializeDungeon#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;method#endDungeon#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="method#endDungeon#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="docComment;method#giveReward#0;class#DungeonHandler#0" expanded="false" />
-                <element signature="method#giveReward#0;class#DungeonHandler#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Inn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/city/Inn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-              <folding>
-                <element signature="docComment;class#Inn#0" expanded="false" />
-                <element signature="docComment;field#_instance#0;class#Inn#0" expanded="false" />
-                <element signature="docComment;method#Inn#0;class#Inn#0" expanded="false" />
-                <element signature="docComment;method#getInstance#0;class#Inn#0" expanded="false" />
-                <element signature="docComment;method#innMenu#0;class#Inn#0" expanded="false" />
-                <element signature="method#innMenu#0;class#Inn#0" expanded="false" />
-                <element signature="docComment;method#calcInnPrice#0;class#Inn#0" expanded="false" />
-                <element signature="docComment;method#rest#0;class#Inn#0" expanded="false" />
-                <element signature="method#rest#0;class#Inn#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Church.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/city/Church.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-              <folding>
-                <element signature="docComment;class#Church#0" expanded="false" />
-                <element signature="docComment;field#_instance#0;class#Church#0" expanded="false" />
-                <element signature="docComment;method#Church#0;class#Church#0" expanded="false" />
-                <element signature="docComment;method#getInstance#0;class#Church#0" expanded="false" />
-                <element signature="docComment;method#churchMenu#0;class#Church#0" expanded="false" />
-                <element signature="method#churchMenu#0;class#Church#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/manager/GameManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="106" column="80" lean-forward="true" selection-start-line="106" selection-start-column="80" selection-end-line="106" selection-end-column="80" />
-              <folding>
-                <element signature="docComment;class#GameManager#0" expanded="false" />
-                <element signature="docComment;field#_instance#0;class#GameManager#0" expanded="false" />
-                <element signature="docComment;field#isDebug#0;class#GameManager#0" expanded="false" />
-                <element signature="docComment;field#_mainMenuOptions#0;class#GameManager#0" expanded="false" />
-                <element signature="docComment;field#_inGameMenuOptions#0;class#GameManager#0" expanded="false" />
-                <element signature="docComment;method#getInstance#0;class#GameManager#0" expanded="false" />
-                <element signature="docComment;method#GameManager#0;class#GameManager#0" expanded="false" />
-                <element signature="docComment;method#mainMenu#0;class#GameManager#0" expanded="false" />
-                <element signature="method#mainMenu#0;class#GameManager#0" expanded="false" />
-                <element signature="docComment;method#inGameMenu#0;class#GameManager#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaveManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/manager/SaveManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1547">
-              <caret line="248" column="45" lean-forward="false" selection-start-line="248" selection-start-column="45" selection-end-line="248" selection-end-column="45" />
-              <folding>
-                <element signature="docComment;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;field#_instance#0;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;field#FOLDER_NAME#0;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;field#SAVE_EXTENSION#0;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;field#VERSION#0;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;method#getInstance#0;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;method#SaveManager#0;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;method#save#0;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;method#load#0;class#SaveManager#0" expanded="false" />
-                <element signature="method#load#0;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;method#askSelectedSave#0;class#SaveManager#0" expanded="false" />
-                <element signature="method#askSelectedSave#0;class#SaveManager#0" expanded="false" />
-                <element signature="docComment;method#getAllUsedName#0;class#SaveManager#0" expanded="false" />
-                <element signature="method#getAllUsedName#0;class#SaveManager#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemTemplate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/Template/ItemTemplate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="170" column="4" lean-forward="false" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
-              <folding>
-                <element signature="docComment;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_id#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_name#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_requiredLevel#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_price#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_rarity#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_maxStack#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_itemType#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_equipSlot#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_maxDurability#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_weight#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_equipable#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_sellable#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_description#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;field#_allBonus#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#ItemTemplate#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="method#ItemTemplate#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#getId#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#getName#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#getAllBonus#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#getBonusByStat#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="method#getBonusByStat#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#isEquipable#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#isSellable#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#getPrice#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#getMaxStack#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="method#getMaxStack#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#getRequiredLevel#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#displayTemplate#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="method#displayTemplate#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="docComment;method#displayBonus#0;class#ItemTemplate#0" expanded="false" />
-                <element signature="method#displayBonus#0;class#ItemTemplate#0" expanded="false" />
+                <element signature="e#10374#10375#0" expanded="true" />
+                <element signature="e#10398#10399#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -332,27 +156,32 @@
       <file leaf-file-name="ItemInstance.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemInstance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="123" column="14" lean-forward="false" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
+            <state relative-caret-position="238">
+              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MiscInstance.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/item/MiscInstance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="24" />
               <folding>
-                <element signature="docComment;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;field#_stack#0;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;field#_itemTemplate#0;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;field#_equipped#0;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;method#ItemInstance#0;class#ItemInstance#0" expanded="false" />
-                <element signature="method#ItemInstance#0;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;method#ItemInstance#1;class#ItemInstance#0" expanded="false" />
-                <element signature="method#ItemInstance#1;class#ItemInstance#0" expanded="false" />
-                <element signature="method#ItemInstance#2;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;method#getTemplate#0;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;method#getStack#0;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;method#addStack#0;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;method#setStack#0;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;method#removeStack#0;class#ItemInstance#0" expanded="false" />
-                <element signature="docComment;method#isEquipped#0;class#ItemInstance#0" expanded="false" />
-                <element signature="e#3097#3098#0" expanded="true" />
-                <element signature="e#3115#3116#0" expanded="true" />
+                <element signature="e#851#852#0" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/calculator/Calculator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="78" column="27" lean-forward="true" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -364,16 +193,13 @@
       <list>
         <option value="UML Class" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>displayMonsterInformation</find>
-      <find>startFight</find>
-      <find>.equ</find>
-      <find>item</find>
       <find>getAttackModifier</find>
       <find>System</find>
       <find>stop</find>
@@ -396,10 +222,14 @@
       <find>diff</find>
       <find>.txt</find>
       <find>equipSlo</find>
-      <find>try</find>
       <find>Hero.getIns</find>
       <find>Hero.getInstance()</find>
       <find>Scanner</find>
+      <find>item</find>
+      <find>wooden</find>
+      <find>try</find>
+      <find>equip</find>
+      <find>inventoryS</find>
     </findStrings>
     <replaceStrings>
       <replace>stats.getEnv</replace>
@@ -407,6 +237,9 @@
       <replace>monstersStats.getEnv</replace>
       <replace>hero</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -416,26 +249,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/DaD/formulas/HeroFormulas.java" />
-        <option value="$PROJECT_DIR$/src/DaD/data/types/Stats/StatType.java" />
-        <option value="$PROJECT_DIR$/src/DaD/calculator/Calculator.java" />
-        <option value="$PROJECT_DIR$/src/DaD/data/types/ItemEquipSlot.java" />
-        <option value="$PROJECT_DIR$/src/DaD/commons/AppendableObjectOutputStream.java" />
-        <option value="$PROJECT_DIR$/src/DaD/data/types/Stats/Env.java" />
-        <option value="$PROJECT_DIR$/src/DaD/item/ItemHolder.java" />
-        <option value="$PROJECT_DIR$/src/DaD/data/types/GearType.java" />
-        <option value="$PROJECT_DIR$/src/DaD/data/types/ItemType.java" />
-        <option value="$PROJECT_DIR$/src/DaD/loader/ItemLoader.java" />
-        <option value="$PROJECT_DIR$/src/DaD/loader/GeneralLoader.java" />
-        <option value="$PROJECT_DIR$/src/DaD/commons/utils.java" />
-        <option value="$PROJECT_DIR$/src/DaD/commons/ItemUtils.java" />
-        <option value="$PROJECT_DIR$/src/DaD/commons/InputUtils.java" />
-        <option value="$PROJECT_DIR$/src/DaD/Commons/Collections/MultiValueSet.java" />
-        <option value="$PROJECT_DIR$/src/DaD/Commons/Utils/Spacer.java" />
-        <option value="$PROJECT_DIR$/src/DaD/manager/InventoryManager.java" />
-        <option value="$PROJECT_DIR$/src/DaD/main.java" />
-        <option value="$PROJECT_DIR$/src/DaD/Commons/Utils/InputFunction.java" />
-        <option value="$PROJECT_DIR$/src/DaD/manager/GameManager.java" />
         <option value="$PROJECT_DIR$/src/DaD/formulas/MonsterFormulas.java" />
         <option value="$PROJECT_DIR$/src/DaD/monster/MonsterTemplate.java" />
         <option value="$PROJECT_DIR$/src/DaD/generator/NpcGenerator.java" />
@@ -447,26 +260,46 @@
         <option value="$PROJECT_DIR$/src/DaD/handler/FightHandler.java" />
         <option value="$PROJECT_DIR$/src/DaD/monster/MonsterInstance.java" />
         <option value="$PROJECT_DIR$/src/DaD/Commons/Utils/ItemFunction.java" />
-        <option value="$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java" />
         <option value="$PROJECT_DIR$/src/DaD/Template/MonsterTemplate.java" />
         <option value="$PROJECT_DIR$/src/DaD/Template/DungeonTemplate.java" />
         <option value="$PROJECT_DIR$/src/DaD/Template/DungeonRoomTemplate.java" />
-        <option value="$PROJECT_DIR$/src/DaD/Holder/ItemHolder.java" />
         <option value="$PROJECT_DIR$/src/DaD/Holder/MonsterHolder.java" />
         <option value="$PROJECT_DIR$/src/DaD/Holder/DungeonHolder.java" />
         <option value="$PROJECT_DIR$/src/DaD/creature/Creature.java" />
-        <option value="$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java" />
-        <option value="$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java" />
         <option value="$PROJECT_DIR$/src/DaD/city/Bank.java" />
-        <option value="$PROJECT_DIR$/src/DaD/item/ItemInstance.java" />
-        <option value="$PROJECT_DIR$/src/DaD/manager/SaveManager.java" />
-        <option value="$PROJECT_DIR$/src/DaD/creature/Hero.java" />
-        <option value="$PROJECT_DIR$/src/DaD/city/Blacksmith.java" />
         <option value="$PROJECT_DIR$/src/DaD/handler/DungeonHandler.java" />
         <option value="$PROJECT_DIR$/src/DaD/city/Inn.java" />
         <option value="$PROJECT_DIR$/src/DaD/city/Church.java" />
+        <option value="$PROJECT_DIR$/src/DaD/handler/IUsable.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/UsableItemInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/Template/ObjectTemplate.java" />
+        <option value="$PROJECT_DIR$/src/DaD/Holder/ObjectHolder.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/Object.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/PotionInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/ScrollInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/Ingredients.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/IUsable.java" />
+        <option value="$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/ItemType.java" />
+        <option value="$PROJECT_DIR$/src/DaD/calculator/Calculator.java" />
+        <option value="$PROJECT_DIR$/src/DaD/manager/InventoryManager.java" />
+        <option value="$PROJECT_DIR$/src/DaD/main.java" />
+        <option value="$PROJECT_DIR$/src/DaD/Template/MiscTemplate.java" />
+        <option value="$PROJECT_DIR$/src/DaD/Template/EquipmentTemplate.java" />
         <option value="$PROJECT_DIR$/src/DaD/Template/ItemTemplate.java" />
+        <option value="$PROJECT_DIR$/src/DaD/loader/GeneralLoader.java" />
+        <option value="$PROJECT_DIR$/src/DaD/Holder/ItemHolder.java" />
+        <option value="$PROJECT_DIR$/src/DaD/city/Blacksmith.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/MiscInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/EquipmentInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/ItemInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/loader/ItemLoader.java" />
         <option value="$PROJECT_DIR$/src/DaD/inventory/Inventory.java" />
+        <option value="$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java" />
+        <option value="$PROJECT_DIR$/src/DaD/creature/Hero.java" />
+        <option value="$PROJECT_DIR$/src/DaD/manager/SaveManager.java" />
       </list>
     </option>
   </component>
@@ -477,8 +310,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -587,7 +422,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
@@ -595,28 +429,88 @@
         <subPane>
           <expand>
             <path>
-              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dungeon_And_Dragons_V3_INCOMING" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DaD" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Dungeon_And_Dragons_V3_INCOMING" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="calculator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="city" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="creature" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="inventory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="item" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="loader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaD" type="462c0819:PsiDirectoryNode" />
+              <item name="Template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -624,7 +518,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/trove4j-3.0.3.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/trove-3.0.0a1.jar/trove-3.0.0a1.jar!/" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -897,6 +791,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -907,20 +802,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34745762" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34745762" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15572916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15572916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3209746" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32521185" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4141949" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4141949" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -944,10 +839,24 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DaD/manager/SaveManager.java</url>
+          <line>113</line>
+          <properties />
+          <option name="timeStamp" value="308" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="314" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="293" />
+      <option name="time" value="315" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -960,664 +869,75 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/Stats/StatType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="355" column="23" lean-forward="false" selection-start-line="355" selection-start-column="23" selection-end-line="355" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/ItemRarity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;class#ItemRarity#0" expanded="false" />
-            <element signature="docComment;field#VALUES#0;class#ItemRarity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/HeroRace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="105" column="1" lean-forward="false" selection-start-line="105" selection-start-column="1" selection-end-line="105" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/commons/AppendableObjectOutputStream.java" />
-    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/GearType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/ItemType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/ItemEquipSlot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/loader/ItemLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Commons/Utils/RandomGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/DaD/inventory/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Commons/Utils/Spacer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/jdk/internal/org/objectweb/asm/tree/TryCatchBlockNode.class">
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/MiscInstance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="595">
+          <caret line="35" column="49" lean-forward="false" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+          <folding>
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/EquipmentInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;field#_equipped#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;field#_durability#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;method#EquipmentInstance#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;method#EquipmentInstance#1;class#EquipmentInstance#0" expanded="false" />
+            <element signature="method#EquipmentInstance#1;class#EquipmentInstance#0" expanded="false" />
+            <element signature="method#EquipmentInstance#2;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;method#isEquipped#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;method#setEquipped#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="e#1598#1599#0" expanded="true" />
+            <element signature="e#1659#1660#0" expanded="true" />
+            <element signature="docComment;method#isThrowable#0;class#EquipmentInstance#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/Template/EquipmentTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/ext/nashorn.jar!/jdk/nashorn/internal/parser/TokenType.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="102" column="4" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/loader/MonsterLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="77" column="47" lean-forward="false" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/calculator/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/loader/GeneralLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-          <folding>
-            <element signature="docComment;field#_instance#0;class#GeneralLoader#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#GeneralLoader#0" expanded="false" />
-            <element signature="docComment;method#GeneralLoader#0;class#GeneralLoader#0" expanded="false" />
-            <element signature="docComment;method#loadAll#0;class#GeneralLoader#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/creature/Npc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="docComment;class#Npc#0" expanded="false" />
-            <element signature="docComment;method#Npc#0;class#Npc#0" expanded="false" />
-            <element signature="e#330#331#0" expanded="false" />
-            <element signature="e#349#350#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Commons/Collections/MultiValueSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="342" column="0" lean-forward="false" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/formulas/MonsterFormulas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="99" column="5" lean-forward="false" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/generator/NpcGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="47" column="65" lean-forward="false" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/generator/DungeonGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="42" column="73" lean-forward="false" selection-start-line="42" selection-start-column="73" selection-end-line="42" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/generator/HeroGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/Stats/Env.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="149" column="16" lean-forward="false" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Commons/Utils/ItemFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Template/MonsterTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Template/DungeonTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Template/DungeonRoomTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Holder/MonsterHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Holder/ItemHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="34" column="81" lean-forward="false" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#ItemHolder#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#ItemHolder#0" expanded="false" />
-            <element signature="docComment;field#_itemsList#0;class#ItemHolder#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#ItemHolder#0" expanded="false" />
-            <element signature="docComment;method#ItemHolder#0;class#ItemHolder#0" expanded="false" />
-            <element signature="docComment;method#createTemplate#0;class#ItemHolder#0" expanded="false" />
-            <element signature="method#createTemplate#0;class#ItemHolder#0" expanded="false" />
-            <element signature="docComment;method#getItem#0;class#ItemHolder#0" expanded="false" />
-            <element signature="e#2171#2172#0" expanded="true" />
-            <element signature="e#2206#2207#0" expanded="true" />
-            <element signature="docComment;method#getTemplateList#0;class#ItemHolder#0" expanded="false" />
-            <element signature="docComment;method#displayAllItems#0;class#ItemHolder#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Holder/DungeonHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/handler/FightHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="120" column="27" lean-forward="false" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;field#_hero#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;field#_turn#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;field#_monsterList#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;method#FightHandler#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;method#startFight#0;class#FightHandler#0" expanded="false" />
-            <element signature="method#startFight#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;method#fightLoop#0;class#FightHandler#0" expanded="false" />
-            <element signature="method#fightLoop#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;method#endFight#0;class#FightHandler#0" expanded="false" />
-            <element signature="method#endFight#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;method#heroTurn#0;class#FightHandler#0" expanded="false" />
-            <element signature="method#heroTurn#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;method#monsterTurn#0;class#FightHandler#0" expanded="false" />
-            <element signature="method#monsterTurn#0;class#FightHandler#0" expanded="false" />
-            <element signature="docComment;method#displayMonsterInformation#0;class#FightHandler#0" expanded="false" />
-            <element signature="method#displayMonsterInformation#0;class#FightHandler#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/creature/Creature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="167" column="5" lean-forward="true" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
-          <folding>
-            <element signature="docComment;method#Creature#0;class#Creature#0" expanded="false" />
-            <element signature="docComment;method#Creature#1;class#Creature#0" expanded="false" />
-            <element signature="method#Creature#1;class#Creature#0" expanded="false" />
-            <element signature="docComment;method#attack#0;class#Creature#0" expanded="false" />
-            <element signature="method#attack#0;class#Creature#0" expanded="false" />
-            <element signature="docComment;method#isDead#0;class#Creature#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="44" column="39" lean-forward="false" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="107" column="58" lean-forward="false" selection-start-line="107" selection-start-column="58" selection-end-line="107" selection-end-column="58" />
-          <folding>
-            <element signature="docComment;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;field#_template#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;field#_rarity#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;field#_race#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#MonsterInstance#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="method#MonsterInstance#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#giveRewards#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="method#giveRewards#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#dropItems#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#getTemplate#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#getRarity#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#setRarity#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#getRace#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#setRace#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#toString#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="docComment;method#getResumedInformation#0;class#MonsterInstance#0" expanded="false" />
-            <element signature="method#getResumedInformation#0;class#MonsterInstance#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/manager/InventoryManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="66" column="26" lean-forward="false" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
-          <folding>
-            <element signature="docComment;class#InventoryManager#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#InventoryManager#0" expanded="false" />
-            <element signature="docComment;field#_iventoryOptions#0;class#InventoryManager#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#InventoryManager#0" expanded="false" />
-            <element signature="docComment;method#InventoryManager#0;class#InventoryManager#0" expanded="false" />
-            <element signature="docComment;method#inventoryMenu#0;class#InventoryManager#0" expanded="false" />
-            <element signature="docComment;method#equipItem#0;class#InventoryManager#0" expanded="false" />
-            <element signature="docComment;method#unequipItem#0;class#InventoryManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/Commons/Utils/InputFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
-          <folding>
-            <element signature="docComment;class#HeroInventory#0" expanded="false" />
-            <element signature="docComment;method#HeroInventory#0;class#HeroInventory#0" expanded="false" />
-            <element signature="docComment;method#HeroInventory#1;class#HeroInventory#0" expanded="false" />
-            <element signature="docComment;method#equip#0;class#HeroInventory#0" expanded="false" />
-            <element signature="method#equip#0;class#HeroInventory#0" expanded="false" />
-            <element signature="docComment;method#unequip#0;class#HeroInventory#0" expanded="false" />
-            <element signature="method#unequip#0;class#HeroInventory#0" expanded="false" />
-            <element signature="docComment;method#setEquipped#0;class#HeroInventory#0" expanded="false" />
-            <element signature="docComment;method#setUnequipped#0;class#HeroInventory#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="7" lean-forward="false" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-          <folding>
-            <element signature="docComment;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;field#_itemTemplate#0;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;field#_maxDrop#0;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;field#_dropRate#0;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;method#ItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
-            <element signature="method#ItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;method#ItemDropInfo#1;class#ItemDropInfo#0" expanded="false" />
-            <element signature="method#ItemDropInfo#1;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;method#ItemDropInfo#2;class#ItemDropInfo#0" expanded="false" />
-            <element signature="method#ItemDropInfo#2;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;method#getTemplate#0;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;method#getMaxDrop#0;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;method#getDropRate#0;class#ItemDropInfo#0" expanded="false" />
-            <element signature="docComment;method#displayItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
-            <element signature="method#displayItemDropInfo#0;class#ItemDropInfo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/dungeon/DungeonInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-          <folding>
-            <element signature="docComment;field#_name#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;field#_currentRoomOrder#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;field#_totalRoomCount#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;field#_experienceReward#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;field#_levelDifficulty#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;field#_requiredLevel#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;field#_roomList#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;method#DungeonInstance#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;method#getCurrentRoom#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="method#getCurrentRoom#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;method#getCurrentRoomOrder#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;method#increaseCurrentRoomOrder#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;method#getTotalRoomCount#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;method#getLevelDifficulty#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;method#getExperienceReward#0;class#DungeonInstance#0" expanded="false" />
-            <element signature="docComment;method#getRoomList#0;class#DungeonInstance#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/city/Bank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="162" column="8" lean-forward="false" selection-start-line="162" selection-start-column="8" selection-end-line="162" selection-end-column="8" />
-          <folding>
-            <element signature="docComment;class#Bank#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;field#_options#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;field#_minimumGoldPerStock#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;field#_stockedGold#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#Bank#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#addMoney#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#decreaseMoney#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#getMoney#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#setMoney#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#bankMenu#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#stockMoney#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#retrieveMoney#0;class#Bank#0" expanded="false" />
-            <element signature="docComment;method#borrowMoney#0;class#Bank#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemInstance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="123" column="14" lean-forward="false" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
-          <folding>
-            <element signature="docComment;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;field#_stack#0;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;field#_itemTemplate#0;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;field#_equipped#0;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;method#ItemInstance#0;class#ItemInstance#0" expanded="false" />
-            <element signature="method#ItemInstance#0;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;method#ItemInstance#1;class#ItemInstance#0" expanded="false" />
-            <element signature="method#ItemInstance#1;class#ItemInstance#0" expanded="false" />
-            <element signature="method#ItemInstance#2;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;method#getTemplate#0;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;method#getStack#0;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;method#addStack#0;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;method#setStack#0;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;method#removeStack#0;class#ItemInstance#0" expanded="false" />
-            <element signature="docComment;method#isEquipped#0;class#ItemInstance#0" expanded="false" />
-            <element signature="e#3097#3098#0" expanded="true" />
-            <element signature="e#3115#3116#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1513">
+          <caret line="98" column="35" lean-forward="false" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/manager/SaveManager.java">
+    <entry file="file://$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="248" column="45" lean-forward="false" selection-start-line="248" selection-start-column="45" selection-end-line="248" selection-end-column="45" />
-          <folding>
-            <element signature="docComment;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;field#FOLDER_NAME#0;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;field#SAVE_EXTENSION#0;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;field#VERSION#0;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;method#SaveManager#0;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;method#save#0;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;method#load#0;class#SaveManager#0" expanded="false" />
-            <element signature="method#load#0;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;method#askSelectedSave#0;class#SaveManager#0" expanded="false" />
-            <element signature="method#askSelectedSave#0;class#SaveManager#0" expanded="false" />
-            <element signature="docComment;method#getAllUsedName#0;class#SaveManager#0" expanded="false" />
-            <element signature="method#getAllUsedName#0;class#SaveManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/creature/Hero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="170" column="51" lean-forward="true" selection-start-line="170" selection-start-column="51" selection-end-line="170" selection-end-column="51" />
-          <folding>
-            <element signature="docComment;class#Hero#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;field#_gender#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;field#_race#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;field#_experienceMax#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;field#_experience#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;field#_inventory#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#Hero#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#Hero#1;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#clearHero#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#setInstance#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#checkLevelUp#0;class#Hero#0" expanded="false" />
-            <element signature="method#checkLevelUp#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#levelUp#0;class#Hero#0" expanded="false" />
-            <element signature="method#levelUp#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#resurect#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#toString#0;class#Hero#0" expanded="false" />
-            <element signature="method#toString#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#displayFullCharacteristic#0;class#Hero#0" expanded="false" />
-            <element signature="method#displayFullCharacteristic#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#getHeroGender#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#getHeroRace#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#setHeroGender#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#setHeroRace#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#getPercentExperience#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#setExperience#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#setExperienceValue#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#addExperience#0;class#Hero#0" expanded="false" />
-            <element signature="method#addExperience#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#getExperience#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#getExperienceMax#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#setExperienceMax#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#tryEquip#0;class#Hero#0" expanded="false" />
-            <element signature="method#tryEquip#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#tryUnequip#0;class#Hero#0" expanded="false" />
-            <element signature="method#tryUnequip#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#getInventory#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#setInventory#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#canAddGold#0;class#Hero#0" expanded="false" />
-            <element signature="method#canAddGold#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#addGold#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#canAfford#0;class#Hero#0" expanded="false" />
-            <element signature="method#canAfford#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#decreaseGold#0;class#Hero#0" expanded="false" />
-            <element signature="method#decreaseGold#0;class#Hero#0" expanded="false" />
-            <element signature="docComment;method#getAmountOfGold#0;class#Hero#0" expanded="false" />
-            <element signature="method#getAmountOfGold#0;class#Hero#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/city/Blacksmith.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="126" column="62" lean-forward="false" selection-start-line="126" selection-start-column="62" selection-end-line="126" selection-end-column="62" />
-          <folding>
-            <element signature="docComment;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;field#_itemTemplateIdList#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;field#_options#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;field#_sellRate#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;method#Blacksmith#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;method#blacksmithMenu#0;class#Blacksmith#0" expanded="false" />
-            <element signature="method#blacksmithMenu#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;method#initializeBlacksmithInventory#0;class#Blacksmith#0" expanded="false" />
-            <element signature="method#initializeBlacksmithInventory#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;method#buyItemsMenu#0;class#Blacksmith#0" expanded="false" />
-            <element signature="method#buyItemsMenu#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;method#buyItem#0;class#Blacksmith#0" expanded="false" />
-            <element signature="method#buyItem#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;method#sellItemsMenu#0;class#Blacksmith#0" expanded="false" />
-            <element signature="method#sellItemsMenu#0;class#Blacksmith#0" expanded="false" />
-            <element signature="docComment;method#sellItem#0;class#Blacksmith#0" expanded="false" />
-            <element signature="method#sellItem#0;class#Blacksmith#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/manager/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="106" column="80" lean-forward="true" selection-start-line="106" selection-start-column="80" selection-end-line="106" selection-end-column="80" />
-          <folding>
-            <element signature="docComment;class#GameManager#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#GameManager#0" expanded="false" />
-            <element signature="docComment;field#isDebug#0;class#GameManager#0" expanded="false" />
-            <element signature="docComment;field#_mainMenuOptions#0;class#GameManager#0" expanded="false" />
-            <element signature="docComment;field#_inGameMenuOptions#0;class#GameManager#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#GameManager#0" expanded="false" />
-            <element signature="docComment;method#GameManager#0;class#GameManager#0" expanded="false" />
-            <element signature="docComment;method#mainMenu#0;class#GameManager#0" expanded="false" />
-            <element signature="method#mainMenu#0;class#GameManager#0" expanded="false" />
-            <element signature="docComment;method#inGameMenu#0;class#GameManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/handler/DungeonHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="71" column="9" lean-forward="true" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
-          <folding>
-            <element signature="docComment;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;field#_dungeon#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;field#_options#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;method#DungeonHandler#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;method#dungeonSetting#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;method#enterDungeon#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="method#enterDungeon#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;method#dungeonLoop#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="method#dungeonLoop#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;method#dungeonRoomMenu#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="method#dungeonRoomMenu#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;method#initializeDungeon#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="method#initializeDungeon#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;method#endDungeon#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="method#endDungeon#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="docComment;method#giveReward#0;class#DungeonHandler#0" expanded="false" />
-            <element signature="method#giveReward#0;class#DungeonHandler#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/city/Inn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;class#Inn#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#Inn#0" expanded="false" />
-            <element signature="docComment;method#Inn#0;class#Inn#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#Inn#0" expanded="false" />
-            <element signature="docComment;method#innMenu#0;class#Inn#0" expanded="false" />
-            <element signature="method#innMenu#0;class#Inn#0" expanded="false" />
-            <element signature="docComment;method#calcInnPrice#0;class#Inn#0" expanded="false" />
-            <element signature="docComment;method#rest#0;class#Inn#0" expanded="false" />
-            <element signature="method#rest#0;class#Inn#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/city/Church.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;class#Church#0" expanded="false" />
-            <element signature="docComment;field#_instance#0;class#Church#0" expanded="false" />
-            <element signature="docComment;method#Church#0;class#Church#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#Church#0" expanded="false" />
-            <element signature="docComment;method#churchMenu#0;class#Church#0" expanded="false" />
-            <element signature="method#churchMenu#0;class#Church#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="1156">
+          <caret line="79" column="79" lean-forward="false" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DaD/Template/ItemTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="170" column="4" lean-forward="false" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
+        <state relative-caret-position="1156">
+          <caret line="137" column="27" lean-forward="false" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_id#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_name#0;class#ItemTemplate#0" expanded="false" />
@@ -1626,87 +946,265 @@
             <element signature="docComment;field#_rarity#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_maxStack#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_itemType#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="docComment;field#_equipSlot#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="docComment;field#_maxDurability#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_weight#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="docComment;field#_equipable#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_sellable#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_description#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="docComment;field#_allBonus#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;method#ItemTemplate#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="method#ItemTemplate#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;method#getId#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;method#getName#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="docComment;method#getAllBonus#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="docComment;method#getBonusByStat#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="method#getBonusByStat#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="docComment;method#isEquipable#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;method#isSellable#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;method#getPrice#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;method#getMaxStack#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="method#getMaxStack#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;method#getRequiredLevel#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="docComment;method#displayTemplate#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="method#displayTemplate#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="docComment;method#displayBonus#0;class#ItemTemplate#0" expanded="false" />
-            <element signature="method#displayBonus#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#ItemTemplate#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="78" column="29" lean-forward="false" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
+          <folding>
+            <element signature="e#2293#2294#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/creature/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6035">
+          <caret line="396" column="0" lean-forward="false" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
+          <folding>
+            <element signature="e#2694#2695#0" expanded="true" />
+            <element signature="e#2738#2739#0" expanded="true" />
+            <element signature="docComment;method#setExperienceMax#0;class#Hero#0" expanded="false" />
+            <element signature="docComment;method#tryEquip#0;class#Hero#0" expanded="false" />
+            <element signature="e#10374#10375#0" expanded="true" />
+            <element signature="e#10398#10399#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DaD/inventory/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="352" column="5" lean-forward="true" selection-start-line="352" selection-start-column="5" selection-end-line="352" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/loader/GeneralLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="51" column="44" lean-forward="false" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/city/Blacksmith.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="135" column="54" lean-forward="true" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/EquipmentInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Inventory#0" expanded="false" />
-            <element signature="docComment;field#_inventorySize#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;field#_itemList#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#Inventory#0;class#Inventory#0" expanded="false" />
-            <element signature="method#Inventory#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#Inventory#1;class#Inventory#0" expanded="false" />
-            <element signature="method#Inventory#1;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getInventorySize#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#setInventorySize#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#increaseInventorySize#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#decreaseInventorySize#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getInventorySizeLeft#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#isInventoryFull#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getNumberOfItems#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getUnequippedItemsCount#0;class#Inventory#0" expanded="false" />
-            <element signature="method#getUnequippedItemsCount#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getItemList#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#addItem#0;class#Inventory#0" expanded="false" />
-            <element signature="method#addItem#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#addStackToExistingItems#0;class#Inventory#0" expanded="false" />
-            <element signature="method#addStackToExistingItems#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#addNonStackableItem#0;class#Inventory#0" expanded="false" />
-            <element signature="method#addNonStackableItem#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#addNewItem#0;class#Inventory#0" expanded="false" />
-            <element signature="method#addNewItem#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#askToFreeSlot#0;class#Inventory#0" expanded="false" />
-            <element signature="method#askToFreeSlot#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#deleteItem#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getEquippedItem#0;class#Inventory#0" expanded="false" />
-            <element signature="method#getEquippedItem#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getAllEquippedItems#0;class#Inventory#0" expanded="false" />
-            <element signature="method#getAllEquippedItems#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getAllNonEquippedItems#0;class#Inventory#0" expanded="false" />
-            <element signature="method#getAllNonEquippedItems#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getAllEquipableUnequippedItems#0;class#Inventory#0" expanded="false" />
-            <element signature="method#getAllEquipableUnequippedItems#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getAllSellableItems#0;class#Inventory#0" expanded="false" />
-            <element signature="method#getAllSellableItems#0;class#Inventory#0" expanded="false" />
-            <element signature="method#getThrowableItems#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#displayInventory#0;class#Inventory#0" expanded="false" />
-            <element signature="method#displayInventory#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getItemById#0;class#Inventory#0" expanded="false" />
-            <element signature="method#getItemById#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#getItemsById#0;class#Inventory#0" expanded="false" />
-            <element signature="method#getItemsById#0;class#Inventory#0" expanded="false" />
-            <element signature="docComment;method#removeItemStack#0;class#Inventory#0" expanded="false" />
-            <element signature="method#removeItemStack#0;class#Inventory#0" expanded="false" />
+            <element signature="docComment;field#_equipped#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;field#_durability#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;method#EquipmentInstance#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;method#EquipmentInstance#1;class#EquipmentInstance#0" expanded="false" />
+            <element signature="method#EquipmentInstance#1;class#EquipmentInstance#0" expanded="false" />
+            <element signature="method#EquipmentInstance#2;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;method#isEquipped#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="docComment;method#setEquipped#0;class#EquipmentInstance#0" expanded="false" />
+            <element signature="e#1598#1599#0" expanded="true" />
+            <element signature="e#1659#1660#0" expanded="true" />
+            <element signature="docComment;method#isThrowable#0;class#EquipmentInstance#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="78" column="29" lean-forward="false" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
+          <folding>
+            <element signature="e#2293#2294#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/Template/ItemTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_id#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_name#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_requiredLevel#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_price#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_rarity#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_maxStack#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_itemType#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_weight#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_sellable#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;field#_description#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;method#ItemTemplate#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;method#getId#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;method#getName#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;method#isSellable#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;method#getPrice#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;method#getMaxStack#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;method#getRequiredLevel#0;class#ItemTemplate#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#ItemTemplate#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/Template/EquipmentTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/city/Church.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/loader/ItemLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding>
+            <element signature="e#8168#8169#0" expanded="true" />
+            <element signature="e#8192#8193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/Holder/ItemHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1155#1156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="56" column="38" lean-forward="true" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+          <folding>
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/calculator/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="78" column="27" lean-forward="true" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/MiscInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/generator/HeroGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/inventory/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="236" column="5" lean-forward="true" selection-start-line="236" selection-start-column="5" selection-end-line="236" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/creature/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+          <folding>
+            <element signature="e#2694#2695#0" expanded="true" />
+            <element signature="e#2738#2739#0" expanded="true" />
+            <element signature="docComment;method#setExperienceMax#0;class#Hero#0" expanded="false" />
+            <element signature="docComment;method#tryEquip#0;class#Hero#0" expanded="false" />
+            <element signature="e#10374#10375#0" expanded="true" />
+            <element signature="e#10398#10399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/manager/SaveManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="216" column="17" lean-forward="false" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

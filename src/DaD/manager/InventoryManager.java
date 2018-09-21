@@ -3,9 +3,11 @@ package DaD.manager;
 import DaD.Debug.DebugLogger;
 import DaD.Commons.Utils.InputFunction;
 import DaD.creature.Hero;
+import DaD.item.EquipmentInstance;
 import DaD.item.ItemInstance;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Clovis on 16/05/2017.
@@ -122,7 +124,7 @@ public class InventoryManager
      */
     private void unequipItem(Hero hero){
         // Retrieves all equipped items
-        ArrayList<ItemInstance> allEquipedItems = hero.getInventory().getAllEquippedItems();
+        List<EquipmentInstance> allEquipedItems = hero.getInventory().getAllEquippedItems();
         // If the list is empty (size = 0) then the hero has no equipped items
         if(allEquipedItems.size() == 0){
             System.out.println("Vous n'avez aucun item equipe !");

@@ -25,7 +25,8 @@ public class ItemDropInfo {
      */
     private final int _maxDrop;
     /**
-     *
+     * Percent of chance item to be dropped.
+     * From 0 to 1, 1 equal to 100% drop rate.
      */
     private final double _dropRate;
 

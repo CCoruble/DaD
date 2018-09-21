@@ -1,8 +1,11 @@
 package DaD.city;
 
 import DaD.Commons.Utils.InputFunction;
+import DaD.Template.EquipmentTemplate;
 import DaD.creature.Hero;
 import DaD.Holder.ItemHolder;
+import DaD.generator.ItemGenerator;
+import DaD.item.EquipmentInstance;
 import DaD.item.ItemInstance;
 import DaD.Template.ItemTemplate;
 
@@ -105,7 +108,7 @@ public class Blacksmith
 	private void buyItemsMenu(Hero hero){
 		System.out.println("Voici la liste des objets en vente:");
 		for(int i = 0; i < _itemTemplateIdList.size(); i++){
-			ItemTemplate template = ItemHolder.getInstance().getItem(_itemTemplateIdList.get(i));
+			EquipmentTemplate template = (EquipmentTemplate)ItemHolder.getInstance().getItem(_itemTemplateIdList.get(i));
 			System.out.println((i+1) + ": (" + (int)template.getPrice() +"g) "  + template.getName() + " [Lv." + template.getRequiredLevel() + "]");
 			template.displayBonus();
 		}
@@ -131,7 +134,7 @@ public class Blacksmith
 			return;
 		}
 		// Create a new ItemInstance from the template
-		ItemInstance itemInstance = new ItemInstance(itemTemplate);
+		ItemInstance itemInstance = ItemGenerator.getInstance().createItem(itemTemplate);
 		if(hero.getInventory().addItem(itemInstance)){
 			hero.decreaseGold(itemTemplate.getPrice());
 		} else {

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="trove4j-3.0.3">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/trove4j-3.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/trove-3.0.0a1.jar/trove-3.0.0a1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
