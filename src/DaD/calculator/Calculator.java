@@ -11,6 +11,7 @@ import DaD.item.EquipmentInstance;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created by Clovis on 30/09/2017.
@@ -74,6 +75,117 @@ public class Calculator implements Comparator<Env>
 			for (EquipmentInstance item : hero.getInventory().getAllEquippedItems()) {
 				allStats.addAll(item.getTemplate().getBonusList());
 			}
+
+			// Once you retrieved all stats we must sort the ArrayList by order
+			sort(allStats);
+
+			// Finally calculate all the stats separately
+			// Attack
+			hero.setAttack(new Env(
+					calculateStat(getEnvByStat(allStats, Stats.ATTACK)),
+					StatType.SET,
+					Stats.ATTACK,
+					0x01
+			));
+
+			// Defense
+			hero.setDefense(new Env(
+					calculateStat(getEnvByStat(allStats, Stats.DEFENSE)),
+					StatType.SET,
+					Stats.DEFENSE,
+					0x01
+			));
+
+			// Hp_Max
+			double oldHpMaxValue = hero.getHpMax().getValue();
+			double hpMaxValue = calculateStat(getEnvByStat(allStats, Stats.HP_MAX));
+			hero.setHpMax(new Env(
+					hpMaxValue,
+					StatType.SET,
+					Stats.HP_MAX,
+					0x01
+			));
+			// This can be negative if item applied debuf on HP
+			double hpMaxValueDiff = hpMaxValue - oldHpMaxValue;
+			// Hp
+			hero.setHp(new Env(
+					hero.getHp().getValue() + hpMaxValueDiff,
+					StatType.SET,
+					Stats.HP,
+					0x01
+			));
+
+			// Mp_Max
+			double oldMpMaxValue = hero.getMpMax().getValue();
+			double mpMaxValue = calculateStat(getEnvByStat(allStats, Stats.MP_MAX));
+			hero.setMpMax(new Env(
+					mpMaxValue,
+					StatType.SET,
+					Stats.MP_MAX,
+					0x10
+			));
+			// This can be negative if item applied debuf on MP
+			double mpMaxValueDiff = mpMaxValue - oldMpMaxValue;
+			// Mp
+			hero.setMp(new Env(
+					hero.getMp().getValue() + mpMaxValueDiff,
+					StatType.SET,
+					Stats.MP,
+					0x10
+			));
+
+			// exp_Max
+			double expMaxValue = calculateStat(getEnvByStat(allStats, Stats.EXPERIENCE_MAX));
+			hero.setExperienceMax(new Env(
+					expMaxValue,
+					StatType.SET,
+					Stats.EXPERIENCE_MAX,
+					0x10
+			));
+		} catch (Exception e){
+			DebugLogger.log(e);
+		}
+	}
+
+	/**
+	 * Will calculate all statistics of
+	 * a hero plus those in the arrayList
+	 * @param hero Hero you wants to calculate all statistics.
+	 */
+	public void calculateAllStats(Hero hero, List<Env> envList){
+		try {
+			// We must calculate all stats that compose the Hero, for this we will first retrieve all stats in one List
+			ArrayList<Env> allStats = new ArrayList();
+
+			// FIRST get all his BASICS STATS
+			allStats.add(HeroFormulas.getBaseAttack());
+			allStats.add(HeroFormulas.getBaseDefense());
+			allStats.add(HeroFormulas.getBaseHpMax());
+			allStats.add(HeroFormulas.getBaseMpMax());
+			allStats.add(HeroFormulas.getBaseExpMax());
+
+			// Then all gender & race modifier
+			for (Env raceModifier : hero.getHeroRace().getAllEnv())
+				allStats.add(raceModifier);
+			for (Env genderModifier : hero.getHeroGender().getAllEnv())
+				allStats.add(genderModifier);
+
+			// Then for every level, LEVEL START AT 1 NOT 0
+			for (int i = 1; i < hero.getLevel(); i++) {
+				allStats.add(HeroFormulas.getAttackGainPerLevel());
+				allStats.add(HeroFormulas.getDefenseGainPerLevel());
+				allStats.add(HeroFormulas.getHpMaxGainPerLevel());
+				allStats.add(HeroFormulas.getMpMaxGainPerLevel());
+				allStats.add(HeroFormulas.getExpMaxGainPerLevel());
+			}
+
+			// All bonus from his equipped items
+			for (EquipmentInstance item : hero.getInventory().getAllEquippedItems()) {
+				allStats.addAll(item.getTemplate().getBonusList());
+			}
+
+			// Add all bonus from the arrayList in parameter
+			allStats.addAll(envList);
 
 			// Once you retrieved all stats we must sort the ArrayList by order
 			sort(allStats);
@@ -220,14 +332,5 @@ public class Calculator implements Comparator<Env>
 				sortedList.add(env);
 		}
 		return sortedList;
-	}
-
-	/**
-	 * Add a stat to hero, this is used for potion.
-	 * @param env to be added to stats
-	 * @return true if adding stats succeeded
-	 */
-	public boolean addStat(Env env){
-		return false;
 	}
 }

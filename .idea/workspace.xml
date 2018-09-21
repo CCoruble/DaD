@@ -5,52 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="343df287-1d87-4777-a027-c8afb8593ba4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/Template/EquipmentTemplate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/Template/MiscTemplate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/item/EquipmentInstance.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/item/IUsable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DaD/item/MiscInstance.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Saves/Dislogette.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Saves/WEEBOZAURUS.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Saves/jackie.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/Holder/ItemHolder.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/Holder/ItemHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/Template/ItemTemplate.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/Template/ItemTemplate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/calculator/Calculator.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/calculator/Calculator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Blacksmith.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Blacksmith.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Church.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Church.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Inn.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/city/Inn.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/Hero$1.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/Hero$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/Hero.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/Hero.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/MonsterInstance.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/creature/MonsterInstance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/data/types/ItemType.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/data/types/ItemType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/generator/ItemGenerator.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/generator/ItemGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/inventory/HeroInventory.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/inventory/HeroInventory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/inventory/Inventory.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/inventory/Inventory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/item/ItemDropInfo.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/item/ItemDropInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/item/ItemInstance.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/item/ItemInstance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/loader/ItemLoader.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/loader/ItemLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/manager/InventoryManager.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/manager/InventoryManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/manager/SaveManager.class" afterPath="$PROJECT_DIR$/out/production/Dungeon_And_Dragons/DaD/manager/SaveManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/trove4j_3_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/trove4j_3_0_3.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AllItems.xml" afterPath="$PROJECT_DIR$/AllItems.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/Holder/ItemHolder.java" afterPath="$PROJECT_DIR$/src/DaD/Holder/ItemHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/Holder/MonsterHolder.java" afterPath="$PROJECT_DIR$/src/DaD/Holder/MonsterHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/Template/DungeonTemplate.java" afterPath="$PROJECT_DIR$/src/DaD/Template/DungeonTemplate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/Template/ItemTemplate.java" afterPath="$PROJECT_DIR$/src/DaD/Template/ItemTemplate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/calculator/Calculator.java" afterPath="$PROJECT_DIR$/src/DaD/calculator/Calculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/city/Blacksmith.java" afterPath="$PROJECT_DIR$/src/DaD/city/Blacksmith.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/creature/Hero.java" afterPath="$PROJECT_DIR$/src/DaD/creature/Hero.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java" afterPath="$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/data/types/ItemType.java" afterPath="$PROJECT_DIR$/src/DaD/data/types/ItemType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java" afterPath="$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java" afterPath="$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/inventory/Inventory.java" afterPath="$PROJECT_DIR$/src/DaD/inventory/Inventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java" afterPath="$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/item/ItemInstance.java" afterPath="$PROJECT_DIR$/src/DaD/item/ItemInstance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/loader/ItemLoader.java" afterPath="$PROJECT_DIR$/src/DaD/loader/ItemLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/manager/InventoryManager.java" afterPath="$PROJECT_DIR$/src/DaD/manager/InventoryManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/manager/SaveManager.java" afterPath="$PROJECT_DIR$/src/DaD/manager/SaveManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/data/types/Stats/Env.java" afterPath="$PROJECT_DIR$/src/DaD/data/types/Stats/Env.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/handler/FightHandler.java" afterPath="$PROJECT_DIR$/src/DaD/handler/FightHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/item/IUsable.java" afterPath="$PROJECT_DIR$/src/DaD/item/IUsable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DaD/item/MiscInstance.java" afterPath="$PROJECT_DIR$/src/DaD/item/MiscInstance.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,54 +33,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Inventory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/inventory/Inventory.java">
+      <file leaf-file-name="MiscInstance.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/item/MiscInstance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="236" column="5" lean-forward="true" selection-start-line="236" selection-start-column="5" selection-end-line="236" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HeroGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/generator/HeroGenerator.java">
+      <file leaf-file-name="FightHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/handler/FightHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+            <state relative-caret-position="311">
+              <caret line="158" column="13" lean-forward="true" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HeroInventory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java">
+      <file leaf-file-name="Env.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DaD/data/types/Stats/Env.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="56" column="38" lean-forward="true" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-              <folding>
-                <element signature="e#647#648#0" expanded="true" />
-                <element signature="e#692#693#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="88" column="4" lean-forward="true" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SaveManager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DaD/manager/SaveManager.java">
+      <file leaf-file-name="Blacksmith.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/city/Blacksmith.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="216" column="17" lean-forward="false" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
+            <state relative-caret-position="287">
+              <caret line="109" column="4" lean-forward="false" selection-start-line="109" selection-start-column="4" selection-end-line="120" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bank.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/city/Bank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="115" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IUsable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaD/item/IUsable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -129,58 +96,8 @@
       <file leaf-file-name="MonsterInstance.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hero.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/creature/Hero.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
-              <folding>
-                <element signature="e#2694#2695#0" expanded="true" />
-                <element signature="e#2738#2739#0" expanded="true" />
-                <element signature="docComment;method#setExperienceMax#0;class#Hero#0" expanded="false" />
-                <element signature="docComment;method#tryEquip#0;class#Hero#0" expanded="false" />
-                <element signature="e#10374#10375#0" expanded="true" />
-                <element signature="e#10398#10399#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemInstance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemInstance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MiscInstance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/item/MiscInstance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="24" />
-              <folding>
-                <element signature="e#851#852#0" expanded="true" />
-                <element signature="e#907#908#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaD/calculator/Calculator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="78" column="27" lean-forward="true" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+            <state relative-caret-position="446">
+              <caret line="163" column="18" lean-forward="false" selection-start-line="163" selection-start-column="18" selection-end-line="163" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -249,7 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/DaD/formulas/MonsterFormulas.java" />
         <option value="$PROJECT_DIR$/src/DaD/monster/MonsterTemplate.java" />
         <option value="$PROJECT_DIR$/src/DaD/generator/NpcGenerator.java" />
         <option value="$PROJECT_DIR$/src/DaD/dungeon/DungeonTemplate.java" />
@@ -257,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/DaD/dungeon/DungeonInstance.java" />
         <option value="$PROJECT_DIR$/src/DaD/generator/HeroGenerator.java" />
         <option value="$PROJECT_DIR$/src/DaD/item/ItemTemplate.java" />
-        <option value="$PROJECT_DIR$/src/DaD/handler/FightHandler.java" />
         <option value="$PROJECT_DIR$/src/DaD/monster/MonsterInstance.java" />
         <option value="$PROJECT_DIR$/src/DaD/Commons/Utils/ItemFunction.java" />
         <option value="$PROJECT_DIR$/src/DaD/Template/MonsterTemplate.java" />
@@ -279,10 +194,8 @@
         <option value="$PROJECT_DIR$/src/DaD/item/ScrollInstance.java" />
         <option value="$PROJECT_DIR$/src/DaD/item/ItemDropInfo.java" />
         <option value="$PROJECT_DIR$/src/DaD/item/Ingredients.java" />
-        <option value="$PROJECT_DIR$/src/DaD/item/IUsable.java" />
         <option value="$PROJECT_DIR$/src/DaD/inventory/HeroInventory.java" />
         <option value="$PROJECT_DIR$/src/DaD/data/types/ItemType.java" />
-        <option value="$PROJECT_DIR$/src/DaD/calculator/Calculator.java" />
         <option value="$PROJECT_DIR$/src/DaD/manager/InventoryManager.java" />
         <option value="$PROJECT_DIR$/src/DaD/main.java" />
         <option value="$PROJECT_DIR$/src/DaD/Template/MiscTemplate.java" />
@@ -291,7 +204,6 @@
         <option value="$PROJECT_DIR$/src/DaD/loader/GeneralLoader.java" />
         <option value="$PROJECT_DIR$/src/DaD/Holder/ItemHolder.java" />
         <option value="$PROJECT_DIR$/src/DaD/city/Blacksmith.java" />
-        <option value="$PROJECT_DIR$/src/DaD/item/MiscInstance.java" />
         <option value="$PROJECT_DIR$/src/DaD/item/EquipmentInstance.java" />
         <option value="$PROJECT_DIR$/src/DaD/item/ItemInstance.java" />
         <option value="$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java" />
@@ -300,6 +212,11 @@
         <option value="$PROJECT_DIR$/src/DaD/generator/ItemGenerator.java" />
         <option value="$PROJECT_DIR$/src/DaD/creature/Hero.java" />
         <option value="$PROJECT_DIR$/src/DaD/manager/SaveManager.java" />
+        <option value="$PROJECT_DIR$/src/DaD/calculator/Calculator.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/IUsable.java" />
+        <option value="$PROJECT_DIR$/src/DaD/item/MiscInstance.java" />
+        <option value="$PROJECT_DIR$/src/DaD/handler/FightHandler.java" />
+        <option value="$PROJECT_DIR$/src/DaD/data/types/Stats/Env.java" />
       </list>
     </option>
   </component>
@@ -462,21 +379,22 @@
               <item name="DaD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DaD" type="462c0819:PsiDirectoryNode" />
-              <item name="creature" type="462c0819:PsiDirectoryNode" />
+              <item name="types" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
               <item name="DaD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DaD" type="462c0819:PsiDirectoryNode" />
-              <item name="generator" type="462c0819:PsiDirectoryNode" />
+              <item name="types" type="462c0819:PsiDirectoryNode" />
+              <item name="Stats" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
               <item name="DaD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DaD" type="462c0819:PsiDirectoryNode" />
-              <item name="inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
@@ -484,27 +402,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DaD" type="462c0819:PsiDirectoryNode" />
               <item name="item" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DaD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DaD" type="462c0819:PsiDirectoryNode" />
-              <item name="loader" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DaD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DaD" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DaD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DaD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DaD" type="462c0819:PsiDirectoryNode" />
-              <item name="Template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -803,12 +700,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34745762" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34745762" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34745762" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15572916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3209746" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3209746" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32521185" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -882,8 +779,8 @@
         <state relative-caret-position="595">
           <caret line="35" column="49" lean-forward="false" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
           <folding>
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#1596#1597#0" expanded="false" />
+            <element signature="e#1652#1653#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -901,8 +798,8 @@
             <element signature="method#EquipmentInstance#2;class#EquipmentInstance#0" expanded="false" />
             <element signature="docComment;method#isEquipped#0;class#EquipmentInstance#0" expanded="false" />
             <element signature="docComment;method#setEquipped#0;class#EquipmentInstance#0" expanded="false" />
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="e#1659#1660#0" expanded="true" />
+            <element signature="e#1598#1599#0" expanded="false" />
+            <element signature="e#1659#1660#0" expanded="false" />
             <element signature="docComment;method#isThrowable#0;class#EquipmentInstance#0" expanded="false" />
           </folding>
         </state>
@@ -937,7 +834,7 @@
         <state relative-caret-position="1156">
           <caret line="137" column="27" lean-forward="false" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="docComment;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_id#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_name#0;class#ItemTemplate#0" expanded="false" />
@@ -1010,14 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/city/Blacksmith.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="135" column="54" lean-forward="true" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DaD/item/EquipmentInstance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1031,8 +920,8 @@
             <element signature="method#EquipmentInstance#2;class#EquipmentInstance#0" expanded="false" />
             <element signature="docComment;method#isEquipped#0;class#EquipmentInstance#0" expanded="false" />
             <element signature="docComment;method#setEquipped#0;class#EquipmentInstance#0" expanded="false" />
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="e#1659#1660#0" expanded="true" />
+            <element signature="e#1598#1599#0" expanded="false" />
+            <element signature="e#1659#1660#0" expanded="false" />
             <element signature="docComment;method#isThrowable#0;class#EquipmentInstance#0" expanded="false" />
           </folding>
         </state>
@@ -1053,7 +942,7 @@
         <state relative-caret-position="389">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="docComment;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_id#0;class#ItemTemplate#0" expanded="false" />
             <element signature="docComment;field#_name#0;class#ItemTemplate#0" expanded="false" />
@@ -1098,8 +987,8 @@
         <state relative-caret-position="2550">
           <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding>
-            <element signature="e#8168#8169#0" expanded="true" />
-            <element signature="e#8192#8193#0" expanded="true" />
+            <element signature="e#8168#8169#0" expanded="false" />
+            <element signature="e#8192#8193#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1120,35 +1009,8 @@
         <state relative-caret-position="442">
           <caret line="56" column="38" lean-forward="true" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
           <folding>
-            <element signature="e#647#648#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/calculator/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="78" column="27" lean-forward="true" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/item/MiscInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="24" />
-          <folding>
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="false" />
+            <element signature="e#692#693#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1157,14 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1202,8 +1056,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DaD/manager/SaveManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="216" column="17" lean-forward="false" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
+        <state relative-caret-position="413">
+          <caret line="217" column="91" lean-forward="true" selection-start-line="217" selection-start-column="91" selection-end-line="217" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/ItemInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/calculator/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="334" column="5" lean-forward="false" selection-start-line="334" selection-start-column="5" selection-end-line="334" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/IUsable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/item/MiscInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/city/Bank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/city/Blacksmith.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="109" column="4" lean-forward="false" selection-start-line="109" selection-start-column="4" selection-end-line="120" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/creature/MonsterInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="163" column="18" lean-forward="false" selection-start-line="163" selection-start-column="18" selection-end-line="163" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/handler/FightHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="158" column="13" lean-forward="true" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaD/data/types/Stats/Env.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="88" column="4" lean-forward="true" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
           <folding />
         </state>
       </provider>

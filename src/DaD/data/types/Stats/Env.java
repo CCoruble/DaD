@@ -86,7 +86,7 @@ public class Env
 			base = calcStat(base);
 		return base;
 	}
-
+	
 	// Stat
 	/**
 	 * Return {@link #_stat}.
